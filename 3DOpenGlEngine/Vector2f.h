@@ -13,7 +13,7 @@ public:
     };
 
 
-    Vector2f(float x, float y)
+    Vector2f(float x=0, float y=0)
 	    : Float(x),
 	      y(y)
     {
@@ -38,7 +38,7 @@ public:
         return Vector2f(x / other.x, y / other.y);
     }
 
-    float operator[](int index) const {
+    float& operator[](int index)  {
         if (index < 0 || index>1)
         {
             throw  std::out_of_range("Vector2f has only indecies betwee 0 - 1");

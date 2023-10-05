@@ -37,7 +37,7 @@ public:
         return Vector4f(x / other.x, y / other.y, z / other.z, w / other.w);
     }
 
-    float operator[](int index) const {
+    float& operator[](int index)  {
         if (index < 0 || index>3)
         {
             throw  std::out_of_range("Vector4f has only indecies betwee 0 - 3");

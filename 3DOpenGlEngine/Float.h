@@ -37,7 +37,7 @@ public:
         return Float(x / other.x);
     }
 
-    float operator[](int index) const {
+    float& operator[](int index)  {
        if(index<0 || index>0)
        {
            throw  std::out_of_range("Float has only index 0");

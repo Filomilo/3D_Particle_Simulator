@@ -1,9 +1,11 @@
 #pragma once
+#include <list>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "Vector4f.h"
 #include <stdexcept>
-
+#include "Renderable.h"
+#include "ShaderProgram.h"
 
 class _3DEngine
 {
@@ -14,6 +16,11 @@ private:
 	GLFWwindow* mainWindow=nullptr;
 	bool shouldClose=false;
 	Vector4f backgroundColor=Vector4f(0.1f,0.1f,0.1f,1.0f);
+
+
+
+
+	std::list<Renderable*> renderables_;
 
 	void initilizeOpenGl()
 	{
@@ -67,21 +74,34 @@ private:
 
 	void endLoop()
 	{
-	
 		glfwPollEvents();
 		glfwSwapBuffers(this->mainWindow);
 		if (glfwWindowShouldClose(this->mainWindow))
 		{
 			this->shouldClose = true;
 		}
+
 	}
+
+
+
+
+
+
+
+
 
 	void mainLoop()
 	{
+
 		while(!this->shouldClose)
 		{
 			startLoop();
 
+
+
+			this->render();
+			
 
 			endLoop();
 		}
@@ -94,6 +114,13 @@ private:
 		
 	}
 
+	void render()
+	{
+		for (Renderable* element : this->renderables_)
+		{
+			element->render();
+		}
+	}
 
 
 public:
@@ -120,7 +147,10 @@ public:
 		this->mainLoop();
 	}
 
-
+	void addRenderable(Renderable* object)
+	{
+		this->renderables_.push_back(object);
+	}
 
 };
 

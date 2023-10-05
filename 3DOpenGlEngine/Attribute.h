@@ -26,5 +26,8 @@ public:
 		os << "NONE Attribute";
 		return os;
 	}
+
+	~Attribute()
+	{}
 };
 

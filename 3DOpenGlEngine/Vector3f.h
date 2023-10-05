@@ -10,11 +10,12 @@ public:
     };
 
 
-    Vector3f(float x, float y, float z)
+    Vector3f(float x=0, float y=0, float z=0)
 	    : Vector2f(x, y),
 	      z(z)
     {
     }
+
 
 
 
@@ -34,7 +35,7 @@ public:
         return Vector3f(x / other.x, y / other.y,  z / other.z);
     }
 
-    float operator[](int index) const {
+    float& operator[](int index)  {
         if (index < 0 || index>2)
         {
             throw  std::out_of_range("Vector3f has only indecies betwee 0 - 2");
