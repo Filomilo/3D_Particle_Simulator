@@ -42,6 +42,11 @@ public:
 		return scale;
 	}
 
+	void rotateY(float degrees)
+	{
+		this->rotation = this->rotation + Vector3f(0, degrees, 0);
+	}
+
 
 	void set_position(Vector3f position)
 	{
@@ -69,6 +74,9 @@ public:
 		mat = glm::scale(mat, glm::vec3(scale.x, scale.y, scale.z));
 		return mat;
 	}
+
+
+
 
 
 };

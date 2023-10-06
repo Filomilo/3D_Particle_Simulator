@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Vector2f.h"
 class Vector3f :
     public Vector2f
@@ -15,7 +16,6 @@ public:
 	      z(z)
     {
     }
-
 
 
 

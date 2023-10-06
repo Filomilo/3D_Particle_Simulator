@@ -16,7 +16,7 @@ private:
 	GLFWwindow* mainWindow;
 	bool shouldClose=false;
 	Vector4f backgroundColor=Vector4f(0.1f,0.1f,0.1f,1.0f);
-
+	
 
 
 
@@ -108,7 +108,7 @@ private:
 		while(!this->shouldClose)
 		{
 			startLoop();
-
+			
 
 			this->updateShaders();
 			this->render();

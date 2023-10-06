@@ -76,23 +76,24 @@ private:
 	}
 
 
-	int* getIndeciesArray()
+	unsigned int* getIndeciesArray()
 	{
-		std::cout << std::endl << std::endl;
-		int* eboArray = new int[this->getTringlePointCount()];
+		std::cout <<"-------------------------------------------------------"<< this->getTringlePointCount() << std::endl << std::endl;
+		int index = 0;
+		unsigned int* eboArray = new  unsigned int[this->getTringlePointCount()];
 		for (Face* face: this->faces)
 		{
 			std::vector<unsigned int> indecies = face->get_vertex_indecies();
 			int firstIndex = indecies[0];
-			int index = 0;
-			for(int i=1;i+1<indecies.size();i++)
+			
+			for(int i=2;i<indecies.size();i++)
 			{
 				eboArray[index++] = firstIndex;
-				eboArray[index++] = indecies[i];
-					eboArray[index++] = indecies[i + 1];
+				eboArray[index++] = indecies[i-1];
+				eboArray[index++] = indecies[i ];
 			
 
-				std::cout << firstIndex << ", " << indecies[i] << ", " << indecies[i + 1] << std::endl;
+				std::cout << firstIndex << ", " << indecies[i-1] << ", " << indecies[i ] << std::endl;
 			}
 		}
 
@@ -205,13 +206,27 @@ public:
 	void initilizePolygonal()
 	{
 		float* vertexBuffer = this->getVertexBuffer();
-		int* indeciesBuffer = this->getIndeciesArray();
+		GLuint* indeciesBuffer = this->getIndeciesArray();
 
 
 
 		//std::cout << "Test: " << this->getVerteciesAmount()*this->getVertexSize()*sizeof(float)<< "\n";
+		std::cout << "VertexBuffer: \n";
+		for(int i=0;i<  this->getVerteciesAmount() * this->getVertexSize();i++)
+		{
+			std::cout << vertexBuffer[i] << ",";
+			if (i % 3==2)
+				std::cout << std::endl;
+		}
 
 
+		std::cout << "\n\nindeciesBuffer: \n";
+		for (int i = 0; i < this->getTringlePointCount(); i++)
+		{
+			std::cout << indeciesBuffer[i] << ",";
+			if (i % 3 == 2)
+				std::cout << std::endl;
+		}
 		this->vao = new VAO();
 		vao->bind();
 
@@ -222,7 +237,7 @@ public:
 
 		std::map<std::string, Attribute::Types> attributesMap = shader->getAttributeMap();
 		std::list<std::string> attributeList = shader->getAttributeList();
-		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(int));
+		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
 
 
 
@@ -246,6 +261,7 @@ public:
 
 	void renderProc() override
 	{
+		this->rotateY(1);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		shader->use();
 		shader->setMatrix4("model", this->getTransformationMatrix());
