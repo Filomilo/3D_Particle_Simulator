@@ -263,6 +263,7 @@ public:
 	{
 		this->rotateY(1);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		//this->set_scale(cos(clock() / 1000.0f)/3);
 		shader->use();
 		shader->setMatrix4("model", this->getTransformationMatrix());
 		this->ebo->bind();

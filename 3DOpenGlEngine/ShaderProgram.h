@@ -11,7 +11,7 @@
 #include<glm/gtc/type_ptr.hpp>
 #include<glm/gtx/rotate_vector.hpp>
 #include<glm/gtx/vector_angle.hpp>
-
+#include "Camera.h"
 #include "Attribute.h"
 #include "Vector3f.h"
 
@@ -173,4 +173,14 @@ public:
 		return this->vertexSize;
 	}
 
+	void setCamera( std::string  name, Camera * camera)
+	{
+		if(camera==nullptr)
+		{
+			std::cerr << "Camera is null\n";
+			throw std::runtime_error("Camera is null");
+		}
+		glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(camera->getCameraMatrix()));
+
+	}
 };

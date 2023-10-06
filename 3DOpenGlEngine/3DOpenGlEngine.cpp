@@ -25,15 +25,15 @@ void cubeTest()
         ShaderProgram* shader = new ShaderProgram("simpleVertexShader.vert", "simpleFragmentShader.frag");
 
 
-        Cube* cube = new Cube(0.5);
+        Cube* cube = new Cube(2.5);
         cube->setShader(shader);
         cube->initilizePolygonal();
 
 
+        engine->addShader(shader);
 
-
-        cube->set_position(Vector3f(0, 0.5, 0));
-        cube->set_rotation(Vector3f(45, 9, 0));
+        //cube->set_position(Vector3f(0, 0.5, 0));
+        //cube->set_rotation(Vector3f(45, 9, 0));
         engine->addRenderable(cube);
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
        // engine->addRenderable(rectangle);

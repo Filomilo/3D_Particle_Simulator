@@ -62,7 +62,10 @@ public:
 	{
 		this->scale = scale;
 	}
-
+	void set_scale(float scale)
+	{
+		this->scale = Vector3f(scale, scale, scale);
+	}
 
 	glm::mat4 getTransformationMatrix()
 	{

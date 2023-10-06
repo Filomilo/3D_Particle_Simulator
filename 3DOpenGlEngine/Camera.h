@@ -17,12 +17,19 @@ private:
         projection = glm::perspective(glm ::radians( this->fov), this->aspect, this->nearPlane, this->farPlane);
     }
 
+    glm::mat4 getLookAtMatrix()
+    {
+        return glm::lookAt(glm::vec3(this->get_position().x, this->get_position().y, this->get_position().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+    }
+
+
 public:
     Camera(float fov, float aspect, float near_plane, float far_plane)
 	    : fov(fov),
 	      aspect(aspect),
 	      nearPlane(near_plane),
-	      farPlane(far_plane)
+	      farPlane(far_plane),
+         Transformable()
     {
         iniit();
     }
@@ -75,7 +82,7 @@ public:
 
     glm::mat4 getCameraMatrix()
     {
-        return this->getTransformationMatrix() * this->projection;
+        return  projection*this->getLookAtMatrix() ;
     }
 };
 

@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include "Renderable.h"
 #include "ShaderProgram.h"
-
+#include "Camera.h"
 class _3DEngine
 {
 
@@ -16,7 +16,9 @@ private:
 	GLFWwindow* mainWindow;
 	bool shouldClose=false;
 	Vector4f backgroundColor=Vector4f(0.1f,0.1f,0.1f,1.0f);
-	
+	Camera* activeCamera;
+	int width;
+	int height;
 
 
 
@@ -37,6 +39,8 @@ private:
 
 	void initlizeWindow(int windowWidth, int windowHeight)
 	{
+		this->width = windowWidth;
+		this->height = windowHeight;
 		this->mainWindow=  glfwCreateWindow(windowWidth, windowHeight, "3DEngine", NULL, NULL);
 		if(mainWindow==NULL)
 		{
@@ -87,9 +91,9 @@ private:
 
 	void updateShaders()
 	{
-		for(ShaderProgram* shader: this->shaders)
+		for (ShaderProgram* shader : this->shaders)
 		{
-			
+			shader->setCamera("camera", this->activeCamera);
 		}
 	}
 
@@ -145,11 +149,18 @@ public:
 		return _3DEngine::instance;
 	}
 
+	void initlizeCamera()
+	{
+		this->activeCamera = new Camera(80, this->width / height, 0.01, 1000);
+		this->activeCamera->set_position(Vector3f(0, 2,-10));
+	}
+
 	void iniit(int windowWidth, int windowHeight)
 	{
 		this->initilizeOpenGl();
 		this->initlizeWindow(windowWidth, windowHeight);
 		this->initilizeGlad();
+		this->initlizeCamera();
 	}
 
 
@@ -161,6 +172,11 @@ public:
 	void addRenderable(Renderable* object)
 	{
 		this->renderables_.push_back(object);
+	}
+
+	void addShader(ShaderProgram* shader)
+	{
+		this->shaders.push_back(shader);
 	}
 
 };
