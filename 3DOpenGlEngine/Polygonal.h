@@ -31,11 +31,11 @@ private:
 
 	float* getVertexBuffer()
 	{
-		std::vector<float> vbo;
+		float* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
 
 		std::map<std::string, Attribute::Types> attributesMap = shader->getAttributeMap();
 		std::list<std::string> attributeList = shader->getAttributeList();
-
+		int index = 0;
 		for (Vertex* vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
@@ -44,18 +44,13 @@ private:
 				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertex,attribName);
 				for(int i=0;i< attribType;i++)
 				{
-					vbo.push_back((*attribVal)[i]);
+					arrayVbo[index++] = (*attribVal)[i];
 					std::cout << (*attribVal)[i] << ", ";
 				}
 
 
 			}
 			std::cout << std::endl;
-		}
-		float* arrayVbo = new float[vbo.size()];
-		for(int i=0;i< vbo.size();i++)
-		{
-			arrayVbo[i] = vbo.at(i);
 		}
 
 		return  arrayVbo;
@@ -84,27 +79,25 @@ private:
 	int* getIndeciesArray()
 	{
 		std::cout << std::endl << std::endl;
-		std::vector< int> ebo;
+		int* eboArray = new int[this->getTringlePointCount()];
 		for (Face* face: this->faces)
 		{
 			std::vector<unsigned int> indecies = face->get_vertex_indecies();
 			int firstIndex = indecies[0];
-
+			int index = 0;
 			for(int i=1;i+1<indecies.size();i++)
 			{
-				ebo.push_back(firstIndex);
-				ebo.push_back(indecies[i]);
-				ebo.push_back(indecies[i+1]);
+				eboArray[index++] = firstIndex;
+				eboArray[index++] = indecies[i];
+					eboArray[index++] = indecies[i + 1];
+			
 
 				std::cout << firstIndex << ", " << indecies[i] << ", " << indecies[i + 1] << std::endl;
 			}
 		}
 
-		int* eboArray = new int[ebo.size()];
-		for(int i=0;i<ebo.size();i++)
-		{
-			eboArray[i] = ebo.at(i);
-		}
+		
+	
 
 
 		return eboArray;
@@ -120,57 +113,77 @@ private:
 
 public:
 
+	Polygonal(): Transformable()
+	{}
 
-	void addPoints(std::initializer_list<std::initializer_list<float>> list)
+	void addPoint(Point* x)
 	{
-		for (std::initializer_list<float> pointValues: list)
+		this->points.push_back(x);
+	}
+	void addPoint(Point pt)
+	{
+		Vector3f* Pos = (Vector3f*)pt.getAttribute("P");
+		Point* point = new Point(Pos->x, Pos->y, Pos->z);
+
+		this->addPoint(point);
+	}
+
+
+	void addPoint(float x, float y, float z)
+	{
+		this->addPoint(new Point(x, y, z));
+	}
+	void addPoint(std::initializer_list<float> coordinates)
+	{
+		Point* pt = new Point(coordinates);
+		this->addPoint(pt);
+	}
+	void addPoints(std::initializer_list<std::initializer_list<float> > coordinates)
+	{
+		for (std::initializer_list<float> coord : coordinates)
 		{
-			Point * pt=new Point(pointValues);
-			this->points.push_back(pt);
+			this->addPoint(coord);
 		}
 	}
 
-	void addFace(std::initializer_list<unsigned int> pointsIndecies)
+	void addVertex(int ptnum)
 	{
-		Face* face = new Face();
-		for(int index:  pointsIndecies)
-		{
-			face->addPointINdex(index);
+		Vertex* vertex = new Vertex(ptnum);
+		this->vertices.push_back(vertex);
+	}
+
+	void addVertex(int ptnum, Vector3f normals)
+	{
+		Vertex* vertex = new Vertex(ptnum, normals);
+		this->vertices.push_back(vertex);
+	}
+	void addVertex(int ptnum, Vector3f normals, Vector3f Uvs)
+	{
+		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
+		this->vertices.push_back(vertex);
+	}
+
+	void addFace(std::initializer_list<int> verteciesNumber)
+	{
+		Face* face = new Face;
+		for (int val : verteciesNumber) {
+			face->addPointINdex(val);
 		}
-		
 		this->faces.push_back(face);
 	}
-
-	void addVertecies(std::initializer_list<unsigned int > pointsIndecies)
+	void addFaces(std::initializer_list<std::initializer_list<int> > faces)
 	{
-		for (unsigned int index : pointsIndecies)
+		for (std::initializer_list<int> verteciesNumber : faces)
 		{
-			this->vertices.push_back(new Vertex(index));
+			this->addFace(verteciesNumber);
 		}
 	}
-
-	void addVertex(int pointIndex, std::initializer_list<float> normals, std::initializer_list<float> uvs)
+	void addVertecies(std::initializer_list<int> indxs)
 	{
-		Vertex* vertex=new Vertex(pointIndex);
-		
-		Vector3f* N = new Vector3f();
-		Vector2f* Uv = new Vector2f();
-		int i= 0;
-		for (float normal: normals)
+		for(int ptnb : indxs)
 		{
-			N[i++] = normal;
+			this->addVertex(ptnb);
 		}
-		i = 0;
-		for (float uv : uvs)
-		{
-			Uv[i++] = uv;
-		}
-		vertex->setAttribute("N",N);
-		vertex->setAttribute("Uv", Uv);
-		
-		this->vertices.push_back(vertex);
-
-		
 	}
 
 
@@ -191,7 +204,7 @@ public:
 
 	void initilizePolygonal()
 	{
-float* vertexBuffer = this->getVertexBuffer();
+		float* vertexBuffer = this->getVertexBuffer();
 		int* indeciesBuffer = this->getIndeciesArray();
 
 
@@ -226,7 +239,8 @@ float* vertexBuffer = this->getVertexBuffer();
 		vbo->unbind();
 		ebo->unbind();
 	
-
+		delete[] vertexBuffer;
+		delete[] indeciesBuffer;
 
 	}
 
@@ -234,6 +248,7 @@ float* vertexBuffer = this->getVertexBuffer();
 	{
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		shader->use();
+		shader->setMatrix4("model", this->getTransformationMatrix());
 		this->ebo->bind();
 		this->vao->bind();
 		glDrawElements(GL_TRIANGLES, this->getTringlePointCount() , GL_UNSIGNED_INT, 0);

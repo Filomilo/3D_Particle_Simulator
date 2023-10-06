@@ -25,10 +25,6 @@ public:
 		return false;
 	}
 
-	Object()
-	{
-		
-	}
 
 	~Object ()
 	{

@@ -13,7 +13,7 @@ class _3DEngine
 private:
 
 	static _3DEngine* instance;
-	GLFWwindow* mainWindow=nullptr;
+	GLFWwindow* mainWindow;
 	bool shouldClose=false;
 	Vector4f backgroundColor=Vector4f(0.1f,0.1f,0.1f,1.0f);
 
@@ -21,6 +21,7 @@ private:
 
 
 	std::list<Renderable*> renderables_;
+	std::list<ShaderProgram*> shaders;
 
 	void initilizeOpenGl()
 	{
@@ -84,7 +85,13 @@ private:
 	}
 
 
-
+	void updateShaders()
+	{
+		for(ShaderProgram* shader: this->shaders)
+		{
+			
+		}
+	}
 
 
 
@@ -94,12 +101,16 @@ private:
 	void mainLoop()
 	{
 
+
+
+		
+
 		while(!this->shouldClose)
 		{
 			startLoop();
 
 
-
+			this->updateShaders();
 			this->render();
 			
 

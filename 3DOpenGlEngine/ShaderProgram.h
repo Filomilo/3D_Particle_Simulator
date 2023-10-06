@@ -6,7 +6,12 @@
 #include <iostream>
 #include <list>
 #include <map>
-#include <glm/glm.hpp>
+#include<glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtc/type_ptr.hpp>
+#include<glm/gtx/rotate_vector.hpp>
+#include<glm/gtx/vector_angle.hpp>
+
 #include "Attribute.h"
 #include "Vector3f.h"
 
@@ -135,6 +140,14 @@ public:
 	}
 
 
+
+	void setMatrix4(const std::string& name, const glm::mat4& mat4)
+	{
+		this->use();
+		glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(mat4));
+	}
+
+
 	void addAttribute(std::string atribName, Attribute::Types type)
 	{
 		this->AttributesRequiredList.push_back(atribName);
@@ -151,6 +164,8 @@ public:
 	{
 		return this->AttributesRequiredMap;
 	}
+
+
 
 
 	unsigned int getVertexSizeRequired()

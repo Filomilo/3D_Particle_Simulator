@@ -38,7 +38,20 @@ void cubeTest()
        // shader->addAttribute("P", Attribute::VECTOR3F);
         rectangle->setShader(shader);
         rectangle->initilizePolygonal();
-        engine->addRenderable(rectangle);
+
+
+        Cube* cube = new Cube(0.5);
+        cube->setShader(shader);
+        cube->initilizePolygonal();
+
+
+
+
+        cube->set_position(Vector3f(0, 0.5, 0));
+        cube->set_rotation(Vector3f(45, 9, 0));
+        engine->addRenderable(cube);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+       // engine->addRenderable(rectangle);
        engine->start();
     }
     catch (std::exception e)

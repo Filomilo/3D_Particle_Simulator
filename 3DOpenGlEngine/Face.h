@@ -37,5 +37,11 @@ public:
     {
         this->vertexIndecies.push_back(index);
     }
+
+
+    ~Face()
+    {
+
+    }
 };
 
