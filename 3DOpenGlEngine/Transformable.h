@@ -5,16 +5,18 @@
 #include<glm/gtc/type_ptr.hpp>
 #include<glm/gtx/rotate_vector.hpp>
 #include<glm/gtx/vector_angle.hpp>
+
+#include "Math.h"
 #include "Vector3f.h"
 
 class Transformable
 {
 
-private:
+protected:
 
-	Vector3f position;
+	glm::mat4 objectTransformation=glm::mat4(1);
+	glm::mat4 originPointTransformation = glm::mat4(1);
 	Vector3f rotation;
-	Vector3f scale;
 
 
 public:
@@ -22,15 +24,16 @@ public:
 
 	Transformable()
 	{
-		scale.x = 1;
-		scale.y = 1;
-		scale.z = 1;
+		
 	}
 
 	Vector3f get_position() const
 	{
-		return position;
+		glm::vec3 position = glm::vec3(originPointTransformation[3]);
+		return Vector3f(position);
 	}
+
+
 
 	Vector3f get_rotation() const
 	{
@@ -39,44 +42,81 @@ public:
 
 	Vector3f get_scale() const
 	{
-		return scale;
+		return Vector3f(glm::vec3(originPointTransformation * glm::vec4(1, 1, 1,1)));
 	}
 
+
+	
 	void rotateY(float degrees)
 	{
-		this->rotation = this->rotation + Vector3f(0, degrees, 0);
+		rotation.y += degrees;
+		this->originPointTransformation = glm::rotate(originPointTransformation,  glm::radians(degrees), glm::vec3(0.0f, 1.0f, 0.0f) );
+	}
+	void rotateX(float degrees)
+	{
+		rotation.x += degrees;
+		this->originPointTransformation = glm::rotate(originPointTransformation, glm::radians(degrees), glm::vec3(1.0f, 0.0f, 0.0f));
+	}
+	void rotateZ(float degrees)
+	{
+		this->originPointTransformation = glm::rotate(originPointTransformation, glm::radians(degrees), glm::vec3(0.0f, 0.0f, 1.0f));
 	}
 
+	void rotate(float degrees,Vector3f vec)
+	{
+		rotation.z += degrees;
+		this->originPointTransformation = glm::rotate(originPointTransformation, glm::radians(degrees), vec.glm());
+	}
 
 	void set_position(Vector3f position)
 	{
-		this->position = position;
+		originPointTransformation[3][0] = position.x; 
+		originPointTransformation[3][1] = position.y; 
+		originPointTransformation[3][2] = position.z; 
+	}
+
+	void set_position_object(Vector3f position)
+	{
+		objectTransformation[3][0] = position.x;
+		objectTransformation[3][1] = position.y;
+		objectTransformation[3][2] = position.z;
 	}
 
 	void set_rotation(Vector3f rotation) 
 	{
-		this->rotation = rotation;
+		//// TODO: implement
 	}
 
 	void set_scale(Vector3f scale) 
 	{
-		this->scale = scale;
+		//// TODO: immplement
 	}
 	void set_scale(float scale)
 	{
-		this->scale = Vector3f(scale, scale, scale);
+		//// TODO: immplement
 	}
 
 	glm::mat4 getTransformationMatrix()
 	{
-		glm::mat4 mat = glm::mat4(1);
-		mat = glm::translate(mat, glm::vec3(position.x, position.y, position.z));
-		mat = glm::rotate(mat, glm::radians((float)this->get_rotation().x),glm::vec3(1,0,0));
-		mat = glm::rotate(mat, glm::radians((float)this->get_rotation().y), glm::vec3(0, 1, 0));
-		mat = glm::rotate(mat, glm::radians((float)this->get_rotation().z), glm::vec3(0, 0, 1));
-		mat = glm::scale(mat, glm::vec3(scale.x, scale.y, scale.z));
-		return mat;
+	
+		return objectTransformation;
 	}
+
+	void move(Vector3f offset)
+	{
+		originPointTransformation = glm::translate(originPointTransformation, offset.glm());
+	}
+	void moveIndendent(Vector3f offset)
+	{
+		objectTransformation = glm::translate(objectTransformation, offset.glm());
+	}
+
+	Vector3f getFullPositon()
+	{
+		glm::vec3 position = glm::vec3((originPointTransformation*objectTransformation)[3]);
+		return Vector3f(position);
+	}
+
 
 
 

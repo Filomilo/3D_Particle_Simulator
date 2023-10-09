@@ -1,5 +1,7 @@
 #pragma once
 
+#include <glm/vec3.hpp>
+
 #include "Vector2f.h"
 class Vector3f :
     public Vector2f
@@ -17,6 +19,10 @@ public:
     {
     }
 
+    Vector3f(glm::vec3 vec):Vector3f(vec.x,vec.y,vec.z)
+    {
+	    
+    }
 
 
     Vector3f operator+(const Vector3f& other) const {
@@ -59,6 +65,11 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Vector3f& obj)
     {
         return os << "[" << obj.x << ", " << obj.y << ", " << obj.z << "]";
+    }
+
+    glm::vec3 glm()
+    {
+        return glm::vec3(x, y, z);
     }
 };
 

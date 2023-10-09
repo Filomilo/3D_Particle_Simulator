@@ -1,4 +1,6 @@
 #pragma once
+
+
 #include "EBO.h"
 #include "Renderable.h"
 #include "Transformable.h"
@@ -26,7 +28,6 @@ private:
 	std::vector<Point*> points;
 	std::vector<Vertex*> vertices;
 	std::vector<Face*> faces;
-
 
 
 	float* getVertexBuffer()
@@ -261,7 +262,7 @@ public:
 
 	void renderProc() override
 	{
-		this->rotateY(1);
+		//this->rotateY(0.01);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		//this->set_scale(cos(clock() / 1000.0f)/3);
 		shader->use();
