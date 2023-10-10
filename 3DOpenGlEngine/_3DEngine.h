@@ -8,6 +8,7 @@
 #include "ShaderProgram.h"
 #include "Camera.h"
 #include "Mouse.h"
+#include "PolyGrid.h"
 
 class _3DEngine
 {
@@ -115,6 +116,24 @@ private:
 			//if(mouse->getMouseOffset().x!=0 || mouse->getMouseOffset().y != 0)
 		//	std::cout << activeCamera->get_rotation() << std::endl;
 		}
+		else
+		{
+			if(mouse->getIsRightPressed())
+			{
+				activeCamera->applyZoom(mouse->getMouseOffset().x * mouse->getMouseOffset().y*1000);
+			}
+			else
+			{
+				if(mouse->getIsMiddlePressedd())
+				{
+
+
+				}
+			}
+
+
+		}
+			
 	}
 
 	void processInput()
@@ -212,12 +231,20 @@ public:
 		
 	}
 
+	void initlizeGround()
+	{
+		//PolyGrid* polygrid = new PolyGrid(10, 10, 10, 10);
+		//this->addRenderable(polygrid);
+		//polygrid->initilizePolygonal();
+	}
+
 	void iniit(int windowWidth, int windowHeight)
 	{
 		this->initilizeOpenGl();
 		this->initlizeWindow(windowWidth, windowHeight);
 		this->initilizeGlad();
 		this->initlizeCamera();
+		this->initlizeGround();
 		framebuffer_size_callback(this->mainWindow, windowWidth, windowHeight);
 		setCallBacks();
 	}

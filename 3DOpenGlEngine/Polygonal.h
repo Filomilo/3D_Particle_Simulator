@@ -256,7 +256,7 @@ public:
 		ebo->unbind();
 	
 		delete[] vertexBuffer;
-		delete[] indeciesBuffer;
+//		delete[] indeciesBuffer;
 
 	}
 
@@ -278,5 +278,28 @@ public:
 	{
 		this->shader = shader;
 	}
+
+
+	void addFace(Face* face)
+	{
+		this->faces.push_back(face);
+	}
+
+	void addFace(const std::vector<int>& vector)
+	{
+		Face* newFace = new Face;
+		for (int indx : vector)
+		{
+			newFace->addPointINdex(indx);
+		}
+		addFace(newFace);
+	}
+
+
+	
+	void addPoint(Vector3f pos)
+{
+		this->addPoint(new Point(pos));
+}
 };
 

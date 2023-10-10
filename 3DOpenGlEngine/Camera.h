@@ -94,10 +94,11 @@ public:
         set_aspect((float)width / (float)height);
     }
 
-    void applyZoom(int scroll_movement)
+    void applyZoom(float value)
     {
-        this->move(Vector3f(0, 0.1* scroll_movement, 0));
+     //   this->moveIndendent(getFullPositon()*value);
         //std::cout << this->get_position() << std::endl;
+        ///TODO: aplication
     }
 
 
@@ -105,22 +106,8 @@ public:
     void applyMouseMovement(Vector2f movement)
     {
 	  
-		//	this->rotateY(movement.x * this->cameraSpeedFactor);
-            //this->rotateX(movement.y * this->cameraSpeedFactor);
-            //this->rotate(movement.y * -1.0 * this->cameraSpeedFactor, getFullPositon());
-          //  std::cout << "vector: " << getFullPositon() << std::endl;
-            Vector3f Pos= getFullPositon() - get_position();
-            Vector3f target =get_position();
-            std::cout << "Pos: " << Pos << std::endl;
 
-            float angle = atan2(Pos.z , Pos.x);// *(180 / 3.14);
-            float rotXfactor = sin(angle);// sin(rotationQuat.y / 4);
-            float rotZfactor = -cos(angle);
-           // this->rotateY(movement.x  * this->cameraSpeedFactor );
-          //  this->rotateX(movement.y  * this->cameraSpeedFactor  * rotXfactor);
-          //  this->rotateZ(movement.y * this->cameraSpeedFactor  * rotXfactor);
-    	//	this->rotate(-movement.y * this->cameraSpeedFactor, Vector3f(glm::cross(glm::vec3(0, 1, 0),glm::vec3(Pos.x,Pos.y,Pos.z))));
-          //  std::cout << "rotXfactor: " << rotXfactor << "\t" << "rotZfactor: " << rotZfactor << std::endl;
+            Vector3f Pos= getFullPositon() - get_position();
 
 
             glm::mat4 yawRotation = glm::rotate(glm::mat4(1.0f), glm::radians(movement.x) * cameraSpeedFactor, glm::vec3(0, 1, 0));

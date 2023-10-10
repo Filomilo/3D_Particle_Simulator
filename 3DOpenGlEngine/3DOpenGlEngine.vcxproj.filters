@@ -93,6 +93,9 @@
     <ClCompile Include="Math.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PolyGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_3DEngine.h">
@@ -156,6 +159,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PolyGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

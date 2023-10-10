@@ -64,5 +64,10 @@ public:
     {
 	    return os<<"[" << obj.x<< ", " << obj.y<<"]";
     }
+
+    float length()
+    {
+       return sqrt(x * x + y * y);
+    }
 };
 

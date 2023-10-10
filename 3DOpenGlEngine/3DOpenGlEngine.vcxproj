@@ -144,6 +144,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Polygonal.cpp" />
+    <ClCompile Include="PolyGrid.cpp" />
     <ClCompile Include="Renderable.cpp" />
     <ClCompile Include="Transformable.cpp" />
     <ClCompile Include="VAO.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Polygonal.h" />
+    <ClInclude Include="PolyGrid.h" />
     <ClInclude Include="Renderable.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Transformable.h" />
