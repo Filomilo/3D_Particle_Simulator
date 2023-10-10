@@ -99,7 +99,7 @@ public:
 	glm::mat4 getTransformationMatrix()
 	{
 	
-		return objectTransformation;
+		return objectTransformation*originPointTransformation;
 	}
 
 	void move(Vector3f offset)
@@ -116,7 +116,10 @@ public:
 		glm::vec3 position = glm::vec3((originPointTransformation*objectTransformation)[3]);
 		return Vector3f(position);
 	}
-
+	void moveY(double yOffset)
+	{
+		move(Vector3f(0, yOffset, 0));
+	}
 
 
 
