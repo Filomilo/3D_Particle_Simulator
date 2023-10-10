@@ -18,6 +18,7 @@ public:
 	{
 		VBO->bind();
 		glVertexAttribPointer(layout, nmOFElements, type, GL_FALSE, stride, (void*)offset);
+		std::cout << "glVertexAttribPointer(" << layout << ", " << nmOFElements << ", " << type << ", " << " GL_FALSE" << ", " << stride << ", " << offset << ")\n";
 		glEnableVertexAttribArray(layout);
 		VBO->unbind();
 	}

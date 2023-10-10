@@ -12,7 +12,11 @@ public:
 		this->addPoint(-width / 2, 0, height / 2);
 		this->addPoint(width / 2, 0, height / 2);
 		this->addPoint(width / 2, 0, -height / 2);
-		this->addVertecies({ 0,1,2,3 });
+		this->addVertex(0, { 0.000000, 1.000000 ,0.000000 }, { 0.0, 0.000000  });
+		this->addVertex(1, { 0.000000, 1.000000, 0.000000 }, { 1.0 ,0.0  });
+		this->addVertex(2, { 0.000000, 1.000000 ,0.000000 }, { 1.0, 1.0,});
+		this->addVertex(3, { 0.000000, 1.000000, 0.000000 }, { 0.0, 1.0});
+
 		this->addFace({ 0,1,2 });
 		this->addFace({ 0,2,3 });
 

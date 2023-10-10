@@ -1,18 +1,19 @@
 #pragma once
 
-#include <vector>
-#include <sstream>
+#include <glad/glad.h>
+
+#include <GL/gl.h>
 #include <fstream>
-#include <iostream>
-#include <list>
 #include <map>
+#include <glm/fwd.hpp>
 #include<glm/glm.hpp>
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
 #include<glm/gtx/rotate_vector.hpp>
 #include<glm/gtx/vector_angle.hpp>
+
 #include "Camera.h"
-#include "Attribute.h"
+#include "Math.h"
 #include "Vector3f.h"
 
 class ShaderProgram

@@ -17,7 +17,10 @@ public:
 		  w(w)
 	{
 	}
-
+    Vector4f()
+	{
+        w = 0;
+	}
 
 
 

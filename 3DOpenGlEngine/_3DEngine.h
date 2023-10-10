@@ -79,6 +79,7 @@ private:
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		
 	}
 
 	void initlizeWindow(int windowWidth, int windowHeight)
@@ -93,6 +94,7 @@ private:
 		}
 		glfwMakeContextCurrent(this->mainWindow);
 		
+		
 	}
 
 
@@ -102,6 +104,7 @@ private:
 		{
 			throw std::runtime_error("couldnt intinlize glad");
 		}
+		glEnable(GL_DEPTH_TEST);
 	}
 
 
@@ -145,7 +148,7 @@ private:
 	void clear()
 	{
 		glClearColor(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
-	glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 

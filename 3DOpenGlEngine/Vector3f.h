@@ -13,10 +13,15 @@ public:
     };
 
 
-    Vector3f(float x=0, float y=0, float z=0)
+    Vector3f(float x, float y, float z)
 	    : Vector2f(x, y),
 	      z(z)
     {
+    }
+
+    Vector3f ()
+    {
+        z = 0;
     }
 
     Vector3f(glm::vec3 vec):Vector3f(vec.x,vec.y,vec.z)

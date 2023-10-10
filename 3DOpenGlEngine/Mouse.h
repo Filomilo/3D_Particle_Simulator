@@ -22,8 +22,8 @@ private:
 		};
 		
 		
-		Vector2f position=0;
-		Vector2f offset=0;
+		Vector2f position=Vector2f(0,0);
+		Vector2f offset = Vector2f(0, 0);
 		float scrollMovement=0;
 		bool isPressing[3];
 		bool isClick[3];

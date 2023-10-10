@@ -1,15 +1,17 @@
 #pragma once
 
 
+#include <list>
+
 #include "EBO.h"
 #include "Renderable.h"
 #include "Transformable.h"
 
 #include "Face.h"
+#include "Material.h"
 #include "Vertex.h"
 #include "Point.h"
 #include "VAO.h"
-#include "ShaderProgram.h"
 #include "Vector4f.h"
 
 class Polygonal :
@@ -22,7 +24,7 @@ private:
 	EBO* ebo;
 	VBO* vbo;
 
-	ShaderProgram* shader;
+	Material* mat;
 
 
 	std::vector<Point*> points;
@@ -34,8 +36,8 @@ private:
 	{
 		float* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
 
-		std::map<std::string, Attribute::Types> attributesMap = shader->getAttributeMap();
-		std::list<std::string> attributeList = shader->getAttributeList();
+		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
+		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		for (Vertex* vertex: this->vertices)
 		{
@@ -59,7 +61,7 @@ private:
 
 	int getVertexSize()
 	{
-		return this->shader->getVertexSizeRequired();
+		return this->mat->getVertexSizeRequired();
 	}
 	int getVerteciesAmount()
 	{
@@ -107,11 +109,16 @@ private:
 
 
 
-	Attribute* getVertexAttrib(Vertex* vertex,std::string attrib)
+	Attribute* getVertexAttrib(Vertex* vertex, std::string attrib)
 	{
-		Point* pt = this->points.at(vertex->pointIndex);
-		return pt->getAttribute(attrib);
+		if (!vertex->isThereAttrib(attrib)) {
+			Point* pt = this->points.at(vertex->pointIndex);
+			return pt->getAttribute(attrib);
+		}
+		return vertex->getAttribute(attrib);
 	}
+
+	
 
 public:
 
@@ -159,7 +166,9 @@ public:
 		Vertex* vertex = new Vertex(ptnum, normals);
 		this->vertices.push_back(vertex);
 	}
-	void addVertex(int ptnum, Vector3f normals, Vector3f Uvs)
+
+
+	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
 	{
 		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
 		this->vertices.push_back(vertex);
@@ -191,17 +200,17 @@ public:
 
 	std::map<std::string,Attribute::Types> getMapOfAttributes()
 	{
-		return this->shader->getAttributeMap();
+		return this->mat->getAttributeMap();
 	}
 
 	std::list<std::string> getListOfAttributes()
 	{
-		return this->shader->getAttributeList();
+		return this->mat->getAttributeList();
 	}
 
 	int getSizeOfVertex()
 	{
-		return this->shader->getVertexSizeRequired();
+		return this->mat->getVertexSizeRequired();
 	}
 
 	void initilizePolygonal()
@@ -213,10 +222,13 @@ public:
 
 		//std::cout << "Test: " << this->getVerteciesAmount()*this->getVertexSize()*sizeof(float)<< "\n";
 		std::cout << "VertexBuffer: \n";
-		for(int i=0;i<  this->getVerteciesAmount() * this->getVertexSize();i++)
+
+		int verteciesAmt = this->getVerteciesAmount();
+		int vertexSize = this->getVertexSize();
+		for(int i=0;i< verteciesAmt * vertexSize;i++)
 		{
 			std::cout << vertexBuffer[i] << ",";
-			if (i % 3==2)
+			if (i % vertexSize == vertexSize-1)
 				std::cout << std::endl;
 		}
 
@@ -236,18 +248,22 @@ public:
 	
 
 
-		std::map<std::string, Attribute::Types> attributesMap = shader->getAttributeMap();
-		std::list<std::string> attributeList = shader->getAttributeList();
+		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
+		std::list<std::string> attributeList = mat->getAttributeList();
 		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
 
 
 
 		int i = 0;
 		int offset = 0;
+		
 		for(std::string name: attributeList)
 		{
 			Attribute::Types type = attributesMap[name];
-			this->vao->linkAttrib(vbo, i++, type, GL_FLOAT, type * sizeof(float), offset);
+			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
+			glEnableVertexAttribArray(i);
+			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
+			i++;
 			offset += type * sizeof(float);
 		}
 
@@ -256,7 +272,7 @@ public:
 		ebo->unbind();
 	
 		delete[] vertexBuffer;
-//		delete[] indeciesBuffer;
+        delete[] indeciesBuffer;
 
 	}
 
@@ -265,8 +281,7 @@ public:
 		//this->rotateY(0.01);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		//this->set_scale(cos(clock() / 1000.0f)/3);
-		shader->use();
-		shader->setMatrix4("model", this->getTransformationMatrix());
+		mat->apply(this->getTransformationMatrix());
 		this->ebo->bind();
 		this->vao->bind();
 		glDrawElements(GL_TRIANGLES, this->getTringlePointCount() , GL_UNSIGNED_INT, 0);
@@ -274,9 +289,9 @@ public:
 		this->ebo->unbind();
 	}
 
-	void setShader(ShaderProgram* shader)
+	void setMat(Material* mat)
 	{
-		this->shader = shader;
+		this->mat = mat;
 	}
 
 

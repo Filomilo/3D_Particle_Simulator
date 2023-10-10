@@ -14,13 +14,16 @@ public:
         float r;
     };
 
-    explicit Float(float x)
+     Float(float x)
 	    : x(x)
     {
     }
 
 
-
+     Float ()
+     {
+         x = 0;
+     }
     Float operator+(const Float& other) const {
         return Float(x + other.x);
     }

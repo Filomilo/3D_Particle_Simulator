@@ -13,13 +13,16 @@ public:
     };
 
 
-    Vector2f(float x=0, float y=0)
+    Vector2f(float x, float y)
 	    : Float(x),
 	      y(y)
     {
     }
 
-
+    Vector2f()
+    {
+        y = 0;
+    }
 
 
     Vector2f operator+(const Vector2f& other) const {

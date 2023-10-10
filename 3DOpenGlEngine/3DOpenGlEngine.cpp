@@ -1,5 +1,7 @@
 // 3DOpenGlEngine.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+
+
 #include <glad/glad.h>
 
 #include "Cube.h"
@@ -23,21 +25,28 @@ void cubeTest()
 
 
         ShaderProgram* shader = new ShaderProgram("simpleVertexShader.vert", "simpleFragmentShader.frag");
+        shader->addAttribute("Uv", Attribute::VECTOR2F);
+
+        Material* basicMat = new Material(shader);
+        Texture* tex = new Texture("Assets/cube_initialShadingGroup_BaseColor.bmp", 2048, 2048, 8);
+        basicMat->addTex("colorTexture", tex);
 
 
-       // Cube* cube = new Cube(2.5);
-       // cube->setShader(shader);
-        //cube->initilizePolygonal();
-
+        Material* basicMatplane = new Material(shader);
+        Texture* tex2 = new Texture("Assets/plane_initialShadingGroup_BaseColor.png", 2048, 2048, 8);
+        basicMatplane->addTex("colorTexture", tex2);
+        Cube* cube = new Cube(5);
+        cube->setMat(basicMat);
+        cube->initilizePolygonal();
+       cube->moveY(2.501);
 
         engine->addShader(shader);
 
-        //cube->set_position(Vector3f(0, 0.5, 0));
-        //cube->set_rotation(Vector3f(45, 9, 0));
-       /// engine->addRenderable(cube);
+       
+        engine->addRenderable(cube);
         try {
-            PolyGrid* polygrid = new PolyGrid(10, 10, 2, 2);
-            polygrid->setShader(shader);
+            PolyGrid* polygrid = new PolyGrid(20, 20, 2, 2);
+            polygrid->setMat(basicMatplane);
             polygrid->initilizePolygonal();
             engine->addRenderable(polygrid);
 
@@ -49,7 +58,7 @@ void cubeTest()
   
 
 
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+      //  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
        // engine->addRenderable(rectangle);
        engine->start();
     }

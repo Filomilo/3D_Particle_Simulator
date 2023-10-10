@@ -16,7 +16,7 @@ protected:
 
 	glm::mat4 objectTransformation=glm::mat4(1);
 	glm::mat4 originPointTransformation = glm::mat4(1);
-	Vector3f rotation;
+	Vector3f rotation=Vector3f(0,0,0);
 
 
 public:

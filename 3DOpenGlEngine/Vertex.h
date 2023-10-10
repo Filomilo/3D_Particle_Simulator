@@ -30,9 +30,9 @@ public:
         this->setAttribute("Uv", normals);
     }
 
-    Vertex(int pointNUm, Vector3f normals, Vector3f Uvs) : Vertex(pointNUm, normals)
+    Vertex(int pointNUm, Vector3f normals, Vector2f Uvs) : Vertex(pointNUm, normals)
     {
-        this->setAttribute("Uv", new Vector3f(Uvs.x, Uvs.y, Uvs.z));
+        this->setAttribute("Uv", new Vector2f(Uvs.x, Uvs.y));
     }
 
 };
