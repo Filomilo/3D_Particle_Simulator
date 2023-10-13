@@ -10,6 +10,7 @@ void ShaderLib::iniitShaderLib()
 	ShaderLib::phongShader->addAttribute("N", Attribute::VECTOR3F);
 	ShaderLib::phongShader->setInt("colorTexture", 0);
 	ShaderLib::phongShader->setInt("normalTexture", 1);
-	ShaderLib::phongShader->setInt("emissionTexture", 2);
+	ShaderLib::phongShader->setInt("roughTexture", 2);
+	ShaderLib::phongShader->setInt("emissionTexture", 3);
 }
 

@@ -83,6 +83,11 @@ public:
 		emissionTex = emission_tex;
 	}
 
+	void set_rough_tex(Texture* tex)
+	{
+		roughTex = tex;
+	}
+
 
 	~PhongMat()
 	{
@@ -101,15 +106,10 @@ public:
 	{
 		set_normal_tex(new Texture(str, i, i1, i2));
 	}
-
-	void set_rough_tex(Texture* str)
+	void set_rough_tex(const char* str, int i, int i1, int i2, int type=GL_RED)
 	{
-		
+		set_rough_tex(new Texture(str, i, i1, i2, type));
 	}
 
-	void set_rough_tex(const char* str, int i, int i1, int i2, int fomrat=GL_ALPHA)
-	{
-		set_rough_tex(new Texture(str, i, i1, i2, fomrat));
-	}
 };
 

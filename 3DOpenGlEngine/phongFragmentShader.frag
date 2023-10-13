@@ -62,7 +62,8 @@ void main()
 	
 	vec3 objectColor =vec3( texture(colorTexture, Uv));
 	vec3 objectNormal =vec3( texture(normalTexture, Uv).xyz*2-1);
-	vec3 objectRough =normalize(vec3( texture(roughTexture, Uv)));
+	vec3 objectRough =abs( vec3( texture(roughTexture, Uv))-1);
+	
 	vec3 ambientLight=light_data.ambientColor*light_data.ambientIntensity;
 
 	vec3 norm = normalize(N);
@@ -80,6 +81,7 @@ void main()
 	vec3 specular=light_data.lightTypeData[0].color*(spec);
 	vec3 finalColor=vec3((ambientLight+lightDiff)*objectColor+objectRough.r*specular);
     FragColor=vec4(finalColor,1);
-	// FragColor=vec4(objectColor ,1);
+	
+ //FragColor=vec4(objectRough ,1);
 
 } 

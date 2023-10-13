@@ -36,7 +36,7 @@ void cubeTest()
         PhongMat* cubeMat = new PhongMat;
         cubeMat->set_color_tex("Assets/cube_initialShadingGroup_BaseColor.bmp", 2048, 2048, 24);
         cubeMat->set_normal_tex("Assets/cube_initialShadingGroup_Normal.bmp", 2048, 2048, 24);
-     //  cubeMat->set_rough_tex("Assets/cube_cyber cue_Roughness.png", 2048, 2048, 8, GL_ALPHA);
+       cubeMat->set_rough_tex("Assets/cube_initialShadingGroup_Roughness.bmp", 2048, 2048, 8, GL_RED);
 
 
 
@@ -44,7 +44,7 @@ void cubeTest()
         PhongMat* basicMatplane = new PhongMat;
         basicMatplane->set_color_tex("Assets/plane_initialShadingGroup_BaseColor.png", 2048, 2048, 24);
         basicMatplane->set_normal_tex("Assets/plane_initialShadingGroup_Normal.png", 2048, 2048, 24);
-       // basicMatplane->set_rough_tex("Assets/plane_initialShadingGroup_Roughness.png", 2048, 2048, 8);
+        basicMatplane->set_rough_tex("Assets/plane_initialShadingGroup_Roughness.png", 2048, 2048, 8, GL_RED);
         Cube* cube = new Cube(5);
         cube->setMat(cubeMat);
         cube->initilizePolygonal();
