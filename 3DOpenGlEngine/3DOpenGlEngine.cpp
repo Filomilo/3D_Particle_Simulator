@@ -70,8 +70,8 @@ void cubeTest()
 
         PointLight* pointLight = new PointLight;
         pointLight->move(Vector3f(0, 5, 5));
-        Light::setAmbientColor(Vector3f(0.7, 0.4, 1));
-        Light::setAmbientIntensity(0.6);
+        Light::setAmbientColor(Vector3f(0.8, 0.8, 1));
+        Light::setAmbientIntensity(0.4);
         engine->addRenderable(pointLight);
 
 
