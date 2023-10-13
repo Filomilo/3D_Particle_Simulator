@@ -140,14 +140,19 @@
     <ClCompile Include="EBO.cpp" />
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Float.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PhongMat.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Polygonal.cpp" />
     <ClCompile Include="PolyGrid.cpp" />
     <ClCompile Include="Renderable.cpp" />
+    <ClCompile Include="ShaderLib.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Transformable.cpp" />
     <ClCompile Include="VAO.cpp" />
@@ -166,14 +171,18 @@
     <ClInclude Include="EBO.h" />
     <ClInclude Include="Face.h" />
     <ClInclude Include="Float.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PhongMat.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="PointLight.h" />
     <ClInclude Include="Polygonal.h" />
     <ClInclude Include="PolyGrid.h" />
     <ClInclude Include="Renderable.h" />
+    <ClInclude Include="ShaderLib.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Transformable.h" />
@@ -186,7 +195,10 @@
     <ClInclude Include="_3DEngine.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="3DOpenGlEngine.vcxproj.user" />
     <None Include="ClassDiagram.cd" />
+    <None Include="phongFragmentShader.frag" />
+    <None Include="simpleFragmentShader.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

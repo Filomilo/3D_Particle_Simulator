@@ -31,6 +31,7 @@ private:
 	std::vector<Vertex*> vertices;
 	std::vector<Face*> faces;
 
+	int renderMode = GL_FILL;
 
 	float* getVertexBuffer()
 	{
@@ -281,6 +282,8 @@ public:
 		//this->rotateY(0.01);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		//this->set_scale(cos(clock() / 1000.0f)/3);
+		glPolygonMode(GL_FRONT_AND_BACK, renderMode);
+		if(mat!=nullptr)
 		mat->apply(this->getTransformationMatrix());
 		this->ebo->bind();
 		this->vao->bind();
@@ -316,5 +319,16 @@ public:
 {
 		this->addPoint(new Point(pos));
 }
+
+
+	int get_render_mode() const
+	{
+		return renderMode;
+	}
+
+	void set_render_mode(int render_mode)
+	{
+		renderMode = render_mode;
+	}
 };
 

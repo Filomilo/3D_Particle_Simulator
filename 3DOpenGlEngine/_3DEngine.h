@@ -9,6 +9,7 @@
 #include "Camera.h"
 #include "Mouse.h"
 #include "PolyGrid.h"
+#include "ShaderLib.h"
 
 class _3DEngine
 {
@@ -97,6 +98,11 @@ private:
 		
 	}
 
+	void iniitShaderLib()
+	{
+		ShaderLib::iniitShaderLib();
+		this->addShader(ShaderLib::phongShader);
+	}
 
 	void initilizeGlad()
 	{
@@ -115,7 +121,7 @@ private:
 
 		if(this->mouse->getIsLeftePressed())
 		{
-			this->activeCamera->applyMouseMovement(this->mouse->getMouseOffset());
+			this->activeCamera->applyMouseMovement(this->mouse->getMouseOffset()*Vector2f(width,height));
 			//if(mouse->getMouseOffset().x!=0 || mouse->getMouseOffset().y != 0)
 		//	std::cout << activeCamera->get_rotation() << std::endl;
 		}
@@ -159,6 +165,10 @@ private:
 		for (ShaderProgram* shader : this->shaders)
 		{
 			shader->setCamera("camera", this->activeCamera);
+			if(shader->isLightAffeted())
+			{
+				shader->applyLightData(activeCamera->getFullPositon());
+			}
 		}
 	}
 
@@ -217,6 +227,11 @@ private:
 
 public:
 
+	~_3DEngine()
+	{
+		ShaderLib::uninnit();
+	}
+
 	static _3DEngine* getInstance()
 	{
 		if (_3DEngine::instance == nullptr)
@@ -248,6 +263,7 @@ public:
 		this->initilizeGlad();
 		this->initlizeCamera();
 		this->initlizeGround();
+		this->iniitShaderLib();
 		framebuffer_size_callback(this->mainWindow, windowWidth, windowHeight);
 		setCallBacks();
 	}

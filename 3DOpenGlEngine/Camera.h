@@ -14,7 +14,7 @@ private:
     float aspect;
     float nearPlane;
     float farPlane;
-    const float cameraSpeedFactor = 100;
+    const float cameraSpeedFactor =0.2;
 
     void iniit()
     {
@@ -99,6 +99,10 @@ public:
      //   this->moveIndendent(getFullPositon()*value);
         //std::cout << this->get_position() << std::endl;
         ///TODO: aplication
+        ///
+     //   Vector3f pos = Vector3f (normalize(getFullPositon().glm())) * value * -0.1;
+       // move(pos);
+        //std::cout << getFullPositon() << ", " << get_position() <<", "<<value<< std::endl;
     }
 
 

@@ -9,12 +9,12 @@
 class Material : public Object
 {
 
-private:
+protected:
 	ShaderProgram* shader;
 	std::vector<Texture*> textures;
 
 
-	void bindTex()
+	virtual void bindTex()
 	{
 		int i = 0;
 		for (Texture* tex : textures)
@@ -29,6 +29,10 @@ public:
 	explicit Material(ShaderProgram* shader)
 		: shader(shader)
 	{
+		if (shader == nullptr)
+		{
+			throw std::runtime_error("cannot create materal with null shader");
+		}
 	}
 
 	void addTex(std::string name,Texture* tex)

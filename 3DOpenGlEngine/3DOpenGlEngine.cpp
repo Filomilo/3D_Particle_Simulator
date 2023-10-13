@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 
 #include "Cube.h"
+#include "PhongMat.h"
+#include "PointLight.h"
 #include "ShaderProgram.h"
 #include "_3DEngine.h"
 
@@ -12,7 +14,7 @@ void otherTEst()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    ShaderProgram shader = ShaderProgram("simpleVertexShader.vert", "simpleFragmentShader.frag");
+    ShaderProgram shader = ShaderProgram("simpleVertexShader.vert", "phongFragmentShader.frag");
 }
 
 
@@ -24,19 +26,27 @@ void cubeTest()
         engine->iniit(800, 600);
 
 
-        ShaderProgram* shader = new ShaderProgram("simpleVertexShader.vert", "simpleFragmentShader.frag");
-        shader->addAttribute("Uv", Attribute::VECTOR2F);
-
+       // ShaderProgram* shader = new ShaderProgram("phongVertexShader.vert", "phongFragmentShader.frag");
+       
+       // shader->addAttribute("Uv", Attribute::VECTOR2F);
+        ShaderProgram* shader = ShaderLib::phongShader;
         Material* basicMat = new Material(shader);
         Texture* tex = new Texture("Assets/cube_initialShadingGroup_BaseColor.bmp", 2048, 2048, 8);
         basicMat->addTex("colorTexture", tex);
+        PhongMat* cubeMat = new PhongMat;
+        cubeMat->set_color_tex("Assets/cube_initialShadingGroup_BaseColor.bmp", 2048, 2048, 24);
+        cubeMat->set_normal_tex("Assets/cube_initialShadingGroup_Normal.bmp", 2048, 2048, 24);
+     //  cubeMat->set_rough_tex("Assets/cube_cyber cue_Roughness.png", 2048, 2048, 8, GL_ALPHA);
 
 
-        Material* basicMatplane = new Material(shader);
-        Texture* tex2 = new Texture("Assets/plane_initialShadingGroup_BaseColor.png", 2048, 2048, 8);
-        basicMatplane->addTex("colorTexture", tex2);
+
+
+        PhongMat* basicMatplane = new PhongMat;
+        basicMatplane->set_color_tex("Assets/plane_initialShadingGroup_BaseColor.png", 2048, 2048, 24);
+        basicMatplane->set_normal_tex("Assets/plane_initialShadingGroup_Normal.png", 2048, 2048, 24);
+       // basicMatplane->set_rough_tex("Assets/plane_initialShadingGroup_Roughness.png", 2048, 2048, 8);
         Cube* cube = new Cube(5);
-        cube->setMat(basicMat);
+        cube->setMat(cubeMat);
         cube->initilizePolygonal();
        cube->moveY(2.501);
 
@@ -55,7 +65,14 @@ void cubeTest()
         {
             std::cerr << "Error creating groundPlane: " << ex.what();
         }
-  
+
+
+
+        PointLight* pointLight = new PointLight;
+        pointLight->move(Vector3f(0, 5, 5));
+        Light::setAmbientColor(Vector3f(0.7, 0.4, 1));
+        Light::setAmbientIntensity(0.6);
+        engine->addRenderable(pointLight);
 
 
       //  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

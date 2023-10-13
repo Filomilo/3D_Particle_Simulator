@@ -16,11 +16,11 @@ private:
 	int channels;
 
 public:
-	Texture(std::string file, int width, int height, int channels);
+	Texture(std::string file, int width, int height, int channels, int format = GL_RGB);
 
 
 
 	void bind();
-	void unbind();
+	static void unbind();
 	
 };

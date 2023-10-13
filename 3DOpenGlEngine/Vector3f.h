@@ -42,6 +42,10 @@ public:
         return Vector3f(x * other.x, y * other.y,  z * other.z);
     }
 
+    Vector3f operator*(const float& other) const {
+        return Vector3f(x * other, y * other, z * other);
+    }
+
     Vector3f operator/(const Vector3f& other) const {
         return Vector3f(x / other.x, y / other.y,  z / other.z);
     }

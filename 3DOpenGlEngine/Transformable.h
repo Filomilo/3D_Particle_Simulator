@@ -102,7 +102,7 @@ public:
 		return objectTransformation*originPointTransformation;
 	}
 
-	void move(Vector3f offset)
+	virtual void move(Vector3f offset)
 	{
 		originPointTransformation = glm::translate(originPointTransformation, offset.glm());
 	}
