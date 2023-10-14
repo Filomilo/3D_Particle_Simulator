@@ -19,6 +19,8 @@
 
 	}
 
+
+
 	 Float Light::getAmbientIntensity()
 	{
 		return light_data.ambientIntensity;

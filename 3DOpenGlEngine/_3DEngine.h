@@ -25,11 +25,13 @@ private:
 	int height;
 	Mouse* mouse=new Mouse();
 
+	unsigned long int timeElapesed;
+	unsigned long int timerunning;
 
 	std::list<Renderable*> renderables_;
 	std::list<ShaderProgram*> shaders;
-
-
+	std::list<void(*)(_3DEngine* engine)> updateFunctions;
+	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{
 		_3DEngine* engine = _3DEngine::getInstance();
@@ -59,6 +61,15 @@ private:
 		//std::cout << button << ", " << action << ", " << mods << std::endl;
 	}
 
+	void static keyboard_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+		_3DEngine* engine = _3DEngine::getInstance();
+		for (void(*func)(GLFWwindow * window, int key, int scancode, int action, int mods) : engine->keycallBacks)
+		{
+			func(window, key, scancode, action, mods);
+		}
+	}
+
 	void resetOneTimeEvenets()
 	{
 		this->mouse->reset();
@@ -70,6 +81,7 @@ private:
 		glfwSetCursorPosCallback(this->mainWindow, _3DEngine::cursor_pos_callback);
 		glfwSetScrollCallback(this->mainWindow, _3DEngine::scroll_callback);
 		glfwSetMouseButtonCallback(this->mainWindow, _3DEngine::mouse_button_callback);
+		glfwSetKeyCallback(this->mainWindow, keyboard_callback);
 	}
 
 
@@ -181,18 +193,19 @@ private:
 	{
 
 
-
+		unsigned long int timer; 
 		
 
 		while(!this->shouldClose)
 		{
+			timer = clock();
 			processInput();
 			clear();
 			
 
 			this->updateShaders();
 			this->render();
-			
+			this->update();
 
 
 			//activeCamera->rotateY(0.1);
@@ -206,6 +219,8 @@ private:
 				this->shouldClose = true;
 			}
 			this->resetOneTimeEvenets();
+			timerunning = clock();
+			timeElapesed = timerunning - timer;
 		}
 	}
 
@@ -225,11 +240,29 @@ private:
 	}
 
 
+	void update()
+	{
+		for (void(*funciton)(_3DEngine* engine) : updateFunctions)
+		{
+			funciton(this);
+		}
+	}
+
 public:
 
 	~_3DEngine()
 	{
 		ShaderLib::uninnit();
+	}
+
+	void addUpdate(void(* funciton)(_3DEngine* engine))
+	{
+		updateFunctions.push_back(funciton);
+	}
+
+	void addKeyCallBack(void(* cube_key_callback)(GLFWwindow* window, int key, int scancode, int action, int mods))
+	{
+		keycallBacks.push_back(cube_key_callback);
 	}
 
 	static _3DEngine* getInstance()
@@ -284,5 +317,10 @@ public:
 		this->shaders.push_back(shader);
 	}
 
+
+	float getTimeRunnig()
+	{
+		return (float)timerunning / CLOCKS_PER_SEC;
+	}
 };
 

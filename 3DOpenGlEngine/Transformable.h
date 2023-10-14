@@ -68,7 +68,7 @@ public:
 		this->originPointTransformation = glm::rotate(originPointTransformation, glm::radians(degrees), vec.glm());
 	}
 
-	void set_position(Vector3f position)
+	virtual void set_position(Vector3f position)
 	{
 		originPointTransformation[3][0] = position.x; 
 		originPointTransformation[3][1] = position.y; 

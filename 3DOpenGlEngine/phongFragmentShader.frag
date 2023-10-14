@@ -61,7 +61,7 @@ void main()
     
 	
 	vec3 objectColor =vec3( texture(colorTexture, Uv));
-	vec3 objectNormal =vec3( texture(normalTexture, Uv).xyz*2-1);
+	vec3 objectNormal = abs(vec3( texture(normalTexture, Uv).xyz*2-1)-1);
 	vec3 objectRough =abs( vec3( texture(roughTexture, Uv))-1);
 	
 	vec3 ambientLight=light_data.ambientColor*light_data.ambientIntensity;

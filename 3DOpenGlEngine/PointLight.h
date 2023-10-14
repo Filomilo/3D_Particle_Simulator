@@ -36,6 +36,10 @@ public:
         Transformable::move(offset);
         setLightPos();
     }
-
+    void set_position(Vector3f position) override
+    {
+        Transformable::set_position(position);
+        setLightPos();
+    }
 };
 
