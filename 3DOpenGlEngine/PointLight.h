@@ -25,7 +25,7 @@ public:
     PointLight(): Light(), Cube(1)
     {
         this->setMat(new Material(ShaderLib::phongShader));
-        initilizePolygonal();
+        iniit();
 
         setLightType(POINYLIGHT);
         this->set_render_mode(GL_LINE);

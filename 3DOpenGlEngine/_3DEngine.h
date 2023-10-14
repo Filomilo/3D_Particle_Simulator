@@ -114,6 +114,7 @@ private:
 	{
 		ShaderLib::iniitShaderLib();
 		this->addShader(ShaderLib::phongShader);
+		this->addShader(ShaderLib::guideShader);
 	}
 
 	void initilizeGlad()
@@ -284,9 +285,12 @@ public:
 
 	void initlizeGround()
 	{
-		//PolyGrid* polygrid = new PolyGrid(10, 10, 10, 10);
-		//this->addRenderable(polygrid);
-		//polygrid->initilizePolygonal();
+		PolyGrid* polygrid = new PolyGrid(10, 10, 10, 10);
+		polygrid->setMat(new Material(ShaderLib::guideShader));
+		polygrid->iniit();
+		polygrid->set_render_mode(GL_LINE);
+		this->addRenderable(polygrid);
+
 	}
 
 	void iniit(int windowWidth, int windowHeight)
@@ -295,8 +299,8 @@ public:
 		this->initlizeWindow(windowWidth, windowHeight);
 		this->initilizeGlad();
 		this->initlizeCamera();
-		this->initlizeGround();
 		this->iniitShaderLib();
+		this->initlizeGround();
 		framebuffer_size_callback(this->mainWindow, windowWidth, windowHeight);
 		setCallBacks();
 	}

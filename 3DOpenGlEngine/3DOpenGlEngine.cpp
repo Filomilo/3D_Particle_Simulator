@@ -25,7 +25,7 @@ void addPlane(_3DEngine* engine)
 
     PolyGrid* polygrid = new PolyGrid(20, 20, 2, 2);
     polygrid->setMat(basicMatplane);
-    polygrid->initilizePolygonal();
+    polygrid->iniit();
     engine->addRenderable(polygrid);
 }
 void cube_key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -127,7 +127,7 @@ void addCube(_3DEngine* engine)
 
      cube = new Cube(5);
     cube->setMat(cubeMat);
-    cube->initilizePolygonal();
+    cube->iniit();
     cube->moveY(2.501);
     engine->addRenderable(cube);
     engine->addKeyCallBack(cube_key_callback);
@@ -165,9 +165,9 @@ void cubeTest()
     try {
         _3DEngine* engine = _3DEngine::getInstance();
         engine->iniit(800, 600);
-        addLight(engine);
-        addCube(engine);
-        addPlane(engine);
+       // addLight(engine);
+       // addCube(engine);
+       // addPlane(engine);
        engine->start();
     }
     catch (std::exception e)

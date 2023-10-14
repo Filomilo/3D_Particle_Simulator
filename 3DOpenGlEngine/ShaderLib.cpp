@@ -2,6 +2,7 @@
 #include "ShaderProgram.h"
 
 ShaderProgram* ShaderLib::phongShader = nullptr;
+ShaderProgram* ShaderLib::guideShader = nullptr;
 
 void ShaderLib::iniitShaderLib()
 {
@@ -12,5 +13,11 @@ void ShaderLib::iniitShaderLib()
 	ShaderLib::phongShader->setInt("normalTexture", 1);
 	ShaderLib::phongShader->setInt("roughTexture", 2);
 	ShaderLib::phongShader->setInt("emissionTexture", 3);
+
+
+	ShaderLib::guideShader = new ShaderProgram("guideVertexShader.vert","guideFragmentShader.frag");
+
+
+
 }
 

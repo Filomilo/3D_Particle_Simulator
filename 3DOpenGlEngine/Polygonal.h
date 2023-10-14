@@ -8,30 +8,32 @@
 #include "Transformable.h"
 
 #include "Face.h"
+#include "glObject.h"
 #include "Material.h"
 #include "Vertex.h"
 #include "Point.h"
+#include "PointGroupObject.h"
 #include "VAO.h"
 #include "Vector4f.h"
 
-class Polygonal :
-    public Renderable,
-	public Transformable
+class Polygonal  :
+	public PointGroupObject
 {
 private:
 
-	VAO* vao;
+
 	EBO* ebo;
-	VBO* vbo;
-
-	Material* mat;
 
 
-	std::vector<Point*> points;
+
+
+
+	
+
 	std::vector<Vertex*> vertices;
 	std::vector<Face*> faces;
 
-	int renderMode = GL_FILL;
+	
 
 	float* getVertexBuffer()
 	{
@@ -40,12 +42,13 @@ private:
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
+		int vertexIndex = 0;
 		for (Vertex* vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
-				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertex,attribName);
+				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertexIndex,attribName);
 				for(int i=0;i< attribType;i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
@@ -55,19 +58,13 @@ private:
 
 			}
 			std::cout << std::endl;
+			vertexIndex++;
 		}
 
 		return  arrayVbo;
 	}
 
-	int getVertexSize()
-	{
-		return this->mat->getVertexSizeRequired();
-	}
-	int getVerteciesAmount()
-	{
-		return vertices.size();
-	}
+
 	int getTringlePointCount()
 	{
 		int numbers = 0;
@@ -110,8 +107,9 @@ private:
 
 
 
-	Attribute* getVertexAttrib(Vertex* vertex, std::string attrib)
+	Attribute* getVertexAttrib(int num, std::string attrib) override
 	{
+		Vertex* vertex = this->vertices.at(num);
 		if (!vertex->isThereAttrib(attrib)) {
 			Point* pt = this->points.at(vertex->pointIndex);
 			return pt->getAttribute(attrib);
@@ -123,57 +121,9 @@ private:
 
 public:
 
-	Polygonal(): Transformable()
+	Polygonal()
 	{}
 
-	void addPoint(Point* x)
-	{
-		this->points.push_back(x);
-	}
-	void addPoint(Point pt)
-	{
-		Vector3f* Pos = (Vector3f*)pt.getAttribute("P");
-		Point* point = new Point(Pos->x, Pos->y, Pos->z);
-
-		this->addPoint(point);
-	}
-
-
-	void addPoint(float x, float y, float z)
-	{
-		this->addPoint(new Point(x, y, z));
-	}
-	void addPoint(std::initializer_list<float> coordinates)
-	{
-		Point* pt = new Point(coordinates);
-		this->addPoint(pt);
-	}
-	void addPoints(std::initializer_list<std::initializer_list<float> > coordinates)
-	{
-		for (std::initializer_list<float> coord : coordinates)
-		{
-			this->addPoint(coord);
-		}
-	}
-
-	void addVertex(int ptnum)
-	{
-		Vertex* vertex = new Vertex(ptnum);
-		this->vertices.push_back(vertex);
-	}
-
-	void addVertex(int ptnum, Vector3f normals)
-	{
-		Vertex* vertex = new Vertex(ptnum, normals);
-		this->vertices.push_back(vertex);
-	}
-
-
-	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
-	{
-		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
-		this->vertices.push_back(vertex);
-	}
 
 	void addFace(std::initializer_list<int> verteciesNumber)
 	{
@@ -190,50 +140,9 @@ public:
 			this->addFace(verteciesNumber);
 		}
 	}
-	void addVertecies(std::initializer_list<int> indxs)
+	void prepEBO()
 	{
-		for(int ptnb : indxs)
-		{
-			this->addVertex(ptnb);
-		}
-	}
-
-
-	std::map<std::string,Attribute::Types> getMapOfAttributes()
-	{
-		return this->mat->getAttributeMap();
-	}
-
-	std::list<std::string> getListOfAttributes()
-	{
-		return this->mat->getAttributeList();
-	}
-
-	int getSizeOfVertex()
-	{
-		return this->mat->getVertexSizeRequired();
-	}
-
-	void initilizePolygonal()
-	{
-		float* vertexBuffer = this->getVertexBuffer();
 		GLuint* indeciesBuffer = this->getIndeciesArray();
-
-
-
-		//std::cout << "Test: " << this->getVerteciesAmount()*this->getVertexSize()*sizeof(float)<< "\n";
-		std::cout << "VertexBuffer: \n";
-
-		int verteciesAmt = this->getVerteciesAmount();
-		int vertexSize = this->getVertexSize();
-		for(int i=0;i< verteciesAmt * vertexSize;i++)
-		{
-			std::cout << vertexBuffer[i] << ",";
-			if (i % vertexSize == vertexSize-1)
-				std::cout << std::endl;
-		}
-
-
 		std::cout << "\n\nindeciesBuffer: \n";
 		for (int i = 0; i < this->getTringlePointCount(); i++)
 		{
@@ -241,47 +150,26 @@ public:
 			if (i % 3 == 2)
 				std::cout << std::endl;
 		}
-		this->vao = new VAO();
-		vao->bind();
-
-		this->vbo = new VBO(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float));
-		
-	
-
-
-		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
-		std::list<std::string> attributeList = mat->getAttributeList();
 		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
+		delete[] indeciesBuffer;
+	}
 
-
-
-		int i = 0;
-		int offset = 0;
-		
-		for(std::string name: attributeList)
-		{
-			Attribute::Types type = attributesMap[name];
-			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
-			glEnableVertexAttribArray(i);
-			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
-			i++;
-			offset += type * sizeof(float);
-		}
+	void iniit()
+	{
+		glObject::iniit();
+		prepEBO();
 
 		vao->unbind();
 		vbo->unbind();
 		ebo->unbind();
 	
-		delete[] vertexBuffer;
-        delete[] indeciesBuffer;
+		
 
 	}
 
 	void renderProc() override
 	{
-		//this->rotateY(0.01);
-		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		//this->set_scale(cos(clock() / 1000.0f)/3);
+
 		glPolygonMode(GL_FRONT_AND_BACK, renderMode);
 		if(mat!=nullptr)
 		mat->apply(this->getTransformationMatrix());
@@ -315,10 +203,6 @@ public:
 
 
 	
-	void addPoint(Vector3f pos)
-{
-		this->addPoint(new Point(pos));
-}
 
 
 	int get_render_mode() const
@@ -330,5 +214,40 @@ public:
 	{
 		renderMode = render_mode;
 	}
+
+
+	void addVertex(int ptnum)
+	{
+		Vertex* vertex = new Vertex(ptnum);
+		this->vertices.push_back(vertex);
+	}
+
+	void addVertex(int ptnum, Vector3f normals)
+	{
+			Vertex* vertex = new Vertex(ptnum, normals);
+			this->vertices.push_back(vertex);
+	}
+
+
+	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
+	{
+		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
+		this->vertices.push_back(vertex);
+	}
+
+	void addVertecies(std::initializer_list<int> indxs)
+	{
+		for (int ptnb : indxs)
+		{
+			this->addVertex(ptnb);
+		}
+	}
+
+
+	int getVerteciesAmount() override
+	{
+		return vertices.size();
+	}
+
 };
 
