@@ -24,6 +24,16 @@ protected:
 			i++;
 		}
 	}
+	void unBindTex()
+	{
+		int i = 0;
+		for (Texture* tex : textures)
+		{
+			glActiveTexture(GL_TEXTURE0 + i);
+			Texture::unbind();
+			i++;
+		}
+	}
 
 public:
 	explicit Material(ShaderProgram* shader)
@@ -48,10 +58,18 @@ public:
 
 	void apply(glm::mat4 model)
 	{
-		bindTex();
+		
 		shader->use();
 		shader->setMatrix4("model", model);
+		bindTex();
+	}
 
+
+
+	void unapply()
+	{
+		unBindTex();
+		shader->unuse();
 	}
 
 	std::list<std::string> getAttributeList()
