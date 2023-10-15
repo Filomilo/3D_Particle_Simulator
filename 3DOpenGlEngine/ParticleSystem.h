@@ -1,4 +1,5 @@
 #pragma once
+#include "ParticleSolver.h"
 #include "PointGroup.h"
 #include "ShaderLib.h"
 #include "Updatable.h"
@@ -8,6 +9,9 @@ class ParticleSystem :
 	public Updatable
 {
 public:
+
+	friend ParticleSolver;
+
 	ParticleSystem(): PointGroup()
 	{
 		set_usage(GL_DYNAMIC_DRAW);

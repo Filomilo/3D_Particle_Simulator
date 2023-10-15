@@ -148,6 +148,7 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ParticleSolver.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="PhongMat.cpp" />
     <ClCompile Include="Point.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParticleSolver.h" />
     <ClInclude Include="ParticleSystem.h" />
     <ClInclude Include="PhongMat.h" />
     <ClInclude Include="Point.h" />

@@ -231,7 +231,9 @@ void SimulationTest()
     engine->addUpdatable(particle_system);
     engine->addRenderable(particle_system);
 
-
+    ParticleSolver* particle_solver = new ParticleSolver;
+    particle_solver->set_particle_system(particle_system);
+        engine->addUpdatable(particle_solver);
     engine->start();
 }
 

@@ -14,6 +14,7 @@ protected:
 	Material* mat;
 
 	int renderMode = GL_FILL;
+	long int usage = GL_STATIC_DRAW;
 
 	virtual float* getVertexBuffer() = 0;
 
@@ -62,7 +63,20 @@ protected:
 		*/
 		vao->bind();
 
-		this->vbo = new VBO(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float));
+		this->vbo = new VBO(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
+		delete[] vertexBuffer;
+	}
+
+	void updateVbo()
+	{
+		float* vertexBuffer = this->getVertexBuffer();
+		int verteciesAmt = this->getVerteciesAmount();
+		int vertexSize = this->getVertexSize();
+
+
+		vbo->bind();
+		this->vbo ->update(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
+		vbo->unbind();
 		delete[] vertexBuffer;
 	}
 
@@ -142,6 +156,16 @@ public:
 	{
 		initParts();
 		unbind();
+	}
+
+	long get_usage() const
+	{
+		return usage;
+	}
+
+	void set_usage(long usage)
+	{
+		this->usage = usage;
 	}
 };
 

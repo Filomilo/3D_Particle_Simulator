@@ -8,9 +8,10 @@ private:
 
 	Vector3f getNewPointPosition() override
 	{
-		Vector3f pos = Vector3f((float)rand() / RAND_MAX * size.x - size.x / 2,
-			(float)rand() / RAND_MAX * size.y - size.y / 2,
-			(float)rand() / RAND_MAX * size.z - size.z / 2
+		Vector3f positon = getFullPositon();
+		Vector3f pos = Vector3f((float)rand() / RAND_MAX * size.x - size.x / 2+ positon.x,
+			(float)rand() / RAND_MAX * size.y - size.y / 2 + positon.y,
+			(float)rand() / RAND_MAX * size.z - size.z / 2 + positon.z
 		);
 		return pos;
 
@@ -21,7 +22,7 @@ private:
 	}
 	Vector3f getNewVelocity() override
 	{
-		return  Vector3f(0, 0, 0);
+		return  Vector3f(0, -1, 0);
 	}
 
 	float getNewSize() override
