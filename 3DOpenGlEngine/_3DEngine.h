@@ -125,6 +125,7 @@ private:
 			throw std::runtime_error("couldnt intinlize glad");
 		}
 		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
 	}
 
 

@@ -182,16 +182,17 @@ void particleTest()
 
     PointGroup* point_group = new PointGroup;
     srand(time(0));
-    float particleSize = 5;
-    for (int i = 0; i < 1000; i++)
+    float particleSize = 100;
+    for (int i = 0; i < 100000; i++)
     {
         point_group->addPoint(
             (float)rand() / RAND_MAX * particleSize - particleSize / 2,
-            (float)rand() / RAND_MAX * particleSize + 1,
+            (float)rand() / RAND_MAX * particleSize - particleSize / 2,
             (float)rand() / RAND_MAX * particleSize - particleSize / 2,
             (float)rand() / RAND_MAX,
             (float)rand() / RAND_MAX,
-            (float)rand() / RAND_MAX
+            (float)rand() / RAND_MAX,
+            (float)rand() / RAND_MAX*50
         );
     }
     point_group->setMat(new Material(ShaderLib::particleShader));

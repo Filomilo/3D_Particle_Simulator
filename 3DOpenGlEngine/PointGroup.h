@@ -95,9 +95,9 @@ public:
 	}
 
 
-	void addPoint(float x, float y, float z, float r, float g, float b)
+	void addPoint(float x, float y, float z, float r, float g, float b, float pscale=1)
     {
-		addPoint(new Point(x, y, z, r, g, b));
+		addPoint(new Point(x, y, z, r, g, b, pscale));
     }
 
 

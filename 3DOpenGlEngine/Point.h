@@ -35,9 +35,16 @@ class Point :
         Vector3f* cd = new Vector3f(r,g,b);
         this->setAttribute("Cd", cd);
     }
-    Point(float x, float y, float z, float r, float g, float b):Point(x,y,z)
+
+    void setPscale(float size)
+    {
+        Float* pscale = new Float(size);
+        this->setAttribute("pscale", pscale);
+    }
+    Point(float x, float y, float z, float r, float g, float b, float size=1):Point(x,y,z)
     {
         setColor(r, g, b);
+        setPscale(size);
       
     }
 };

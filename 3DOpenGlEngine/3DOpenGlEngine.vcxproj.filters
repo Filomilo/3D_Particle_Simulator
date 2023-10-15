@@ -120,12 +120,6 @@
     <ClCompile Include="ShaderProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="glObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PointGroupObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_3DEngine.h">
@@ -213,12 +207,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ShaderLib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="glObject.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="PointGroupObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

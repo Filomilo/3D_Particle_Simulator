@@ -21,5 +21,6 @@ void ShaderLib::iniitShaderLib()
 
 	ShaderLib::particleShader = new ShaderProgram("particleVertexShader.vert", "particleFragmentShader.frag");
 	ShaderLib::particleShader->addAttribute("Cd", Attribute::VECTOR3F);
+	ShaderLib::particleShader->addAttribute("pscale", Attribute::FLOAT);
 }
 
