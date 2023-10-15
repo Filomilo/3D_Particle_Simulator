@@ -48,6 +48,12 @@ class Point :
         this->setAttribute("V", V);
     }
 
+    void setMass(float mass)
+    {
+        Float* Mass = new Float(mass);
+        this->setAttribute("mass", Mass);
+    }
+
     Point(float x, float y, float z, float r, float g, float b, float size=1):Point(x,y,z)
     {
         setColor(r, g, b);

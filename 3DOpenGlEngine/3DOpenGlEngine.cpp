@@ -11,7 +11,7 @@
 #include "PointLight.h"
 #include "ShaderProgram.h"
 #include "_3DEngine.h"
-
+#include "Gravity.h"
 
 
 
@@ -234,6 +234,7 @@ void SimulationTest()
     ParticleSolver* particle_solver = new ParticleSolver;
     particle_solver->set_particle_system(particle_system);
         engine->addUpdatable(particle_solver);
+        particle_solver->addForce(new Gravity);
     engine->start();
 }
 

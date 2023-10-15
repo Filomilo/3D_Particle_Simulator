@@ -18,5 +18,6 @@ void ParticleSolver::updatePos(Point* pt, float timeElpased)
 		for (Point* pt : particle_system_->points)
 		{
 			updatePos(pt, timeElpased);
+			applyForces(pt, timeElpased);
 		}
 	}

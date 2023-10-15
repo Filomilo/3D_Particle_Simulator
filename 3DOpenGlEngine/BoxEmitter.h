@@ -18,11 +18,11 @@ private:
 	}
 	Vector3f getNewColor() override
 	{
-		return  Vector3f(1, 1, 1);
+		return  Vector3f(1,1,1);
 	}
 	Vector3f getNewVelocity() override
 	{
-		return  Vector3f(0, -1, 0);
+		return  Vector3f(0, 0, 0);
 	}
 
 	float getNewSize() override
