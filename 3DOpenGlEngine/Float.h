@@ -49,6 +49,10 @@ public:
        return x;
 
     }
+    Float operator-=(const Float& other) const {
+        return Float(x - other.x);
+    }
+    
 
     int getSize()const override
 	{

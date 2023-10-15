@@ -11,7 +11,8 @@ public:
 	void affect(Point* pt, float timeVal) override
 	{
 		Vector3f* V =(Vector3f*) pt->getAttribute("V");
-		V->y -= G*timeVal;
+		Float* mass = (Float*)pt->getAttribute("mass");
+		V->y -= (((*mass)*G) * timeVal)[0];
 	}
 };
 
