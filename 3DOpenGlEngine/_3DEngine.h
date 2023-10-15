@@ -115,6 +115,7 @@ private:
 		ShaderLib::iniitShaderLib();
 		this->addShader(ShaderLib::phongShader);
 		this->addShader(ShaderLib::guideShader);
+		this->addShader(ShaderLib::particleShader);
 	}
 
 	void initilizeGlad()
@@ -286,11 +287,10 @@ public:
 	void initlizeGround()
 	{
 		PolyGrid* polygrid = new PolyGrid(10, 10, 10, 10);
-		polygrid->setMat(new Material(ShaderLib::guideShader));
-		polygrid->iniit();
-		polygrid->set_render_mode(GL_LINE);
 		this->addRenderable(polygrid);
-
+		polygrid->setMat(new Material(ShaderLib::guideShader));
+		polygrid->set_render_mode(GL_LINE);
+		polygrid->init();
 	}
 
 	void iniit(int windowWidth, int windowHeight)

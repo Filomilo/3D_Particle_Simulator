@@ -119,6 +119,7 @@ void ShaderProgram::unuse()
 
 void ShaderProgram::setVector3f(const std::string& name, const Vector3f& vector3_f)
 {
+	use();
 	glUniform3f(glGetUniformLocation(ID, name.c_str()), vector3_f.x, vector3_f.y, vector3_f.z);
 }
 
@@ -158,6 +159,7 @@ unsigned int ShaderProgram::getVertexSizeRequired()
 
 void ShaderProgram::setCamera(std::string  name, Camera* camera)
 {
+	use();
 	if (camera == nullptr)
 	{
 		std::cerr << "Camera is null\n";

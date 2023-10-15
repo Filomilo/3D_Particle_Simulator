@@ -24,8 +24,8 @@ private:
 public:
     PointLight(): Light(), Cube(1)
     {
-        this->setMat(new Material(ShaderLib::phongShader));
-        iniit();
+        this->setMat(new Material(ShaderLib::guideShader));
+        init();
 
         setLightType(POINYLIGHT);
         this->set_render_mode(GL_LINE);

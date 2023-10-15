@@ -25,7 +25,7 @@ void addPlane(_3DEngine* engine)
 
     PolyGrid* polygrid = new PolyGrid(20, 20, 2, 2);
     polygrid->setMat(basicMatplane);
-    polygrid->iniit();
+    polygrid->init();
     engine->addRenderable(polygrid);
 }
 void cube_key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -127,7 +127,7 @@ void addCube(_3DEngine* engine)
 
      cube = new Cube(5);
     cube->setMat(cubeMat);
-    cube->iniit();
+    cube->init();
     cube->moveY(2.501);
     engine->addRenderable(cube);
     engine->addKeyCallBack(cube_key_callback);
@@ -165,9 +165,9 @@ void cubeTest()
     try {
         _3DEngine* engine = _3DEngine::getInstance();
         engine->iniit(800, 600);
-       // addLight(engine);
-       // addCube(engine);
-       // addPlane(engine);
+        addLight(engine);
+        addCube(engine);
+        addPlane(engine);
        engine->start();
     }
     catch (std::exception e)
@@ -175,32 +175,40 @@ void cubeTest()
         std::cerr <<"Error: "<< e.what();
     }
 }
-
-
 void particleTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
 
-    PointGroupObject* point_group = new PointGroupObject;
+    PointGroup* point_group = new PointGroup;
     srand(time(0));
     float particleSize = 5;
-    for(int i=0;i<1000;i++)
+    for (int i = 0; i < 1000; i++)
     {
         point_group->addPoint(
-            (float)rand() / RAND_MAX * particleSize- particleSize/2,
-            (float)rand() / RAND_MAX * particleSize+1,
             (float)rand() / RAND_MAX * particleSize - particleSize / 2,
-            (float)rand() / RAND_MAX ,
+            (float)rand() / RAND_MAX * particleSize + 1,
+            (float)rand() / RAND_MAX * particleSize - particleSize / 2,
+            (float)rand() / RAND_MAX,
             (float)rand() / RAND_MAX,
             (float)rand() / RAND_MAX
-                );
+        );
     }
     point_group->setMat(new Material(ShaderLib::particleShader));
-    point_group->iniit();
-	engine->addRenderable(point_group);
- //   addCube(engine);
+    point_group->init();
+    engine->addRenderable(point_group);
+    //   addCube(engine);
 
+
+    engine->start();
+}
+
+void emptyTest()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+
+    
 
     engine->start();
 }
@@ -209,5 +217,6 @@ int main()
 {
     //cubeTest();
 	particleTest();
+   //emptyTest();
     return 0;
 }

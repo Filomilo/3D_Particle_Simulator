@@ -140,7 +140,7 @@
     <ClCompile Include="EBO.cpp" />
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Float.cpp" />
-    <ClCompile Include="glObject.cpp" />
+    <ClCompile Include="GlObject.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Math.cpp" />
@@ -148,7 +148,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhongMat.cpp" />
     <ClCompile Include="Point.cpp" />
-    <ClCompile Include="PointGroupObject.cpp" />
+    <ClCompile Include="PointGroup.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Polygonal.cpp" />
     <ClCompile Include="PolyGrid.cpp" />
@@ -173,7 +173,7 @@
     <ClInclude Include="EBO.h" />
     <ClInclude Include="Face.h" />
     <ClInclude Include="Float.h" />
-    <ClInclude Include="glObject.h" />
+    <ClInclude Include="GlObject.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Math.h" />
@@ -181,7 +181,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PhongMat.h" />
     <ClInclude Include="Point.h" />
-    <ClInclude Include="PointGroupObject.h" />
+    <ClInclude Include="PointGroup.h" />
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="Polygonal.h" />
     <ClInclude Include="PolyGrid.h" />

@@ -8,16 +8,16 @@
 #include "Transformable.h"
 
 #include "Face.h"
-#include "glObject.h"
+#include "GlObject.h"
 #include "Material.h"
 #include "Vertex.h"
 #include "Point.h"
-#include "PointGroupObject.h"
+#include "PointGroup.h"
 #include "VAO.h"
 #include "Vector4f.h"
 
-class Polygonal  :
-	public PointGroupObject
+class Polygonal :
+    public PointGroup
 {
 private:
 
@@ -26,29 +26,25 @@ private:
 
 
 
-
-
-	
-
 	std::vector<Vertex*> vertices;
 	std::vector<Face*> faces;
 
-	
 
-	float* getVertexBuffer()
+
+	float* getVertexBuffer() override
 	{
 		float* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
 
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
-		int vertexIndex = 0;
+		int vertIndex = 0;
 		for (Vertex* vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
-				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertexIndex,attribName);
+				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertIndex,attribName);
 				for(int i=0;i< attribType;i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
@@ -58,13 +54,16 @@ private:
 
 			}
 			std::cout << std::endl;
-			vertexIndex++;
+			vertIndex++;
 		}
 
 		return  arrayVbo;
 	}
 
-
+	int getVerteciesAmount() override
+	{
+		return vertices.size();
+	}
 	int getTringlePointCount()
 	{
 		int numbers = 0;
@@ -117,32 +116,44 @@ private:
 		return vertex->getAttribute(attrib);
 	}
 
-
-
-	void glRender() override
-	{
-		glDrawElements(GL_TRIANGLES, this->getTringlePointCount(), GL_UNSIGNED_INT, 0);
-
-	}
-
-	void bind() override
-	{
-		glObject::bind();
-		this->ebo->bind();
-
-	}
 	void unbind() override
 	{
-		glObject::bind();
-		this->ebo->unbind();
-
+		GlObject::unbind();
+		ebo->unbind();
+	}
+	void bind() override
+	{
+		GlObject::bind();
+		this->ebo->bind();
 	}
 
 public:
 
-	Polygonal()
-	{}
+	Polygonal(): PointGroup()
+	{
+	
+	}
 
+	
+
+	void addVertex(int ptnum)
+	{
+		Vertex* vertex = new Vertex(ptnum);
+		this->vertices.push_back(vertex);
+	}
+
+	void addVertex(int ptnum, Vector3f normals)
+	{
+		Vertex* vertex = new Vertex(ptnum, normals);
+		this->vertices.push_back(vertex);
+	}
+
+
+	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
+	{
+		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
+		this->vertices.push_back(vertex);
+	}
 
 	void addFace(std::initializer_list<int> verteciesNumber)
 	{
@@ -159,10 +170,22 @@ public:
 			this->addFace(verteciesNumber);
 		}
 	}
-	void prepEBO()
+	void addVertecies(std::initializer_list<int> indxs)
+	{
+		for(int ptnb : indxs)
+		{
+			this->addVertex(ptnb);
+		}
+	}
+
+
+
+
+
+	void iniitEBO()
+
 	{
 		GLuint* indeciesBuffer = this->getIndeciesArray();
-		std::cout << "\n\nindeciesBuffer: \n";
 		for (int i = 0; i < this->getTringlePointCount(); i++)
 		{
 			std::cout << indeciesBuffer[i] << ",";
@@ -172,23 +195,21 @@ public:
 		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
 		delete[] indeciesBuffer;
 	}
-
-	void iniit()
-	{
-		glObject::iniit();
-		prepEBO();
-
-		vao->unbind();
-		vbo->unbind();
-		ebo->unbind();
 	
-		
 
+	void initParts() override
+	{
+		GlObject::initParts();
+		iniitEBO();
 	}
 
 
 
+	void glDrawCall() override
+	{
+		glDrawElements(GL_TRIANGLES, this->getTringlePointCount(), GL_UNSIGNED_INT, 0);
 
+	}
 
 
 	void addFace(Face* face)
@@ -209,39 +230,6 @@ public:
 
 	
 
-
-	void addVertex(int ptnum)
-	{
-		Vertex* vertex = new Vertex(ptnum);
-		this->vertices.push_back(vertex);
-	}
-
-	void addVertex(int ptnum, Vector3f normals)
-	{
-			Vertex* vertex = new Vertex(ptnum, normals);
-			this->vertices.push_back(vertex);
-	}
-
-
-	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
-	{
-		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
-		this->vertices.push_back(vertex);
-	}
-
-	void addVertecies(std::initializer_list<int> indxs)
-	{
-		for (int ptnb : indxs)
-		{
-			this->addVertex(ptnb);
-		}
-	}
-
-
-	int getVerteciesAmount() override
-	{
-		return vertices.size();
-	}
 
 };
 
