@@ -22,6 +22,23 @@ protected:
 
 	int renderMode = GL_FILL;
 
+
+	virtual void bind()
+	{
+		glPolygonMode(GL_FRONT_AND_BACK, renderMode);
+		if (mat != nullptr)
+			mat->apply(this->getTransformationMatrix());
+		this->vao->bind();
+	}
+
+	virtual void unbind()
+	{
+		this->vao->unbind();
+
+	}
+
+	virtual void glRender() = 0;
+
 public:
 	 glObject() = default;
 
@@ -73,7 +90,7 @@ public:
 			Attribute::Types type = attributesMap[name];
 			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
 			glEnableVertexAttribArray(i);
-			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
+		//	std::cout << "glEnableVertexAttribArray(" << i << ")\n";
 			i++;
 			offset += type * sizeof(float);
 		}
@@ -86,17 +103,42 @@ public:
 
 		int verteciesAmt = this->getVerteciesAmount();
 		int vertexSize = this->getVertexSize();
+		/*
 		for (int i = 0; i < verteciesAmt * vertexSize; i++)
 		{
 			std::cout << vertexBuffer[i] << ",";
 			if (i % vertexSize == vertexSize - 1)
 				std::cout << std::endl;
 		}
+		*/
 		vao->bind();
 
 		this->vbo = new VBO(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float));
 		delete[] vertexBuffer;
 	}
 
+	int get_render_mode() const
+	{
+		return renderMode;
+	}
+
+	void set_render_mode(int render_mode)
+	{
+		renderMode = render_mode;
+	}
+
+	void setMat(Material* mat)
+	{
+		this->mat = mat;
+	}
+
+
+
+	virtual void renderProc()
+	{
+		bind();
+		glRender();
+		unbind();
+	}
 };
 

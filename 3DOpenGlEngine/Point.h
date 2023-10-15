@@ -29,5 +29,16 @@ class Point :
 	    }
         this->setAttribute("P", pos);
     }
+
+    void setColor(float r,float g, float b)
+    {
+        Vector3f* cd = new Vector3f(r,g,b);
+        this->setAttribute("Cd", cd);
+    }
+    Point(float x, float y, float z, float r, float g, float b):Point(x,y,z)
+    {
+        setColor(r, g, b);
+      
+    }
 };
 

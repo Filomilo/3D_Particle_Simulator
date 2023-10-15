@@ -3,6 +3,7 @@
 
 ShaderProgram* ShaderLib::phongShader = nullptr;
 ShaderProgram* ShaderLib::guideShader = nullptr;
+ShaderProgram* ShaderLib::particleShader = nullptr;
 
 void ShaderLib::iniitShaderLib()
 {
@@ -18,6 +19,7 @@ void ShaderLib::iniitShaderLib()
 	ShaderLib::guideShader = new ShaderProgram("guideVertexShader.vert","guideFragmentShader.frag");
 
 
-
+	ShaderLib::particleShader = new ShaderProgram("particleVertexShader.vert", "particleFragmentShader.frag");
+	ShaderLib::particleShader->addAttribute("Cd", Attribute::VECTOR3F);
 }
 

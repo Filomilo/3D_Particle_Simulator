@@ -9,6 +9,10 @@ protected:
 
 
 public:
+	PointGroupObject()
+	{
+		renderMode = GL_POINTS;
+	}
 
 	void addPoint(Point* x)
 	{
@@ -49,8 +53,58 @@ public:
 	{
 		return points.size();
 	}
-	virtual Attribute* getVertexAttrib(int num, std::string attrib) override=0;
-	virtual float* getVertexBuffer() override = 0;
-	virtual void iniit() override = 0;
+	virtual Attribute* getVertexAttrib(int num, std::string attrib)
+	{
+		Point* pt = points.at(num);
+		if (pt->isThereAttrib(attrib))
+			return pt->getAttribute(attrib);
+		Attribute* val= new Vector4f;
+		pt->setAttribute(attrib, val);
+		return val;
+
+	}
+	virtual float* getVertexBuffer() override
+	{
+		float* arrayVbo = new float[this->getVerteciesAmount() * this->getVertexSize()];
+
+		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
+		std::list<std::string> attributeList = mat->getAttributeList();
+		int index = 0;
+		int vertexIndex = 0;
+		for (Point* vertex : this->points)
+		{
+			for (std::string attribName : attributeList)
+			{
+				Attribute::Types attribType = attributesMap.find(attribName)->second;
+				Vector4f* attribVal = (Vector4f*)this->getVertexAttrib(vertexIndex, attribName);
+				for (int i = 0; i < attribType; i++)
+				{
+					arrayVbo[index++] = (*attribVal)[i];
+				//	std::cout << (*attribVal)[i] << ", ";
+				}
+
+
+			}
+			//std::cout << std::endl;
+			vertexIndex++;
+		}
+
+		return  arrayVbo;
+	}
+	virtual void iniit()
+	{
+		glObject::iniit();
+	}
+
+	void addPoint(float x, float y, float z, float r, float g, float b)
+	{
+		addPoint(new Point( x, y, z, r, g, b));
+	}
+
+protected:
+	void glRender() override
+	{
+		glDrawArrays(GL_POINTS, 0, getVerteciesAmount());
+	}
 };
 

@@ -176,9 +176,38 @@ void cubeTest()
     }
 }
 
+
+void particleTest()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+
+    PointGroupObject* point_group = new PointGroupObject;
+    srand(time(0));
+    float particleSize = 5;
+    for(int i=0;i<1000;i++)
+    {
+        point_group->addPoint(
+            (float)rand() / RAND_MAX * particleSize- particleSize/2,
+            (float)rand() / RAND_MAX * particleSize+1,
+            (float)rand() / RAND_MAX * particleSize - particleSize / 2,
+            (float)rand() / RAND_MAX ,
+            (float)rand() / RAND_MAX,
+            (float)rand() / RAND_MAX
+                );
+    }
+    point_group->setMat(new Material(ShaderLib::particleShader));
+	point_group->iniit();
+  engine->addRenderable(point_group);
+ //   addCube(engine);
+
+
+    engine->start();
+}
+
 int main()
 {
-    cubeTest();
-	//Test();
+    //cubeTest();
+	particleTest();
     return 0;
 }

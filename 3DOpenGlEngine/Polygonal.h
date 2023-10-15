@@ -117,7 +117,26 @@ private:
 		return vertex->getAttribute(attrib);
 	}
 
-	
+
+
+	void glRender() override
+	{
+		glDrawElements(GL_TRIANGLES, this->getTringlePointCount(), GL_UNSIGNED_INT, 0);
+
+	}
+
+	void bind() override
+	{
+		glObject::bind();
+		this->ebo->bind();
+
+	}
+	void unbind() override
+	{
+		glObject::bind();
+		this->ebo->unbind();
+
+	}
 
 public:
 
@@ -167,23 +186,9 @@ public:
 
 	}
 
-	void renderProc() override
-	{
 
-		glPolygonMode(GL_FRONT_AND_BACK, renderMode);
-		if(mat!=nullptr)
-		mat->apply(this->getTransformationMatrix());
-		this->ebo->bind();
-		this->vao->bind();
-		glDrawElements(GL_TRIANGLES, this->getTringlePointCount() , GL_UNSIGNED_INT, 0);
-		this->vao->unbind();
-		this->ebo->unbind();
-	}
 
-	void setMat(Material* mat)
-	{
-		this->mat = mat;
-	}
+
 
 
 	void addFace(Face* face)
@@ -203,17 +208,6 @@ public:
 
 
 	
-
-
-	int get_render_mode() const
-	{
-		return renderMode;
-	}
-
-	void set_render_mode(int render_mode)
-	{
-		renderMode = render_mode;
-	}
 
 
 	void addVertex(int ptnum)
