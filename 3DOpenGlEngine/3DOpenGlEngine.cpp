@@ -224,7 +224,7 @@ void SimulationTest()
     ParticleSystem* particle_system = new ParticleSystem;
 
 
-    BoxEmitter* box_emitter = new BoxEmitter(Vector3f(0, 0, 0), Vector3f(10, 10, 10));
+    BoxEmitter* box_emitter = new BoxEmitter(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
     box_emitter->set_particle_system(particle_system);
     engine->addUpdatable(box_emitter);
 

@@ -26,6 +26,22 @@ private:
 		}
 	}
 
+
+	float groundLevel = 0;
+
+
+	void applyGround(Point* pt)
+	{
+		Vector3f* pos = (Vector3f*)pt->getAttribute("P");
+		if(pos->y<=groundLevel)
+		{
+			pos->y = groundLevel;
+			Vector3f* vel = (Vector3f*)pt->getAttribute("V");
+			Float* bounce=(Float*)pt->getAttribute("bounce");
+			vel->y *= -1 * bounce->x;
+		}
+	}
+
 public:
 	void update(float timeElpased) override;
 

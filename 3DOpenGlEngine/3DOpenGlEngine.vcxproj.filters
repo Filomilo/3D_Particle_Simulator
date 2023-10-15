@@ -144,6 +144,15 @@
     <ClCompile Include="BoxEmitter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Force.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gravity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_3DEngine.h">
@@ -248,8 +257,17 @@
     <ClInclude Include="Emitter.h">
       <Filter>Header Files\Particles\Emitters</Filter>
     </ClInclude>
-    <ClInclude Include="BoxEmitter.h">
+    <ClInclude Include="Force.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gravity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxEmitter.h">
+      <Filter>Header Files\Particles\Emitters</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSolver.h">
+      <Filter>Header Files\Particles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

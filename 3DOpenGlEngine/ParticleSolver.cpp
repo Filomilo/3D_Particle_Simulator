@@ -19,5 +19,6 @@ void ParticleSolver::updatePos(Point* pt, float timeElpased)
 		{
 			updatePos(pt, timeElpased);
 			applyForces(pt, timeElpased);
+			applyGround(pt);
 		}
 	}
