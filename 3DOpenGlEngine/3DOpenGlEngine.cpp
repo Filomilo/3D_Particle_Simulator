@@ -4,7 +4,9 @@
 
 #include <glad/glad.h>
 
+#include "BoxEmitter.h"
 #include "Cube.h"
+#include "ParticleSystem.h"
 #include "PhongMat.h"
 #include "PointLight.h"
 #include "ShaderProgram.h"
@@ -197,6 +199,9 @@ void particleTest()
     }
     point_group->setMat(new Material(ShaderLib::particleShader));
     point_group->init();
+
+
+
     engine->addRenderable(point_group);
     //   addCube(engine);
 
@@ -208,16 +213,34 @@ void emptyTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
+    engine->start();
+}
 
-    
+
+void SimulationTest()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+    ParticleSystem* particle_system = new ParticleSystem;
+
+
+    BoxEmitter* box_emitter = new BoxEmitter(Vector3f(0, 0, 0), Vector3f(10, 10, 10));
+    box_emitter->set_particle_system(particle_system);
+    engine->addUpdatable(box_emitter);
+
+    engine->addUpdatable(particle_system);
+    engine->addRenderable(particle_system);
+
 
     engine->start();
 }
 
+
 int main()
 {
     //cubeTest();
-	particleTest();
+	//particleTest();
    //emptyTest();
+    SimulationTest();
     return 0;
 }

@@ -41,6 +41,13 @@ class Point :
         Float* pscale = new Float(size);
         this->setAttribute("pscale", pscale);
     }
+
+    void setVelocity(float x, float y, float z)
+    {
+        Vector3f* V = new Vector3f(x,y,z);
+        this->setAttribute("V", V);
+    }
+
     Point(float x, float y, float z, float r, float g, float b, float size=1):Point(x,y,z)
     {
         setColor(r, g, b);

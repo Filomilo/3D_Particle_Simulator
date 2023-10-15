@@ -8,6 +8,11 @@ public:
 	VBO(GLfloat* vertieces, GLsizeiptr size, unsigned long int usage= GL_STATIC_DRAW)
 	{
 		glGenBuffers(1, &ID);
+		update(vertieces, size, usage);
+	}
+
+	void update(GLfloat* vertieces, GLsizeiptr size, unsigned long int usage = GL_STATIC_DRAW)
+	{
 		glBindBuffer(GL_ARRAY_BUFFER, ID);
 		glBufferData(GL_ARRAY_BUFFER, size, vertieces, usage);
 	}

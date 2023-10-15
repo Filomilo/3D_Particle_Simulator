@@ -8,6 +8,7 @@
 #include "ShaderProgram.h"
 #include "Camera.h"
 #include "Mouse.h"
+#include "ParticleSystem.h"
 #include "PolyGrid.h"
 #include "ShaderLib.h"
 
@@ -30,6 +31,7 @@ private:
 
 	std::list<Renderable*> renderables_;
 	std::list<ShaderProgram*> shaders;
+	std::list<Updatable*> updatabels;
 	std::list<void(*)(_3DEngine* engine)> updateFunctions;
 	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -249,6 +251,11 @@ private:
 		{
 			funciton(this);
 		}
+
+		for (Updatable* element : updatabels)
+		{
+			element->update(getTimeElapesed());
+		}
 	}
 
 public:
@@ -266,6 +273,11 @@ public:
 	void addKeyCallBack(void(* cube_key_callback)(GLFWwindow* window, int key, int scancode, int action, int mods))
 	{
 		keycallBacks.push_back(cube_key_callback);
+	}
+
+	void addUpdatable(Updatable* updatable)
+	{
+		this->updatabels.push_back(updatable);
 	}
 
 	static _3DEngine* getInstance()
@@ -326,6 +338,11 @@ public:
 	float getTimeRunnig()
 	{
 		return (float)timerunning / CLOCKS_PER_SEC;
+	}
+
+	float getTimeElapesed()
+	{
+		return (float)timeElapesed / CLOCKS_PER_SEC;
 	}
 };
 
