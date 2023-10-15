@@ -197,8 +197,8 @@ void particleTest()
                 );
     }
     point_group->setMat(new Material(ShaderLib::particleShader));
-	point_group->iniit();
-  engine->addRenderable(point_group);
+    point_group->iniit();
+	engine->addRenderable(point_group);
  //   addCube(engine);
 
 
