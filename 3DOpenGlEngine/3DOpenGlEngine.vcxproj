@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)dependencies\glad\include;$(ProjectDir)dependencies\glm;%(AdditionalIncludeDirectories);$(ProjectDir)dependencies\stb</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)dependencies\glad\include;$(ProjectDir)dependencies\glm;%(AdditionalIncludeDirectories);$(ProjectDir)dependencies\stb;$(ProjectDir)dependencies\fastNoise</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>;$(ProjectDir)dependencies\stb</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>;$(ProjectDir)dependencies\stb;$(ProjectDir)dependencies\fastNoise</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,6 +149,7 @@
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="Noise.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ParticleSolver.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Transformable.cpp" />
+    <ClCompile Include="Turbulance.cpp" />
     <ClCompile Include="Updatable.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VBO.cpp" />
@@ -189,6 +191,7 @@
     <ClInclude Include="Material.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Noise.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParticleSolver.h" />
     <ClInclude Include="ParticleSystem.h" />
@@ -203,6 +206,7 @@
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Transformable.h" />
+    <ClInclude Include="Turbulance.h" />
     <ClInclude Include="Updatable.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />

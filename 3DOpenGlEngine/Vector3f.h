@@ -80,5 +80,21 @@ public:
     {
         return glm::vec3(x, y, z);
     }
+
+
+    float length()
+    {
+        return sqrt(x * x + y * y + z * z);
+    }
+
+    Vector3f normalize()
+    {
+        float length = this->length();
+        x /=  length;
+        y /=  length;
+        z /=  length;
+        return *this;
+    }
+
 };
 
