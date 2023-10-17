@@ -1,6 +1,7 @@
 #pragma once
 #include <forward_list>
 #include <list>
+#include <vector>
 
 #include "Force.h"
 #include "Point.h"
@@ -41,6 +42,9 @@ private:
 			vel->y *= -1 * bounce->x;
 		}
 	}
+
+
+	bool applyDecay(std::vector<Point*>::iterator pt, float timeElpased);
 
 public:
 	void update(float timeElpased) override;

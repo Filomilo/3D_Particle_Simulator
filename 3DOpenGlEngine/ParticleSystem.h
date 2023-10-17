@@ -55,7 +55,7 @@ public:
 		updateVbo();
 	}
 
-	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=0.0)
+	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=0.0, float life=1)
 	{
 		Point* pt = new Point(pos);
 		pt->setColor(color.r,color.g,color.b);
@@ -63,7 +63,10 @@ public:
 		pt->setPscale(size);
 		pt->setMass(mass);
 		pt->setBounce(bounce);
+		pt->setLife(life);
 		PointGroup::addPoint(pt);
 	}
+
+
 };
 

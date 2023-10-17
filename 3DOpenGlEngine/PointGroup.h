@@ -100,6 +100,6 @@ public:
 		addPoint(new Point(x, y, z, r, g, b, pscale));
     }
 
-
+	
 };
 

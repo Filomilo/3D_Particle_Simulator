@@ -1,7 +1,7 @@
 #include "ParticleSolver.h"
 #include  "ParticleSystem.h"
-
-
+#include "Attribute.h"
+#include "Float.h"
 
 
 void ParticleSolver::updatePos(Point* pt, float timeElpased)
@@ -15,10 +15,29 @@ void ParticleSolver::updatePos(Point* pt, float timeElpased)
 
 	void ParticleSolver::update(float timeElpased) 
 	{
-		for (Point* pt : particle_system_->points)
+		int ptNum = 0;
+		for (std::vector<Point*>::iterator  pt = this->particle_system_->points.begin(); pt != this->particle_system_->points.end(); ) 
 		{
-			updatePos(pt, timeElpased);
-			applyForces(pt, timeElpased);
-			applyGround(pt);
+				if (applyDecay(pt, timeElpased))
+					break;
+
+			updatePos(*pt, timeElpased);
+			applyForces(*pt, timeElpased);
+			applyGround(*pt);
+			++pt;
 		}
+	}
+
+
+	bool ParticleSolver::applyDecay(std::vector<Point*>::iterator pt, float timeElpased)
+	{
+		(*pt)->increaseAge(timeElpased);
+		Float* age = (Float*)(*pt)->getAttribute("age");
+		Float* life = (Float*)(*pt)->getAttribute("life");
+		if (life->x < age->x)
+		{
+			this->particle_system_->points.erase(pt);
+			return true;
+		}
+		return false;
 	}

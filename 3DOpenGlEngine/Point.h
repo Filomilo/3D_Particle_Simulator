@@ -60,6 +60,26 @@ class Point :
         this->setAttribute("bounce", Bounce);
     }
 
+    void setLife(float life)
+    {
+        Float* Life = new Float(life);
+        this->setAttribute("life", Life);
+    }
+    void setAge(float age)
+    {
+        Float* Age = new Float(age);
+        this->setAttribute("age", Age);
+    }
+
+
+    void increaseAge(float amount)
+    {
+        Float* Age = (Float*)getAttribute("age");
+        this->setAge(Age->x + amount);
+    }
+
+
+
     Point(float x, float y, float z, float r, float g, float b, float size=1):Point(x,y,z)
     {
         setColor(r, g, b);
