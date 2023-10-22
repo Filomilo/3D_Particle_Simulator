@@ -12,6 +12,6 @@ void main()
 		vec4 objectColor =vec4( texture(colorTexture, Uv));
 
 	
-    FragColor=vec4(objectColor);
+    FragColor=vec4(objectColor.r,objectColor.r,objectColor.r,objectColor.r);
 
 } 

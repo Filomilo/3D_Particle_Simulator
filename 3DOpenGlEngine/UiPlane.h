@@ -27,5 +27,7 @@ public:
     {
 		this->mat->addTex("color", tex);
     }
+
+  
 };
 

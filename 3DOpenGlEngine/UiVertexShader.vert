@@ -5,9 +5,10 @@ layout (location = 1) in vec2 aUv;
 
 out vec2 Uv;
 
+uniform mat4 model;
 
 void main()
 {
-    gl_Position = vec4(aPos.x, aPos.y,aPos.z, 1.0);
+    gl_Position = model*vec4(aPos.x, aPos.y,aPos.z, 1.0);
     Uv=aUv;
 }

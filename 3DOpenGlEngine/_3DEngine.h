@@ -12,6 +12,7 @@
 #include "PolyGrid.h"
 #include "ShaderLib.h"
 #include "TextureLib.h"
+#include "UiPlane.h"
 
 class _3DEngine
 {
@@ -33,11 +34,16 @@ private:
 	std::list<Renderable*> renderables_;
 	std::list<ShaderProgram*> shaders;
 	std::list<Updatable*> updatabels;
+	std::list<UiPlane*> uiElements;
 	std::list<void(*)(_3DEngine* engine)> updateFunctions;
 	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{
 		_3DEngine* engine = _3DEngine::getInstance();
+		std::cout << "test: " << width / (float)engine->width << std::endl;
+		engine->updateUiRatio(Vector2f((float)engine->width / width, (float)engine->height / height));
+
+
 		engine->width = width;
 		engine->height = height;
 		glViewport(0,0,width, height);
@@ -129,6 +135,9 @@ private:
 		}
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	}
 
 
@@ -259,6 +268,16 @@ private:
 		}
 	}
 
+	void updateUiRatio(Vector2f scaleFactor)
+	{
+		for (UiPlane* element : this->uiElements)
+		{
+			element->scale(Vector3f(scaleFactor.x, scaleFactor.y, 1));
+		}
+		
+	}
+
+
 public:
 
 	~_3DEngine()
@@ -280,6 +299,12 @@ public:
 	{
 		this->updatabels.push_back(updatable);
 	}
+
+	void addUiElement(UiPlane* ui_plane)
+	{
+		this->uiElements.push_back(ui_plane);
+	}
+		
 
 	static _3DEngine* getInstance()
 	{

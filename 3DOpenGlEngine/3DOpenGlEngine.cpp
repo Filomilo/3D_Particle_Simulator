@@ -245,6 +245,7 @@ void uiTest()
     engine->iniit(800, 600);
     UiPlane* uiPlane = new UiPlane();
     uiPlane->setTex(TextureLib::ArialFontTex);
+    engine->addUiElement(uiPlane);
     engine->addRenderable(uiPlane);
    // addCube(engine);
     engine->start();

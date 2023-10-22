@@ -18,7 +18,6 @@ protected:
 	glm::mat4 originPointTransformation = glm::mat4(1);
 	Vector3f rotation=Vector3f(0,0,0);
 
-
 public:
 
 
@@ -87,13 +86,10 @@ public:
 		//// TODO: implement
 	}
 
-	void set_scale(Vector3f scale) 
+
+	void scale(const Vector3f& scale)
 	{
-		//// TODO: immplement
-	}
-	void set_scale(float scale)
-	{
-		//// TODO: immplement
+		originPointTransformation = glm::scale(originPointTransformation, glm::vec3(scale.x, scale.y, scale.y));
 	}
 
 	glm::mat4 getTransformationMatrix()
