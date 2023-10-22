@@ -8,6 +8,8 @@
 #include "Texture.h"
 
 #include "FontTexture.h"
+
+#include "Vector2f.h"
 #define BufferSize 100000
 #define fontRes 1024
 #define fontHeight 30
@@ -56,3 +58,20 @@ FontTexture::FontTexture(std::string fontFileName, std::string destinationTex)
     charData = new stbtt_bakedchar[96];
     genFontTex(fontFileName, destinationTex);
 }
+
+void FontTexture::getChar(char letter, Vector2f* upperLeftPostion, Vector2f* rightDoownPostiion, Vector2f* offset, Float* advance)
+{
+    stbtt_bakedchar info = ((stbtt_bakedchar*)this->charData)[letter - charBeigin];
+    upperLeftPostion->x = info.x0;
+    upperLeftPostion->y = info.y0;
+
+    rightDoownPostiion->x = info.x1;
+    rightDoownPostiion->y = info.y1;
+
+    offset->x = info.xoff;
+    offset->y = info.yoff;
+
+    advance->x = info.xadvance;
+
+}
+

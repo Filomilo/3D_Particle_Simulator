@@ -39,6 +39,7 @@ private:
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		int vertIndex = 0;
+		std::cout << "VErtxBuffer::" << std::endl;
 		for (Vertex* vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
@@ -81,6 +82,7 @@ private:
 		std::cout <<"-------------------------------------------------------"<< this->getTringlePointCount() << std::endl << std::endl;
 		int index = 0;
 		unsigned int* eboArray = new  unsigned int[this->getTringlePointCount()];
+		std::cout << "ndeciesArray::" << std::endl;
 		for (Face* face: this->faces)
 		{
 			std::vector<unsigned int> indecies = face->get_vertex_indecies();

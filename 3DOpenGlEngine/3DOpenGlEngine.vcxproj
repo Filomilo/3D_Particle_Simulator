@@ -163,12 +163,12 @@
     <ClCompile Include="Renderable.cpp" />
     <ClCompile Include="ShaderLib.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
-    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureLib.cpp" />
     <ClCompile Include="Transformable.cpp" />
     <ClCompile Include="Turbulance.cpp" />
     <ClCompile Include="UiPlane.cpp" />
+    <ClCompile Include="UiText.cpp" />
     <ClCompile Include="Updatable.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VBO.cpp" />
@@ -209,12 +209,12 @@
     <ClInclude Include="Renderable.h" />
     <ClInclude Include="ShaderLib.h" />
     <ClInclude Include="ShaderProgram.h" />
-    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureLib.h" />
     <ClInclude Include="Transformable.h" />
     <ClInclude Include="Turbulance.h" />
     <ClInclude Include="UiPlane.h" />
+    <ClInclude Include="UiText.h" />
     <ClInclude Include="Updatable.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />

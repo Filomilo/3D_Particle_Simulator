@@ -5,12 +5,14 @@ class UiPlane :
     public Polygonal
 {
 public:
+	UiPlane(void * empty){}
     UiPlane()
     {
 		this->addPoint(-1,-1,0);
 		this->addPoint(1, -1, 0);
 		this->addPoint(1, 1, 0);
 		this->addPoint(-1, 1, 0);
+		
 		this->addVertex(0, { 0.000000, 1.000000 ,0.000000 }, { 0.0, 0.000000 });
 		this->addVertex(1, { 0.000000, 1.000000, 0.000000 }, { 1.0 ,0.0 });
 		this->addVertex(2, { 0.000000, 1.000000 ,0.000000 }, { 1.0, 1.0, });

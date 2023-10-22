@@ -39,6 +39,7 @@ private:
 	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	{
+
 		_3DEngine* engine = _3DEngine::getInstance();
 		std::cout << "test: " << width / (float)engine->width << std::endl;
 		engine->updateUiRatio(Vector2f((float)engine->width / width, (float)engine->height / height));
@@ -272,7 +273,9 @@ private:
 	{
 		for (UiPlane* element : this->uiElements)
 		{
+			std::cout<<"TeeeeeeeeL :"<<scaleFactor<<std::endl;
 			element->scale(Vector3f(scaleFactor.x, scaleFactor.y, 1));
+			//element->move(Vector3f((1- scaleFactor.x)*-1, 1-scaleFactor.y, 0));
 		}
 		
 	}
@@ -302,6 +305,15 @@ public:
 
 	void addUiElement(UiPlane* ui_plane)
 	{
+		if (this->width > this->height) {
+			ui_plane->scale(Vector3f(this->height / (float)this->width, 1, 1));
+		//	ui_plane->move(Vector3f((1 - (this->height / (float)this->width)) * -1, 0, 0));
+		}
+		else
+		{
+			ui_plane->scale(Vector3f(1, this->width / (float)this->height, 1));
+			//ui_plane->move(Vector3f(0,1-(this->width / (float)this->height),0));
+		}
 		this->uiElements.push_back(ui_plane);
 	}
 		

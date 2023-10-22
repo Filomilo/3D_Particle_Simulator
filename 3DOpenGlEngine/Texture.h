@@ -5,6 +5,7 @@
 #include <string>
 #include <glad/glad.h>
 
+#include "Vector2f.h"
 
 
 class Texture
@@ -20,7 +21,10 @@ public:
 	Texture(std::string file, int width, int height, int channels, int format = GL_RGB);
 	Texture()
 	{}
-
+	Vector2f getSize()
+	{
+		return Vector2f(width, height);
+	}
 
 	void bind();
 	static void unbind();

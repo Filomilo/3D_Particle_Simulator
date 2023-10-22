@@ -13,6 +13,7 @@
 #include "TextureLib.h"
 #include "Turbulance.h"
 #include "UiPlane.h"
+#include "UiText.h"
 
 
 PointLight* pointLight;
@@ -243,10 +244,13 @@ void uiTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    UiPlane* uiPlane = new UiPlane();
-    uiPlane->setTex(TextureLib::ArialFontTex);
-    engine->addUiElement(uiPlane);
-    engine->addRenderable(uiPlane);
+    ///UiPlane* uiPlane = new UiPlane();
+    //uiPlane->setTex(TextureLib::ArialFontTex);
+    //engine->addUiElement(uiPlane);
+   // engine->addRenderable(uiPlane);
+    UiText* txt = new UiText("LOream IPSDoi",0.05);
+	engine->addUiElement(txt);
+    engine->addRenderable(txt);
    // addCube(engine);
     engine->start();
 }
