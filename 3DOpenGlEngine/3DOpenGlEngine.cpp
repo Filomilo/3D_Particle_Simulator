@@ -1,5 +1,3 @@
-// 3DOpenGlEngine.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 
 #include <glad/glad.h>
@@ -12,7 +10,9 @@
 #include "ShaderProgram.h"
 #include "_3DEngine.h"
 #include "Gravity.h"
+#include "TextureLib.h"
 #include "Turbulance.h"
+#include "UiPlane.h"
 
 
 PointLight* pointLight;
@@ -239,12 +239,23 @@ void SimulationTest()
     engine->start();
 }
 
+void uiTest()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+    UiPlane* uiPlane = new UiPlane();
+    uiPlane->setTex(TextureLib::ArialFontTex);
+    engine->addRenderable(uiPlane);
+   // addCube(engine);
+    engine->start();
+}
 
 int main()
 {
     //cubeTest();
 	//particleTest();
    //emptyTest();
-    SimulationTest();
+  ///  SimulationTest();
+    uiTest();
     return 0;
 }

@@ -102,7 +102,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)dependencies\glad\include;$(ProjectDir)dependencies\glm;%(AdditionalIncludeDirectories);$(ProjectDir)dependencies\stb;$(ProjectDir)dependencies\fastNoise</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -120,7 +120,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>;$(ProjectDir)dependencies\stb;$(ProjectDir)dependencies\fastNoise</AdditionalIncludeDirectories>
     </ClCompile>
@@ -142,6 +142,7 @@
     <ClCompile Include="Emitter.cpp" />
     <ClCompile Include="Face.cpp" />
     <ClCompile Include="Float.cpp" />
+    <ClCompile Include="FontTexture.cpp" />
     <ClCompile Include="Force.cpp" />
     <ClCompile Include="GlObject.cpp" />
     <ClCompile Include="Gravity.cpp" />
@@ -162,9 +163,12 @@
     <ClCompile Include="Renderable.cpp" />
     <ClCompile Include="ShaderLib.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureLib.cpp" />
     <ClCompile Include="Transformable.cpp" />
     <ClCompile Include="Turbulance.cpp" />
+    <ClCompile Include="UiPlane.cpp" />
     <ClCompile Include="Updatable.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VBO.cpp" />
@@ -184,6 +188,7 @@
     <ClInclude Include="Emitter.h" />
     <ClInclude Include="Face.h" />
     <ClInclude Include="Float.h" />
+    <ClInclude Include="FontTexture.h" />
     <ClInclude Include="Force.h" />
     <ClInclude Include="GlObject.h" />
     <ClInclude Include="Gravity.h" />
@@ -204,9 +209,12 @@
     <ClInclude Include="Renderable.h" />
     <ClInclude Include="ShaderLib.h" />
     <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureLib.h" />
     <ClInclude Include="Transformable.h" />
     <ClInclude Include="Turbulance.h" />
+    <ClInclude Include="UiPlane.h" />
     <ClInclude Include="Updatable.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />

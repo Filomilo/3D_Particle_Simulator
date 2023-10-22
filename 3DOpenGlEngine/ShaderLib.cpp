@@ -4,6 +4,7 @@
 ShaderProgram* ShaderLib::phongShader = nullptr;
 ShaderProgram* ShaderLib::guideShader = nullptr;
 ShaderProgram* ShaderLib::particleShader = nullptr;
+ShaderProgram* ShaderLib::UiShader = nullptr;
 
 void ShaderLib::iniitShaderLib()
 {
@@ -22,5 +23,10 @@ void ShaderLib::iniitShaderLib()
 	ShaderLib::particleShader = new ShaderProgram("particleVertexShader.vert", "particleFragmentShader.frag");
 	ShaderLib::particleShader->addAttribute("Cd", Attribute::VECTOR3F);
 	ShaderLib::particleShader->addAttribute("pscale", Attribute::FLOAT);
+
+	ShaderLib::UiShader = new ShaderProgram("UiVertexShader.vert", "UiFragmentShader.frag");
+	ShaderLib::UiShader->addAttribute("Uv", Attribute::VECTOR2F);
+	ShaderLib::UiShader->setInt("colorTexture", 0);
+
 }
 

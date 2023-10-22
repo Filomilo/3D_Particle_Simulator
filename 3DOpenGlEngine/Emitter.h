@@ -13,7 +13,7 @@ class Emitter :
     virtual float getNewSize() = 0;
 
 private:
-    unsigned int particles_per_second=100;
+    unsigned int particles_per_second=10;
 
     ParticleSystem* particle_system;
 

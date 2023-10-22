@@ -37,6 +37,9 @@
     <Filter Include="Header Files\Particles\Forces">
       <UniqueIdentifier>{61937b25-a126-44b5-9086-cbce4413d4a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{49f8cf41-5e57-49ff-83e3-cd50e8aa7dbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3DOpenGlEngine.cpp">
@@ -162,6 +165,18 @@
     <ClCompile Include="Turbulance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UiPlane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_3DEngine.h">
@@ -283,6 +298,18 @@
     </ClInclude>
     <ClInclude Include="Turbulance.h">
       <Filter>Header Files\Particles\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="UiPlane.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontTexture.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

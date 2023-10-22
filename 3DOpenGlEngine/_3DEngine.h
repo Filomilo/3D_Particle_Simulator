@@ -11,6 +11,7 @@
 #include "ParticleSystem.h"
 #include "PolyGrid.h"
 #include "ShaderLib.h"
+#include "TextureLib.h"
 
 class _3DEngine
 {
@@ -313,6 +314,7 @@ public:
 		this->initilizeGlad();
 		this->initlizeCamera();
 		this->iniitShaderLib();
+		TextureLib::initTextureLib();
 		this->initlizeGround();
 		framebuffer_size_callback(this->mainWindow, windowWidth, windowHeight);
 		setCallBacks();
