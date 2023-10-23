@@ -100,6 +100,13 @@ public:
 		addPoint(new Point(x, y, z, r, g, b, pscale));
     }
 
-	
+	virtual void cleanGeo()
+    {
+		for (Point* point : points) {
+			delete point;
+		}
+
+		points.clear();
+    }
 };
 

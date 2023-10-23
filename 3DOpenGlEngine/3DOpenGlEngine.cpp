@@ -15,7 +15,7 @@
 #include "UiPlane.h"
 #include "UiSystem.h"
 #include "UiText.h"
-
+#include <sstream>
 
 PointLight* pointLight;
 Cube* cube;
@@ -240,6 +240,22 @@ void SimulationTest()
         particle_solver->addForce(new Turbulance);
     engine->start();
 }
+UiText* txt;
+
+
+void udpateTxt(_3DEngine* engine)
+{
+    static int i = 1;
+    std::stringstream text;
+    
+    text << clock();
+
+        txt->setText(text.str());
+    
+i++;
+
+}
+
 
 void uiTest()
 {
@@ -249,7 +265,7 @@ void uiTest()
     //uiPlane->setTex(TextureLib::ArialFontTex);
     //engine->addUiElement(uiPlane);
    // engine->addRenderable(uiPlane);
-    UiText* txt = new UiText("LOream IPSDoi",0.05);
+    txt = new UiText("lOspasdka sd",0.05);
 	engine->addUiElement(txt);
     engine->addRenderable(txt);
 
@@ -272,7 +288,7 @@ void uiTest()
 
      uisystem->addParameterGroup(test);
      uisystem->addParameterGroup(dummy);
-
+     engine->addUpdate(udpateTxt);
      engine->addUpdatable(uisystem);
    // addCube(engine);
     engine->start();

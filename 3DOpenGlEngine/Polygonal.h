@@ -231,7 +231,38 @@ public:
 
 
 	
+	void cleanGeo() override
+	{
+		PointGroup::cleanGeo();
+		for(Vertex* element: vertices)
+		{
+			delete element;
+		}
+		vertices.clear();
 
+		for (Face* element : faces)
+		{
+			delete element;
+		}
+		faces.clear();
+	}
+
+protected:
+	void updateEbo()
+	{
+
+
+		GLuint* indeciesBuffer = this->getIndeciesArray();
+		for (int i = 0; i < this->getTringlePointCount(); i++)
+		{
+			std::cout << indeciesBuffer[i] << ",";
+			if (i % 3 == 2)
+				std::cout << std::endl;
+		}
+		this->ebo->update((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
+
+		delete[] indeciesBuffer;
+	}
 
 };
 

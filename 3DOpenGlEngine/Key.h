@@ -24,6 +24,8 @@ public:
 		switch (state)
 		{
 		case GLFW_PRESS: isClicked = true; isPressing = true; break;
+		case GLFW_REPEAT: isClicked = true; break;
+
 		case GLFW_RELEASE: isReleased = true; isPressing = false; break;
 		}
 	}

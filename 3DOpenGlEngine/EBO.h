@@ -27,7 +27,11 @@ public:
 	{
 		glDeleteBuffers(1, &ID);
 	}
-
+	void update(GLuint* indeces, GLsizeiptr size, unsigned long int usage = GL_DYNAMIC_DRAW)
+	{
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ID);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, indeces, usage);
+		}
 
 
 };

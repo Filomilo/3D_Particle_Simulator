@@ -39,21 +39,39 @@ class UiText :
         std::cout << "test";
     }
 
-
+    virtual void cleanGeo() override
+    {
+        UiPlane::cleanGeo();
+        offset = 0;
+    }
 
 public:
+
+    void setText(std::string text)
+    {
+
+        this->cleanGeo();
+        for (char letter : text)
+        {
+            addCharacter(letter);
+        }
+        updateVbo();
+        updateEbo();
+    }
+
     UiText(std::string text,float fontSize=1): UiPlane(nullptr)
     {
         setMat(new Material(ShaderLib::UiShader));
         this->fontSize = fontSize;
         font =(FontTexture*) TextureLib::ArialFontTex;
         this->mat->addTex("ColorTexture",font);
+        set_usage(GL_DYNAMIC_DRAW);
         for (char letter : text)
         {
             addCharacter(letter);
         }
-
         this->init();
+   
     }
 };
 
