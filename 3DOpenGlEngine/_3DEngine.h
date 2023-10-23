@@ -13,7 +13,8 @@
 #include "ShaderLib.h"
 #include "TextureLib.h"
 #include "UiPlane.h"
-
+#include "UiSystem.h"
+#include "Keyboard.h"
 class _3DEngine
 {
 
@@ -35,6 +36,7 @@ private:
 	std::list<ShaderProgram*> shaders;
 	std::list<Updatable*> updatabels;
 	std::list<UiPlane*> uiElements;
+	Keyboard* keyboard=new Keyboard;
 	std::list<void(*)(_3DEngine* engine)> updateFunctions;
 	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
 	void static framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -78,11 +80,14 @@ private:
 		{
 			func(window, key, scancode, action, mods);
 		}
+		engine->keyboard->update(key, action);
 	}
 
 	void resetOneTimeEvenets()
 	{
 		this->mouse->reset();
+		keyboard->reset();
+		
 	}
 
 	void setCallBacks()
@@ -382,6 +387,12 @@ public:
 	float getTimeElapesed()
 	{
 		return (float)timeElapesed / CLOCKS_PER_SEC;
+	}
+
+
+	static Keyboard*  getKeyBoard()
+	{
+		return _3DEngine::getInstance()->keyboard;
 	}
 };
 

@@ -13,6 +13,7 @@
 #include "TextureLib.h"
 #include "Turbulance.h"
 #include "UiPlane.h"
+#include "UiSystem.h"
 #include "UiText.h"
 
 
@@ -251,6 +252,28 @@ void uiTest()
     UiText* txt = new UiText("LOream IPSDoi",0.05);
 	engine->addUiElement(txt);
     engine->addRenderable(txt);
+
+
+     UiSystem* uisystem = new UiSystem;
+     float AA=0;
+     float BB=0;
+     float CC=0;
+     float DD=0;
+
+
+     UiParameterGroup* test = new    UiParameterGroup("test");
+     UiParameterGroup* dummy = new    UiParameterGroup("dummy");
+
+     test->addParameter(new UiParameter("AA", &AA, 1));
+     test->addParameter(new UiParameter("BB", &BB, 1));
+     dummy->addParameter(new UiParameter("CC", &CC, 1));
+     dummy->addParameter(new UiParameter("DD", &DD, 1));
+
+
+     uisystem->addParameterGroup(test);
+     uisystem->addParameterGroup(dummy);
+
+     engine->addUpdatable(uisystem);
    // addCube(engine);
     engine->start();
 }
