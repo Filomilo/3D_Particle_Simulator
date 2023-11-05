@@ -68,5 +68,15 @@ public:
 		os << std::endl;
 		return  os;
 	}
+
+	std::vector<UiParameter*> getParamters()
+	{
+		return parameters_;
+	}
+
+	int getSelected()
+	{
+		return selectedParamater;
+	}
 };
 

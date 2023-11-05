@@ -266,8 +266,8 @@ void uiTest()
     //engine->addUiElement(uiPlane);
    // engine->addRenderable(uiPlane);
     txt = new UiText("lOspasdka sd",0.05);
-	engine->addUiElement(txt);
-    engine->addRenderable(txt);
+
+   
 
 
      UiSystem* uisystem = new UiSystem;
@@ -288,9 +288,28 @@ void uiTest()
 
      uisystem->addParameterGroup(test);
      uisystem->addParameterGroup(dummy);
-     engine->addUpdate(udpateTxt);
+    // engine->addUpdate(udpateTxt);
      engine->addUpdatable(uisystem);
+     engine->addUiElement(uisystem);
+     engine->addRenderable(uisystem);
    // addCube(engine);
+    engine->start();
+}
+
+void textTest()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+    ///UiPlane* uiPlane = new UiPlane();
+    //uiPlane->setTex(TextureLib::ArialFontTex);
+    //engine->addUiElement(uiPlane);
+   // engine->addRenderable(uiPlane);
+    txt = new UiText("abcedlo: \n z bieba spadlo", 0.005);
+    //txt = new UiText("A", 0.05);
+    engine->addUiElement(txt);
+    engine->addRenderable(txt);
+
+    // addCube(engine);
     engine->start();
 }
 
@@ -300,6 +319,7 @@ int main()
 	//particleTest();
    //emptyTest();
   ///  SimulationTest();
-    uiTest();
+   uiTest();
+   // textTest();
     return 0;
 }

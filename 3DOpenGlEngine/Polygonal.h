@@ -247,6 +247,23 @@ public:
 		faces.clear();
 	}
 
+	void addRect(const Vector2f& left_upper_pos, const Vector2f& right_down_pos, const Vector2f& left_upper_uv, const Vector2f& right_down_uv)
+	{
+		int amountOfPOints = this->points.size();
+		this->addPoint(left_upper_pos.x, left_upper_pos.y,0);
+		this->addPoint(right_down_pos.x, left_upper_pos.y, 0);
+		this->addPoint(right_down_pos.x, right_down_pos.y, 0);
+		this->addPoint(left_upper_pos.x, right_down_pos.y, 0);
+
+		this->addVertex(amountOfPOints + 0, { 0.000000, 1.000000 ,0.000000 }, { left_upper_uv.x, left_upper_uv.y });
+		this->addVertex(amountOfPOints + 1, { 0.000000, 1.000000, 0.000000 }, { right_down_uv.x ,left_upper_uv.y });
+		this->addVertex(amountOfPOints + 2, { 0.000000, 1.000000 ,0.000000 }, { right_down_uv.x,right_down_uv.y });
+		this->addVertex(amountOfPOints + 3, { 0.000000, 1.000000, 0.000000 }, { left_upper_uv.x, right_down_uv.y });
+
+		this->addFace({ amountOfPOints + 0,amountOfPOints + 1,amountOfPOints + 2,amountOfPOints + 3 });
+
+	}
+
 protected:
 	void updateEbo()
 	{

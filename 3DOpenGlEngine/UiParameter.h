@@ -30,5 +30,17 @@ public:
 	{
 		return os<< obj.name<<": "<<*obj.parametertoChange;
 	}
+
+	std::string getName()
+	{
+		return  name;
+	}
+
+	float getVal()
+	{
+		return *parametertoChange;
+	}
+
+
 };
 

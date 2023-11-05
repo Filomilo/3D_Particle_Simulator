@@ -13,5 +13,5 @@ void main()
 
 	
     FragColor=vec4(objectColor.r,objectColor.r,objectColor.r,objectColor.r);
-
+	//FragColor=vec4(1,1,1,1);
 } 
