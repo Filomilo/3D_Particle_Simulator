@@ -31,13 +31,14 @@ private:
 		{
 			if(groups.at(activegroup)->getSelected() == i)
 			{
-				stream <<"::::"<< param->getName() << ": " << param->getVal() << '\n';
+				stream <<"<<"<< param->getName() << ": " << param->getVal()<<" >>" << '\n';
 			}
 			else
 			stream << param->getName() << ": " << param->getVal()<<'\n';
 			i++;
 		}
 		this->setText(stream.str());
+		//std::cout << stream.str() << std::endl;
 	}
 
 

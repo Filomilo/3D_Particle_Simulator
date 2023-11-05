@@ -39,7 +39,7 @@ private:
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		int vertIndex = 0;
-		std::cout << "VErtxBuffer::" << std::endl;
+		//std::cout << "VErtxBuffer::" << std::endl;
 		for (Vertex* vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
@@ -49,12 +49,12 @@ private:
 				for(int i=0;i< attribType;i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
-					std::cout << (*attribVal)[i] << ", ";
+					//std::cout << (*attribVal)[i] << ", ";
 				}
 
 
 			}
-			std::cout << std::endl;
+			//std::cout << std::endl;
 			vertIndex++;
 		}
 
@@ -79,10 +79,10 @@ private:
 
 	unsigned int* getIndeciesArray()
 	{
-		std::cout <<"-------------------------------------------------------"<< this->getTringlePointCount() << std::endl << std::endl;
+		//std::cout <<"-------------------------------------------------------"<< this->getTringlePointCount() << std::endl << std::endl;
 		int index = 0;
 		unsigned int* eboArray = new  unsigned int[this->getTringlePointCount()];
-		std::cout << "ndeciesArray::" << std::endl;
+		//std::cout << "ndeciesArray::" << std::endl;
 		for (Face* face: this->faces)
 		{
 			std::vector<unsigned int> indecies = face->get_vertex_indecies();
@@ -95,7 +95,7 @@ private:
 				eboArray[index++] = indecies[i ];
 			
 
-				std::cout << firstIndex << ", " << indecies[i-1] << ", " << indecies[i ] << std::endl;
+				//std::cout << firstIndex << ", " << indecies[i-1] << ", " << indecies[i ] << std::endl;
 			}
 		}
 
@@ -190,9 +190,9 @@ public:
 		GLuint* indeciesBuffer = this->getIndeciesArray();
 		for (int i = 0; i < this->getTringlePointCount(); i++)
 		{
-			std::cout << indeciesBuffer[i] << ",";
-			if (i % 3 == 2)
-				std::cout << std::endl;
+			//std::cout << indeciesBuffer[i] << ",";
+			//if (i % 3 == 2)
+				//std::cout << std::endl;
 		}
 		this->ebo = new EBO((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
 		delete[] indeciesBuffer;
@@ -272,9 +272,9 @@ protected:
 		GLuint* indeciesBuffer = this->getIndeciesArray();
 		for (int i = 0; i < this->getTringlePointCount(); i++)
 		{
-			std::cout << indeciesBuffer[i] << ",";
-			if (i % 3 == 2)
-				std::cout << std::endl;
+			//std::cout << indeciesBuffer[i] << ",";
+			//if (i % 3 == 2)
+				//std::cout << std::endl;
 		}
 		this->ebo->update((GLuint*)indeciesBuffer, this->getTringlePointCount() * sizeof(unsigned int));
 

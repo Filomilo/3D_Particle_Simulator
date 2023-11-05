@@ -45,7 +45,7 @@ class UiText :
 
         std::cout << "test";
         */
-        std::cout << letter << ": "<<std::endl;
+       // std::cout << letter << ": "<<std::endl;
         if (letter == ' ')
             offset.x += letterWidth/2;
         if (letter == '\n')
@@ -57,18 +57,18 @@ class UiText :
         Vector2f leftBounderyPos, rigtBounderyPos, Offset;
         Float advance;
         font->getChar(letter, &leftBounderyPos, &rigtBounderyPos, &Offset, &advance);
-        std::cout << "leftBounderyPos: " << leftBounderyPos << std::endl;;
-        std::cout << "rigtBounderyPos: " << rigtBounderyPos << std::endl;;
-        std::cout << "Offset: " << leftBounderyPos << std::endl;;
-        std::cout << "advance: " << advance << std::endl;;
+    //    std::cout << "leftBounderyPos: " << leftBounderyPos << std::endl;;
+      //  std::cout << "rigtBounderyPos: " << rigtBounderyPos << std::endl;;
+  //      std::cout << "Offset: " << leftBounderyPos << std::endl;;
+//        std::cout << "advance: " << advance << std::endl;;
 
         float letterWidtt = rigtBounderyPos.x - leftBounderyPos.x;
         float letterHeight= rigtBounderyPos.y - leftBounderyPos.y;
         letterWidtt =  (letterWidtt* fontSize)/ ScaleFactor;
         letterHeight = (letterHeight * fontSize)/ ScaleFactor;
 
-        std::cout << "letterWidtt: " << letterWidtt << std::endl;;
-        std::cout << "letterHeight: " << letterHeight << std::endl;
+      //  std::cout << "letterWidtt: " << letterWidtt << std::endl;;
+       // std::cout << "letterHeight: " << letterHeight << std::endl;
 
 
 
@@ -85,7 +85,7 @@ class UiText :
 
         this->addRect(leftUp, rightDown, LeftUpUV , rightDownUV);
         offset = offset + Vector2f(letterWidtt, 0);
-        std::cout << std::endl << std::endl;
+      //  std::cout << std::endl << std::endl;
 
     }
 

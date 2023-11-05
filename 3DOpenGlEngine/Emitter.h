@@ -5,7 +5,8 @@
 #include <math.h>
 class Emitter :
     public Transformable,
-	public Updatable
+	public Updatable,
+	public Parametrized
 {
     virtual Vector3f getNewPointPosition() = 0;
     virtual Vector3f getNewColor() = 0;
@@ -13,7 +14,7 @@ class Emitter :
     virtual float getNewSize() = 0;
 
 private:
-    unsigned int particles_per_second=10;
+    float particles_per_second=10;
 
     ParticleSystem* particle_system;
 
@@ -105,6 +106,13 @@ public:
     void set_particle_system(ParticleSystem* particle_system)
     {
 	    this->particle_system = particle_system;
+    }
+
+    UiParameterGroup* getParameterGroup() override
+    {
+        UiParameterGroup* ui_parameter_group = new UiParameterGroup("Gravity");
+        ui_parameter_group->addParameter(new UiParameter("paritcles_per_Second", &this->particles_per_second, 1));
+        return ui_parameter_group;
     }
 };
 

@@ -236,8 +236,25 @@ void SimulationTest()
     ParticleSolver* particle_solver = new ParticleSolver;
     particle_solver->set_particle_system(particle_system);
         engine->addUpdatable(particle_solver);
-        particle_solver->addForce(new Gravity);
-        particle_solver->addForce(new Turbulance);
+
+
+    Gravity* gravity = new Gravity();
+    Turbulance* turbulance = new Turbulance();
+		particle_solver->addForce(gravity);
+        particle_solver->addForce(turbulance);
+
+        
+
+
+        UiSystem* uisystem = new UiSystem;
+		
+        uisystem->addParameterGroup(gravity->getParameterGroup());
+        uisystem->addParameterGroup(turbulance->getParameterGroup());
+        uisystem->addParameterGroup(box_emitter->getParameterGroup());
+        engine->addUiElement(uisystem);
+        engine->addRenderable(uisystem);
+        engine->addUpdatable(uisystem);
+
     engine->start();
 }
 UiText* txt;
@@ -250,6 +267,7 @@ void udpateTxt(_3DEngine* engine)
     
     text << clock();
 
+		
         txt->setText(text.str());
     
 i++;
@@ -318,8 +336,8 @@ int main()
     //cubeTest();
 	//particleTest();
    //emptyTest();
-  ///  SimulationTest();
-   uiTest();
+    SimulationTest();
+  // uiTest();
    // textTest();
     return 0;
 }

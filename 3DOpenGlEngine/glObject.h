@@ -97,7 +97,8 @@ protected:
 			Attribute::Types type = attributesMap[name];
 			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
 			glEnableVertexAttribArray(i);
-			//std::cout << "glEnableVertexAttribArray(" << i << ")\n";
+			//
+			//  << "glEnableVertexAttribArray(" << i << ")\n";
 			i++;
 			offset += type * sizeof(float);
 		}

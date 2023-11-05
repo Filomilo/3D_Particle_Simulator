@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 #include "Object.h"
 #include "Vector3f.h"
 
@@ -85,6 +87,11 @@ class Point :
         setColor(r, g, b);
         setPscale(size);
       
+    }
+
+    ~Point()
+    {
+
     }
 };
 

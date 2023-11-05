@@ -19,7 +19,12 @@ public:
 
 
     }
-
+    UiParameterGroup* getParameterGroup() override
+    {
+        UiParameterGroup* ui_parameter_group = new UiParameterGroup("Turbulance");
+        ui_parameter_group->addParameter(new UiParameter("scale", &this->scale, 0.001));
+        return ui_parameter_group;
+    }
 
 
 

@@ -43,7 +43,7 @@ private:
 	{
 
 		_3DEngine* engine = _3DEngine::getInstance();
-		std::cout << "test: " << width / (float)engine->width << std::endl;
+		//std::cout << "test: " << width / (float)engine->width << std::endl;
 		engine->updateUiRatio(Vector2f((float)engine->width / width, (float)engine->height / height));
 
 
@@ -64,7 +64,7 @@ private:
 	{
 		_3DEngine* engine = _3DEngine::getInstance();
 		engine->mouse->updateScroll(y);
-		std::cout << x << ", " << y << std::endl;
+		//std::cout << x << ", " << y << std::endl;
 	}
 	void static mouse_button_callback(GLFWwindow* window, int button,int action,int mods )
 	{
@@ -278,7 +278,8 @@ private:
 	{
 		for (UiPlane* element : this->uiElements)
 		{
-			std::cout<<"TeeeeeeeeL :"<<scaleFactor<<std::endl;
+			
+			//<<"TeeeeeeeeL :"<<scaleFactor<<std::endl;
 			element->scale(Vector3f(scaleFactor.x/ scaleFactor.y, 1, 1));
 	
 		}
