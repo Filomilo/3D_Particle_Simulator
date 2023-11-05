@@ -279,8 +279,8 @@ private:
 		for (UiPlane* element : this->uiElements)
 		{
 			std::cout<<"TeeeeeeeeL :"<<scaleFactor<<std::endl;
-			element->scale(Vector3f(scaleFactor.x, scaleFactor.y, 1));
-			//element->move(Vector3f((1- scaleFactor.x)*-1, 1-scaleFactor.y, 0));
+			element->scale(Vector3f(scaleFactor.x/ scaleFactor.y, 1, 1));
+	
 		}
 		
 	}
