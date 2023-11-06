@@ -46,12 +46,15 @@ class UiText :
         std::cout << "test";
         */
        // std::cout << letter << ": "<<std::endl;
-        if (letter == ' ')
+        if (letter == ' ') {
             offset.x += letterWidth/2;
+            return;
+        }
         if (letter == '\n')
         {
             activeRow++;
             offset =Vector2f(0,0);
+            return;
         }
 
         Vector2f leftBounderyPos, rigtBounderyPos, Offset;
