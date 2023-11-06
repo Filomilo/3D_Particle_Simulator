@@ -9,14 +9,14 @@ class GlObject :
 	public Transformable
 {
 protected:
-	VAO* vao;
-	VBO* vbo;
-	Material* mat;
+	std::unique_ptr<VAO> vao;
+	std::shared_ptr<VBO> vbo;
+	std::shared_ptr<Material> mat;
 
 	int renderMode = GL_FILL;
 	long int usage = GL_STATIC_DRAW;
 
-	virtual float* getVertexBuffer() = 0;
+	virtual GLfloat* getVertexBuffer() = 0;
 
 
 	int getVertexSize()
@@ -26,7 +26,7 @@ protected:
 
 
 	virtual int getVerteciesAmount() = 0;
-	virtual Attribute* getVertexAttrib(int num, std::string attrib) = 0;
+	virtual std::shared_ptr<Attribute> getVertexAttrib(int num, std::string attrib) = 0;
 
 
 	std::map<std::string, Attribute::Types> getMapOfAttributes()
@@ -49,7 +49,7 @@ protected:
 
 	void iniitVbo()
 	{
-		float* vertexBuffer = this->getVertexBuffer();
+		GLfloat* vertexBuffer = this->getVertexBuffer();
 		int verteciesAmt = this->getVerteciesAmount();
 		int vertexSize = this->getVertexSize();
 
@@ -63,13 +63,13 @@ protected:
 		*/
 		vao->bind();
 
-		this->vbo = new VBO(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
+		this->vbo = std::make_unique <VBO>( vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
 		delete[] vertexBuffer;
 	}
 
 	void updateVbo()
 	{
-		float* vertexBuffer = this->getVertexBuffer();
+		GLfloat* vertexBuffer = this->getVertexBuffer();
 		int verteciesAmt = this->getVerteciesAmount();
 		int vertexSize = this->getVertexSize();
 
@@ -129,7 +129,7 @@ protected:
 public:
 	GlObject() : Transformable()
 	{
-			this->vao = new VAO();
+			this->vao = std::make_unique<VAO>() ;
 	}
 
 
@@ -143,7 +143,7 @@ public:
 	{
 		renderMode = render_mode;
 	}
-	void setMat(Material* mat)
+	void setMat(std::shared_ptr<Material>  mat)
 	{
 		this->mat = mat;
 	}
