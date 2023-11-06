@@ -17,17 +17,17 @@
 #include "UiText.h"
 #include <sstream>
 
-PointLight* pointLight;
-Cube* cube;
+std::shared_ptr<PointLight> pointLight;
+std::shared_ptr<Cube> cube;
 
 void addPlane(_3DEngine* engine)
 {
-    PhongMat* basicMatplane = new PhongMat;
+    std::shared_ptr<PhongMat> basicMatplane = std::make_shared<PhongMat>() ;
     basicMatplane->set_color_tex("Assets/plane_initialShadingGroup_BaseColor.png", 2048, 2048, 24);
     basicMatplane->set_normal_tex("Assets/plane_initialShadingGroup_Normal.png", 2048, 2048, 24);
     basicMatplane->set_rough_tex("Assets/plane_initialShadingGroup_Roughness.png", 2048, 2048, 8, GL_RED);
 
-    PolyGrid* polygrid = new PolyGrid(20, 20, 2, 2);
+   std::shared_ptr<PolyGrid> polygrid = std::make_shared<PolyGrid> (20, 20, 2, 2);
     polygrid->setMat(basicMatplane);
     polygrid->init();
     engine->addRenderable(polygrid);
@@ -120,7 +120,7 @@ void cube_key_callback(GLFWwindow* window, int key, int scancode, int action, in
 }
 void addCube(_3DEngine* engine)
 {
-    PhongMat* cubeMat = new PhongMat;
+    std::shared_ptr<PhongMat> cubeMat = std::make_shared<PhongMat>();
     cubeMat->set_color_tex("Assets/cube_initialShadingGroup_BaseColor.bmp", 2048, 2048, 24);
     cubeMat->set_normal_tex("Assets/cube_initialShadingGroup_Normal.bmp", 2048, 2048, 24);
     cubeMat->set_rough_tex("Assets/cube_initialShadingGroup_Roughness.bmp", 2048, 2048, 8, GL_RED);
@@ -129,7 +129,7 @@ void addCube(_3DEngine* engine)
 
 
 
-     cube = new Cube(5);
+   cube = std::make_shared<Cube>(5);
     cube->setMat(cubeMat);
     cube->init();
     cube->moveY(2.501);
@@ -154,7 +154,7 @@ void lightAround(_3DEngine* engine)
 
 void addLight(_3DEngine* engine)
 {
-    pointLight = new PointLight;
+    pointLight = std::make_shared<PointLight>();
     pointLight->move(Vector3f(0, 5, 5));
     Light::setAmbientColor(Vector3f(0.8, 0.8, 1));
     Light::setAmbientIntensity(0.4);
@@ -184,7 +184,7 @@ void particleTest()
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
 
-    PointGroup* point_group = new PointGroup;
+    std::shared_ptr<PointGroup> point_group = std::make_shared<PointGroup>();
     srand(time(0));
     float particleSize = 100;
     for (int i = 0; i < 100000; i++)
@@ -199,7 +199,7 @@ void particleTest()
             (float)rand() / RAND_MAX*50
         );
     }
-    point_group->setMat(new Material(ShaderLib::particleShader));
+    point_group->setMat(std::make_shared<Material>(ShaderLib::particleShader));
     point_group->init();
 
 
@@ -223,30 +223,30 @@ void SimulationTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    ParticleSystem* particle_system = new ParticleSystem;
+    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>();
 
 
-    BoxEmitter* box_emitter = new BoxEmitter(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
+    std::shared_ptr < BoxEmitter> box_emitter = std::make_shared<BoxEmitter>(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
     box_emitter->set_particle_system(particle_system);
     engine->addUpdatable(box_emitter);
 
     engine->addUpdatable(particle_system);
     engine->addRenderable(particle_system);
 
-    ParticleSolver* particle_solver = new ParticleSolver;
+    std::shared_ptr < ParticleSolver> particle_solver = std::make_shared < ParticleSolver>();
     particle_solver->set_particle_system(particle_system);
         engine->addUpdatable(particle_solver);
 
 
-    Gravity* gravity = new Gravity();
-    Turbulance* turbulance = new Turbulance();
+        std::shared_ptr < Gravity> gravity = std::make_shared < Gravity>();
+        std::shared_ptr <Turbulance> turbulance = std::make_shared < Turbulance>();
 		particle_solver->addForce(gravity);
         particle_solver->addForce(turbulance);
 
         
 
 
-        UiSystem* uisystem = new UiSystem;
+        std::shared_ptr<UiSystem> uisystem = std::make_shared<UiSystem>() ;
 		
         uisystem->addParameterGroup(gravity->getParameterGroup());
         uisystem->addParameterGroup(turbulance->getParameterGroup());
@@ -257,7 +257,7 @@ void SimulationTest()
 
     engine->start();
 }
-UiText* txt;
+std::shared_ptr<UiText> txt;
 
 
 void udpateTxt(_3DEngine* engine)
@@ -279,36 +279,36 @@ void uiTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    ///UiPlane* uiPlane = new UiPlane();
+    ///std::shared_ptr<UiPlane> uiPlane = new UiPlane();
     //uiPlane->setTex(TextureLib::ArialFontTex);
     //engine->addUiElement(uiPlane);
    // engine->addRenderable(uiPlane);
-    txt = new UiText("lOspasdka sd",0.05);
+    txt = std::make_shared<UiText>("lOspasdka sd",0.05);
 
    
 
 
-     UiSystem* uisystem = new UiSystem;
+     std::shared_ptr<UiSystem> uisystem = std::make_unique<UiSystem>();
      float AA=0;
      float BB=0;
      float CC=0;
      float DD=0;
 
 
-     UiParameterGroup* test = new    UiParameterGroup("test");
-     UiParameterGroup* dummy = new    UiParameterGroup("dummy");
+     std::shared_ptr<UiParameterGroup> test = std::make_shared<UiParameterGroup>("test");
+     std::shared_ptr<UiParameterGroup> dummy = std::make_shared<UiParameterGroup>("dummy");
 
-     test->addParameter(new UiParameter("AA", &AA, 1));
-     test->addParameter(new UiParameter("BB", &BB, 1));
-     dummy->addParameter(new UiParameter("CC", &CC, 1));
-     dummy->addParameter(new UiParameter("DD", &DD, 1));
+    // test->addParameter(std::make_shared<UiParameter>("AA", &AA, 1));
+    // test->addParameter(std::make_shared<UiParameter>("BB", &BB, 1));
+    // dummy->addParameter(std::make_shared<UiParameter>("CC", &CC, 1));
+   //  dummy->addParameter(std::make_shared<UiParameter>("DD", &DD, 1));
 
 
      uisystem->addParameterGroup(test);
      uisystem->addParameterGroup(dummy);
     // engine->addUpdate(udpateTxt);
-     engine->addUpdatable(uisystem);
-     engine->addUiElement(uisystem);
+     engine->addUpdatable(std::dynamic_pointer_cast<Updatable>(uisystem) );
+     engine->addUiElement(std::dynamic_pointer_cast<UiPlane > (uisystem));
      engine->addRenderable(uisystem);
    // addCube(engine);
     engine->start();
@@ -318,12 +318,13 @@ void textTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    ///UiPlane* uiPlane = new UiPlane();
+    ///std::shared_ptr<UiPlane> uiPlane = new UiPlane();
     //uiPlane->setTex(TextureLib::ArialFontTex);
     //engine->addUiElement(uiPlane);
+    
    // engine->addRenderable(uiPlane);
-    txt = new UiText("abcedlo: \n z bieba spadlo", 0.005);
-    //txt = new UiText("A", 0.05);
+    txt = std::make_shared<UiText>("abcedlo: \n z bieba spadlo", 0.005);
+    //txt = std::make_shared<UiText>("A", 0.05);
     engine->addUiElement(txt);
     engine->addRenderable(txt);
 

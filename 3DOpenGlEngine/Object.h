@@ -9,20 +9,20 @@ class Object
 {
 public:
 
-	std::map<std::string, Attribute*> attributes;
+	std::map<std::string, std::shared_ptr<Attribute>> attributes;
 
-	void setAttribute(std::string name, Attribute* type)
+	void setAttribute(std::string name,  std::shared_ptr<Attribute> type)
 	{
 		this->attributes.insert_or_assign(name, type);
 	}
 
-	Attribute* getAttribute(std::string name)
+	 std::shared_ptr<Attribute> getAttribute(std::string name)
 	{
-		std::map<std::string,Attribute*>::iterator it= this->attributes.find(name);
-		Attribute* attrib;
+		std::map<std::string, std::shared_ptr<Attribute>>::iterator it= this->attributes.find(name);
+		 std::shared_ptr<Attribute> attrib;
 		if(it== this->attributes.end())
 		{
-			attrib = new Vector4f(0,0,0,0);
+			attrib =std::make_shared<Vector4f>(0,0,0,0);
 			this->setAttribute(name, attrib);
 		}
 		else
@@ -41,10 +41,7 @@ public:
 
 	~Object ()
 	{
-		for (std::pair<std::string, Attribute*> element: attributes)
-		{
-			delete element.second;
-		}
+		attributes.clear();
 	}
 };
 

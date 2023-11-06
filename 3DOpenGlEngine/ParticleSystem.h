@@ -20,7 +20,7 @@ public:
 	ParticleSystem(): PointGroup()
 	{
 		set_usage(GL_DYNAMIC_DRAW);
-		setMat(new Material(ShaderLib::particleShader));
+		setMat(std::make_shared<Material> (ShaderLib::particleShader));
 		init();
 	}
 
@@ -57,7 +57,8 @@ public:
 
 	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=0.0, float life=1)
 	{
-		Point* pt = new Point(pos);
+
+		std::shared_ptr<Point> pt = std::make_shared<Point>(pos);
 		pt->setColor(color.r,color.g,color.b);
 		pt->setVelocity(velocity.x, velocity.y, velocity.z);
 		pt->setPscale(size);

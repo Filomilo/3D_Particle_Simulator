@@ -32,10 +32,10 @@ private:
 	unsigned long int timeElapesed;
 	unsigned long int timerunning;
 
-	std::list<Renderable*> renderables_;
+	std::list<std::shared_ptr<Renderable> > renderables_;
 	std::list<ShaderProgram*> shaders;
-	std::list<Updatable*> updatabels;
-	std::list<UiPlane*> uiElements;
+	std::list<std::shared_ptr<Updatable>> updatabels;
+	std::list<std::shared_ptr<UiPlane>> uiElements;
 	Keyboard* keyboard=new Keyboard;
 	std::list<void(*)(_3DEngine* engine)> updateFunctions;
 	std::list<void(*)(GLFWwindow* window, int key, int scancode, int action, int mods)> keycallBacks;
@@ -254,7 +254,7 @@ private:
 
 	void render()
 	{
-		for (Renderable* element : this->renderables_)
+		for (std::shared_ptr<Renderable>  element : this->renderables_)
 		{
 			element->render();
 		}
@@ -268,7 +268,7 @@ private:
 			funciton(this);
 		}
 
-		for (Updatable* element : updatabels)
+		for (std::shared_ptr<Updatable> element : updatabels)
 		{
 			element->update(getTimeElapesed());
 		}
@@ -276,7 +276,7 @@ private:
 
 	void updateUiRatio(Vector2f scaleFactor)
 	{
-		for (UiPlane* element : this->uiElements)
+		for (std::shared_ptr<UiPlane> element : this->uiElements)
 		{
 			
 			//<<"TeeeeeeeeL :"<<scaleFactor<<std::endl;
@@ -304,12 +304,12 @@ public:
 		keycallBacks.push_back(cube_key_callback);
 	}
 
-	void addUpdatable(Updatable* updatable)
+	void addUpdatable(std::shared_ptr<Updatable> updatable)
 	{
 		this->updatabels.push_back(updatable);
 	}
 
-	void addUiElement(UiPlane* ui_plane)
+	void addUiElement(std::shared_ptr<UiPlane> ui_plane)
 	{
 		if (this->width > this->height) {
 			ui_plane->scale(Vector3f(this->height / (float)this->width, 1, 1));
@@ -343,9 +343,9 @@ public:
 
 	void initlizeGround()
 	{
-		PolyGrid* polygrid = new PolyGrid(10, 10, 10, 10);
+		std::shared_ptr<PolyGrid> polygrid = std::make_shared<PolyGrid>(10, 10, 10, 10);
 		this->addRenderable(polygrid);
-		polygrid->setMat(new Material(ShaderLib::guideShader));
+		polygrid->setMat(std::make_shared<Material>(ShaderLib::guideShader));
 		polygrid->set_render_mode(GL_LINE);
 		polygrid->init();
 	}
@@ -369,7 +369,7 @@ public:
 		this->mainLoop();
 	}
 
-	void addRenderable(Renderable* object)
+	void addRenderable( std::shared_ptr<Renderable> object)
 	{
 		this->renderables_.push_back(object);
 	}

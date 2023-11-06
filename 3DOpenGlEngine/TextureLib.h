@@ -5,14 +5,14 @@ class TextureLib
 {
 
 public:
-	static Texture* ArialFontTex;
+	static  std::shared_ptr<Texture> ArialFontTex;
 
 
 	static void initTextureLib();
 
 	static void uninnit()
 	{
-		delete ArialFontTex;
+		ArialFontTex = nullptr;
 
 	}
 };

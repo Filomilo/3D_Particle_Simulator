@@ -14,16 +14,16 @@ class Emitter :
     virtual float getNewSize() = 0;
 
 private:
-    float particles_per_second=10;
+    std::shared_ptr<Float> particles_per_second=std::make_shared<Float>(10);
 
-    ParticleSystem* particle_system;
+    std::shared_ptr<ParticleSystem> particle_system;
 
     float timeBuffer=0;
   
     int calculatePartceToCreate(float time_elpased)
     {
         timeBuffer += time_elpased;
-        float seconddivcision = 1.0 / particles_per_second;
+        float seconddivcision = 1.0 / particles_per_second->x;
         int amtTocreate = floor(timeBuffer / seconddivcision);
         timeBuffer -= seconddivcision * amtTocreate;
         return amtTocreate;
@@ -90,28 +90,28 @@ public:
 
     unsigned get_particles_per_second() const
     {
-	    return particles_per_second;
+	    return particles_per_second->x;
     }
 
     void set_particles_per_second(unsigned particles_per_second)
     {
-	    this->particles_per_second = particles_per_second;
+	    this->particles_per_second->x = particles_per_second;
     }
 
-    ParticleSystem* get_particle_system() const
+    std::shared_ptr<ParticleSystem> get_particle_system() const
     {
 	    return particle_system;
     }
 
-    void set_particle_system(ParticleSystem* particle_system)
+    void set_particle_system(std::shared_ptr<ParticleSystem> particle_system)
     {
 	    this->particle_system = particle_system;
     }
 
-    UiParameterGroup* getParameterGroup() override
+    std::shared_ptr<UiParameterGroup> getParameterGroup() override
     {
-        UiParameterGroup* ui_parameter_group = new UiParameterGroup("Gravity");
-        ui_parameter_group->addParameter(new UiParameter("paritcles_per_Second", &this->particles_per_second, 1));
+        std::shared_ptr<UiParameterGroup> ui_parameter_group = std::make_shared<UiParameterGroup>("Gravity");
+        ui_parameter_group->addParameter(std::make_shared <UiParameter>("paritcles_per_Second", this->particles_per_second, 1));
         return ui_parameter_group;
     }
 };

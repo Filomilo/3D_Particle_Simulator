@@ -11,13 +11,13 @@ class Material : public Object
 
 protected:
 	ShaderProgram* shader;
-	std::vector<Texture*> textures;
+	std::vector< std::shared_ptr<Texture>> textures;
 
 
 	virtual void bindTex()
 	{
 		int i = 0;
-		for (Texture* tex : textures)
+		for ( std::shared_ptr<Texture> tex : textures)
 		{
 			glActiveTexture(GL_TEXTURE0 + i);
 			tex->bind();
@@ -27,7 +27,7 @@ protected:
 	void unBindTex()
 	{
 		int i = 0;
-		for (Texture* tex : textures)
+		for ( std::shared_ptr<Texture> tex : textures)
 		{
 			glActiveTexture(GL_TEXTURE0 + i);
 			Texture::unbind();
@@ -45,7 +45,7 @@ public:
 		}
 	}
 
-	void addTex(std::string name,Texture* tex)
+	void addTex(std::string name, std::shared_ptr<Texture> tex)
 	{
 		shader->use();
 		shader->setInt("colorTexture", textures.size());

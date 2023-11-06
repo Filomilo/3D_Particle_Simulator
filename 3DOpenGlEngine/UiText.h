@@ -7,7 +7,7 @@
 class UiText :
     public UiPlane
 {
-    FontTexture* font;
+	 std::shared_ptr<FontTexture> font;
     Vector2f offset = Vector2f(0,0);
     float fontSize = 12;
     const float ScaleFactor = 8;
@@ -55,8 +55,8 @@ class UiText :
         }
 
         Vector2f leftBounderyPos, rigtBounderyPos, Offset;
-        Float advance;
-        font->getChar(letter, &leftBounderyPos, &rigtBounderyPos, &Offset, &advance);
+        std::shared_ptr<Float> advance = std::make_shared<Float>();
+        font->getChar(letter, &leftBounderyPos, &rigtBounderyPos, &Offset, advance);
     //    std::cout << "leftBounderyPos: " << leftBounderyPos << std::endl;;
       //  std::cout << "rigtBounderyPos: " << rigtBounderyPos << std::endl;;
   //      std::cout << "Offset: " << leftBounderyPos << std::endl;;
@@ -101,10 +101,10 @@ class UiText :
     void setScaleData()
     {
         Vector2f leftBounderyPos, rigtBounderyPos, Offset;
-        Float advance;
+        std::shared_ptr<Float> advance=std::make_shared<Float>();
 
  
-        font->getChar('A', &leftBounderyPos, &rigtBounderyPos, &Offset, &advance);
+        font->getChar('A', &leftBounderyPos, &rigtBounderyPos, &Offset, advance);
         float letterWidtt = rigtBounderyPos.x - leftBounderyPos.x;
         float letterHeight = rigtBounderyPos.y - leftBounderyPos.y;
 
@@ -132,9 +132,9 @@ public:
 
     UiText(std::string text,float fontSize=1): UiPlane(nullptr)
     {
-        setMat(new Material(ShaderLib::UiShader));
+        setMat(std::make_shared<Material>(ShaderLib::UiShader));
         this->fontSize = fontSize;
-        font =(FontTexture*) TextureLib::ArialFontTex;
+        font =std::static_pointer_cast<FontTexture>(TextureLib::ArialFontTex);
         this->mat->addTex("ColorTexture",font);
         set_usage(GL_DYNAMIC_DRAW);
 //        set_render_mode(GL_LINE);

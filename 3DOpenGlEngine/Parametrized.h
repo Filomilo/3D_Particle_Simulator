@@ -4,6 +4,6 @@
 class Parametrized
 {
 public:
-	virtual UiParameterGroup* getParameterGroup()=0;
+	virtual std::shared_ptr<UiParameterGroup> getParameterGroup()=0;
 };
 

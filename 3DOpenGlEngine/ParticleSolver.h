@@ -14,14 +14,14 @@ class ParticleSolver:
 public Updatable
 {
 private:
-	ParticleSystem* particle_system_;
-	std::list<Force*> forces;
+	std::shared_ptr<ParticleSystem> particle_system_;
+	std::list<std::shared_ptr<Force>> forces;
 
-	void updatePos(Point* pt, float timeElpased);
+	void updatePos(std::shared_ptr<Point> pt, float timeElpased);
 
-	void applyForces(Point* pt, float timeElpased)
+	void applyForces(std::shared_ptr<Point> pt, float timeElpased)
 	{
-		for (Force* force: forces)
+		for (std::shared_ptr<Force> force: forces)
 		{
 			force->affect(pt, timeElpased);
 		}
@@ -31,37 +31,37 @@ private:
 	float groundLevel = 0;
 
 
-	void applyGround(Point* pt)
+	void applyGround(std::shared_ptr<Point> pt)
 	{
-		Vector3f* pos = (Vector3f*)pt->getAttribute("P");
+		 std::shared_ptr<Vector3f> pos = std::dynamic_pointer_cast<Vector3f>(pt->getAttribute("P"));
 		if(pos->y<=groundLevel)
 		{
 			pos->y = groundLevel;
-			Vector3f* vel = (Vector3f*)pt->getAttribute("V");
-			Float* bounce=(Float*)pt->getAttribute("bounce");
+			 std::shared_ptr<Vector3f> vel = std::dynamic_pointer_cast<Vector3f>(pt->getAttribute("V"));
+			std::shared_ptr<Float> bounce= std::dynamic_pointer_cast<Float>(pt->getAttribute("bounce"));
 			vel->y *= -1 * bounce->x;
 		}
 	}
 
 
-	bool applyDecay(std::vector<Point*>::iterator pt, float timeElpased);
+	bool applyDecay(std::vector<std::shared_ptr<Point>>::iterator pt, float timeElpased);
 
 public:
 	void update(float timeElpased) override;
 
 
-	ParticleSystem* get_particle_system() const
+	std::shared_ptr<ParticleSystem> get_particle_system() const
 	{
 		return particle_system_;
 	}
 
-	void set_particle_system(ParticleSystem* particle_system)
+	void set_particle_system(std::shared_ptr<ParticleSystem> particle_system)
 	{
 		particle_system_ = particle_system;
 	}
 
 
-	void addForce(Force* force)
+	void addForce(std::shared_ptr<Force> force)
 	{
 		this->forces.push_back(force);
 	}

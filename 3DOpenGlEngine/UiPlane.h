@@ -19,13 +19,13 @@ public:
 		this->addVertex(3, { 0.000000, 1.000000, 0.000000 }, { 0.0, 1.0 });
 
 		this->addFace({ 0,1,2,3 });
-		setMat(new Material(ShaderLib::UiShader));
+		setMat(std::make_shared<Material>(ShaderLib::UiShader));
 		//set_render_mode(GL_LINES);
 		init();
 		
     }
 
-	void setTex(Texture* tex)
+	void setTex( std::shared_ptr<Texture> tex)
     {
 		this->mat->addTex("color", tex);
     }

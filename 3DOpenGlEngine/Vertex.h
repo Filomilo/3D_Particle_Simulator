@@ -17,22 +17,23 @@ public:
 
     Vertex(int pointNUm, Vector3f normals) : Vertex(pointNUm)
     {
-        this->setAttribute("N", new Vector3f(normals.x, normals.y, normals.z));
+        this->setAttribute("N", std::make_shared<Vector3f>(normals.x, normals.y, normals.z));
     }
 
-    Vertex(int pointNUm, Vector3f* normals) : Vertex(pointNUm)
+    Vertex(int pointNUm,std::shared_ptr< Vector3f> normals) : Vertex(pointNUm)
     {
         this->setAttribute("N", normals);
     }
 
-    Vertex(int pointNUm, Vector3f* normals, Vector3f* uv) : Vertex(pointNUm, normals)
+    Vertex(int pointNUm,std::shared_ptr< Vector3f> normals,std::shared_ptr< Vector3f> uv) : Vertex(pointNUm, normals)
     {
         this->setAttribute("Uv", normals);
     }
 
     Vertex(int pointNUm, Vector3f normals, Vector2f Uvs) : Vertex(pointNUm, normals)
     {
-        this->setAttribute("Uv", new Vector2f(Uvs.x, Uvs.y));
+        this->setAttribute("Uv", std::make_shared<Vector2f>(Uvs.x, Uvs.y));
+
     }
 
 };

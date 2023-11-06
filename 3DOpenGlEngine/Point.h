@@ -12,18 +12,18 @@ class Point :
 
     Point(float x=0, float y=0, float z=0) : Object()
     {
-        Vector3f* pos= new Vector3f(x, y, z);
+        std::shared_ptr<Vector3f> pos= std::make_shared<Vector3f>(x, y, z);
         this->setAttribute("P",pos);
     }
 
     Point(Vector3f pos) : Object()
     {
-        this->setAttribute("P", new Vector3f(pos));
+        this->setAttribute("P", std::make_shared<Vector3f>(pos));
     }
 
      Point(std::initializer_list<float> initializers): Object()
     {
-        Vector3f* pos=new Vector3f;
+       std::shared_ptr<Vector3f> pos=std::make_shared<Vector3f>();
         int i = 0;
 	    for (float posVal: initializers)
 	    {
@@ -34,49 +34,49 @@ class Point :
 
     void setColor(float r,float g, float b)
     {
-        Vector3f* cd = new Vector3f(r,g,b);
+       std::shared_ptr< Vector3f> cd = std::make_shared<Vector3f>(r,g,b);
         this->setAttribute("Cd", cd);
     }
 
     void setPscale(float size)
     {
-        Float* pscale = new Float(size);
+        std::shared_ptr<Float> pscale = std::make_shared<Float>(size);
         this->setAttribute("pscale", pscale);
     }
 
     void setVelocity(float x, float y, float z)
     {
-        Vector3f* V = new Vector3f(x,y,z);
+       std::shared_ptr< Vector3f> V = std::make_shared<Vector3f>(x,y,z);
         this->setAttribute("V", V);
     }
 
     void setMass(float mass)
     {
-        Float* Mass = new Float(mass);
+        std::shared_ptr<Float> Mass = std::make_shared<Float>(mass);
         this->setAttribute("mass", Mass);
     }
 
     void setBounce(float bounce)
     {
-        Float* Bounce = new Float(bounce);
+        std::shared_ptr<Float> Bounce = std::make_shared<Float>(bounce);
         this->setAttribute("bounce", Bounce);
     }
 
     void setLife(float life)
     {
-        Float* Life = new Float(life);
+        std::shared_ptr<Float> Life = std::make_shared<Float>(life);
         this->setAttribute("life", Life);
     }
     void setAge(float age)
     {
-        Float* Age = new Float(age);
+        std::shared_ptr<Float> Age = std::make_shared<Float>(age);
         this->setAttribute("age", Age);
     }
 
 
     void increaseAge(float amount)
     {
-        Float* Age = (Float*)getAttribute("age");
+        std::shared_ptr<Float> Age = std::dynamic_pointer_cast<Float>(getAttribute("age"));
         this->setAge(Age->x + amount);
     }
 

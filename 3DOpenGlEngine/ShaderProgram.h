@@ -35,7 +35,7 @@ public:
 	void setBool(const std::string& name, bool val);
 	void setInt(const std::string& name, int val);
 	void setFloat(const std::string& name, float val);
-	void setArray(const std::string& name, int size, float* pointer);
+	void setArray(const std::string& name, int size, GLfloat* pointer);
 	void unuse();
 	void setVector3f(const std::string& name, const Vector3f& vector3_f);
 	void setMatrix4(const std::string& name, const glm::mat4& mat4);

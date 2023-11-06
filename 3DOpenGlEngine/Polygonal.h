@@ -26,26 +26,26 @@ private:
 
 
 
-	std::vector<Vertex*> vertices;
+	std::vector<std::shared_ptr<Vertex>> vertices;
 	std::vector<Face*> faces;
 
 
 
-	float* getVertexBuffer() override
+	GLfloat* getVertexBuffer() override
 	{
-		float* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
+		GLfloat* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
 
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		int vertIndex = 0;
 		//std::cout << "VErtxBuffer::" << std::endl;
-		for (Vertex* vertex: this->vertices)
+		for (std::shared_ptr<Vertex> vertex: this->vertices)
 		{
 			for (std::string attribName : attributeList)
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
-				Vector4f* attribVal =(Vector4f*) this->getVertexAttrib(vertIndex,attribName);
+				std::shared_ptr<Vector4f> attribVal =std::static_pointer_cast <Vector4f>(this->getVertexAttrib(vertIndex,attribName));
 				for(int i=0;i< attribType;i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
@@ -108,11 +108,11 @@ private:
 
 
 
-	Attribute* getVertexAttrib(int num, std::string attrib) override
+	std::shared_ptr<Attribute> getVertexAttrib(int num, std::string attrib) override
 	{
-		Vertex* vertex = this->vertices.at(num);
+		std::shared_ptr<Vertex> vertex = this->vertices.at(num);
 		if (!vertex->isThereAttrib(attrib)) {
-			Point* pt = this->points.at(vertex->pointIndex);
+			std::shared_ptr<Point> pt = this->points.at(vertex->pointIndex);
 			return pt->getAttribute(attrib);
 		}
 		return vertex->getAttribute(attrib);
@@ -140,20 +140,20 @@ public:
 
 	void addVertex(int ptnum)
 	{
-		Vertex* vertex = new Vertex(ptnum);
+		std::shared_ptr<Vertex> vertex = std::make_shared<Vertex>(ptnum);
 		this->vertices.push_back(vertex);
 	}
 
 	void addVertex(int ptnum, Vector3f normals)
 	{
-		Vertex* vertex = new Vertex(ptnum, normals);
+		std::shared_ptr<Vertex> vertex = std::make_shared<Vertex>(ptnum, normals);
 		this->vertices.push_back(vertex);
 	}
 
 
 	void addVertex(int ptnum, Vector3f normals, Vector2f Uvs)
 	{
-		Vertex* vertex = new Vertex(ptnum, normals, Uvs);
+		std::shared_ptr<Vertex> vertex = std::make_shared<Vertex>(ptnum, normals, Uvs);
 		this->vertices.push_back(vertex);
 	}
 
@@ -234,16 +234,11 @@ public:
 	void cleanGeo() override
 	{
 		PointGroup::cleanGeo();
-		for(Vertex* element: vertices)
-		{
-			delete element;
-		}
+
+
 		vertices.clear();
 
-		for (Face* element : faces)
-		{
-			delete element;
-		}
+
 		faces.clear();
 	}
 

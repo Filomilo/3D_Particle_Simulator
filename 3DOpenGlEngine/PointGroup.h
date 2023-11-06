@@ -5,11 +5,11 @@ class PointGroup :
     public GlObject
 {
 protected:
-    std::vector<Point*> points;
+    std::vector<std::shared_ptr<Point>> points;
 
-	Attribute* getVertexAttrib(int num, std::string attrib) override
+	std::shared_ptr<Attribute> getVertexAttrib(int num, std::string attrib) override
 	{
-		Point* pt = this->points.at(num);
+		std::shared_ptr<Point> pt = this->points.at(num);
 		if (!pt->isThereAttrib(attrib)) {
 			return pt->getAttribute(attrib);
 		}
@@ -21,20 +21,20 @@ protected:
 		return points.size();
 	}
 
-	float* getVertexBuffer() override
+	GLfloat* getVertexBuffer() override
 	{
-		float* arrayVbo = new float[this->getVerteciesAmount() * this->getVertexSize()];
+		GLfloat* arrayVbo = new float[this->getVerteciesAmount() * this->getVertexSize()];
 
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		int vertIndex = 0;
-		for (Point* vertex : this->points)
+		for (std::shared_ptr<Point> vertex : this->points)
 		{
 			for (std::string attribName : attributeList)
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
-				Vector4f* attribVal = (Vector4f*)this->getVertexAttrib(vertIndex, attribName);
+				std::shared_ptr<Vector4f> attribVal = std::static_pointer_cast <Vector4f>(this->getVertexAttrib(vertIndex, attribName));
 
 				for (int i = 0; i < attribType; i++)
 				{
@@ -60,30 +60,30 @@ public:
     {}
 
 
-	void addPoint(Point* x)
+	void addPoint(std::shared_ptr<Point> x)
 	{
 		this->points.push_back(x);
 	}
 	void addPoint(Point pt)
 	{
-		Vector3f* Pos = (Vector3f*)pt.getAttribute("P");
-		Point* point = new Point(Pos->x, Pos->y, Pos->z);
+		 std::shared_ptr<Vector3f> Pos = std::dynamic_pointer_cast <Vector3f>(pt.getAttribute("P"));
+		std::shared_ptr<Point> point = std::make_shared<Point>(Pos->x, Pos->y, Pos->z);
 
 		this->addPoint(point);
 	}
 	void addPoint(Vector3f pos)
 	{
-		this->addPoint(new Point(pos));
+		this->addPoint(std::make_shared<Point>(pos));
 	}
 
 
 	void addPoint(float x, float y, float z)
 	{
-		this->addPoint(new Point(x, y, z));
+		this->addPoint(std::make_shared<Point>(x, y, z));
 	}
 	void addPoint(std::initializer_list<float> coordinates)
 	{
-		Point* pt = new Point(coordinates);
+		std::shared_ptr<Point> pt = std::make_shared<Point>(coordinates);
 		this->addPoint(pt);
 	}
 	void addPoints(std::initializer_list<std::initializer_list<float> > coordinates)
@@ -97,14 +97,11 @@ public:
 
 	virtual void addPoint(float x, float y, float z, float r, float g, float b, float pscale=1)
     {
-		addPoint(new Point(x, y, z, r, g, b, pscale));
+		addPoint(std::make_shared<Point>(x, y, z, r, g, b, pscale));
     }
 
 	virtual void cleanGeo()
     {
-		for (Point* point : points) {
-			delete point;
-		}
 
 		points.clear();
     }

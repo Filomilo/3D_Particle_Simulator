@@ -17,7 +17,7 @@ public:
 
 
     FontTexture(std::string fontFileName, std::string destinationTex);
-    void getChar(char letter, Vector2f* upperLeftPostion, Vector2f* rightDoownPostiion, Vector2f* offset, Float* advance);
+    void getChar(char letter, Vector2f* upperLeftPostion, Vector2f* rightDoownPostiion, Vector2f* offset, std::shared_ptr<Float> advance);
 
 };
 

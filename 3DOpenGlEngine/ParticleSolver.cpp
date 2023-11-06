@@ -4,10 +4,10 @@
 #include "Float.h"
 
 
-void ParticleSolver::updatePos(Point* pt, float timeElpased)
+void ParticleSolver::updatePos(std::shared_ptr<Point> pt, float timeElpased)
 {
-	Vector3f* pos = (Vector3f*)pt->getAttribute("P");
-	Vector3f* V = (Vector3f*)pt->getAttribute("V");
+	 std::shared_ptr<Vector3f> pos = std::dynamic_pointer_cast <Vector3f>(pt->getAttribute("P"));
+	 std::shared_ptr<Vector3f> V = std::dynamic_pointer_cast <Vector3f>(pt->getAttribute("V"));
 	pos->x += V->x* timeElpased;
 	pos->y += V->y * timeElpased;
 	pos->z += V->z * timeElpased;
@@ -16,7 +16,7 @@ void ParticleSolver::updatePos(Point* pt, float timeElpased)
 	void ParticleSolver::update(float timeElpased) 
 	{
 		int ptNum = 0;
-		for (std::vector<Point*>::iterator  pt = this->particle_system_->points.begin(); pt != this->particle_system_->points.end(); ) 
+		for (std::vector<std::shared_ptr<Point>>::iterator  pt = this->particle_system_->points.begin(); pt != this->particle_system_->points.end(); ) 
 		{
 				if (applyDecay(pt, timeElpased))
 					break;
@@ -29,11 +29,11 @@ void ParticleSolver::updatePos(Point* pt, float timeElpased)
 	}
 
 
-	bool ParticleSolver::applyDecay(std::vector<Point*>::iterator pt, float timeElpased)
+	bool ParticleSolver::applyDecay(std::vector<std::shared_ptr<Point>>::iterator pt, float timeElpased)
 	{
 		(*pt)->increaseAge(timeElpased);
-		Float* age = (Float*)(*pt)->getAttribute("age");
-		Float* life = (Float*)(*pt)->getAttribute("life");
+		std::shared_ptr<Float> age = std::dynamic_pointer_cast <Float>((*pt)->getAttribute("age"));
+		std::shared_ptr<Float> life = std::dynamic_pointer_cast <Float>((*pt)->getAttribute("life"));
 		if (life->x < age->x)
 		{
 			this->particle_system_->points.erase(pt);

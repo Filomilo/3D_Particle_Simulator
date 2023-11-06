@@ -2,14 +2,16 @@
 #include <ostream>
 #include <string>
 
+#include "Float.h"
+
 class UiParameter
 {
 	std::string name;
-	float* parametertoChange;
+	std::shared_ptr<Float> parametertoChange;
 	float paremeterChangeStep;
 
 public:
-	UiParameter(const std::string& name, float* parameterto_change, float paremeter_change_step)
+	UiParameter(const std::string& name, std::shared_ptr<Float> parameterto_change, float paremeter_change_step)
 		: name(name),
 		  parametertoChange(parameterto_change),
 		  paremeterChangeStep(paremeter_change_step)
@@ -18,12 +20,12 @@ public:
 
 	void increaseVal()
 	{
-		*parametertoChange += paremeterChangeStep;
+		*parametertoChange = *parametertoChange+ paremeterChangeStep;
 	}
 
 	void decreaseVal()
 	{
-		*parametertoChange -= paremeterChangeStep;
+		*parametertoChange = *parametertoChange- paremeterChangeStep;
 	}
 
 	friend std::ostream& operator<<(std::ostream& os,  UiParameter& obj)
@@ -38,7 +40,7 @@ public:
 
 	float getVal()
 	{
-		return *parametertoChange;
+		return parametertoChange->x;
 	}
 
 

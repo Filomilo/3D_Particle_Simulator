@@ -12,7 +12,7 @@ class UiSystem : public Updatable, public UiText
 private:
 
 
-	std::vector<UiParameterGroup*> groups;
+	std::vector<std::shared_ptr<UiParameterGroup>> groups;
 
 	int activegroup=0;
 
@@ -27,7 +27,7 @@ private:
 		std::stringstream stream;
 		stream << groups.at(activegroup)->get_name() << ": "<<"\n\n";
 		int i=0;
-		for(UiParameter* param : groups.at(activegroup)->getParamters())
+		for(std::shared_ptr<UiParameter> param : groups.at(activegroup)->getParamters())
 		{
 			if(groups.at(activegroup)->getSelected() == i)
 			{
@@ -48,7 +48,7 @@ public:
 	{
 	}
 
-	void addParameterGroup( UiParameterGroup* ui_parameter_group)
+	void addParameterGroup( std::shared_ptr<UiParameterGroup> ui_parameter_group)
 	{
 		groups.push_back(ui_parameter_group);
 		updateGroupText();

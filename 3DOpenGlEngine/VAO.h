@@ -14,13 +14,13 @@ public:
 		GLenum error = glGetError();
 		}
 
-	void linkAttrib(VBO* VBO, GLuint layout, GLuint nmOFElements, GLenum type, GLsizeiptr stride, int offset)
+	void linkAttrib(std::shared_ptr<VBO> vbo, GLuint layout, GLuint nmOFElements, GLenum type, GLsizeiptr stride, int offset)
 	{
-		VBO->bind();
+		vbo->bind();
 		glVertexAttribPointer(layout, nmOFElements, type, GL_FALSE, stride, (void*)offset);
 		//std::cout << "glVertexAttribPointer(" << layout << ", " << nmOFElements << ", " << type << ", " << " GL_FALSE" << ", " << stride << ", " << offset << ")\n";
 		glEnableVertexAttribArray(layout);
-		VBO->unbind();
+		vbo->unbind();
 	}
 
 	void bind()

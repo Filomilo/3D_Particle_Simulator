@@ -59,7 +59,7 @@ FontTexture::FontTexture(std::string fontFileName, std::string destinationTex)
     genFontTex(fontFileName, destinationTex);
 }
 
-void FontTexture::getChar(char letter, Vector2f* upperLeftPostion, Vector2f* rightDoownPostiion, Vector2f* offset, Float* advance)
+void FontTexture::getChar(char letter, Vector2f* upperLeftPostion, Vector2f* rightDoownPostiion, Vector2f* offset, std::shared_ptr<Float> advance)
 {
     stbtt_bakedchar info = ((stbtt_bakedchar*)this->charData)[letter - charBeigin];
     upperLeftPostion->x = info.x0;

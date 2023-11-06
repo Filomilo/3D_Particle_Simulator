@@ -19,12 +19,13 @@ private:
     void setLightPos()
     {
         light_data.lightTypeData[lightNum].position = getFullPositon();
+        
     }
-
+    
 public:
     PointLight(): Light(), Cube(1)
     {
-        this->setMat(new Material(ShaderLib::guideShader));
+        this->setMat(std::make_shared<Material>(ShaderLib::guideShader));
         init();
 
         setLightType(POINYLIGHT);

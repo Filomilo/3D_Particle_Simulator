@@ -1,11 +1,11 @@
 #include "TextureLib.h"
 #include "FontTexture.h"
- Texture* TextureLib::ArialFontTex=nullptr;
+  std::shared_ptr<Texture> TextureLib::ArialFontTex=nullptr;
 
 
 void TextureLib::initTextureLib()
 {
 	
-	TextureLib::ArialFontTex = new FontTexture("Assets/arial.ttf", "Assets/arial.png");
+	TextureLib::ArialFontTex = std::make_shared<FontTexture>("Assets/arial.ttf", "Assets/arial.png");
 
 }

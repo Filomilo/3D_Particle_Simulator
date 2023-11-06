@@ -105,7 +105,7 @@ void ShaderProgram::setFloat(const std::string& name, float val)
 
 
 
-void ShaderProgram::setArray(const std::string& name, int size, float* pointer)
+void ShaderProgram::setArray(const std::string& name, int size, GLfloat* pointer)
 {
 	this->use();
 

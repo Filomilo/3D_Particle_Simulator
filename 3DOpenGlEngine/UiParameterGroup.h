@@ -9,7 +9,7 @@ private:
 	std::string name;
 
 
-	std::vector<UiParameter*> parameters_;
+	std::vector<std::shared_ptr<UiParameter>> parameters_;
 
 	int selectedParamater = 0;
 
@@ -50,7 +50,7 @@ public:
 		parameters_[selectedParamater]->decreaseVal();
 	}
 
-	void addParameter(UiParameter* ui_parameter)
+	void addParameter(std::shared_ptr<UiParameter> ui_parameter)
 	{
 		parameters_.push_back(ui_parameter);
 	}
@@ -58,7 +58,7 @@ public:
 	{
 		 os << "name: " << obj.name<<": \n";
 		int i = 0;
-		for (UiParameter* element : obj.parameters_)
+		for (std::shared_ptr<UiParameter> element : obj.parameters_)
 		{
 			if (obj.selectedParamater == i)
 				os << "Selected: ";
@@ -69,7 +69,7 @@ public:
 		return  os;
 	}
 
-	std::vector<UiParameter*> getParamters()
+	std::vector<std::shared_ptr<UiParameter>> getParamters()
 	{
 		return parameters_;
 	}
