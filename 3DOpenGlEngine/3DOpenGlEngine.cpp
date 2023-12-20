@@ -131,7 +131,7 @@ void addCube(_3DEngine* engine)
 
 
 
-    cube = std::make_shared<Cube>(5);
+    cube = std::make_shared<Cube>(0.5);
     cube->setMat(cubeMat);
     cube->init();
     cube->moveY(2.501);
@@ -264,8 +264,8 @@ void SimulationTest()
     engine->iniit(800, 600);
     addCube(engine);
 
-    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>();
-
+    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>(cube);
+    
 
     std::shared_ptr < BoxEmitter> box_emitter = std::make_shared<BoxEmitter>(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
     box_emitter->set_particle_system(particle_system);

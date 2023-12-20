@@ -68,6 +68,13 @@ public:
 		instanceGeo->iniitEBO();
 	}
 
+	void updateVboInstanced()
+	{
+		this->updateVboUNiversal(this->getVertexBufferForMat(this->mat), this->getVerteciesAmount(), this->getVertexSizeForMat(this->mat),this->usage, this->instancesVBO, this->vao);
+
+	
+		
+	}
 
 
 

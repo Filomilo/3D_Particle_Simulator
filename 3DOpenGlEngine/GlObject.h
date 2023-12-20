@@ -71,26 +71,23 @@ protected:
 
 	void iniitVbo()
 	{
-		GLfloat* vertexBuffer = this->getVertexBuffer();
-		int verteciesAmt = this->getVerteciesAmount();
-		int vertexSize = this->getVertexSize();
 
 
 		iniitVboUniversal(this->getVertexBuffer(), this->getVerteciesAmount(), this->getVertexSize(), this->vbo,this->vao);
 
 	}
+	void updateVboUNiversal(GLfloat* vertexBuffer, int verteciesAmt, int vertexSize,long usage, std::shared_ptr<VBO>& vbo, std::shared_ptr<VAO>& vao)
+	{
+		vbo->bind();
+		vbo->update(vertexBuffer, verteciesAmt * vertexSize * sizeof(float), usage);;
+		vbo->unbind();
+		delete[] vertexBuffer;
+	}
 
 	void updateVbo()
 	{
 		GLfloat* vertexBuffer = this->getVertexBuffer();
-		int verteciesAmt = this->getVerteciesAmount();
-		int vertexSize = this->getVertexSize();
-
-
-		vbo->bind();
-		this->vbo ->update(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
-		vbo->unbind();
-		delete[] vertexBuffer;
+		updateVboUNiversal(vertexBuffer, this->getVerteciesAmount(), this->getVertexSize(), usage, this->vbo,this->vao);
 	}
 
 	void iniitVao()

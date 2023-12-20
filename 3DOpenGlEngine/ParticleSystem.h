@@ -1,11 +1,12 @@
 #pragma once
 #include "ParticleSolver.h"
 #include "PointGroup.h"
+#include "PointGroupInstanced.h"
 #include "ShaderLib.h"
 #include "Updatable.h"
 
 class ParticleSystem :
-    public PointGroup,
+    public PointGroupInstanced,
 	public Updatable
 {
 private:
@@ -16,11 +17,15 @@ private:
 public:
 
 	friend ParticleSolver;
-
-	ParticleSystem(): PointGroup()
+	ParticleSystem(): PointGroupInstanced()
 	{
+	}
+
+	ParticleSystem(std::shared_ptr<Polygonal> instance): PointGroupInstanced()
+	{
+		setInstanceGeo(instance);
 		set_usage(GL_DYNAMIC_DRAW);
-		setMat(std::make_shared<Material> (ShaderLib::particleShader));
+		setMat(std::make_shared<Material> (ShaderLib::particleShaderInstanced));
 		init();
 	}
 
@@ -52,7 +57,7 @@ public:
 			(float)rand() / RAND_MAX * 50
 		);
 		*/
-		updateVbo();
+		updateVboInstanced();
 	}
 
 	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=1.0, float life=10)
