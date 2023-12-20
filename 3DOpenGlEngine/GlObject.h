@@ -9,6 +9,8 @@ class GlObject :
 	public Transformable
 {
 protected:
+
+	
 	std::unique_ptr<VAO> vao;
 	std::shared_ptr<VBO> vbo;
 	std::shared_ptr<Material> mat;
@@ -97,7 +99,7 @@ protected:
 			Attribute::Types type = attributesMap[name];
 			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
 			glEnableVertexAttribArray(i);
-			//std::cout << "glEnableVertexAttribArray(" << i << ")\n";
+			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
 			i++;
 			offset += type * sizeof(float);
 		}
@@ -127,6 +129,8 @@ protected:
 		mat->unapply();
 	}
 public:
+
+	friend class PointGroupInstanced;
 	GlObject() : Transformable()
 	{
 			this->vao = std::make_unique<VAO>() ;
