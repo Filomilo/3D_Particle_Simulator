@@ -16,12 +16,14 @@
 #include "VAO.h"
 #include "Vector4f.h"
 
+
+
 class Polygonal :
     public PointGroup
 {
 private:
 
-
+	friend class PointGroupInstanced;
 	EBO* ebo;
 
 
@@ -65,16 +67,7 @@ private:
 	{
 		return vertices.size();
 	}
-	int getTringlePointCount()
-	{
-		int numbers = 0;
-		for (Face* fc : this->faces)
-		{
-			numbers += 3 * (fc->get_vertex_indecies().size() - 2);
-			//std::cout << "numbers:: " << numbers << std::endl;
-		}
-		return numbers;
-	}
+
 
 
 	unsigned int* getIndeciesArray()
@@ -275,6 +268,17 @@ protected:
 
 		delete[] indeciesBuffer;
 	}
+	public:
+		int getTringlePointCount()
+		{
+			int numbers = 0;
+			for (Face* fc : this->faces)
+			{
+				numbers += 3 * (fc->get_vertex_indecies().size() - 2);
+				//std::cout << "numbers:: " << numbers << std::endl;
+			}
+			return numbers;
+		}
 
 };
 

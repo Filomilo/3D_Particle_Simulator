@@ -60,5 +60,10 @@ public:
 	{
 		return os << *obj.groups[obj.activegroup];
 	}
+
+	void reset()
+	{
+
+	}
 };
 

@@ -15,6 +15,8 @@
 #include "UiPlane.h"
 #include "UiSystem.h"
 #include "Keyboard.h"
+#include <time.h>
+
 class _3DEngine
 {
 
@@ -28,6 +30,7 @@ private:
 	int width;
 	int height;
 	Mouse* mouse=new Mouse();
+	bool isSimulationActive = false;
 
 	unsigned long int timeElapesed;
 	unsigned long int timerunning;
@@ -35,6 +38,7 @@ private:
 	std::list<std::shared_ptr<Renderable> > renderables_;
 	std::list<ShaderProgram*> shaders;
 	std::list<std::shared_ptr<Updatable>> updatabels;
+	std::list<std::shared_ptr<Simulatable>> simulatables;
 	std::list<std::shared_ptr<UiPlane>> uiElements;
 	Keyboard* keyboard=new Keyboard;
 	std::list<void(*)(_3DEngine* engine)> updateFunctions;
@@ -131,6 +135,7 @@ private:
 		this->addShader(ShaderLib::phongShader);
 		this->addShader(ShaderLib::guideShader);
 		this->addShader(ShaderLib::particleShader);
+		this->addShader(ShaderLib::particleShaderInstanced);
 	}
 
 	void initilizeGlad()
@@ -143,7 +148,6 @@ private:
 		glEnable(GL_VERTEX_PROGRAM_POINT_SIZE);
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 	}
 
 
@@ -395,5 +399,28 @@ public:
 	{
 		return _3DEngine::getInstance()->keyboard;
 	}
-};
 
+	bool getIsSimulationActive() {
+		return isSimulationActive;
+	}
+
+	void inverseSimulationActive() {
+		isSimulationActive = !isSimulationActive;
+		std::cout << isSimulationActive << std::endl;
+	}
+
+	void clearSimulation()
+	{
+		for (std::shared_ptr<Simulatable> simulatable : simulatables)
+		{
+			simulatable->reset();
+		}
+	}
+
+	void addSimulatable(std::shared_ptr<Simulatable> element)
+	{
+		addUpdatable(element);
+	  this->simulatables.push_back(element);
+	}
+
+};

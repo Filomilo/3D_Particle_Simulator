@@ -23,6 +23,16 @@ public:
 		vbo->unbind();
 	}
 
+
+	void linkAttrib(GLuint vbo, GLuint layout, GLuint nmOFElements, GLenum type, GLsizeiptr stride, int offset)
+	{
+		glBindBuffer(GL_ARRAY_BUFFER,vbo);
+		glVertexAttribPointer(layout, nmOFElements, type, GL_FALSE, stride, (void*)offset);
+		//std::cout << "glVertexAttribPointer(" << layout << ", " << nmOFElements << ", " << type << ", " << " GL_FALSE" << ", " << stride << ", " << offset << ")\n";
+		glEnableVertexAttribArray(layout);
+		glBindBuffer(GL_ARRAY_BUFFER,0);
+	}
+
 	void bind()
 	{
 		glBindVertexArray(ID);

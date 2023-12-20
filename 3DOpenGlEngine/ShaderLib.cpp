@@ -5,6 +5,7 @@ ShaderProgram* ShaderLib::phongShader = nullptr;
 ShaderProgram* ShaderLib::guideShader = nullptr;
 ShaderProgram* ShaderLib::particleShader = nullptr;
 ShaderProgram* ShaderLib::UiShader = nullptr;
+ShaderProgram* ShaderLib::particleShaderInstanced = nullptr;
 
 void ShaderLib::iniitShaderLib()
 {
@@ -27,6 +28,9 @@ void ShaderLib::iniitShaderLib()
 	ShaderLib::UiShader = new ShaderProgram("UiVertexShader.vert", "UiFragmentShader.frag");
 	ShaderLib::UiShader->addAttribute("Uv", Attribute::VECTOR2F);
 	ShaderLib::UiShader->setInt("colorTexture", 0);
+
+
+	ShaderLib::particleShaderInstanced= new ShaderProgram("particleInstnacedVertexShader.vert", "particleInstnacedFragmentShader.frag");
 
 }
 

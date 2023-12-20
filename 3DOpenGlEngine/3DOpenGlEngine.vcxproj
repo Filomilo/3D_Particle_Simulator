@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{81194262-fb8e-4294-981f-a32c5aae1011}</ProjectGuid>
     <RootNamespace>My3DOpenGlEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -163,12 +163,14 @@
     <ClCompile Include="PhongMat.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="PointGroup.cpp" />
+    <ClCompile Include="PointGroupInstanced.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Polygonal.cpp" />
     <ClCompile Include="PolyGrid.cpp" />
     <ClCompile Include="Renderable.cpp" />
     <ClCompile Include="ShaderLib.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Simulatable.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureLib.cpp" />
     <ClCompile Include="Transformable.cpp" />
@@ -184,6 +186,7 @@
     <ClCompile Include="Vector3f.cpp" />
     <ClCompile Include="Vector4f.cpp" />
     <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="Vortex.cpp" />
     <ClCompile Include="_3DEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +212,8 @@
     <ClInclude Include="Noise.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Parametrized.h" />
+    <ClInclude Include="PointGroupInstanced.h" />
+    <ClInclude Include="Simulatable.h" />
     <ClInclude Include="UiParameter.h" />
     <ClInclude Include="UiParameterGroup.h" />
     <ClInclude Include="ParticleSolver.h" />
@@ -236,6 +241,7 @@
     <ClInclude Include="Vector3f.h" />
     <ClInclude Include="Vector4f.h" />
     <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Vortex.h" />
     <ClInclude Include="_3DEngine.h" />
   </ItemGroup>
   <ItemGroup>

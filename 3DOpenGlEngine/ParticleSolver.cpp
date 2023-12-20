@@ -2,7 +2,7 @@
 #include  "ParticleSystem.h"
 #include "Attribute.h"
 #include "Float.h"
-
+#include "_3DEngine.h"
 
 void ParticleSolver::updatePos(std::shared_ptr<Point> pt, float timeElpased)
 {
@@ -15,16 +15,18 @@ void ParticleSolver::updatePos(std::shared_ptr<Point> pt, float timeElpased)
 
 	void ParticleSolver::update(float timeElpased) 
 	{
-		int ptNum = 0;
-		for (std::vector<std::shared_ptr<Point>>::iterator  pt = this->particle_system_->points.begin(); pt != this->particle_system_->points.end(); ) 
-		{
+		if (_3DEngine::getInstance()->getIsSimulationActive()) {
+			int ptNum = 0;
+			for (std::vector<std::shared_ptr<Point>>::iterator pt = this->particle_system_->points.begin(); pt != this->particle_system_->points.end(); )
+			{
 				if (applyDecay(pt, timeElpased))
 					break;
 
-			updatePos(*pt, timeElpased);
-			applyForces(*pt, timeElpased);
-			applyGround(*pt);
-			++pt;
+				updatePos(*pt, timeElpased);
+				applyForces(*pt, timeElpased);
+				applyGround(*pt);
+				++pt;
+			}
 		}
 	}
 
@@ -40,4 +42,9 @@ void ParticleSolver::updatePos(std::shared_ptr<Point> pt, float timeElpased)
 			return true;
 		}
 		return false;
+	}
+
+	void ParticleSolver::reset()
+	{
+		this->particle_system_->clearPoints();
 	}

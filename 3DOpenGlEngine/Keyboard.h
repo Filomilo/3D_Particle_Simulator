@@ -16,7 +16,8 @@ public:
 	Key arrowUp;
 	Key arrowRight;
 	Key arrowLeft;
-
+	Key space;
+	Key Delete;
 
 	void update(int key, int state)
 	{
@@ -27,6 +28,8 @@ public:
 		case GLFW_KEY_RIGHT: arrowRight.update(state); break;
 		case GLFW_KEY_UP: arrowUp.update(state); break;
 		case GLFW_KEY_DOWN: arrowDown.update(state); break;
+		case GLFW_KEY_SPACE: space.update(state); break;
+		case GLFW_KEY_DELETE: Delete.update(state); break;
 		}
 	}
 
@@ -37,6 +40,8 @@ public:
 		 arrowUp.reset();
 		 arrowRight.reset();
 		 arrowLeft.reset();
+		 space.reset();
+		 Delete.reset();
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const Keyboard& obj)

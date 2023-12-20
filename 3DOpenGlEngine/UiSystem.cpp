@@ -3,32 +3,42 @@
 
 void UiSystem::update(float timeElpased)
 {
+	if (_3DEngine::getKeyBoard()->space.is_is_clicked())
+	{
+		_3DEngine::getInstance()->inverseSimulationActive();
+	}
+	
+	if (_3DEngine::getKeyBoard()->Delete.is_is_clicked())
+	{
+		_3DEngine::getInstance()->clearSimulation();
+	}
+
 	if (_3DEngine::getKeyBoard()->Tab.is_is_clicked()) {
 		incrementGroup();
 		updateGroupText();
-		std::cout << *this<<std::endl;
+	//	std::cout << *this<<std::endl;
 	}
-	if (_3DEngine::getKeyBoard()->arrowUp.is_is_clicked()) {
+	if (_3DEngine::getKeyBoard()->arrowDown.is_is_clicked()) {
 		groups[activegroup]->icreaseSelection();
 		updateGroupText();
 		std::cout << *this << std::endl;
 	}
-	if (_3DEngine::getKeyBoard()->arrowDown.is_is_clicked()) {
+	if (_3DEngine::getKeyBoard()->arrowUp.is_is_clicked()) {
 		groups[activegroup]->decreaseSelection();
 		updateGroupText();
-		std::cout << *this << std::endl;
+//std::cout << *this << std::endl;
 	}
 
 
 	if (_3DEngine::getKeyBoard()->arrowRight.is_is_clicked()) {
 		groups[activegroup]->increaseSelectedParam();
 		updateGroupText();
-		std::cout << *this << std::endl;
+	//	std::cout << *this << std::endl;
 	}
 	if (_3DEngine::getKeyBoard()->arrowLeft.is_is_clicked()) {
 		groups[activegroup]->decreaseSelectedParam();
 		updateGroupText();
-		std::cout << *this << std::endl;
+	//	std::cout << *this << std::endl;
 	}
 
 	

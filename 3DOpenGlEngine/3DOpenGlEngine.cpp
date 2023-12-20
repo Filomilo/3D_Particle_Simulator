@@ -16,6 +16,8 @@
 #include "UiSystem.h"
 #include "UiText.h"
 #include <sstream>
+#include "Vortex.h"
+#include "PointGroupInstanced.h"
 
 std::shared_ptr<PointLight> pointLight;
 std::shared_ptr<Cube> cube;
@@ -129,11 +131,11 @@ void addCube(_3DEngine* engine)
 
 
 
-   cube = std::make_shared<Cube>(5);
+    cube = std::make_shared<Cube>(5);
     cube->setMat(cubeMat);
     cube->init();
     cube->moveY(2.501);
-    engine->addRenderable(cube);
+    //engine->addRenderable(cube);
     engine->addKeyCallBack(cube_key_callback);
 
 }
@@ -184,10 +186,11 @@ void particleTest()
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
 
+
     std::shared_ptr<PointGroup> point_group = std::make_shared<PointGroup>();
     srand(time(0));
     float particleSize = 100;
-    for (int i = 0; i < 100000; i++)
+    for (int i = 0; i < 1000; i++)
     {
         point_group->addPoint(
             (float)rand() / RAND_MAX * particleSize - particleSize / 2,
@@ -205,11 +208,47 @@ void particleTest()
 
 
     engine->addRenderable(point_group);
-    //   addCube(engine);
 
 
     engine->start();
 }
+
+
+void pointGroupInstanced()
+{
+	_3DEngine* engine = _3DEngine::getInstance();
+	engine->iniit(800, 600);
+	addCube(engine);
+	addLight(engine);
+	std::shared_ptr<PointGroupInstanced> point_group = std::make_shared<PointGroupInstanced>();
+	point_group->setInstanceGeo(cube);
+	srand(time(0));
+	float particleSize = 100;
+	for (int i = 0; i < 1000; i++)
+	{
+		point_group->addPoint(
+			(float)rand() / RAND_MAX * particleSize - particleSize / 2,
+			(float)rand() / RAND_MAX * particleSize - particleSize / 2,
+			(float)rand() / RAND_MAX * particleSize - particleSize / 2,
+			(float)rand() / RAND_MAX,
+			(float)rand() / RAND_MAX,
+			(float)rand() / RAND_MAX,
+			(float)rand() / RAND_MAX * 50
+		);
+	}
+	point_group->setMat(std::make_shared<Material>(ShaderLib::particleShaderInstanced));
+	point_group->init();
+
+
+
+	engine->addRenderable(point_group);
+	
+	//   addCube(engine);
+
+
+	engine->start();
+}
+
 
 void emptyTest()
 {
@@ -235,14 +274,15 @@ void SimulationTest()
 
     std::shared_ptr < ParticleSolver> particle_solver = std::make_shared < ParticleSolver>();
     particle_solver->set_particle_system(particle_system);
-        engine->addUpdatable(particle_solver);
+        engine->addSimulatable(particle_solver);
 
 
         std::shared_ptr < Gravity> gravity = std::make_shared < Gravity>();
         std::shared_ptr <Turbulance> turbulance = std::make_shared < Turbulance>();
+		std::shared_ptr <Vortex> vortex = std::make_shared < Vortex>();
 		particle_solver->addForce(gravity);
         particle_solver->addForce(turbulance);
-
+		particle_solver->addForce(vortex);
         
 
 
@@ -251,6 +291,7 @@ void SimulationTest()
         uisystem->addParameterGroup(gravity->getParameterGroup());
         uisystem->addParameterGroup(turbulance->getParameterGroup());
         uisystem->addParameterGroup(box_emitter->getParameterGroup());
+		uisystem->addParameterGroup(vortex->getParameterGroup());
         engine->addUiElement(uisystem);
         engine->addRenderable(uisystem);
         engine->addUpdatable(uisystem);
@@ -334,10 +375,11 @@ void textTest()
 
 int main()
 {
-    //cubeTest();
-	//particleTest();
-   //emptyTest();
-    SimulationTest();
+//   cubeTest();
+//	particleTest();
+	pointGroupInstanced();
+//emptyTest();
+    //SimulationTest();
   // uiTest();
    // textTest();
     return 0;

@@ -6,12 +6,12 @@
 #include "Force.h"
 #include "Point.h"
 #include "Updatable.h"
-
+#include "Simulatable.h"
 
 class ParticleSystem;
 
 class ParticleSolver:
-public Updatable
+public Simulatable
 {
 private:
 	std::shared_ptr<ParticleSystem> particle_system_;
@@ -65,6 +65,8 @@ public:
 	{
 		this->forces.push_back(force);
 	}
+
+	void reset();
 
 };
 

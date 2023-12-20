@@ -195,6 +195,15 @@
     <ClCompile Include="Parametrized.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Simulatable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vortex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointGroupInstanced.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_3DEngine.h">
@@ -345,6 +354,15 @@
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="Parametrized.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vortex.h">
+      <Filter>Header Files\Particles\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="PointGroupInstanced.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

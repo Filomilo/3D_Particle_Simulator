@@ -55,7 +55,7 @@ public:
 		updateVbo();
 	}
 
-	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=0.0, float life=1)
+	 void addPoint(const Vector3f& pos, const Vector3f& color, const Vector3f& velocity, float size=1, float mass=1, float bounce=1.0, float life=10)
 	{
 
 		std::shared_ptr<Point> pt = std::make_shared<Point>(pos);
@@ -68,6 +68,8 @@ public:
 		PointGroup::addPoint(pt);
 	}
 
+
+	 void clearPoints();
 
 };
 
