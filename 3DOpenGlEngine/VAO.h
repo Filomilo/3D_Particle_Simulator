@@ -32,6 +32,14 @@ public:
 		glEnableVertexAttribArray(layout);
 		glBindBuffer(GL_ARRAY_BUFFER,0);
 	}
+	void linkPointINstancePostion(std::shared_ptr<VBO> vbo, GLuint layout, GLuint nmOFElements, GLenum type, GLsizeiptr stride, int offset)
+	{
+		vbo->bind();
+		glVertexAttribPointer(layout, nmOFElements, type, GL_FALSE, stride, (void*)offset);
+		glEnableVertexAttribArray(layout);
+		glVertexAttribDivisor(1, 1);
+		vbo->unbind();
+	}
 
 	void bind()
 	{

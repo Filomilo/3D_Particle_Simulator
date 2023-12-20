@@ -21,7 +21,8 @@ protected:
 		return points.size();
 	}
 
-	GLfloat* getVertexBuffer() override
+
+	GLfloat* getVertexBufferForMat(std::shared_ptr<Material> mat) override
 	{
 		GLfloat* arrayVbo = new float[this->getVerteciesAmount() * this->getVertexSize()];
 
@@ -39,7 +40,7 @@ protected:
 				for (int i = 0; i < attribType; i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
-				//	std::cout << (*attribVal)[i] << ", ";
+					//	std::cout << (*attribVal)[i] << ", ";
 				}
 
 
@@ -49,6 +50,12 @@ protected:
 		}
 
 		return  arrayVbo;
+	}
+
+	GLfloat* getVertexBuffer() override
+	{
+		
+		return  getVertexBufferForMat(this->mat);
 	}
 	void glDrawCall() override
 	{

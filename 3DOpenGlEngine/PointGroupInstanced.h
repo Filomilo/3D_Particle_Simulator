@@ -11,32 +11,31 @@ public:
 	~PointGroupInstanced();
 
 	std::shared_ptr<Polygonal> instanceGeo;
-
+	std::shared_ptr<VBO> instancesVBO;
 
 	void setInstanceGeo(std::shared_ptr<Polygonal> instanceGeo) {
 		this->instanceGeo = instanceGeo;
 	}
 
-	GLuint MBO;
-	/*
-	void iniitVbo()
+
+
+
+
+	void initInstancesVbo()
 	{
-		GLfloat* vertexBuffer = instanceGeo->getVertexBuffer();
-		int verteciesAmt = instanceGeo->getVerteciesAmount();
-		int vertexSize = instanceGeo->getVertexSize();
-		vao->bind();
-
-		this->vbo = std::make_unique <VBO>(vertexBuffer, instanceGeo->getVerteciesAmount() * instanceGeo->getVertexSize() * sizeof(float), usage);
-		delete[] vertexBuffer;
-
+		this->iniitVboUniversal(this->getVertexBuffer(), this->getVerteciesAmount(), this->getVertexSize(), this->instancesVBO, this->vao);
 	}
-
+	void initPolygonsVbo()
+	{
+		this->iniitVboUniversal(instanceGeo->getVertexBufferForMat(this->mat), instanceGeo->getVerteciesAmount(), instanceGeo->getVertexSizeForMat(this->mat), this->vbo,this->vao);
+	}
 
 	void iniitVao()
 	{
+		std::cout << "init vao" << std::endl;
 
-		int verteciesAmt = this->getVerteciesAmount();
-		int vertexSize = this->getVertexSize();
+		int verteciesAmt = this->instanceGeo->getVerteciesAmount();
+		int vertexSize = this->instanceGeo->getVertexSize();
 
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
@@ -47,57 +46,38 @@ public:
 		for (std::string name : attributeList)
 		{
 			Attribute::Types type = attributesMap[name];
-			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
+			this->vao->linkAttrib(this->instanceGeo->vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
 			glEnableVertexAttribArray(i);
 			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
 			i++;
 			offset += type * sizeof(float);
 		}
-
-	
-		glGenBuffers(1, &MBO);
-		glBindBuffer(GL_ARRAY_BUFFER, MBO);
-		GLfloat* mbo = this->getVertexBuffer();
-		glBufferData(GL_ARRAY_BUFFER, this->points.size() * sizeof(GLfloat), mbo, GL_STATIC_DRAW);
-		this->vao->linkAttrib(this->MBO, i, GL_FLOAT, GL_FLOAT, 3 * sizeof(float), offset);
-		glEnableVertexAttribArray(i);
-		glVertexAttribDivisor(i, 1);
-
-		delete(mbo);
-
+		this->vao->linkPointINstancePostion(instancesVBO, i, 3, GL_FLOAT, 3 * sizeof(float), 0);
+		
 	}
 
-
-
-	
-		void updateVbo()
-		{
-			GLfloat* vertexBuffer = instanceGeo->getVertexBuffer();
-			int verteciesAmt = this->getVerteciesAmount();
-			int vertexSize = this->getVertexSize();
-			vbo->bind();
-			this->vbo->update(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
-			vbo->unbind();
-			delete[] vertexBuffer;
-		}
-		*/
-
-
-
-	virtual void bind()
+	void initParts()
 	{
-		this->instanceGeo->bind();
+		std::cout << "--------------------------------------------------INSATEGEO\n\n(";
+		initInstancesVbo();
+		std::cout << "--------------------------------------------------INSATEGEO\n\n(";
+		initPolygonsVbo();
+		
+
+		iniitVao();
+		instanceGeo->iniitEBO();
 	}
-	virtual void unbind()
-	{
-		this->instanceGeo->unbind();
-	}
+
+
+
 
 		void glDrawCall()
 		{
-		//	glDrawElementsInstanced(GL_TRIANGLES, instanceGeo->getTringlePointCount(), GL_UNSIGNED_INT, 0, this->points.size());
+		glDrawElementsInstanced(GL_TRIANGLES, instanceGeo->getTringlePointCount(), GL_UNSIGNED_INT, 0, this->points.size());
 		//		glDrawElements(GL_TRIANGLES, instanceGeo->getTringlePointCount(), GL_UNSIGNED_INT, 0);
-			this->instanceGeo->glDrawCall();
+		//	this->instanceGeo->glDrawCall();
+		//	glDrawElements(GL_TRIANGLES, instanceGeo->getTringlePointCount(), GL_UNSIGNED_INT, 0);
+
 		}
 
 		

@@ -32,23 +32,22 @@ private:
 	std::vector<Face*> faces;
 
 
-
-	GLfloat* getVertexBuffer() override
+	GLfloat* getVertexBufferForMat(std::shared_ptr<Material> mat) override
 	{
-		GLfloat* arrayVbo = new float[this->getVerteciesAmount()*this->getVertexSize()];
+		GLfloat* arrayVbo = new float[this->getVerteciesAmount() * this->getVertexSize()];
 
 		std::map<std::string, Attribute::Types> attributesMap = mat->getAttributeMap();
 		std::list<std::string> attributeList = mat->getAttributeList();
 		int index = 0;
 		int vertIndex = 0;
 		//std::cout << "VErtxBuffer::" << std::endl;
-		for (std::shared_ptr<Vertex> vertex: this->vertices)
+		for (std::shared_ptr<Vertex> vertex : this->vertices)
 		{
 			for (std::string attribName : attributeList)
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
-				std::shared_ptr<Vector4f> attribVal =std::static_pointer_cast <Vector4f>(this->getVertexAttrib(vertIndex,attribName));
-				for(int i=0;i< attribType;i++)
+				std::shared_ptr<Vector4f> attribVal = std::static_pointer_cast <Vector4f>(this->getVertexAttrib(vertIndex, attribName));
+				for (int i = 0; i < attribType; i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
 					//std::cout << (*attribVal)[i] << ", ";
@@ -61,6 +60,13 @@ private:
 		}
 
 		return  arrayVbo;
+	}
+
+
+	GLfloat* getVertexBuffer() override
+	{
+
+		return  getVertexBufferForMat(this->mat);
 	}
 
 	int getVerteciesAmount() override

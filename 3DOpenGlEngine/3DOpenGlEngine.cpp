@@ -224,7 +224,7 @@ void pointGroupInstanced()
 	point_group->setInstanceGeo(cube);
 	srand(time(0));
 	float particleSize = 100;
-	for (int i = 0; i < 1000; i++)
+	for (int i = 0; i < 10000; i++)
 	{
 		point_group->addPoint(
 			(float)rand() / RAND_MAX * particleSize - particleSize / 2,
@@ -262,6 +262,8 @@ void SimulationTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
+    addCube(engine);
+
     std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>();
 
 
@@ -300,6 +302,49 @@ void SimulationTest()
 }
 std::shared_ptr<UiText> txt;
 
+
+
+void SimulationTestInstance()
+{
+    _3DEngine* engine = _3DEngine::getInstance();
+    engine->iniit(800, 600);
+    addCube(engine);
+    addLight(engine);
+    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>();
+    particle_system->init();
+    std::shared_ptr < BoxEmitter> box_emitter = std::make_shared<BoxEmitter>(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
+    box_emitter->set_particle_system(particle_system);
+    engine->addUpdatable(box_emitter);
+
+    engine->addUpdatable(particle_system);
+    engine->addRenderable(particle_system);
+
+    std::shared_ptr < ParticleSolver> particle_solver = std::make_shared < ParticleSolver>();
+    particle_solver->set_particle_system(particle_system);
+    engine->addSimulatable(particle_solver);
+
+
+    std::shared_ptr < Gravity> gravity = std::make_shared < Gravity>();
+    std::shared_ptr <Turbulance> turbulance = std::make_shared < Turbulance>();
+    std::shared_ptr <Vortex> vortex = std::make_shared < Vortex>();
+    particle_solver->addForce(gravity);
+    particle_solver->addForce(turbulance);
+    particle_solver->addForce(vortex);
+
+
+
+    std::shared_ptr<UiSystem> uisystem = std::make_shared<UiSystem>();
+
+    uisystem->addParameterGroup(gravity->getParameterGroup());
+    uisystem->addParameterGroup(turbulance->getParameterGroup());
+    uisystem->addParameterGroup(box_emitter->getParameterGroup());
+    uisystem->addParameterGroup(vortex->getParameterGroup());
+    engine->addUiElement(uisystem);
+    engine->addRenderable(uisystem);
+    engine->addUpdatable(uisystem);
+
+    engine->start();
+}
 
 void udpateTxt(_3DEngine* engine)
 {
@@ -377,9 +422,10 @@ int main()
 {
 //   cubeTest();
 //	particleTest();
-	pointGroupInstanced();
+//	pointGroupInstanced();
 //emptyTest();
-    //SimulationTest();
+	SimulationTest();
+   // SimulationTestInstance();
   // uiTest();
    // textTest();
     return 0;

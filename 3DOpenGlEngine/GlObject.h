@@ -11,21 +11,26 @@ class GlObject :
 protected:
 
 	
-	std::unique_ptr<VAO> vao;
+	std::shared_ptr<VAO> vao;
 	std::shared_ptr<VBO> vbo;
 	std::shared_ptr<Material> mat;
 
 	int renderMode = GL_FILL;
 	long int usage = GL_STATIC_DRAW;
 
+	virtual GLfloat* getVertexBufferForMat(std::shared_ptr<Material> mat) = 0;
+
+
 	virtual GLfloat* getVertexBuffer() = 0;
 
-
+	int getVertexSizeForMat(std::shared_ptr<Material> mat)
+	{
+		return mat->getVertexSizeRequired();
+	}
 	int getVertexSize()
 	{
-		return this->mat->getVertexSizeRequired();
+		return getVertexSizeForMat(this->mat);
 	}
-
 
 	virtual int getVerteciesAmount() = 0;
 	virtual std::shared_ptr<Attribute> getVertexAttrib(int num, std::string attrib) = 0;
@@ -46,6 +51,21 @@ protected:
 		return this->mat->getVertexSizeRequired();
 	}
 
+	void iniitVboUniversal(GLfloat* vertexBuffer, int verteciesAmt, int vertexSize, std::shared_ptr<VBO>& vbo, std::shared_ptr<VAO>& vao)
+	{
+		/*
+		for (int i = 0; i < verteciesAmt * vertexSize; i++)
+		{
+			std::cout << vertexBuffer[i] << ",";
+			if (i % vertexSize == vertexSize - 1)
+				std::cout << std::endl;
+		}
+		*/
+		
+		vao->bind();
+		vbo = std::make_unique <VBO>(vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
+		delete[] vertexBuffer;
+	}
 
 
 
@@ -55,18 +75,9 @@ protected:
 		int verteciesAmt = this->getVerteciesAmount();
 		int vertexSize = this->getVertexSize();
 
-		/*
-		for (int i = 0; i < verteciesAmt * vertexSize; i++)
-		{
-			std::cout << vertexBuffer[i] << ",";
-			if (i % vertexSize == vertexSize - 1)
-				std::cout << std::endl;
-		}
-		*/
-		vao->bind();
 
-		this->vbo = std::make_unique <VBO>( vertexBuffer, this->getVerteciesAmount() * this->getVertexSize() * sizeof(float), usage);
-		delete[] vertexBuffer;
+		iniitVboUniversal(this->getVertexBuffer(), this->getVerteciesAmount(), this->getVertexSize(), this->vbo,this->vao);
+
 	}
 
 	void updateVbo()
@@ -99,7 +110,7 @@ protected:
 			Attribute::Types type = attributesMap[name];
 			this->vao->linkAttrib(vbo, i, type, GL_FLOAT, vertexSize * sizeof(float), offset);
 			glEnableVertexAttribArray(i);
-			std::cout << "glEnableVertexAttribArray(" << i << ")\n";
+			//std::cout << "glEnableVertexAttribArray(" << i << ")\n";
 			i++;
 			offset += type * sizeof(float);
 		}
@@ -133,7 +144,7 @@ public:
 	friend class PointGroupInstanced;
 	GlObject() : Transformable()
 	{
-			this->vao = std::make_unique<VAO>() ;
+			this->vao = std::make_shared<VAO>() ;
 	}
 
 
