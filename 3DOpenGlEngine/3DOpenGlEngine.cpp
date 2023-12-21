@@ -18,6 +18,7 @@
 #include <sstream>
 #include "Vortex.h"
 #include "PointGroupInstanced.h"
+#include "Sphere.h"
 
 std::shared_ptr<PointLight> pointLight;
 std::shared_ptr<Cube> cube;
@@ -135,7 +136,7 @@ void addCube(_3DEngine* engine)
     cube->setMat(cubeMat);
     cube->init();
     cube->moveY(2.501);
-    //engine->addRenderable(cube);
+    engine->addRenderable(cube);
     engine->addKeyCallBack(cube_key_callback);
 
 }
@@ -181,6 +182,37 @@ void cubeTest()
         std::cerr <<"Error: "<< e.what();
     }
 }
+
+
+
+void sphereTest()
+{
+    try {
+        _3DEngine* engine = _3DEngine::getInstance();
+        engine->iniit(800, 600);
+        addLight(engine);
+        
+
+
+       
+
+        std::shared_ptr<Sphere> cube = std::make_shared<Sphere>(5,8,15);
+        cube-> setMat(std::make_shared<Material>(ShaderLib::particleShader));
+        cube->init();
+        cube->moveY(2.501);
+        engine->addRenderable(cube);
+
+
+
+        addPlane(engine);
+        engine->start();
+    }
+    catch (std::exception e)
+    {
+        std::cerr << "Error: " << e.what();
+    }
+}
+
 void particleTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
@@ -420,13 +452,14 @@ void textTest()
 
 int main()
 {
-//   cubeTest();
+ //cubeTest();
 //	particleTest();
 //	pointGroupInstanced();
 //emptyTest();
-	SimulationTest();
+	//SimulationTest();
    // SimulationTestInstance();
   // uiTest();
    // textTest();
+    sphereTest();
     return 0;
 }

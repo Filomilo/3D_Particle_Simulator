@@ -171,6 +171,7 @@
     <ClCompile Include="ShaderLib.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Simulatable.cpp" />
+    <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureLib.cpp" />
     <ClCompile Include="Transformable.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="Parametrized.h" />
     <ClInclude Include="PointGroupInstanced.h" />
     <ClInclude Include="Simulatable.h" />
+    <ClInclude Include="Sphere.h" />
     <ClInclude Include="UiParameter.h" />
     <ClInclude Include="UiParameterGroup.h" />
     <ClInclude Include="ParticleSolver.h" />
