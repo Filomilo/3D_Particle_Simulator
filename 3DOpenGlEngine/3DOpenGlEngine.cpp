@@ -294,9 +294,9 @@ void SimulationTest()
 {
     _3DEngine* engine = _3DEngine::getInstance();
     engine->iniit(800, 600);
-    addCube(engine);
+    //addCube(engine);
 
-    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>(cube);
+    std::shared_ptr<ParticleSystem> particle_system = std::make_shared<ParticleSystem>();
     
 
     std::shared_ptr < BoxEmitter> box_emitter = std::make_shared<BoxEmitter>(Vector3f(0, 10, 0), Vector3f(10, 10, 10));
@@ -456,10 +456,10 @@ int main()
 //	particleTest();
 //	pointGroupInstanced();
 //emptyTest();
-	//SimulationTest();
+	SimulationTest();
    // SimulationTestInstance();
   // uiTest();
    // textTest();
-    sphereTest();
+  //  sphereTest();
     return 0;
 }

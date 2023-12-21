@@ -40,7 +40,7 @@ public:
 	{
 		std::shared_ptr<UiParameterGroup> ui_parameter_group = std::make_shared<UiParameterGroup>("Vortex");
 		ui_parameter_group->addParameter(std::make_shared<UiParameter>("scale", scale, 0.1));
-		ui_parameter_group->addParameter(std::make_shared<UiParameter>("magnet", magnet, 0.1));
+		ui_parameter_group->addParameter(std::make_shared<UiParameter>("magnet", magnet, 10));
 		ui_parameter_group->addParameter(std::make_shared<UiParameter>("radius", radius, 0.1));
 		return ui_parameter_group;
 	}

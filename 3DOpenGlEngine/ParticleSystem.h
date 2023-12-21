@@ -3,7 +3,9 @@
 #include "PointGroup.h"
 #include "PointGroupInstanced.h"
 #include "ShaderLib.h"
+#include "Sphere.h"
 #include "Updatable.h"
+
 
 class ParticleSystem :
     public PointGroupInstanced,
@@ -17,9 +19,7 @@ private:
 public:
 
 	friend ParticleSolver;
-	ParticleSystem(): PointGroupInstanced()
-	{
-	}
+
 
 	ParticleSystem(std::shared_ptr<Polygonal> instance): PointGroupInstanced()
 	{
@@ -28,7 +28,16 @@ public:
 		setMat(std::make_shared<Material> (ShaderLib::particleShaderInstanced));
 		init();
 	}
-
+	ParticleSystem() : PointGroupInstanced()
+	{
+		std::shared_ptr<Sphere> sph = std::make_shared<Sphere>(0.06, 10, 20);
+		sph->setMat(std::make_shared<Material>(ShaderLib::particleShader)); \
+			sph->init();
+		setInstanceGeo(sph);
+		set_usage(GL_DYNAMIC_DRAW);
+		setMat(std::make_shared<Material>(ShaderLib::particleShaderInstanced));
+		init();
+	}
 
 	void addPoint(float pos, float color, float velocity, float size, float x, float x1, float x2)
 	{
