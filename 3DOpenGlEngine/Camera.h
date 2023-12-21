@@ -98,10 +98,15 @@ public:
     void applyZoom(float value)
     {
      //   this->moveIndendent(getFullPositon()*value);
-        //std::cout << this->get_position() << std::endl;
-        ///TODO: aplication
-        ///
-     //   Vector3f pos = Vector3f (normalize(getFullPositon().glm())) * value * -0.1;
+      //  std::cout << this->get_position() << std::endl;
+        Vector3f scaling = Vector3f(1, 1, 1) ;
+        if (value != 0) {
+     if(value>0)
+            scaling = Vector3f(0.9, 0.9, 0.0) ;
+     else
+         scaling = Vector3f(1.1, 1.1, 1.1) ;
+            scale(scaling);
+        }
        // move(pos);
         //std::cout << getFullPositon() << ", " << get_position() <<", "<<value<< std::endl;
     }
