@@ -1,16 +1,50 @@
+/**
+ * @file Vortex.h
+ * @author fborowiec@wp.pl
+ * @brief File containg class with Vortex Force
+ * @version 0.1
+ * @date 2023-12-25
+ * 
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+
 #pragma once
 #include "Force.h"
+/**
+ * @brief Implementaion of vortex force for paricle simulation
+ * 
+ * Vortex force that extendeds class Froce, it implements virtual method affect,
+ * to apply to glObject vortex force based on its attributes, It works by calculating new
+ * velocaity vector based on it's postion form the center and adds it to current
+ * object velocity multiply scale parameter, It also apply magnet froce that apply force 
+ * in direction to closest point in a cricle of radius defined by radius paramter in order to keep 
+ * object in the center
+ */
 class Vortex :
 	public Force
 {
 private:
+/**
+ * @brief scale factor paremeter used in ui
+ * 
+ * paramter is used to scale new cortex force vector in simulation
+ */
 	std::shared_ptr<Float>  scale = std::make_shared<Float>(1);
 	std::shared_ptr<Float>  radius = std::make_shared<Float>(1);
-	std::shared_ptr<Float>  magnet = std::make_shared<Float>(1);
+	std::shared_ptr<Float>  magnet = std::make_shared<Float>(0);
 
 
 
 public:
+/**
+ * @brief applies vector force to current point
+ * 
+ * @param pt shared pointer to point affect during current simulation run
+ * @param timeVal time offset from previous simulation run to scale force accrodingly
+ */
 	void affect(std::shared_ptr<Point> pt, float timeVal) override
 	{
 		std::shared_ptr<Vector3f> V = std::dynamic_pointer_cast<Vector3f>(pt->getAttribute("V"));

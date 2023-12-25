@@ -132,7 +132,7 @@ void addCube(_3DEngine* engine)
 
 
 
-    cube = std::make_shared<Cube>(0.5);
+    cube = std::make_shared<Cube>(5);
     cube->setMat(cubeMat);
     cube->init();
     cube->moveY(2.501);
@@ -140,6 +140,39 @@ void addCube(_3DEngine* engine)
     engine->addKeyCallBack(cube_key_callback);
 
 }
+
+
+
+
+
+
+
+
+void addSphere(_3DEngine* engine)
+{
+    std::shared_ptr<PhongMat> sphereMat = std::make_shared<PhongMat>();
+    sphereMat->set_color_tex("Assets/sph30_initialShadingGroup_BaseColor.png", 2048, 2048, 24);
+    sphereMat->set_normal_tex("Assets/sph30_initialShadingGroup_Normal.png", 2048, 2048, 24);
+    sphereMat->set_rough_tex("Assets/sph30_initialShadingGroup_Roughness.png", 2048, 2048, 8, GL_RED);
+    sphereMat->set_emission_tex(std::make_shared < Texture>("Assets/sph30_initialShadingGroup_Emissive.png", 2048, 2048, 24));
+
+
+
+
+    std::shared_ptr<Sphere> sphere = std::make_shared<Sphere>(3, 30, 30);
+    sphere->setMat(sphereMat);
+    sphere->init();
+    sphere->move(Vector3f(5,3,5));
+    engine->addRenderable(sphere);
+    engine->addKeyCallBack(cube_key_callback);
+
+}
+
+
+
+
+
+
 void lightAround(_3DEngine* engine)
 {
 
@@ -175,6 +208,7 @@ void cubeTest()
         addLight(engine);
         addCube(engine);
         addPlane(engine);
+        addSphere(engine);
        engine->start();
     }
     catch (std::exception e)
@@ -452,11 +486,11 @@ void textTest()
 
 int main()
 {
- //cubeTest();
+ cubeTest();
 //	particleTest();
 //	pointGroupInstanced();
 //emptyTest();
-	SimulationTest();
+	//SimulationTest();
    // SimulationTestInstance();
   // uiTest();
    // textTest();
