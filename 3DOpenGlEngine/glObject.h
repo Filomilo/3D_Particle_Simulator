@@ -87,6 +87,7 @@ protected:
 	void updateVbo()
 	{
 		GLfloat* vertexBuffer = this->getVertexBuffer();
+		std::cout << "u[date vbo" << std::endl;
 		updateVboUNiversal(vertexBuffer, this->getVerteciesAmount(), this->getVertexSize(), usage, this->vbo,this->vao);
 	}
 

@@ -19,6 +19,7 @@
 #include "Vortex.h"
 #include "PointGroupInstanced.h"
 #include "Sphere.h"
+#include "ObjLoader.h"
 
 std::shared_ptr<PointLight> pointLight;
 std::shared_ptr<Cube> cube;
@@ -484,16 +485,60 @@ void textTest()
     engine->start();
 }
 
+
+void     ObjLoaderTest()
+{
+
+
+        try {
+        _3DEngine* engine = _3DEngine::getInstance();
+        engine->iniit(800, 600);
+        addLight(engine);
+
+
+        std::shared_ptr<PhongMat> cubeMat = std::make_shared<PhongMat>();
+        cubeMat->set_color_tex("D:\\proejcts\\OrssinaBlednerRig\\texs\\OrsisnaBlenderRIg_Uv_otssina_BaseColor.png", 8192, 8192, 16);
+      //  cubeMat->set_normal_tex("Assets/cube_initialShadingGroup_Normal.bmp", 2048, 2048, 24);
+       // cubeMat->set_rough_tex("Assets/cube_initialShadingGroup_Roughness.bmp", 2048, 2048, 8, GL_RED);
+
+
+        std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\proejcts\\OrssinaBlednerRig\\orsinaobj.obj");
+      //  std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\temp\\sph30.obj");
+        chracter->setMat(cubeMat);
+        chracter->init();
+       // std::cout << "finehs init" << std::endl;
+        float sclae = 0.01;
+       // sclae = 4;
+      chracter->scale(Vector3f(sclae, sclae, sclae));
+      chracter->moveY(sclae / (pow(sclae,2)));
+      
+        
+       engine->addRenderable(chracter);
+
+
+
+        addPlane(engine);
+        engine->start();
+    }
+    catch (std::exception e)
+    {
+        std::cerr << "Error: " << e.what();
+    }
+
+
+}
+
 int main()
 {
- cubeTest();
+// cubeTest();
 //	particleTest();
 //	pointGroupInstanced();
 //emptyTest();
-	//SimulationTest();
+//SimulationTest();
    // SimulationTestInstance();
   // uiTest();
    // textTest();
   //  sphereTest();
+    ObjLoaderTest();
     return 0;
 }

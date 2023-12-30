@@ -1,9 +1,35 @@
+/**
+ * @file PolyGrid.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file containg polygrid prmitive
+ * @version 0.1
+ * @date 2023-12-26
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #pragma once
 #include "Polygonal.h"
+/**
+ * @brief class impleitng basic primiteve grid 
+ * 
+ */
 class PolyGrid :
     public Polygonal
 {
 public:
+/**
+ * @brief Construct a new Poly Grid object
+ * 
+ * bsic contrcutor of polygrid based on tis paramtes with sepcifed rows and columns on object
+ * 
+ * 
+ * @param width width of plane
+ * @param height height of plane
+ * @param rows rows of plane
+ * @param colums columns of plane
+ */
 	PolyGrid(float width, float height, unsigned int rows = 2, unsigned int colums = 2)
 	{
 		

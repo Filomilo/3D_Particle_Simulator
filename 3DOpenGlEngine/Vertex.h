@@ -13,6 +13,12 @@
 #pragma once
 #include "Object.h"
 #include "Vector3f.h"
+/**
+ * @brief class conating vertex data for rendering
+ * 
+ * class allw for conating structure for vertex data, it conatins point index corresponding in polygonal object,
+ * it can store attributes used in rendeeirng like normal vectro and uv position
+ */
 class Vertex :
     public Object
 {

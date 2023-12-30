@@ -1,3 +1,13 @@
+/**
+ * @file ShaderProgram.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file containg class Shader program
+ * @version 0.1
+ * @date 2023-12-26
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #pragma once
 
 #include <glad/glad.h>
@@ -16,14 +26,40 @@
 #include "Camera.h"
 #include "Math.h"
 #include "Vector3f.h"
-
+/**
+ * @brief class  used to mange openg shader program
+ * 
+ */
 class ShaderProgram
 {
-
+/**
+ * @brief id of shader program used by opengl
+ * 
+ */
 	unsigned int ID;
+	/**
+	 * @brief map of attrbutres used by shader program
+	 * 
+	 */
 	std::map<std::string, Attribute::Types> AttributesRequiredMap;
+	/**
+	 * @brief order of attributes used by shader program
+	 * 
+	 */
 	std::list<std::string> AttributesRequiredList;
+	/**
+	 * @brief size of vertex data in the sahder program
+	 * 
+	 */
 	int vertexSize = 0;
+	/**
+	 * @brief Get the Text File object
+	 * 
+	 * retruns text of file used to create shader based on file input
+	 * 
+	 * @param file 
+	 * @return std::string 
+	 */
 	std::string getTextFile(std::string file);
 
 

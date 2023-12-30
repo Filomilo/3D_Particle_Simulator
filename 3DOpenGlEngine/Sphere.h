@@ -1,12 +1,34 @@
+/**
+ * @file Sphere.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file conating sphere primitive class
+ * @version 0.1
+ * @date 2023-12-26
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #pragma once
 #include "Polygonal.h"
 #include <cmath>
-# define M_PI           3.14159265358979323846 
+# define M_PI           3.14159265358979323846
+/**
+ * @brief class defing primtive sphere class
+ * 
+ */
 class Sphere :
     public Polygonal
 {
 
 private:
+/**
+ * @brief Get the Normal Vectro Of Point object
+ * 
+ * heling class used for getting normal vector of vertex based of point index
+ * 
+ * @param pointIndx inedex of point to get normal vector from
+ * @return Vector3f normal vector
+ */
     Vector3f getNormalVectroOfPoint(int pointIndx)
     {
        std::shared_ptr<Vector3f> posRef = std::dynamic_pointer_cast<Vector3f>( this->points.at(pointIndx)->getAttribute("P"));
@@ -25,7 +47,16 @@ public:
 
 
 
-
+/**
+ * @brief Construct a new Sphere object
+ * 
+ * constrcut calucates new point besed increasing decrees and selecred rows and columns
+ * and size
+ * 
+ * @param size size of sphere 
+ * @param columns columns in sphere
+ * @param rows rows of sphere
+ */
     Sphere(float size, int columns, int rows)
     {
 

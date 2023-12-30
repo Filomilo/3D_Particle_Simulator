@@ -1,23 +1,81 @@
+/**
+ * @file UiText.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file conating uiText clas
+ * @version 0.1
+ * @date 2023-12-26
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
  #pragma once
 #include <windows.h>
 
 #include "FontTexture.h"
 #include "TextureLib.h"
 #include "UiPlane.h"
+/**
+ * @brief Ui class alowing to print basic text on screen
+ * 
+ */
 class UiText :
     public UiPlane
 {
+    /**
+     * @brief Texture map with font symbols
+     * 
+     * Texture class that handles gneret font texture that contains all letetrs nad symbols used int text rendering
+     */
 	 std::shared_ptr<FontTexture> font;
+     /**
+      * @brief help varaible to define character postion
+      * 
+      * its a help value used to define character position on screen after print previous position
+      * 
+      */
     Vector2f offset = Vector2f(0,0);
+    /**
+     * @brief size of font to define size of character on screen
+     * 
+     */
     float fontSize = 12;
+    /**
+     * @brief scale factor in reenedering
+     * 
+     * a heling value to better control size of characters on screen
+     */
     const float ScaleFactor = 8;
+    /**
+     * @brief global varaible 
+     * 
+     * a varaible set base on fint size to help with priniting text on screen 
+     * 
+     */
     float rowHeight=0;
+    /**
+     * @brief size of font texture
+     * 
+     * pixel resultion of texture used to print texture
+     * 
+     */
     float texSize = 1024;
-
+/**
+ * @brief a varaible defing width of character
+ * 
+ * a helpful varaible used to for renderign characters on screen
+ * 
+ */
     float letterWidth=0;
     int activeRow = 1;
     
-
+/**
+ * @brief fucntion print next character on screne
+ * 
+ * a method taht used to print character on scrren next in positon or 
+ * to offset cursor if its space or new line
+ * 
+ * @param letter 
+ */
     void addCharacter(char letter)
     {
         /*
@@ -91,7 +149,12 @@ class UiText :
       //  std::cout << std::endl << std::endl;
 
     }
-
+/**
+ * @brief cleanup method
+ * 
+ * an method overide used for reset geomtery and cursor
+ * 
+ */
     virtual void cleanGeo() override
     {
         UiPlane::cleanGeo();
@@ -100,7 +163,12 @@ class UiText :
         activeRow = 1;
     }
 
-
+/**
+ * @brief Set the Scale Data 
+ * 
+ * a mrthod taht based on parmeter texture set size paramters used for printing
+ * 
+ */
     void setScaleData()
     {
         Vector2f leftBounderyPos, rigtBounderyPos, Offset;
@@ -118,7 +186,13 @@ class UiText :
 
 
 public:
-
+/**
+ * @brief Set the Text object
+ * 
+ * set text and rest gemmetry and cretes a new one with provided text
+ * 
+ * @param text  text to be shown on scrren
+ */
     void setText(std::string text)
     {
 
@@ -132,7 +206,14 @@ public:
     }
 
 
-
+/**
+ * @brief Construct a new Ui Text object
+ * 
+ * constuct a new ui text object with specifed text nad size, its set deault font and calcuates sieze paramters based on that
+ * 
+ * @param text 
+ * @param fontSize 
+ */
     UiText(std::string text,float fontSize=1): UiPlane(nullptr)
     {
         setMat(std::make_shared<Material>(ShaderLib::UiShader));
