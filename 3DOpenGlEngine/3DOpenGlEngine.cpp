@@ -497,18 +497,18 @@ void     ObjLoaderTest()
 
 
         std::shared_ptr<PhongMat> cubeMat = std::make_shared<PhongMat>();
-        cubeMat->set_color_tex("D:\\proejcts\\OrssinaBlednerRig\\texs\\OrsisnaBlenderRIg_Uv_otssina_BaseColor.png", 8192, 8192, 16);
-      //  cubeMat->set_normal_tex("Assets/cube_initialShadingGroup_Normal.bmp", 2048, 2048, 24);
-       // cubeMat->set_rough_tex("Assets/cube_initialShadingGroup_Roughness.bmp", 2048, 2048, 8, GL_RED);
+        cubeMat->set_color_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_BaseColor.png", 8192, 8192, 16);
+        cubeMat->set_normal_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_Normal.png", 8192, 8192, 16);
+        cubeMat->set_rough_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_Roughness.png", 8192, 8192, 8, GL_RED);
 
 
-        std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\proejcts\\OrssinaBlednerRig\\orsinaobj.obj");
-      //  std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\temp\\sph30.obj");
+        //std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\proejcts\\OrssinaBlednerRig\\orsinaobj.obj");
+        std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("Assets\\orssina.obj");
         chracter->setMat(cubeMat);
         chracter->init();
        // std::cout << "finehs init" << std::endl;
-        float sclae = 0.01;
-       // sclae = 4;
+        float sclae = 1;
+      //  sclae = 4;
       chracter->scale(Vector3f(sclae, sclae, sclae));
       chracter->moveY(sclae / (pow(sclae,2)));
       

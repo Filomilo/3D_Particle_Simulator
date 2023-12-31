@@ -82,10 +82,10 @@ private:
 			{
 				Attribute::Types attribType = attributesMap.find(attribName)->second;
 				std::shared_ptr<Vector4f> attribVal = std::static_pointer_cast <Vector4f>(this->getVertexAttrib(vertIndex, attribName));
-				for (int i = 0; i < attribType; i++)
+			for (int i = 0; i < attribType; i++)
 				{
 					arrayVbo[index++] = (*attribVal)[i];
-				//	std::cout << (*attribVal)[i] << ", ";
+					//std::cout << (*attribVal)[i] << ", ";
 				}
 
 
