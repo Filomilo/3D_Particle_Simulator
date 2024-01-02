@@ -108,5 +108,10 @@ public:
 		set_rough_tex(std::make_shared<Texture>(str, i, i1, i2, type));
 	}
 
+	 void set_emission_tex(const char* str, int i, int i1, int i2)
+	{
+		 set_emission_tex(std::make_shared<Texture>(str, i, i1, i2));
+
+	}
 };
 
