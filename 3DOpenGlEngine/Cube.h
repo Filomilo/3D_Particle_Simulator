@@ -1,10 +1,30 @@
+/**
+ * @file Cube.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file coanintg cube class primitive
+ * @version 0.1
+ * @date 2024-01-03
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #pragma once
 #include "Polygonal.h"
+/**
+ * @brief cube class primitve
+ * 
+ * calss genaitng cube 
+ * 
+ */
 class Cube : public Polygonal
 {
 public:
 
-
+/**
+ * @brief Construct a new Cube object
+ * 
+ * @param size 
+ */
     Cube(float size)
     {
 

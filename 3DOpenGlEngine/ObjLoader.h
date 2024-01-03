@@ -1,13 +1,32 @@
+/**
+ * @file ObjLoader.h
+ * @author Filip Borowiec (fborowiec@wp.pl)
+ * @brief file coainting class obj laoder
+ * @version 0.1
+ * @date 2024-01-03
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #pragma once
 
 #include "Polygonal.h"
 #include <fstream>
-
+/**
+ * @brief class made for hanlfing loading obj 3d models
+ * 
+ */
 class ObjLoader
 {
 
 private:
-
+	/**
+	 * helping function that get values form obj file line.
+	 * 
+	 * \param line
+	 * \return 
+	 */
 	static std::vector<float> getValues(std::string line)
 	{
 		std::vector<float> array;
@@ -18,7 +37,14 @@ private:
 		return array;
 	}
 
-
+	/**
+	 * helping funciton for handle adding new point form obj file.
+	 * 
+	 * 
+	 * 
+	 * \param line string line with new point values
+	 * \param loadingFile polygonal object aht points are added to
+	 */
 	static void handleNewPoint(std::string line, std::shared_ptr<Polygonal> loadingFile)
 	{
 	
@@ -38,7 +64,14 @@ private:
 
 
 	}
-
+	/**
+	 * helping funciton for handling adding new face from points.
+	 * 
+	 * \param line String line to handle new face
+	 * \param uvs uv vector with uv values of face vertecies
+	 * \param ns vectro holding normal vectors for polygon vertecies
+	 * \param loadingFile polygonal object for adding new face into
+	 */
 	static void handleNewFace(std::string line, std::vector<Vector2f>* uvs, std::vector<Vector3f>* ns, std::shared_ptr<Polygonal> loadingFile)
 	{
 	//	std::cout << "face" <<line<< std::endl;
@@ -100,6 +133,12 @@ private:
 		//std::cout << std::endl;
 
 	}
+	/**
+	 * heloing fucniton for hanlding new uv in obj file .
+	 * 
+	 * \param line line iwth uv value
+	 * \param pointer to vector holding uv values
+	 */
 static 	void handleNewUV(std::string line, std::vector<Vector2f>* uvs)
 	{
 
@@ -110,6 +149,13 @@ static 	void handleNewUV(std::string line, std::vector<Vector2f>* uvs)
 		//std::cout << "uv: " << uv << std::endl;
 	
 	}
+
+/**
+ * helping function for hanlding new normal values form obj.
+ * 
+ * \param line line form file hodling normal value
+ * \param ns pointet ovector containg normal valaues
+ */
 static 	void handleNewN(std::string line, std::vector<Vector3f>* ns)
 {
 
@@ -120,6 +166,14 @@ static 	void handleNewN(std::string line, std::vector<Vector3f>* ns)
 	//std::cout << "uv: " << uv << std::endl;
 }
 
+/**
+ * hleoing function for handling lines form obj file.
+ * 
+ * \param line lien from obj file to hadnle
+ * \param loadingFile polgonal object ot be added ne vector
+ * \param uvs vectro to be added new uv value from obj file
+ * \param ns vector to be added new normal values from obj file
+ */
 	static void handleNeLine(std::string line, std::shared_ptr<Polygonal> loadingFile, std::vector<Vector2f>* uvs, std::vector<Vector3f>* ns)
 	{
 	
@@ -148,7 +202,12 @@ static 	void handleNewN(std::string line, std::vector<Vector3f>* ns)
 
 
 public:
-	
+	/**
+	 * main function to loading file polygonal object from obj.
+	 * 
+	 * \param file locaiton of obj file
+	 * \return polygonal object form laoded file
+	 */
 	static std::shared_ptr<Polygonal> loadFromFile(std::string file)
 	{
 		//std::cout << "file: " << file;
