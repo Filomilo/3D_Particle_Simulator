@@ -1,0 +1,33 @@
+\doxysection{Renderable.\+h}
+\hypertarget{_renderable_8h_source}{}\label{_renderable_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Renderable.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Renderable.h}}
+\mbox{\hyperlink{_renderable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_renderable}{Renderable}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ renderProc()}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ shouldRender=\textcolor{keyword}{true};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_renderable_a581df1aecf30b520f5bcda57af0b32db}{is\_should\_render}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ shouldRender;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_renderable_a093ffed283f6ba2a6ffa25796c0ebc04}{set\_should\_render}}(\textcolor{keywordtype}{bool}\ should\_render)}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ shouldRender\ =\ should\_render;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_renderable_a1dce45c4703b60fd30acf824c77df9b6}{render}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (shouldRender)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>renderProc();}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+
+\end{DoxyCode}

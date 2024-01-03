@@ -1,0 +1,48 @@
+\doxysection{Box\+Emitter.\+h}
+\hypertarget{_box_emitter_8h_source}{}\label{_box_emitter_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/BoxEmitter.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/BoxEmitter.h}}
+\mbox{\hyperlink{_box_emitter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_emitter_8h}{Emitter.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_box_emitter}{BoxEmitter}}\ :}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_emitter}{Emitter}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ size;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ getNewPointPosition()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ positon\ =\ \mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{getFullPositon}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos\ =\ \mbox{\hyperlink{class_vector3f}{Vector3f}}((\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX\ *\ size.x\ -\/\ size.x\ /\ 2+\ positon.x,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX\ *\ size.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ -\/\ size.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ /\ 2\ +\ positon.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX\ *\ size.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}\ -\/\ size.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}\ /\ 2\ +\ positon.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pos;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ getNewColor()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}(1,1,1);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ getNewVelocity()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}(0,\ 0,\ 0);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ getNewSize()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00066\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ 100;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_box_emitter_a83658d0598f436496b0bfc22fe3edc96}{BoxEmitter}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ size)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_transformable_add511c646430a73e00f7c23b65f01f1f}{set\_position}}(pos);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ this-\/>size\ =\ size;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+
+\end{DoxyCode}

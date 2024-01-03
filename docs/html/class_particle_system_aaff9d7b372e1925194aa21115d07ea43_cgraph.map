@@ -1,0 +1,19 @@
+<map id="ParticleSystem::update" name="ParticleSystem::update">
+<area shape="rect" id="Node000001" title="update vertedx buffer of object" alt="" coords="5,133,163,160"/>
+<area shape="rect" id="Node000002" href="$class_point_group_instanced.html#a1760f5af34f0547b0b92febab429c020" title=" " alt="" coords="211,125,358,168"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,144,195,144,195,149,163,149"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html#ac36c933f8ccaec3708c562d09adcad40" title="Get the Vertecies Amount object." alt="" coords="657,5,825,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,122,355,95,405,71,465,53,527,41,642,27,642,33,528,46,466,58,407,76,357,100,316,127"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#a4e0878b6840a2632669269f2afc67d69" title="Get the Vertex Buffer For Mat object." alt="" coords="413,85,596,128"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,131,397,123,398,129,359,136"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="880,148,1083,175"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="359,148,650,159,864,160,864,165,650,164,359,153"/>
+<area shape="rect" id="Node000008" href="$class_gl_object.html#a3770866f40a581c09b16dfaeffa10922" title="update vertex buffer unierslly" alt="" coords="406,224,602,251"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="328,166,407,203,443,216,441,221,405,208,326,171"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="569,82,660,51,662,56,570,87"/>
+<area shape="rect" id="Node000005" href="$class_point_group.html#a5e99bc81f9de6e26ed91545b73f67c75" title="Get the Vertex Attrib object." alt="" coords="650,72,832,99"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="596,96,635,92,635,98,597,101"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="660,123,822,149"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="597,115,645,121,644,127,596,121"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="823,142,865,146,864,152,823,147"/>
+</map>

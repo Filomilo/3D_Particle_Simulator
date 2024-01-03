@@ -1,0 +1,194 @@
+\doxysection{Material Class Reference}
+\hypertarget{class_material}{}\label{class_material}\index{Material@{Material}}
+
+
+matrial calss  
+
+
+
+
+{\ttfamily \#include $<$Material.\+h$>$}
+
+
+
+Inheritance diagram for Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{class_material__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Material\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_material__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_material_a63966f646a6b1e1f82399da648d63482}{Material}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_material}{Material} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_material_a24b769968cf734fff20e1974840cbe29}{add\+Tex}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ tex)
+\begin{DoxyCompactList}\small\item\em add texture to matrail \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_material_a3f3145a32274e3ba58c48385d874676d}{apply}} (glm\+::mat4 model)
+\begin{DoxyCompactList}\small\item\em appply matrix object transofrmaiton ot sahder and vind textures \end{DoxyCompactList}\item 
+\Hypertarget{class_material_a0ad8b63e6227f3ceb3c266d362e35f48}\label{class_material_a0ad8b63e6227f3ceb3c266d362e35f48} 
+void {\bfseries unapply} ()
+\begin{DoxyCompactList}\small\item\em unaplly textures and stops using shader \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_material_af04c58ddb0f040791f57dd65220cd71b}{get\+Attribute\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} List object. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} $>$ \mbox{\hyperlink{class_material_a9267e6d8dc0b823dd63ecb5ffac22acf}{get\+Attribute\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} Map object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_material_a7258c207953779bf9612128d4f78f1f0}{get\+Vertex\+Size\+Required}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Size Required object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_material_af342e030f8bfdb86ddc16b9573803efc}\label{class_material_af342e030f8bfdb86ddc16b9573803efc} 
+virtual void {\bfseries bind\+Tex} ()
+\begin{DoxyCompactList}\small\item\em bind textures in correct order \end{DoxyCompactList}\item 
+\Hypertarget{class_material_a0adb244508d25a720b06d27e7b4a1aaf}\label{class_material_a0adb244508d25a720b06d27e7b4a1aaf} 
+void {\bfseries un\+Bind\+Tex} ()
+\begin{DoxyCompactList}\small\item\em unbinds all the textures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}\label{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5} 
+\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} {\bfseries shader}
+\begin{DoxyCompactList}\small\item\em shader used by this metrial \end{DoxyCompactList}\item 
+\Hypertarget{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}\label{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ $>$ {\bfseries textures}
+\begin{DoxyCompactList}\small\item\em list of texture conatined in this matariela \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+matrial calss 
+
+class for handlign material made out of apremts for and shaders for texutre 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_material_a63966f646a6b1e1f82399da648d63482}\label{class_material_a63966f646a6b1e1f82399da648d63482} 
+\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Material()}{Material()}}
+{\footnotesize\ttfamily Material\+::\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_material}{Material} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & sahder used by this materail \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_material_a24b769968cf734fff20e1974840cbe29}\label{class_material_a24b769968cf734fff20e1974840cbe29} 
+\index{Material@{Material}!addTex@{addTex}}
+\index{addTex@{addTex}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{addTex()}{addTex()}}
+{\footnotesize\ttfamily void Material\+::add\+Tex (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$}]{tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add texture to matrail 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of exute \\
+\hline
+{\em tex} & texture \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_material_a3f3145a32274e3ba58c48385d874676d}\label{class_material_a3f3145a32274e3ba58c48385d874676d} 
+\index{Material@{Material}!apply@{apply}}
+\index{apply@{apply}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Material\+::apply (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+appply matrix object transofrmaiton ot sahder and vind textures 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_material_a3f3145a32274e3ba58c48385d874676d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_material_af04c58ddb0f040791f57dd65220cd71b}\label{class_material_af04c58ddb0f040791f57dd65220cd71b} 
+\index{Material@{Material}!getAttributeList@{getAttributeList}}
+\index{getAttributeList@{getAttributeList}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{getAttributeList()}{getAttributeList()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ Material\+::get\+Attribute\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{class_attribute}{Attribute} List object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::list$<$std\+::string$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_material_a9267e6d8dc0b823dd63ecb5ffac22acf}\label{class_material_a9267e6d8dc0b823dd63ecb5ffac22acf} 
+\index{Material@{Material}!getAttributeMap@{getAttributeMap}}
+\index{getAttributeMap@{getAttributeMap}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{getAttributeMap()}{getAttributeMap()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} $>$ Material\+::get\+Attribute\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{class_attribute}{Attribute} Map object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::map$<$std\+::string, Attribute\+::\+Types$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_material_a7258c207953779bf9612128d4f78f1f0}\label{class_material_a7258c207953779bf9612128d4f78f1f0} 
+\index{Material@{Material}!getVertexSizeRequired@{getVertexSizeRequired}}
+\index{getVertexSizeRequired@{getVertexSizeRequired}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{getVertexSizeRequired()}{getVertexSizeRequired()}}
+{\footnotesize\ttfamily int Material\+::get\+Vertex\+Size\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{class_vertex}{Vertex} Size Required object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_material_8h}{Material.\+h}}\end{DoxyCompactItemize}

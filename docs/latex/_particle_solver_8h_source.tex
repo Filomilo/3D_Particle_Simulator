@@ -1,0 +1,70 @@
+\doxysection{Particle\+Solver.\+h}
+\hypertarget{_particle_solver_8h_source}{}\label{_particle_solver_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ParticleSolver.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ParticleSolver.h}}
+\mbox{\hyperlink{_particle_solver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <forward\_list>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_force_8h}{Force.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_8h}{Point.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_updatable_8h}{Updatable.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_simulatable_8h}{Simulatable.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_particle_system}{ParticleSystem}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_particle_solver}{ParticleSolver}}:}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_simulatable}{Simulatable}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<ParticleSystem>\ particle\_system\_;}
+\DoxyCodeLine{00040\ \ \ \ \ std::list<std::shared\_ptr<Force>>\ forces;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ updatePos(std::shared\_ptr<Point>\ pt,\ \textcolor{keywordtype}{float}\ timeElpased);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ applyForces(std::shared\_ptr<Point>\ pt,\ \textcolor{keywordtype}{float}\ timeElpased)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Force>\ force:\ forces)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ force-\/>affect(pt,\ timeElpased);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ groundLevel\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ applyGround(std::shared\_ptr<Point>\ pt)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ pos\ =\ std::dynamic\_pointer\_cast<Vector3f>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pos-\/>y<=groundLevel)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>y\ =\ groundLevel;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ vel\ =\ std::dynamic\_pointer\_cast<Vector3f>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}V"{}}));}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ bounce=\ std::dynamic\_pointer\_cast<Float>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}bounce"{}}));}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ vel-\/>y\ *=\ -\/1\ *\ bounce-\/>x;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ applyDecay(std::vector<std::shared\_ptr<Point>>::iterator\ pt,\ \textcolor{keywordtype}{float}\ timeElpased);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_solver_ac0fdc0ab7a228ef3d2cc71440ce28bc5}{update}}(\textcolor{keywordtype}{float}\ timeElpased)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00108\ \ \ \ \ std::shared\_ptr<ParticleSystem>\ \mbox{\hyperlink{class_particle_solver_a37b0c5cff67986c3e8197de02a7ea239}{get\_particle\_system}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ particle\_system\_;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_solver_aa4ffd0bcfb712111313aec328b991d69}{set\_particle\_system}}(std::shared\_ptr<ParticleSystem>\ particle\_system)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ particle\_system\_\ =\ particle\_system;}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_solver_afceb84d56d7e255687f9871dccc0463a}{addForce}}(std::shared\_ptr<Force>\ force)}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ this-\/>forces.push\_back(force);}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_solver_a6a5ae8e08e4b54119e1bc6ecdea86449}{reset}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+
+\end{DoxyCode}

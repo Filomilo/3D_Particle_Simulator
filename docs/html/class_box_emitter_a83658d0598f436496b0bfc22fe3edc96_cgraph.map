@@ -1,0 +1,5 @@
+<map id="BoxEmitter::BoxEmitter" name="BoxEmitter::BoxEmitter">
+<area shape="rect" id="Node000001" title="Construct a new Box Emitter object." alt="" coords="5,13,165,40"/>
+<area shape="rect" id="Node000002" href="$class_transformable.html#add511c646430a73e00f7c23b65f01f1f" title="Set the origin point position." alt="" coords="213,5,341,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,24,197,24,197,29,165,29"/>
+</map>

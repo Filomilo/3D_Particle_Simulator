@@ -1,0 +1,5 @@
+<map id="Vector3f::normalize" name="Vector3f::normalize">
+<area shape="rect" id="Node000001" title="normalisez vector values to achinve length egual to 1" alt="" coords="5,5,139,32"/>
+<area shape="rect" id="Node000002" href="$class_vector3f.html#abd0d544e338c5832b565a189f92e5782" title="method calcluats length using pythogarm theory" alt="" coords="187,5,299,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
+</map>

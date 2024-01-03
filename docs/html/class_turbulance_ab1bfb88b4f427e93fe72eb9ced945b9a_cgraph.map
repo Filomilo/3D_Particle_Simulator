@@ -1,0 +1,9 @@
+<map id="Turbulance::affect" name="Turbulance::affect">
+<area shape="rect" id="Node000001" title="affect method appliyng noise velocity" alt="" coords="5,5,129,32"/>
+<area shape="rect" id="Node000002" href="$class_noise.html#a308dc5c5d3f83f616d842087a262bcf6" title=" " alt="" coords="177,5,290,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,16,161,16,161,21,129,21"/>
+<area shape="rect" id="Node000003" href="$class_vector3f.html#af86f3422d11cfb5e56bdada4b4bc68cc" title="normalisez vector values to achinve length egual to 1" alt="" coords="338,5,471,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="290,16,322,16,322,21,290,21"/>
+<area shape="rect" id="Node000004" href="$class_vector3f.html#abd0d544e338c5832b565a189f92e5782" title="method calcluats length using pythogarm theory" alt="" coords="519,5,632,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="472,16,504,16,504,21,472,21"/>
+</map>

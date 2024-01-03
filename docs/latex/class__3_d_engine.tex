@@ -1,0 +1,320 @@
+\doxysection{\+\_\+3\+DEngine Class Reference}
+\hypertarget{class__3_d_engine}{}\label{class__3_d_engine}\index{\_3DEngine@{\_3DEngine}}
+
+
+main 3d egninge class  
+
+
+
+
+{\ttfamily \#include $<$\+\_\+3\+DEngine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class__3_d_engine_a3a66262f44e27d2e8d9b557b7c7b68e0}\label{class__3_d_engine_a3a66262f44e27d2e8d9b557b7c7b68e0} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+\_\+3\+DEngine} ()
+\begin{DoxyCompactList}\small\item\em Destroy the 3dengine object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a10fb57122ba596e83657d7a5ec245e01}{add\+Update}} (void(\texorpdfstring{$\ast$}{*}funciton)(\mbox{\hyperlink{class__3_d_engine}{\+\_\+3\+DEngine}} \texorpdfstring{$\ast$}{*}engine))
+\begin{DoxyCompactList}\small\item\em add updatable object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a8697768ccc573d9b1a4cd6a1acebb563}{add\+Key\+Call\+Back}} (void(\texorpdfstring{$\ast$}{*}cube\+\_\+key\+\_\+callback)(GLFWwindow \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods))
+\begin{DoxyCompactList}\small\item\em adds key callbakc \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823}{add\+Updatable}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_updatable}{Updatable}} $>$ updatable)
+\begin{DoxyCompactList}\small\item\em add updatable object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a26e3b7416734b6d74a72b9152ddb7510}{add\+Ui\+Element}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_plane}{Ui\+Plane}} $>$ ui\+\_\+plane)
+\begin{DoxyCompactList}\small\item\em adds ui elemtn \end{DoxyCompactList}\item 
+\Hypertarget{class__3_d_engine_af60be567bb38f36c7f8ba2fbe7a3a37b}\label{class__3_d_engine_af60be567bb38f36c7f8ba2fbe7a3a37b} 
+void {\bfseries initlize\+Camera} ()
+\begin{DoxyCompactList}\small\item\em inirlizes camera for opengl \end{DoxyCompactList}\item 
+\Hypertarget{class__3_d_engine_a7874d6af858f0278850fdf7a8372f7aa}\label{class__3_d_engine_a7874d6af858f0278850fdf7a8372f7aa} 
+void {\bfseries initlize\+Ground} ()
+\begin{DoxyCompactList}\small\item\em inrlizes ground for perspecitive \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a87083fbc6774b5472e2e2bbf5fac086e}{iniit}} (int window\+Width, int window\+Height)
+\begin{DoxyCompactList}\small\item\em inrlizes whole engine \end{DoxyCompactList}\item 
+\Hypertarget{class__3_d_engine_ad2cf4d9574cfc7c31b0f13c926fa66b1}\label{class__3_d_engine_ad2cf4d9574cfc7c31b0f13c926fa66b1} 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em start main loop \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf}{add\+Renderable}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_renderable}{Renderable}} $>$ object)
+\begin{DoxyCompactList}\small\item\em add renderable object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{add\+Shader}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}shader)
+\begin{DoxyCompactList}\small\item\em add sahder to be handled \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class__3_d_engine_ac37a9dc3e3a1cde657af2c109a4a0183}{get\+Time\+Runnig}} ()
+\begin{DoxyCompactList}\small\item\em Get the Time Runnig object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class__3_d_engine_a6acace6d5cf988d3f21d795065f5893c}{get\+Time\+Elapesed}} ()
+\begin{DoxyCompactList}\small\item\em Get the Time Elapesed object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class__3_d_engine_a2fbf080aad4a06199abe13295ff22d4e}{get\+Is\+Simulation\+Active}} ()
+\begin{DoxyCompactList}\small\item\em Get the Is Simulation Active object. \end{DoxyCompactList}\item 
+\Hypertarget{class__3_d_engine_ad3578893d0781a710abc58382b2c49e3}\label{class__3_d_engine_ad3578893d0781a710abc58382b2c49e3} 
+void {\bfseries inverse\+Simulation\+Active} ()
+\begin{DoxyCompactList}\small\item\em get if siunumaltion is active \end{DoxyCompactList}\item 
+\Hypertarget{class__3_d_engine_a6c7f33de8ad902fce8d3138480f404f0}\label{class__3_d_engine_a6c7f33de8ad902fce8d3138480f404f0} 
+void {\bfseries clear\+Simulation} ()
+\begin{DoxyCompactList}\small\item\em clears al simulations \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class__3_d_engine_a0bd84951b11a10e6f93b53376ac995a1}{add\+Simulatable}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simulatable}{Simulatable}} $>$ element)
+\begin{DoxyCompactList}\small\item\em adds simualtables \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class__3_d_engine}{\+\_\+3\+DEngine}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the Instance object. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_keyboard}{Keyboard}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e}{get\+Key\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_key}{Key} Board object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main 3d egninge class 
+
+3d engine class coanitng all oject ot be rneder simualted updated nad runs main loop for handling al renders and updates it is suing singleton so it can be sued everywhere 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class__3_d_engine_a8697768ccc573d9b1a4cd6a1acebb563}\label{class__3_d_engine_a8697768ccc573d9b1a4cd6a1acebb563} 
+\index{\_3DEngine@{\_3DEngine}!addKeyCallBack@{addKeyCallBack}}
+\index{addKeyCallBack@{addKeyCallBack}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addKeyCallBack()}{addKeyCallBack()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Key\+Call\+Back (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(GLFWwindow \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods)}]{cube\+\_\+key\+\_\+callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds key callbakc 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cube\+\_\+key\+\_\+callback} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf}\label{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf} 
+\index{\_3DEngine@{\_3DEngine}!addRenderable@{addRenderable}}
+\index{addRenderable@{addRenderable}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addRenderable()}{addRenderable()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Renderable (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_renderable}{Renderable}} $>$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add renderable object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class__3_d_engine_a49fc140cd27902976955ca329d651969}\label{class__3_d_engine_a49fc140cd27902976955ca329d651969} 
+\index{\_3DEngine@{\_3DEngine}!addShader@{addShader}}
+\index{addShader@{addShader}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addShader()}{addShader()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add sahder to be handled 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class__3_d_engine_a0bd84951b11a10e6f93b53376ac995a1}\label{class__3_d_engine_a0bd84951b11a10e6f93b53376ac995a1} 
+\index{\_3DEngine@{\_3DEngine}!addSimulatable@{addSimulatable}}
+\index{addSimulatable@{addSimulatable}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addSimulatable()}{addSimulatable()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Simulatable (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simulatable}{Simulatable}} $>$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds simualtables 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_a0bd84951b11a10e6f93b53376ac995a1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class__3_d_engine_a26e3b7416734b6d74a72b9152ddb7510}\label{class__3_d_engine_a26e3b7416734b6d74a72b9152ddb7510} 
+\index{\_3DEngine@{\_3DEngine}!addUiElement@{addUiElement}}
+\index{addUiElement@{addUiElement}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addUiElement()}{addUiElement()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Ui\+Element (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_plane}{Ui\+Plane}} $>$}]{ui\+\_\+plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds ui elemtn 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+\_\+plane} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823}\label{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823} 
+\index{\_3DEngine@{\_3DEngine}!addUpdatable@{addUpdatable}}
+\index{addUpdatable@{addUpdatable}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addUpdatable()}{addUpdatable()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Updatable (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_updatable}{Updatable}} $>$}]{updatable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add updatable object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updatable} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class__3_d_engine_a10fb57122ba596e83657d7a5ec245e01}\label{class__3_d_engine_a10fb57122ba596e83657d7a5ec245e01} 
+\index{\_3DEngine@{\_3DEngine}!addUpdate@{addUpdate}}
+\index{addUpdate@{addUpdate}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{addUpdate()}{addUpdate()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::add\+Update (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})(\mbox{\hyperlink{class__3_d_engine}{\+\_\+3\+DEngine}} \texorpdfstring{$\ast$}{*}engine)}]{funciton }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add updatable object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em funciton} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}\label{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b} 
+\index{\_3DEngine@{\_3DEngine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class__3_d_engine}{\+\_\+3\+DEngine}} \texorpdfstring{$\ast$}{*} \+\_\+3\+DEngine\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the Instance object. 
+
+\begin{DoxyReturn}{Returns}
+\+\_\+3\+DEngine\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class__3_d_engine_a2fbf080aad4a06199abe13295ff22d4e}\label{class__3_d_engine_a2fbf080aad4a06199abe13295ff22d4e} 
+\index{\_3DEngine@{\_3DEngine}!getIsSimulationActive@{getIsSimulationActive}}
+\index{getIsSimulationActive@{getIsSimulationActive}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{getIsSimulationActive()}{getIsSimulationActive()}}
+{\footnotesize\ttfamily bool \+\_\+3\+DEngine\+::get\+Is\+Simulation\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Is Simulation Active object. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e}\label{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e} 
+\index{\_3DEngine@{\_3DEngine}!getKeyBoard@{getKeyBoard}}
+\index{getKeyBoard@{getKeyBoard}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{getKeyBoard()}{getKeyBoard()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_keyboard}{Keyboard}} \texorpdfstring{$\ast$}{*} \+\_\+3\+DEngine\+::get\+Key\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the \doxylink{class_key}{Key} Board object. 
+
+\begin{DoxyReturn}{Returns}
+Keyboard\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class__3_d_engine_a6acace6d5cf988d3f21d795065f5893c}\label{class__3_d_engine_a6acace6d5cf988d3f21d795065f5893c} 
+\index{\_3DEngine@{\_3DEngine}!getTimeElapesed@{getTimeElapesed}}
+\index{getTimeElapesed@{getTimeElapesed}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{getTimeElapesed()}{getTimeElapesed()}}
+{\footnotesize\ttfamily float \+\_\+3\+DEngine\+::get\+Time\+Elapesed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Time Elapesed object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{class__3_d_engine_ac37a9dc3e3a1cde657af2c109a4a0183}\label{class__3_d_engine_ac37a9dc3e3a1cde657af2c109a4a0183} 
+\index{\_3DEngine@{\_3DEngine}!getTimeRunnig@{getTimeRunnig}}
+\index{getTimeRunnig@{getTimeRunnig}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{getTimeRunnig()}{getTimeRunnig()}}
+{\footnotesize\ttfamily float \+\_\+3\+DEngine\+::get\+Time\+Runnig (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Time Runnig object. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\Hypertarget{class__3_d_engine_a87083fbc6774b5472e2e2bbf5fac086e}\label{class__3_d_engine_a87083fbc6774b5472e2e2bbf5fac086e} 
+\index{\_3DEngine@{\_3DEngine}!iniit@{iniit}}
+\index{iniit@{iniit}!\_3DEngine@{\_3DEngine}}
+\doxysubsubsection{\texorpdfstring{iniit()}{iniit()}}
+{\footnotesize\ttfamily void \+\_\+3\+DEngine\+::iniit (\begin{DoxyParamCaption}\item[{int}]{window\+Width,  }\item[{int}]{window\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+inrlizes whole engine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Width} & \\
+\hline
+{\em window\+Height} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class__3_d_engine_a87083fbc6774b5472e2e2bbf5fac086e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{__3_d_engine_8h}{\+\_\+3\+DEngine.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\+\_\+3\+DEngine.\+cpp\end{DoxyCompactItemize}

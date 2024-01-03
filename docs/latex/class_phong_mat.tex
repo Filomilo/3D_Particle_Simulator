@@ -1,0 +1,335 @@
+\doxysection{Phong\+Mat Class Reference}
+\hypertarget{class_phong_mat}{}\label{class_phong_mat}\index{PhongMat@{PhongMat}}
+
+
+{\ttfamily \#include $<$Phong\+Mat.\+h$>$}
+
+
+
+Inheritance diagram for Phong\+Mat\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{class_phong_mat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Phong\+Mat\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_phong_mat__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ \mbox{\hyperlink{class_phong_mat_a8a69c7cf79e18f24c9a4ebb71054fb32}{get\+\_\+color\+\_\+tex}} () const
+\item 
+void \mbox{\hyperlink{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3}{set\+\_\+color\+\_\+tex}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ color\+\_\+tex)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ \mbox{\hyperlink{class_phong_mat_a843366939f1606dee9f0c4a2bf4437df}{get\+\_\+normal\+\_\+tex}} () const
+\item 
+void \mbox{\hyperlink{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a}{set\+\_\+normal\+\_\+tex}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ normal\+\_\+tex)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ \mbox{\hyperlink{class_phong_mat_a72e7f6b51b06c179436a1e90f27b0b0f}{get\+\_\+emission\+\_\+tex}} () const
+\item 
+void \mbox{\hyperlink{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6}{set\+\_\+emission\+\_\+tex}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ emission\+\_\+tex)
+\item 
+void \mbox{\hyperlink{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209}{set\+\_\+rough\+\_\+tex}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ tex)
+\item 
+void \mbox{\hyperlink{class_phong_mat_a6c42eb5f7092b1a4a9bd2422b0d40b85}{set\+\_\+color\+\_\+tex}} (const char \texorpdfstring{$\ast$}{*}str, int i, int i1, int i2)
+\item 
+void \mbox{\hyperlink{class_phong_mat_adfd25926cda2da8de33b03fe427cc42e}{set\+\_\+normal\+\_\+tex}} (const char \texorpdfstring{$\ast$}{*}str, int i, int i1, int i2)
+\item 
+void \mbox{\hyperlink{class_phong_mat_aabffe0dc9922e7a5ff8270969a645a22}{set\+\_\+rough\+\_\+tex}} (const char \texorpdfstring{$\ast$}{*}str, int i, int i1, int i2, int type=GL\+\_\+\+RED)
+\item 
+void \mbox{\hyperlink{class_phong_mat_a10cfa3ca30c0b05fed5f0097159c9bba}{set\+\_\+emission\+\_\+tex}} (const char \texorpdfstring{$\ast$}{*}str, int i, int i1, int i2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_material}{Material}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_material_a63966f646a6b1e1f82399da648d63482}{Material}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_material}{Material} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_material_a24b769968cf734fff20e1974840cbe29}{add\+Tex}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ tex)
+\begin{DoxyCompactList}\small\item\em add texture to matrail \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_material_a3f3145a32274e3ba58c48385d874676d}{apply}} (glm\+::mat4 model)
+\begin{DoxyCompactList}\small\item\em appply matrix object transofrmaiton ot sahder and vind textures \end{DoxyCompactList}\item 
+void {\bfseries unapply} ()
+\begin{DoxyCompactList}\small\item\em unaplly textures and stops using shader \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_material_af04c58ddb0f040791f57dd65220cd71b}{get\+Attribute\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} List object. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} $>$ \mbox{\hyperlink{class_material_a9267e6d8dc0b823dd63ecb5ffac22acf}{get\+Attribute\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} Map object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_material_a7258c207953779bf9612128d4f78f1f0}{get\+Vertex\+Size\+Required}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Size Required object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_material}{Material}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries un\+Bind\+Tex} ()
+\begin{DoxyCompactList}\small\item\em unbinds all the textures \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_material}{Material}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} {\bfseries shader}
+\begin{DoxyCompactList}\small\item\em shader used by this metrial \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ $>$ {\bfseries textures}
+\begin{DoxyCompactList}\small\item\em list of texture conatined in this matariela \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a class that wraps basci phong material to its own class to simplfy mangaing it . 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_phong_mat_a8a69c7cf79e18f24c9a4ebb71054fb32}\label{class_phong_mat_a8a69c7cf79e18f24c9a4ebb71054fb32} 
+\index{PhongMat@{PhongMat}!get\_color\_tex@{get\_color\_tex}}
+\index{get\_color\_tex@{get\_color\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{get\_color\_tex()}{get\_color\_tex()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ Phong\+Mat\+::get\+\_\+color\+\_\+tex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter for color texture.
+
+\begin{DoxyReturn}{Returns}
+color texutre 
+\end{DoxyReturn}
+\Hypertarget{class_phong_mat_a72e7f6b51b06c179436a1e90f27b0b0f}\label{class_phong_mat_a72e7f6b51b06c179436a1e90f27b0b0f} 
+\index{PhongMat@{PhongMat}!get\_emission\_tex@{get\_emission\_tex}}
+\index{get\_emission\_tex@{get\_emission\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{get\_emission\_tex()}{get\_emission\_tex()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ Phong\+Mat\+::get\+\_\+emission\+\_\+tex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter for emssion texture.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_phong_mat_a843366939f1606dee9f0c4a2bf4437df}\label{class_phong_mat_a843366939f1606dee9f0c4a2bf4437df} 
+\index{PhongMat@{PhongMat}!get\_normal\_tex@{get\_normal\_tex}}
+\index{get\_normal\_tex@{get\_normal\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{get\_normal\_tex()}{get\_normal\_tex()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ Phong\+Mat\+::get\+\_\+normal\+\_\+tex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+getter fro normal texture.
+
+\begin{DoxyReturn}{Returns}
+normal map 
+\end{DoxyReturn}
+\Hypertarget{class_phong_mat_a6c42eb5f7092b1a4a9bd2422b0d40b85}\label{class_phong_mat_a6c42eb5f7092b1a4a9bd2422b0d40b85} 
+\index{PhongMat@{PhongMat}!set\_color\_tex@{set\_color\_tex}}
+\index{set\_color\_tex@{set\_color\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_color\_tex()}{set\_color\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+color\+\_\+tex (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{i,  }\item[{int}]{i1,  }\item[{int}]{i2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter color texture with creation of it already in method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & localisation of texture in files \\
+\hline
+{\em i} & wifth of texutre \\
+\hline
+{\em i1} & height of texture \\
+\hline
+{\em i2} & bit depth of texture \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_a6c42eb5f7092b1a4a9bd2422b0d40b85_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3}\label{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3} 
+\index{PhongMat@{PhongMat}!set\_color\_tex@{set\_color\_tex}}
+\index{set\_color\_tex@{set\_color\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_color\_tex()}{set\_color\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+color\+\_\+tex (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$}]{color\+\_\+tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for color texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color\+\_\+tex} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_a10cfa3ca30c0b05fed5f0097159c9bba}\label{class_phong_mat_a10cfa3ca30c0b05fed5f0097159c9bba} 
+\index{PhongMat@{PhongMat}!set\_emission\_tex@{set\_emission\_tex}}
+\index{set\_emission\_tex@{set\_emission\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_emission\_tex()}{set\_emission\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+emission\+\_\+tex (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{i,  }\item[{int}]{i1,  }\item[{int}]{i2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter emsision texture with creation of it already in method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & localisation of texture in files \\
+\hline
+{\em i} & wifth of texutre \\
+\hline
+{\em i1} & height of texture \\
+\hline
+{\em i2} & bit depth of texture \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_a10cfa3ca30c0b05fed5f0097159c9bba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6}\label{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6} 
+\index{PhongMat@{PhongMat}!set\_emission\_tex@{set\_emission\_tex}}
+\index{set\_emission\_tex@{set\_emission\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_emission\_tex()}{set\_emission\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+emission\+\_\+tex (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$}]{emission\+\_\+tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for emission texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em emission\+\_\+tex} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_adfd25926cda2da8de33b03fe427cc42e}\label{class_phong_mat_adfd25926cda2da8de33b03fe427cc42e} 
+\index{PhongMat@{PhongMat}!set\_normal\_tex@{set\_normal\_tex}}
+\index{set\_normal\_tex@{set\_normal\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_normal\_tex()}{set\_normal\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+normal\+\_\+tex (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{i,  }\item[{int}]{i1,  }\item[{int}]{i2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter normal texture with creation of it already in method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & localisation of texture in files \\
+\hline
+{\em i} & wifth of texutre \\
+\hline
+{\em i1} & height of texture \\
+\hline
+{\em i2} & bit depth of texture \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_adfd25926cda2da8de33b03fe427cc42e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a}\label{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a} 
+\index{PhongMat@{PhongMat}!set\_normal\_tex@{set\_normal\_tex}}
+\index{set\_normal\_tex@{set\_normal\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_normal\_tex()}{set\_normal\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+normal\+\_\+tex (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$}]{normal\+\_\+tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+.setter normal map of model
+
+
+\begin{DoxyParams}{Parameters}
+{\em normal\+\_\+tex} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_aabffe0dc9922e7a5ff8270969a645a22}\label{class_phong_mat_aabffe0dc9922e7a5ff8270969a645a22} 
+\index{PhongMat@{PhongMat}!set\_rough\_tex@{set\_rough\_tex}}
+\index{set\_rough\_tex@{set\_rough\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_rough\_tex()}{set\_rough\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+rough\+\_\+tex (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{i,  }\item[{int}]{i1,  }\item[{int}]{i2,  }\item[{int}]{type = {\ttfamily GL\+\_\+RED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter rougness texture with creation of it already in method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & localisation of texture in files \\
+\hline
+{\em i} & wifth of texutre \\
+\hline
+{\em i1} & height of texture \\
+\hline
+{\em i2} & bit depth of texture \\
+\hline
+{\em type} & color type of texture \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_aabffe0dc9922e7a5ff8270969a645a22_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209}\label{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209} 
+\index{PhongMat@{PhongMat}!set\_rough\_tex@{set\_rough\_tex}}
+\index{set\_rough\_tex@{set\_rough\_tex}!PhongMat@{PhongMat}}
+\doxysubsubsection{\texorpdfstring{set\_rough\_tex()}{set\_rough\_tex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Phong\+Mat\+::set\+\_\+rough\+\_\+tex (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$}]{tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for roughned/sepcular texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_phong_mat_8h}{Phong\+Mat.\+h}}\end{DoxyCompactItemize}

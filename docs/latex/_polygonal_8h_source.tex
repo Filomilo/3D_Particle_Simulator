@@ -1,0 +1,343 @@
+\doxysection{Polygonal.\+h}
+\hypertarget{_polygonal_8h_source}{}\label{_polygonal_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Polygonal.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Polygonal.h}}
+\mbox{\hyperlink{_polygonal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_e_b_o_8h}{EBO.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_8h}{Renderable.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transformable_8h}{Transformable.h}}"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_face_8h}{Face.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gl_object_8h}{GlObject.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_8h}{Material.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vertex_8h}{Vertex.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_8h}{Point.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_8h}{PointGroup.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_a_o_8h}{VAO.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector4f_8h}{Vector4f.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_polygonal}{Polygonal}}\ :}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point_group}{PointGroup}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_e_b_o}{EBO}}*\ ebo;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<std::shared\_ptr<Vertex>>\ vertices;}
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<Face*>\ faces;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00070\ \ \ \ \ GLfloat*\ getVertexBufferForMat(std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ GLfloat*\ arrayVbo\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[this-\/>getVerteciesAmount()\ *\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}()];}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::map<std::string,\ Attribute::Types>\ attributesMap\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeMap();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::list<std::string>\ attributeList\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeList();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertIndex\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}VErtxBuffer::"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Vertex>\ vertex\ :\ this-\/>vertices)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ attribName\ :\ attributeList)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ attribType\ =\ attributesMap.find(attribName)-\/>second;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector4f>\ attribVal\ =\ std::static\_pointer\_cast\ <Vector4f>(this-\/>getVertexAttrib(vertIndex,\ attribName));}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ attribType;\ i++)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arrayVbo[index++]\ =\ (*attribVal)[i];}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ (*attribVal)[i]\ <<\ "{},\ "{};}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout<<\ vertIndex<<"{}/"{}<<this-\/>vertices.size()\ <<\ std::endl;}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ vertIndex++;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ arrayVbo;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \ \ \ \ GLfloat*\ getVertexBuffer()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ getVertexBufferForMat(this-\/>mat);}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ getVerteciesAmount()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00121\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vertices.size();}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ getIndeciesArray()}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}<<\ this-\/>getTringlePointCount()\ <<\ std::endl\ <<\ std::endl;}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ eboArray\ =\ \textcolor{keyword}{new}\ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}[this-\/>\mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}()];}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}ndeciesArray::"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_face}{Face}}*\ face:\ this-\/>faces)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<unsigned\ int>\ indecies\ =\ face-\/>get\_vertex\_indecies();}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ firstIndex\ =\ indecies[0];}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=2;i<indecies.size();i++)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eboArray[index++]\ =\ firstIndex;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eboArray[index++]\ =\ indecies[i-\/1];}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eboArray[index++]\ =\ indecies[i\ ];}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ firstIndex\ <<\ "{},\ "{}\ <<\ indecies[i-\/1]\ <<\ "{},\ "{}\ <<\ indecies[i\ ]\ <<\ std::endl;}}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ eboArray;}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00172\ \ \ \ \ std::shared\_ptr<Attribute>\ getVertexAttrib(\textcolor{keywordtype}{int}\ num,\ std::string\ attrib)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vertex>\ vertex\ =\ this-\/>vertices.at(num);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vertex-\/>isThereAttrib(attrib))\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Point>\ pt\ =\ this-\/>\mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}.at(vertex-\/>pointIndex);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pt-\/>getAttribute(attrib);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vertex-\/>getAttribute(attrib);}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ unbind()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_af142c6a9d45130b1702e61d70fddac54}{GlObject::unbind}}();}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ ebo-\/>\mbox{\hyperlink{class_e_b_o_a8857542d7b10bc6ecd3aadd0567d4d42}{unbind}}();}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ bind()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a6654c05d05132852deab11aac65dec39}{GlObject::bind}}();}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ this-\/>ebo-\/>\mbox{\hyperlink{class_e_b_o_a0fc0d95ce8b37f98a256f4dd8581c33f}{bind}}();}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_polygonal_ab2f212430d6c01ea42e050bba5fadeec}{Polygonal}}():\ \mbox{\hyperlink{class_point_group}{PointGroup}}()}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(\textcolor{keywordtype}{int}\ ptnum)}
+\DoxyCodeLine{00219\ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vertex>\ vertex\ =\ std::make\_shared<Vertex>(ptnum);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ this-\/>vertices.push\_back(vertex);}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a408d79f114d494dc8167197cd9d3abe1}{addVertex}}(\textcolor{keywordtype}{int}\ ptnum,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ normals)}
+\DoxyCodeLine{00230\ \ \ \ \ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vertex>\ vertex\ =\ std::make\_shared<Vertex>(ptnum,\ normals);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ this-\/>vertices.push\_back(vertex);}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a10aebdb62a58e60c93c4863f61b4a24c}{addVertex}}(\textcolor{keywordtype}{int}\ ptnum,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ normals,\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ Uvs)}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vertex>\ vertex\ =\ std::make\_shared<Vertex>(ptnum,\ normals,\ Uvs);}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ this-\/>vertices.push\_back(vertex);}
+\DoxyCodeLine{00246\ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(std::initializer\_list<int>\ verteciesNumber)}
+\DoxyCodeLine{00253\ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_face}{Face}}*\ face\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_face}{Face}};}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ val\ :\ verteciesNumber)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ face-\/>\mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(val);}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ this-\/>faces.push\_back(face);}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a8ae6f814c99a8dbe307fad2821b03199}{addFaces}}(std::initializer\_list<std::initializer\_list<int>\ >\ faces)}
+\DoxyCodeLine{00266\ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::initializer\_list<int>\ verteciesNumber\ :\ faces)}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(verteciesNumber);}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a9c0f9b06a300c0b9d1f2c135179b1e29}{addVertecies}}(std::initializer\_list<int>\ indxs)}
+\DoxyCodeLine{00279\ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ ptnb\ :\ indxs)}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(ptnb);}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a143cff6a159dac44164305139a8f5c18}{iniitEBO}}()}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ GLuint*\ indeciesBuffer\ =\ this-\/>getIndeciesArray();}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00298\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ this-\/>getTringlePointCount();\ i++)}}
+\DoxyCodeLine{00299\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00300\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ //std::cout\ <<\ indeciesBuffer[i]\ <<\ "{},"{};}}
+\DoxyCodeLine{00301\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (i\ \%\ 3\ ==\ 2)\ \{}}
+\DoxyCodeLine{00302\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00303\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(i\%1000==0)}}
+\DoxyCodeLine{00304\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ i\ <<\ "{}/"{}\ <<\ this-\/>getTringlePointCount()\ <<\ "{},"{}\ <<\ std::endl;;}}
+\DoxyCodeLine{00305\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00306\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00308\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}eboinit\(\backslash\)n"{}};}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ this-\/>ebo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_e_b_o}{EBO}}((GLuint*)indeciesBuffer,\ this-\/>\mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}()\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ indeciesBuffer;}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ \ \ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a7e3ad1d7b539c03039de66f16a2ef28e}{initParts}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00319\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a04b2c9a9f4e7d6c37b69c2e775e79c29}{GlObject::initParts}}();}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_polygonal_a143cff6a159dac44164305139a8f5c18}{iniitEBO}}();}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_ae52c35fa6cb877a685ddcc7c04e19ba0}{glDrawCall}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00330\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}polygonal\ rnder:\ "{}\ <<\ this-\/>vertices.size()\ <<\ std::endl;;}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ glDrawElements(GL\_TRIANGLES,\ this-\/>\mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}(),\ GL\_UNSIGNED\_INT,\ 0);}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a00de27cbcccc03b47b8a0fad681e0e28}{addFace}}(\mbox{\hyperlink{class_face}{Face}}*\ face)}
+\DoxyCodeLine{00342\ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ this-\/>faces.push\_back(face);}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_af94c434bf667c08fc9b90cc83b22d51b}{addFace}}(\textcolor{keyword}{const}\ std::vector<int>\&\ vector)}
+\DoxyCodeLine{00352\ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_face}{Face}}*\ newFace\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_face}{Face}};}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ indx\ :\ vector)}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ newFace-\/>\mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(indx);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(newFace);}
+\DoxyCodeLine{00359\ \ \ \ \ \}}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_ababeedde87b427c70196ab39165bdf44}{cleanGeo}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00367\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_ac534dc3ae2dc90f00f4dcf180745d125}{PointGroup::cleanGeo}}();}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ vertices.clear();}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ faces.clear();}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_adbf7db3dc2a1f07944bc1358f1366036}{addRect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\&\ left\_upper\_pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\&\ right\_down\_pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\&\ left\_upper\_uv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\&\ right\_down\_uv)}
+\DoxyCodeLine{00385\ \ \ \ \ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ amountOfPOints\ =\ this-\/>\mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}.size();}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(left\_upper\_pos.x,\ left\_upper\_pos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},0);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(right\_down\_pos.x,\ left\_upper\_pos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ 0);}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(right\_down\_pos.x,\ right\_down\_pos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ 0);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(left\_upper\_pos.x,\ right\_down\_pos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ 0);}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(amountOfPOints\ +\ 0,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ left\_upper\_uv.x,\ left\_upper\_uv.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ \});}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(amountOfPOints\ +\ 1,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ right\_down\_uv.x\ ,left\_upper\_uv.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ \});}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(amountOfPOints\ +\ 2,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ right\_down\_uv.x,right\_down\_uv.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ \});}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(amountOfPOints\ +\ 3,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ left\_upper\_uv.x,\ right\_down\_uv.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ \});}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ amountOfPOints\ +\ 0,amountOfPOints\ +\ 1,amountOfPOints\ +\ 2,amountOfPOints\ +\ 3\ \});}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \}}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00406\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_polygonal_a2eb1b2dae19617a9f23b33f63a39c345}{updateEbo}}()}
+\DoxyCodeLine{00407\ \ \ \ \ \{}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ GLuint*\ indeciesBuffer\ =\ this-\/>getIndeciesArray();}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>\mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}();\ i++)}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ indeciesBuffer[i]\ <<\ "{},"{};}}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ (i\ \%\ 3\ ==\ 2)}}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ this-\/>ebo-\/>\mbox{\hyperlink{class_e_b_o_a2faf86d52e8ec6324d6307c705b27c9e}{update}}((GLuint*)indeciesBuffer,\ this-\/>\mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}()\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int));}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ indeciesBuffer;}
+\DoxyCodeLine{00420\ \ \ \ \ \}}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{getTringlePointCount}}()}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numbers\ =\ 0;}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_face}{Face}}*\ fc\ :\ this-\/>faces)}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numbers\ +=\ 3\ *\ (fc-\/>get\_vertex\_indecies().size()\ -\/\ 2);}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}numbers::\ "{}\ <<\ numbers\ <<\ std::endl;}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numbers;}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addFullFace(std::vector<int>\ pointIndecies)}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currectnVrtexAmount\ =\ this-\/>vertices.size();}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}size:\ "{}\ <<\ this-\/>vertices.size()\ <<\ std::endl;}}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_face}{Face}}*\ face\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_face}{Face}}();}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pointindex\ :\ pointIndecies)}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ pointindex\ <<\ "{},\ "{};}}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(pointindex);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ face-\/>\mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(currectnVrtexAmount++);}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(face);}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addFullFace(std::vector<int>\ pointIndecies,\ std::vector<Vector2f>\ uvs)}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currectnVrtexAmount\ =\ this-\/>vertices.size();}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}size:\ "{}\ <<\ this-\/>vertices.size()\ <<\ std::endl;}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_face}{Face}}*\ face\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_face}{Face}}();}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pointindex\ :\ pointIndecies)}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<"{}pos:\ "{}<<\ pointindex\ <<\ "{},\ uv:\ "{}<<\ uvs.at(i)<<std::endl;}}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(pointindex,\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,0,0),\ uvs.at(i));}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ face-\/>\mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(currectnVrtexAmount++);}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(face);}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addFullFace(std::vector<int>\ pointIndecies,\ std::vector<Vector2f>\ uvs,\ std::vector<Vector3f>\ ns)}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currectnVrtexAmount\ =\ this-\/>vertices.size();}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}size:\ "{}\ <<\ this-\/>vertices.size()\ <<\ std::endl;}}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_face}{Face}}*\ face\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_face}{Face}}();}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ pointindex\ :\ pointIndecies)}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}pos:\ "{}\ <<\ pointindex\ <<\ "{},\ uv:\ "{}\ <<\ uvs.at(i)\ <<\ std::endl;}}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(pointindex,\ ns.at(i),\ uvs.at(i));}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ face-\/>\mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(currectnVrtexAmount++);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(face);}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \};}
+\DoxyCodeLine{00496\ }
+
+\end{DoxyCode}

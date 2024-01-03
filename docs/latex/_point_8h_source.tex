@@ -1,0 +1,92 @@
+\doxysection{Point.\+h}
+\hypertarget{_point_8h_source}{}\label{_point_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Point.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Point.h}}
+\mbox{\hyperlink{_point_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{Vector3f.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point}{Point}}\ :}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_point_abf67a1160dd25744b162999d0cac1adf}{Point}}(\textcolor{keywordtype}{float}\ x=0,\ \textcolor{keywordtype}{float}\ y=0,\ \textcolor{keywordtype}{float}\ z=0)\ :\ \mbox{\hyperlink{class_object}{Object}}()}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ pos=\ std::make\_shared<Vector3f>(x,\ y,\ z);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}P"{}},pos);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_point_ad9df67895f722afe3efedc269c17823a}{Point}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos)\ :\ \mbox{\hyperlink{class_object}{Object}}()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}P"{}},\ std::make\_shared<Vector3f>(pos));}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \mbox{\hyperlink{class_point_a23cf1a19ad6d123e9c4c2f3237df0913}{Point}}(std::initializer\_list<float>\ initializers):\ \mbox{\hyperlink{class_object}{Object}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ pos=std::make\_shared<Vector3f>();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{float}\ posVal:\ initializers)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ (*pos)[i++]\ =\ posVal;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}P"{}},\ pos);}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a4e75b065a97aa8850b5b79f95bd63de7}{setColor}}(\textcolor{keywordtype}{float}\ r,\textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ std::shared\_ptr<\ Vector3f>\ cd\ =\ std::make\_shared<Vector3f>(r,g,b);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}Cd"{}},\ cd);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a41dbe49207a8fd141e70e317b2bd04d5}{setPscale}}(\textcolor{keywordtype}{float}\ size)}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ pscale\ =\ std::make\_shared<Float>(size);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}pscale"{}},\ pscale);}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_aa9f3656d011ad031b2019c967a752a4c}{setVelocity}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ std::shared\_ptr<\ Vector3f>\ V\ =\ std::make\_shared<Vector3f>(x,y,z);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}V"{}},\ V);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a1a8a88a4765bbe6bfe8d275fe8698875}{setMass}}(\textcolor{keywordtype}{float}\ mass)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ Mass\ =\ std::make\_shared<Float>(mass);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}mass"{}},\ Mass);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_af2620710c18bd529a2b3d895810b89a1}{setBounce}}(\textcolor{keywordtype}{float}\ bounce)}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ Bounce\ =\ std::make\_shared<Float>(bounce);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}bounce"{}},\ Bounce);}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_ad52cb216702e97fca4d029a0257b9ef9}{setLife}}(\textcolor{keywordtype}{float}\ life)}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ Life\ =\ std::make\_shared<Float>(life);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}life"{}},\ Life);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a15061d264ff84b5e82363b34435d12c8}{setAge}}(\textcolor{keywordtype}{float}\ age)}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ Age\ =\ std::make\_shared<Float>(age);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}age"{}},\ Age);}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a190a449119d5bead0a4927cced8db270}{increaseAge}}(\textcolor{keywordtype}{float}\ amount)}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ Age\ =\ std::dynamic\_pointer\_cast<Float>(\mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{getAttribute}}(\textcolor{stringliteral}{"{}age"{}}));}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_a15061d264ff84b5e82363b34435d12c8}{setAge}}(Age-\/>x\ +\ amount);}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{class_point_ac8c1ef2f28ed16a4bfc677a24d7768d9}{Point}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ size=1):\mbox{\hyperlink{class_point}{Point}}(x,y,z)}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_a4e75b065a97aa8850b5b79f95bd63de7}{setColor}}(r,\ g,\ b);}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_a41dbe49207a8fd141e70e317b2bd04d5}{setPscale}}(size);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{class_point}{\string~Point}}()}
+\DoxyCodeLine{00193\ \ \ \ \ \{}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \};}
+\DoxyCodeLine{00197\ }
+
+\end{DoxyCode}

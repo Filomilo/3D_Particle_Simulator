@@ -1,0 +1,20 @@
+<map id="Face::addPointINdex" name="Face::addPointINdex">
+<area shape="rect" id="Node000001" title="add vetex index to face" alt="" coords="381,107,523,133"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#af94c434bf667c08fc9b90cc83b22d51b" title="adds face based indecies prvovided" alt="" coords="9,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="384,105,129,35,130,30,386,100"/>
+<area shape="rect" id="Node000003" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="197,132,333,159"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="366,134,334,139,333,133,365,129"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="239,123,198,84,147,46,124,35,126,30,150,42,202,80,243,119"/>
+<area shape="rect" id="Node000004" href="$class_polygonal.html#a8ae6f814c99a8dbe307fad2821b03199" title="crates muliple faces made out of prvide vertecie indecies" alt="" coords="5,56,149,83"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="219,128,148,97,118,86,120,81,150,92,221,123"/>
+<area shape="rect" id="Node000005" href="$class_polygonal.html#adbf7db3dc2a1f07944bc1358f1366036" title="add rectangel in postion provided" alt="" coords="10,107,144,133"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="181,137,144,132,145,126,181,131"/>
+<area shape="rect" id="Node000006" href="$class_cube.html#aa5836d076d913d4272b8b1547d695df3" title="Construct a new Cube object." alt="" coords="32,157,122,184"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="182,159,123,167,122,162,181,154"/>
+<area shape="rect" id="Node000007" href="$class_poly_grid.html#a9adcd65dd2ad98e6e8d02030436b6657" title="Construct a new Poly Grid object." alt="" coords="12,208,142,235"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="221,168,150,198,120,210,118,205,148,194,219,163"/>
+<area shape="rect" id="Node000008" href="$class_sphere.html#a475cfda56524d2d06440b713707390ff" title="Construct a new Sphere object." alt="" coords="21,259,133,285"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="243,172,202,211,150,249,126,260,124,256,147,244,198,207,239,168"/>
+<area shape="rect" id="Node000009" href="$class_ui_plane.html#a0478c4cee4849541e96e66a0506c03a0" title="Construct a new Ui Plane object." alt="" coords="17,309,137,336"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="252,174,211,236,183,270,150,300,130,311,127,306,147,295,179,266,207,233,247,171"/>
+</map>

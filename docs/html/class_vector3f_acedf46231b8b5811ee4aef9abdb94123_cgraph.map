@@ -1,0 +1,5 @@
+<map id="Vector3f::operator*" name="Vector3f::operator*">
+<area shape="rect" id="Node000001" title="overlaoding operator * allowing to multuply vectro value with one float value" alt="" coords="5,5,135,32"/>
+<area shape="rect" id="Node000002" href="$class_vector3f.html#a1b14b77d2503c1b1ca1363163ff55432" title="Construct a new Vector 3f object with all 3 values of 0." alt="" coords="183,5,308,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,16,167,16,167,21,135,21"/>
+</map>

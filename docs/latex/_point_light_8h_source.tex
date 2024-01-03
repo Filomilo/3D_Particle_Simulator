@@ -1,0 +1,51 @@
+\doxysection{Point\+Light.\+h}
+\hypertarget{_point_light_8h_source}{}\label{_point_light_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointLight.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointLight.h}}
+\mbox{\hyperlink{_point_light_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_cube_8h}{Cube.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_light_8h}{Light.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_lib_8h}{ShaderLib.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_light}{PointLight}}\ :}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_light}{Light}},}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_cube}{Cube}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ setLightPos()}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_light_a7753b01ec8dc5345a961a3b2ff71cc7a}{light\_data}}.lightTypeData[\mbox{\hyperlink{class_light_ae38ed2514b1c4c83461d02cda9caa224}{lightNum}}].position\ =\ \mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{getFullPositon}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_point_light_abbfdf5f05b559c49016f8bb97b0ca414}{PointLight}}():\ \mbox{\hyperlink{class_light}{Light}}(),\ \mbox{\hyperlink{class_cube}{Cube}}(1)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78}{ShaderLib::guideShader}}));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_light_a2a87f841449160af66a4afca19061cd7}{setLightType}}(POINYLIGHT);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_af86286d32938597b06a490ff450b0067}{set\_render\_mode}}(GL\_LINE);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_light_a4a0e7c6ed82b95f591fe2c9cc9663d20}{move}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ offset)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_transformable_a16541760d089f6987b578e7bd4b64707}{Transformable::move}}(offset);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ setLightPos();}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_light_a9cbff8c3c146f0b024583cb21abe075c}{set\_position}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ position)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_transformable_add511c646430a73e00f7c23b65f01f1f}{Transformable::set\_position}}(position);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ setLightPos();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+
+\end{DoxyCode}

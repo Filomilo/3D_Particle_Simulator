@@ -1,0 +1,141 @@
+\doxysection{Float Class Reference}
+\hypertarget{class_float}{}\label{class_float}\index{Float@{Float}}
+
+
+\doxylink{class_float}{Float} cals attribute.  
+
+
+
+
+{\ttfamily \#include $<$Float.\+h$>$}
+
+
+
+Inheritance diagram for Float\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{class_float__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Float\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{class_float__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_float_aff2942d23f0b4c799c9c950eeb85bf89}{Float}} (float x)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_float}{Float} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_float_a7b7f67ce1b479378f0be3b5f7a975bb3}\label{class_float_a7b7f67ce1b479378f0be3b5f7a975bb3} 
+{\bfseries Float} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_float}{Float} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_float_ac91de6dd01a6ba64066a58df30dffb94}\label{class_float_ac91de6dd01a6ba64066a58df30dffb94} 
+\mbox{\hyperlink{class_float}{Float}} {\bfseries operator+} (const \mbox{\hyperlink{class_float}{Float}} \&other) const
+\item 
+\Hypertarget{class_float_a77ecb4346a6e75119d384b334a141f62}\label{class_float_a77ecb4346a6e75119d384b334a141f62} 
+\mbox{\hyperlink{class_float}{Float}} {\bfseries operator-\/} (const \mbox{\hyperlink{class_float}{Float}} \&other) const
+\item 
+\Hypertarget{class_float_ad38399f0fb6a22ecd58cbda572a15d71}\label{class_float_ad38399f0fb6a22ecd58cbda572a15d71} 
+\mbox{\hyperlink{class_float}{Float}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{class_float}{Float}} \&other) const
+\item 
+\Hypertarget{class_float_ac66179086df2f5009f44002ff5f4160f}\label{class_float_ac66179086df2f5009f44002ff5f4160f} 
+\mbox{\hyperlink{class_float}{Float}} {\bfseries operator/} (const \mbox{\hyperlink{class_float}{Float}} \&other) const
+\item 
+\Hypertarget{class_float_a3e782de414bccbc226d70adea0c3cbc9}\label{class_float_a3e782de414bccbc226d70adea0c3cbc9} 
+float \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int index)
+\item 
+\Hypertarget{class_float_a98b2e2652c8a6aff6bbb0beb7412a7b4}\label{class_float_a98b2e2652c8a6aff6bbb0beb7412a7b4} 
+\mbox{\hyperlink{class_float}{Float}} {\bfseries operator-\/=} (const \mbox{\hyperlink{class_float}{Float}} \&other) const
+\item 
+int \mbox{\hyperlink{class_float_aae3767ce5cc05ca04d780d9bdfc0f8a8}{get\+Size}} () const override
+\begin{DoxyCompactList}\small\item\em size of vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_float_a083e7def9c2b553247ae96c0f988a5e5}\label{class_float_a083e7def9c2b553247ae96c0f988a5e5} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>float {\bfseries x}\\
+\>float {\bfseries r}\\
+\}; \\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em union conaintg possiblee wayas to adres value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_float_af79b538493c67c17418610970c936606}\label{class_float_af79b538493c67c17418610970c936606} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{class_float}{Float}} \&obj)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_attribute}{Attribute}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_attribute_a7a338c500645d5509fca351ddea8b49c}\label{class_attribute_a7a338c500645d5509fca351ddea8b49c} 
+enum \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Types}} \{ \newline
+{\bfseries NONE} =0
+, {\bfseries FLOAT}
+, {\bfseries VECTOR2F}
+, {\bfseries VECTOR3F}
+, \newline
+{\bfseries VECTOR4F}
+ \}
+\begin{DoxyCompactList}\small\item\em type of attributes handled \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_float}{Float} cals attribute. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_float_aff2942d23f0b4c799c9c950eeb85bf89}\label{class_float_aff2942d23f0b4c799c9c950eeb85bf89} 
+\index{Float@{Float}!Float@{Float}}
+\index{Float@{Float}!Float@{Float}}
+\doxysubsubsection{\texorpdfstring{Float()}{Float()}}
+{\footnotesize\ttfamily Float\+::\+Float (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_float}{Float} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_float_aae3767ce5cc05ca04d780d9bdfc0f8a8}\label{class_float_aae3767ce5cc05ca04d780d9bdfc0f8a8} 
+\index{Float@{Float}!getSize@{getSize}}
+\index{getSize@{getSize}!Float@{Float}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Float\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+size of vector 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_attribute_a8cca19c7ddb23e3f2cef40a86997bccb}{Attribute}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_vector2f_a962dbbae4509c664ca8cee2ebad9c926}{Vector2f}}, \mbox{\hyperlink{class_vector3f_a9099023918e59190cb674f6b62b3962d}{Vector3f}}, and \mbox{\hyperlink{class_vector4f_aa9c78322b48a0023c8cf67b01bd8cb4c}{Vector4f}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_float_8h}{Float.\+h}}\end{DoxyCompactItemize}

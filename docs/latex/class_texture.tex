@@ -1,0 +1,197 @@
+\doxysection{Texture Class Reference}
+\hypertarget{class_texture}{}\label{class_texture}\index{Texture@{Texture}}
+
+
+class texture magnaing openg gl texture  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+
+
+Inheritance diagram for Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_texture__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a0d65062a700475d4ac6861838db8d63a}{Texture}} (std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{file}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}}=\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{GL\+\_\+\+RGB}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_texture}{Texture} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a6c275e3f186675ff6ed73ccf970e552f}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_texture}{Texture} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2f}{Vector2f}} \mbox{\hyperlink{class_texture_a8889bb43370ca74d35a427cc39b308a8}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the Size object. \end{DoxyCompactList}\item 
+\Hypertarget{class_texture_a3840dc7429982ffaddeafc8d62345b5d}\label{class_texture_a3840dc7429982ffaddeafc8d62345b5d} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} {\bfseries bind} ()
+\begin{DoxyCompactList}\small\item\em bind texture to opnegl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_texture_a8480eed7ed703a937c3e6ab528f559bd}\label{class_texture_a8480eed7ed703a937c3e6ab528f559bd} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{static}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} {\bfseries unbind} ()
+\begin{DoxyCompactList}\small\item\em binds empty texture to opengl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \mbox{\hyperlink{class_texture_a752a4bdf561d8117444159bbca4ba568}{gen\+Tex}} (std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{file}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}})
+\begin{DoxyCompactList}\small\item\em mrthod used for genratign texture \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \mbox{\hyperlink{class_texture_af7bac510daac6ac22077d2f2aac5270a}{gen\+Data}} (\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{unsigned}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{char}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}})
+\begin{DoxyCompactList}\small\item\em genertes texture data based ob bytes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_texture_ab36997a503d4ee65aac557b857a1db8e}\label{class_texture_ab36997a503d4ee65aac557b857a1db8e} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{GLuint}} {\bfseries ID}
+\begin{DoxyCompactList}\small\item\em open gl texture id \end{DoxyCompactList}\item 
+\Hypertarget{class_texture_a06a0246cb31343557c3441c5733349cd}\label{class_texture_a06a0246cb31343557c3441c5733349cd} 
+int {\bfseries width}
+\begin{DoxyCompactList}\small\item\em width of texture \end{DoxyCompactList}\item 
+\Hypertarget{class_texture_ad37c395c65ff8bde86230908027a6fcd}\label{class_texture_ad37c395c65ff8bde86230908027a6fcd} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries height}
+\begin{DoxyCompactList}\small\item\em height of texture \end{DoxyCompactList}\item 
+\Hypertarget{class_texture_a69c58068e4b82a86d24e8c797705d515}\label{class_texture_a69c58068e4b82a86d24e8c797705d515} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries channels}
+\begin{DoxyCompactList}\small\item\em bit channels of texutre \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class texture magnaing openg gl texture 
+
+class used to help with amganig laoded texture in opengl 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_texture_a0d65062a700475d4ac6861838db8d63a}\label{class_texture_a0d65062a700475d4ac6861838db8d63a} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{file,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{channels,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{format = {\ttfamily \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{GL\+\_\+\+RGB}}} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{class_texture}{Texture} object. 
+
+main constructor of texture \begin{DoxyVerb}@param file file conating texture
+@param width width of texture
+@param height height of texture
+@param channels channels in texture image
+@param format format of texture
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_a0d65062a700475d4ac6861838db8d63a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_a6c275e3f186675ff6ed73ccf970e552f}\label{class_texture_a6c275e3f186675ff6ed73ccf970e552f} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_texture}{Texture} object. 
+
+basic empty constructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_texture_af7bac510daac6ac22077d2f2aac5270a}\label{class_texture_af7bac510daac6ac22077d2f2aac5270a} 
+\index{Texture@{Texture}!genData@{genData}}
+\index{genData@{genData}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{genData()}{genData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} Texture\+::gen\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{unsigned}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{char}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{channels,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+genertes texture data based ob bytes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & bytes conating texture data \\
+\hline
+{\em width} & width of texture \\
+\hline
+{\em height} & height of texture \\
+\hline
+{\em channels} & channels in texture image \\
+\hline
+{\em format} & format of texture \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_af7bac510daac6ac22077d2f2aac5270a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_a752a4bdf561d8117444159bbca4ba568}\label{class_texture_a752a4bdf561d8117444159bbca4ba568} 
+\index{Texture@{Texture}!genTex@{genTex}}
+\index{genTex@{genTex}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{genTex()}{genTex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} Texture\+::gen\+Tex (\begin{DoxyParamCaption}\item[{std\+::string}]{file,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{width,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{height,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{channels,  }\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+mrthod used for genratign texture 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & file conating texture \\
+\hline
+{\em width} & width of texture \\
+\hline
+{\em height} & height of texture \\
+\hline
+{\em channels} & channels in texture image \\
+\hline
+{\em format} & format of texture \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_texture_a752a4bdf561d8117444159bbca4ba568_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_texture_a752a4bdf561d8117444159bbca4ba568_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_a8889bb43370ca74d35a427cc39b308a8}\label{class_texture_a8889bb43370ca74d35a427cc39b308a8} 
+\index{Texture@{Texture}!getSize@{getSize}}
+\index{getSize@{getSize}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector2f}{Vector2f}} Texture\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Size object. 
+
+retruns vector with size data about texture
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector2f}{Vector2f} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_texture_8h}{Texture.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Texture.\+cpp\end{DoxyCompactItemize}

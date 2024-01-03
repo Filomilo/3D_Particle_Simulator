@@ -1,0 +1,142 @@
+\doxysection{Font\+Texture Class Reference}
+\hypertarget{class_font_texture}{}\label{class_font_texture}\index{FontTexture@{FontTexture}}
+
+
+calss for gerneating font texture  
+
+
+
+
+{\ttfamily \#include $<$Font\+Texture.\+h$>$}
+
+
+
+Inheritance diagram for Font\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_font_texture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Font\+Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_font_texture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_font_texture_aaeca1b093410a99bce5d4baac2ceec54}{Font\+Texture}} (std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{font\+File\+Name}}, std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{destination\+Tex}})
+\begin{DoxyCompactList}\small\item\em Construct a new Font \doxylink{class_texture}{Texture} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \mbox{\hyperlink{class_font_texture_a5fb4f5571a2ccd37083456549c6abbcd}{get\+Char}} (\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{char}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{letter}}, \mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{upper\+Left\+Postion}}, \mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{right\+Doown\+Postiion}}, \mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}offset, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_float}{Float}} $>$ advance)
+\begin{DoxyCompactList}\small\item\em Get the Char object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_texture}{Texture}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a0d65062a700475d4ac6861838db8d63a}{Texture}} (std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{file}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}}=\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{GL\+\_\+\+RGB}})
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_texture}{Texture} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a6c275e3f186675ff6ed73ccf970e552f}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_texture}{Texture} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2f}{Vector2f}} \mbox{\hyperlink{class_texture_a8889bb43370ca74d35a427cc39b308a8}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the Size object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} {\bfseries bind} ()
+\begin{DoxyCompactList}\small\item\em bind texture to opnegl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_font_texture_ab6483c8c6611ff68d05a0efb21a68429}\label{class_font_texture_ab6483c8c6611ff68d05a0efb21a68429} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries char\+Beigin} = 32
+\begin{DoxyCompactList}\small\item\em lcahracter to ber genrated start \end{DoxyCompactList}\item 
+\Hypertarget{class_font_texture_a738a97ca378845aece97acda08f957f5}\label{class_font_texture_a738a97ca378845aece97acda08f957f5} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries char\+Amount} = 96
+\begin{DoxyCompactList}\small\item\em amount f cahracter to ber genreated \end{DoxyCompactList}\item 
+\Hypertarget{class_font_texture_ab6909019b6d72a8049c2670d9e81a33e}\label{class_font_texture_ab6909019b6d72a8049c2670d9e81a33e} 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \texorpdfstring{$\ast$}{*} {\bfseries char\+Data} =\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{nullptr}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_texture}{Texture}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{static}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} {\bfseries unbind} ()
+\begin{DoxyCompactList}\small\item\em binds empty texture to opengl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_texture}{Texture}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \mbox{\hyperlink{class_texture_a752a4bdf561d8117444159bbca4ba568}{gen\+Tex}} (std\+::string \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{file}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}})
+\begin{DoxyCompactList}\small\item\em mrthod used for genratign texture \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} \mbox{\hyperlink{class_texture_af7bac510daac6ac22077d2f2aac5270a}{gen\+Data}} (\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{unsigned}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{char}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{width}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_ad37c395c65ff8bde86230908027a6fcd}{height}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a69c58068e4b82a86d24e8c797705d515}{channels}}, \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{format}})
+\begin{DoxyCompactList}\small\item\em genertes texture data based ob bytes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_texture}{Texture}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{GLuint}} {\bfseries ID}
+\begin{DoxyCompactList}\small\item\em open gl texture id \end{DoxyCompactList}\item 
+int {\bfseries width}
+\begin{DoxyCompactList}\small\item\em width of texture \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries height}
+\begin{DoxyCompactList}\small\item\em height of texture \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{int}} {\bfseries channels}
+\begin{DoxyCompactList}\small\item\em bit channels of texutre \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+calss for gerneating font texture 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_font_texture_aaeca1b093410a99bce5d4baac2ceec54}\label{class_font_texture_aaeca1b093410a99bce5d4baac2ceec54} 
+\index{FontTexture@{FontTexture}!FontTexture@{FontTexture}}
+\index{FontTexture@{FontTexture}!FontTexture@{FontTexture}}
+\doxysubsubsection{\texorpdfstring{FontTexture()}{FontTexture()}}
+{\footnotesize\ttfamily Font\+Texture\+::\+Font\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{font\+File\+Name,  }\item[{std\+::string}]{destination\+Tex }\end{DoxyParamCaption})}
+
+
+
+Construct a new Font \doxylink{class_texture}{Texture} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font\+File\+Name} & \\
+\hline
+{\em destination\+Tex} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_font_texture_a5fb4f5571a2ccd37083456549c6abbcd}\label{class_font_texture_a5fb4f5571a2ccd37083456549c6abbcd} 
+\index{FontTexture@{FontTexture}!getChar@{getChar}}
+\index{getChar@{getChar}!FontTexture@{FontTexture}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{void}} Font\+Texture\+::get\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_texture_a06a0246cb31343557c3441c5733349cd}{char}}}]{letter,  }\item[{\mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}}]{upper\+Left\+Postion,  }\item[{\mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}}]{right\+Doown\+Postiion,  }\item[{\mbox{\hyperlink{class_vector2f}{Vector2f}} \texorpdfstring{$\ast$}{*}}]{offset,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_float}{Float}} $>$}]{advance }\end{DoxyParamCaption})}
+
+
+
+Get the Char object. 
+
+returns in pointer data aobut sepcifc postion of character sepcifed
+
+
+\begin{DoxyParams}{Parameters}
+{\em letter} & \\
+\hline
+{\em upper\+Left\+Postion} & \\
+\hline
+{\em right\+Doown\+Postiion} & \\
+\hline
+{\em offset} & \\
+\hline
+{\em advance} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_font_texture_8h}{Font\+Texture.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Font\+Texture.\+cpp\end{DoxyCompactItemize}

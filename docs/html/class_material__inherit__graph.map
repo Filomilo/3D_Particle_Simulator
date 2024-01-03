@@ -1,0 +1,7 @@
+<map id="Material" name="Material">
+<area shape="rect" id="Node000001" title="matrial calss" alt="" coords="12,80,79,107"/>
+<area shape="rect" id="Node000003" href="$class_phong_mat.html" title=" " alt="" coords="5,155,86,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="48,122,48,154,43,154,43,122"/>
+<area shape="rect" id="Node000002" href="$class_object.html" title="class object" alt="" coords="16,5,75,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,48,48,80,43,80,43,48"/>
+</map>

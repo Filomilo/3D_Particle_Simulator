@@ -1,0 +1,89 @@
+\doxysection{Material.\+h}
+\hypertarget{_material_8h_source}{}\label{_material_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Material.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Material.h}}
+\mbox{\hyperlink{_material_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_program_8h}{ShaderProgram.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_8h}{Texture.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_material}{Material}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}*\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}};}
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<\ std::shared\_ptr<Texture>>\ \mbox{\hyperlink{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}{textures}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_af342e030f8bfdb86ddc16b9573803efc}{bindTex}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ std::shared\_ptr<Texture>\ tex\ :\ \mbox{\hyperlink{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}{textures}})}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ tex-\/>bind();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a0adb244508d25a720b06d27e7b4a1aaf}{unBindTex}}()}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ std::shared\_ptr<Texture>\ tex\ :\ \mbox{\hyperlink{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}{textures}})}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_a8480eed7ed703a937c3e6ab528f559bd}{Texture::unbind}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_material_a63966f646a6b1e1f82399da648d63482}{Material}}(\mbox{\hyperlink{class_shader_program}{ShaderProgram}}*\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}(\mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}})}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}cannot\ create\ materal\ with\ null\ shader"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a24b769968cf734fff20e1974840cbe29}{addTex}}(std::string\ name,\ std::shared\_ptr<Texture>\ tex)}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>use();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>setInt(\textcolor{stringliteral}{"{}colorTexture"{}},\ \mbox{\hyperlink{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}{textures}}.size());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a8cbe2722ab1d5f712adb74cfc4b856eb}{textures}}.push\_back(tex);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>unuse();}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a3f3145a32274e3ba58c48385d874676d}{apply}}(glm::mat4\ model)}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>use();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>setMatrix4(\textcolor{stringliteral}{"{}model"{}},\ model);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_af342e030f8bfdb86ddc16b9573803efc}{bindTex}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a0ad8b63e6227f3ceb3c266d362e35f48}{unapply}}()}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a0adb244508d25a720b06d27e7b4a1aaf}{unBindTex}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>unuse();}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_material_af04c58ddb0f040791f57dd65220cd71b}{getAttributeList}}()}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>getAttributeList();}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ std::map<std::string,\ Attribute::Types>\ \mbox{\hyperlink{class_material_a9267e6d8dc0b823dd63ecb5ffac22acf}{getAttributeMap}}()}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>getAttributeMap();}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_material_a7258c207953779bf9612128d4f78f1f0}{getVertexSizeRequired}}()}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_material_a96bd6269f7328666d9d9f6ef6f53e7a5}{shader}}-\/>getVertexSizeRequired();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+
+\end{DoxyCode}

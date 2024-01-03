@@ -1,0 +1,48 @@
+\doxysection{Object.\+h}
+\hypertarget{_object_8h_source}{}\label{_object_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Object.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Object.h}}
+\mbox{\hyperlink{_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_attribute_8h}{Attribute.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector4f_8h}{Vector4f.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::map<std::string,\ std::shared\_ptr<Attribute>>\ \mbox{\hyperlink{class_object_a5b011405a84c9f656ac312e4cac6828d}{attributes}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(std::string\ name,\ \ std::shared\_ptr<Attribute>\ type)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ this-\/>attributes.insert\_or\_assign(name,\ type);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ std::shared\_ptr<Attribute>\ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{getAttribute}}(std::string\ name)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::map<std::string,\ std::shared\_ptr<Attribute>>::iterator\ it=\ this-\/>attributes.find(name);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Attribute>\ attrib;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it==\ this-\/>attributes.end())}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ attrib\ =std::make\_shared<Vector4f>(0,0,0,0);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(name,\ attrib);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ attrib\ =\ it-\/>second;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ attrib;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{isThereAttrib}}(std::string\ name)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>attributes.find(name)\ !=\ this-\/>attributes.end();}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\string~Object}}\ ()}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_a5b011405a84c9f656ac312e4cac6828d}{attributes}}.clear();}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+
+\end{DoxyCode}

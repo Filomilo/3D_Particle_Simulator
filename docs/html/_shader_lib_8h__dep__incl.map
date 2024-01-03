@@ -1,0 +1,26 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/ShaderLib.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/ShaderLib.h">
+<area shape="rect" id="Node000001" title="filr contaign class shader lib" alt="" coords="310,5,514,80"/>
+<area shape="rect" id="Node000002" href="$_particle_system_8h.html" title="file containing calss paritcle system" alt="" coords="5,128,235,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,89,210,130,208,125,308,84"/>
+<area shape="rect" id="Node000005" href="$__3_d_engine_8h.html" title="file containg main 3d engie class" alt="" coords="207,251,412,325"/>
+<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="331,92,313,109,300,129,290,159,289,191,292,222,299,250,294,251,287,223,283,191,285,158,295,127,309,106,327,88"/>
+<area shape="rect" id="Node000007" href="$_phong_mat_8h.html" title="file cocnaitng phong material class" alt="" coords="310,128,514,203"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="415,96,415,128,409,128,409,96"/>
+<area shape="rect" id="Node000008" href="$_point_light_8h.html" title="file conating point light class" alt="" coords="538,128,742,203"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="496,85,572,125,569,130,494,90"/>
+<area shape="rect" id="Node000009" href="$_ui_plane_8h.html" title="file implementing Ui plane class" alt="" coords="766,128,970,203"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="530,68,755,125,766,129,765,134,754,131,529,73"/>
+<area shape="rect" id="Node000003" href="$_emitter_8h.html" title="file coanitng emiter calss" alt="" coords="18,373,222,448"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,218,123,373,117,373,117,218"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="192,209,253,248,250,252,189,213"/>
+<area shape="rect" id="Node000004" href="$_box_emitter_8h.html" title="file coantiang box emiitrer" alt="" coords="17,496,223,571"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,464,123,496,117,496,117,464"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="241,336,179,375,176,371,238,332"/>
+<area shape="rect" id="Node000006" href="$_ui_system_8h.html" title="file containg class UiSysytem" alt="" coords="246,373,450,448"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="319,340,330,372,325,374,314,341"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="338,359,327,327,332,325,343,358"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="752,206,569,246,412,274,411,268,568,241,750,201"/>
+<area shape="rect" id="Node000010" href="$_ui_text_8h.html" title="file conating uiText clas" alt="" coords="619,251,824,325"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="813,215,768,252,764,248,810,211"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="605,329,451,379,449,374,604,324"/>
+</map>

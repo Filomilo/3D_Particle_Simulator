@@ -1,0 +1,172 @@
+\doxysection{gl\+Object.\+h}
+\hypertarget{gl_object_8h_source}{}\label{gl_object_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/glObject.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/glObject.h}}
+\mbox{\hyperlink{gl_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_8h}{Material.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_8h}{Renderable.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_transformable_8h}{Transformable.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_a_o_8h}{VAO.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gl_object}{GlObject}}\ :}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_renderable}{Renderable}},}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_transformable}{Transformable}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::shared\_ptr<VAO>\ \mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}};}
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<VBO>\ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}};}
+\DoxyCodeLine{00039\ \ \ \ \ std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_a3301959d1919caec35d9da877510ce50}{renderMode}}\ =\ GL\_FILL;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}}\ =\ GL\_STATIC\_DRAW;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ GLfloat*\ \mbox{\hyperlink{class_gl_object_a202ef2118cfa5c82705aae0aaa94ed8e}{getVertexBufferForMat}}(std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})\ =\ 0;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ GLfloat*\ \mbox{\hyperlink{class_gl_object_ad29dff0e8392d4c1326bfbf4c1990484}{getVertexBuffer}}()\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_ae5f073fd9c7b911ec8eb86d327bfdfcf}{getVertexSizeForMat}}(std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getVertexSizeRequired();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gl_object_ae5f073fd9c7b911ec8eb86d327bfdfcf}{getVertexSizeForMat}}(this-\/>mat);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_a682c66222099523058a932574e2b11e6}{getVerteciesAmount}}()\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ std::shared\_ptr<Attribute>\ \mbox{\hyperlink{class_gl_object_a757975aa2ec7af88bd6b6e0f4e53b470}{getVertexAttrib}}(\textcolor{keywordtype}{int}\ num,\ std::string\ attrib)\ =\ 0;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ std::map<std::string,\ Attribute::Types>\ \mbox{\hyperlink{class_gl_object_aedb90bc05aceb32757744c5a44ccd223}{getMapOfAttributes}}()}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>mat-\/>getAttributeMap();}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ std::list<std::string>\ \mbox{\hyperlink{class_gl_object_a7836e95ec25e6847763e282493764db0}{getListOfAttributes}}()}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>mat-\/>getAttributeList();}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_a39df6fc8abae00ab001e1e85c99e0e86}{getSizeOfVertex}}()}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>mat-\/>getVertexSizeRequired();}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a4e5b9fbdc6013d2c71bab8fcf1743767}{iniitVboUniversal}}(GLfloat*\ vertexBuffer,\ \textcolor{keywordtype}{int}\ verteciesAmt,\ \textcolor{keywordtype}{int}\ vertexSize,\ std::shared\_ptr<VBO>\&\ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}},\ std::shared\_ptr<VAO>\&\ \mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}})}
+\DoxyCodeLine{00149\ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ verteciesAmt\ *\ vertexSize;\ i++)}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ vertexBuffer[i]\ <<\ "{},"{};}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (i\ \%\ vertexSize\ ==\ vertexSize\ -\/\ 1)}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}}-\/>bind();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}\ =\ std::make\_unique\ <VBO>(vertexBuffer,\ this-\/>\mbox{\hyperlink{class_gl_object_a682c66222099523058a932574e2b11e6}{getVerteciesAmount}}()\ *\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}()\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ usage);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertexBuffer;}
+\DoxyCodeLine{00162\ \ \ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_aeb66962c60b73ec0232e18ab5afc90fd}{iniitVbo}}()}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a4e5b9fbdc6013d2c71bab8fcf1743767}{iniitVboUniversal}}(this-\/>\mbox{\hyperlink{class_gl_object_ad29dff0e8392d4c1326bfbf4c1990484}{getVertexBuffer}}(),\ this-\/>\mbox{\hyperlink{class_gl_object_a682c66222099523058a932574e2b11e6}{getVerteciesAmount}}(),\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}(),\ this-\/>vbo,this-\/>vao);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a3770866f40a581c09b16dfaeffa10922}{updateVboUNiversal}}(GLfloat*\ vertexBuffer,\ \textcolor{keywordtype}{int}\ verteciesAmt,\ \textcolor{keywordtype}{int}\ vertexSize,\textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}},\ std::shared\_ptr<VBO>\&\ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}},\ std::shared\_ptr<VAO>\&\ \mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}})}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}-\/>bind();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}-\/>update(vertexBuffer,\ verteciesAmt\ *\ vertexSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}});;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}-\/>unbind();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ vertexBuffer;}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a94c28a6549b090841e93dd6fa5618f28}{updateVbo}}()}
+\DoxyCodeLine{00198\ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ GLfloat*\ vertexBuffer\ =\ this-\/>\mbox{\hyperlink{class_gl_object_ad29dff0e8392d4c1326bfbf4c1990484}{getVertexBuffer}}();}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ "{}u[date\ vbo"{}\ <<\ std::endl;}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a3770866f40a581c09b16dfaeffa10922}{updateVboUNiversal}}(vertexBuffer,\ this-\/>\mbox{\hyperlink{class_gl_object_a682c66222099523058a932574e2b11e6}{getVerteciesAmount}}(),\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}(),\ usage,\ this-\/>vbo,this-\/>vao);}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_ad714dda8d3b92367b988ab67b01ce55d}{iniitVao}}()}
+\DoxyCodeLine{00208\ \ \ \ \ \{}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ verteciesAmt\ =\ this-\/>\mbox{\hyperlink{class_gl_object_a682c66222099523058a932574e2b11e6}{getVerteciesAmount}}();}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertexSize\ =\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}();}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ std::map<std::string,\ Attribute::Types>\ attributesMap\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeMap();}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ std::list<std::string>\ attributeList\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeList();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ 0;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ name\ :\ attributeList)}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ type\ =\ attributesMap[name];}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>vao-\/>linkAttrib(\mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}},\ i,\ type,\ GL\_FLOAT,\ vertexSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ offset);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(i);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}glEnableVertexAttribArray("{}\ <<\ i\ <<\ "{})\(\backslash\)n"{};}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ offset\ +=\ type\ *\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a6654c05d05132852deab11aac65dec39}{bind}}()}
+\DoxyCodeLine{00235\ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ this-\/>vbo-\/>bind();}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ this-\/>vao-\/>bind();}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_af142c6a9d45130b1702e61d70fddac54}{unbind}}()}
+\DoxyCodeLine{00244\ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}}-\/>unbind();}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}-\/>unbind();}
+\DoxyCodeLine{00247\ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a634356bf50d3186856a3c41d1be209bc}{glDrawCall}}()\ =\ 0;}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a9770fbbbe86341a99324d59c90eb491a}{renderProc}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00258\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ glPolygonMode(GL\_FRONT\_AND\_BACK,\ \mbox{\hyperlink{class_gl_object_a3301959d1919caec35d9da877510ce50}{renderMode}});}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>apply(this-\/>\mbox{\hyperlink{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad}{getTransformationMatrix}}());}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a6654c05d05132852deab11aac65dec39}{bind}}();}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a634356bf50d3186856a3c41d1be209bc}{glDrawCall}}();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_af142c6a9d45130b1702e61d70fddac54}{unbind}}();}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ mat-\/>unapply();}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}};}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{class_gl_object_ad6bf38b7c545d414cd4abf95f42b3ec4}{GlObject}}()\ :\ \mbox{\hyperlink{class_transformable}{Transformable}}()}
+\DoxyCodeLine{00275\ \ \ \ \ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>vao\ =\ std::make\_shared<VAO>()\ ;}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_gl_object_a230ebc157cf962e0a15c7c18f265c11c}{get\_render\_mode}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00286\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gl_object_a3301959d1919caec35d9da877510ce50}{renderMode}};}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_af86286d32938597b06a490ff450b0067}{set\_render\_mode}}(\textcolor{keywordtype}{int}\ render\_mode)}
+\DoxyCodeLine{00295\ \ \ \ \ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a3301959d1919caec35d9da877510ce50}{renderMode}}\ =\ render\_mode;}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::shared\_ptr<Material>\ \ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})}
+\DoxyCodeLine{00304\ \ \ \ \ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ this-\/>mat\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}};}
+\DoxyCodeLine{00306\ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a04b2c9a9f4e7d6c37b69c2e775e79c29}{initParts}}()}
+\DoxyCodeLine{00312\ \ \ \ \ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_aeb66962c60b73ec0232e18ab5afc90fd}{iniitVbo}}();}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ad714dda8d3b92367b988ab67b01ce55d}{iniitVao}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}()}
+\DoxyCodeLine{00321\ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a04b2c9a9f4e7d6c37b69c2e775e79c29}{initParts}}();}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_af142c6a9d45130b1702e61d70fddac54}{unbind}}();}
+\DoxyCodeLine{00324\ \ \ \ \ \}}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_gl_object_a84bff39a6d827ad8a41f8f7e4a1c24b3}{get\_usage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00331\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}};}
+\DoxyCodeLine{00333\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gl_object_aa68128871cd44ed5ef126f8af9f87f67}{set\_usage}}(\textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}})}
+\DoxyCodeLine{00340\ \ \ \ \ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ this-\/>usage\ =\ \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}};}
+\DoxyCodeLine{00342\ \ \ \ \ \}}
+\DoxyCodeLine{00343\ \};}
+\DoxyCodeLine{00344\ }
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\doxysection{Vertex.\+h}
+\hypertarget{_vertex_8h_source}{}\label{_vertex_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Vertex.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Vertex.h}}
+\mbox{\hyperlink{_vertex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{Vector3f.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vertex}{Vertex}}\ :}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vertex_a27bc59987033c13174d7f425c88d05e9}{pointIndex}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_vertex_a0713e1893ec469c78fb2e6d6375a0168}{Vertex}}(\textcolor{keywordtype}{unsigned}\ point\_index)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_vertex_a27bc59987033c13174d7f425c88d05e9}{pointIndex}}(point\_index)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_vertex_ad8a5abad93509e036acd640317d593ce}{Vertex}}(\textcolor{keywordtype}{int}\ pointNUm,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ normals)\ :\ \mbox{\hyperlink{class_vertex}{Vertex}}(pointNUm)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}N"{}},\ std::make\_shared<Vector3f>(normals.x,\ normals.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ normals.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}));}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_vertex_a24d23d6e87635edac1b7d88d6afafac8}{Vertex}}(\textcolor{keywordtype}{int}\ pointNUm,std::shared\_ptr<\ Vector3f>\ normals)\ :\ \mbox{\hyperlink{class_vertex}{Vertex}}(pointNUm)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}N"{}},\ normals);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_vertex_a3dc3934c119d0b31a92f016dcbba7829}{Vertex}}(\textcolor{keywordtype}{int}\ pointNUm,std::shared\_ptr<\ Vector3f>\ normals,std::shared\_ptr<\ Vector3f>\ uv)\ :\ \mbox{\hyperlink{class_vertex}{Vertex}}(pointNUm,\ normals)}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}Uv"{}},\ normals);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_vertex_abfa612a0b5de6df2b1abb93fbb65f640}{Vertex}}(\textcolor{keywordtype}{int}\ pointNUm,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ normals,\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ Uvs)\ :\ \mbox{\hyperlink{class_vertex}{Vertex}}(pointNUm,\ normals)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(\textcolor{stringliteral}{"{}Uv"{}},\ std::make\_shared<Vector2f>(Uvs.x,\ Uvs.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}));}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+
+\end{DoxyCode}

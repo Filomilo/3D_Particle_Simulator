@@ -1,0 +1,7 @@
+<map id="Polygonal::addFaces" name="Polygonal::addFaces">
+<area shape="rect" id="Node000001" title="crates muliple faces made out of prvide vertecie indecies" alt="" coords="5,5,149,32"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="197,5,333,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,16,181,16,181,21,149,21"/>
+<area shape="rect" id="Node000003" href="$class_face.html#a4dd2120c676797bf8b1854badebcf93a" title="add vetex index to face" alt="" coords="381,5,523,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="333,16,366,16,366,21,333,21"/>
+</map>

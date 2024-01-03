@@ -1,0 +1,279 @@
+\doxysection{Light Class Reference}
+\hypertarget{class_light}{}\label{class_light}\index{Light@{Light}}
+
+
+class light  
+
+
+
+
+{\ttfamily \#include $<$Light.\+h$>$}
+
+
+
+Inheritance diagram for Light\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{class_light__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Light\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_light__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_light_1_1light_data}{light\+Data}}
+\begin{DoxyCompactList}\small\item\em arrat of ally light and data bout to it to be apsed by shader \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_light_1_1_light_struct_type}{Light\+Struct\+Type}}
+\begin{DoxyCompactList}\small\item\em structure of light apramters passed to sahder \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_light_aeb5df09a25a32f19fdffa761268ba24f}\label{class_light_aeb5df09a25a32f19fdffa761268ba24f} 
+{\bfseries Light} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_light}{Light} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_light_abf34be6dd9c2190bc1284f358dba3f1d}{set\+Light\+Color}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} color)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_light}{Light} Color object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_light_a17517ecc2d25a05c5bb7bfd8210bc849}{get\+Light\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_light}{Light} Color object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_light_a66746b4179d0ccb9bf30c529117a2c63}{set\+Light\+Intensity}} (float intensity)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_light}{Light} Intensity object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_light_a4a488b9c61145ef1af5916ee4800569d}{get\+Light\+Intensity}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_light}{Light} Intensity object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_light_a2a87f841449160af66a4afca19061cd7}{set\+Light\+Type}} (\mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{LIGHTYTYPE}} type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_light}{Light} Type object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{LIGHTYTYPE}} \mbox{\hyperlink{class_light_ac03828de6f99db39a82b9b9d886b046a}{get\+Light\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_light}{Light} Type object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_light_abbb96d83f57ac05906057bca42b25471}{apply\+Light}} (\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}shader)
+\begin{DoxyCompactList}\small\item\em apply light to sahder \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_float}{Float}} \mbox{\hyperlink{class_light_af0c2223488ecd2a8d28c9a7f60dfa14a}{get\+Ambient\+Intensity}} ()
+\begin{DoxyCompactList}\small\item\em Get the Ambient Intensity object. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_light_a574b0591c1cbc0049ba278f880b7cf12}{set\+Ambient\+Intensity}} (float val)
+\begin{DoxyCompactList}\small\item\em Set the Ambient Intensity object. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_light_a6ce0d87f2ed1d7225f4745e90a40a784}{get\+Ambient\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Get the Ambient Color object. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_light_ae88646b59335095ec497a03415a00694}{set\+Ambient\+Color}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} col)
+\begin{DoxyCompactList}\small\item\em Set the Ambient Color object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_light_a7753b01ec8dc5345a961a3b2ff71cc7a}\label{class_light_a7753b01ec8dc5345a961a3b2ff71cc7a} 
+static \mbox{\hyperlink{struct_light_1_1light_data}{light\+Data}} {\bfseries light\+\_\+data}
+\begin{DoxyCompactList}\small\item\em light data conaitng lal parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{LIGHTYTYPE}} \{ {\bfseries POINYLIGHT}
+, {\bfseries DIRECTIONALLIGHT}
+, {\bfseries SPOTLIHGT}
+ \}
+\begin{DoxyCompactList}\small\item\em type of light \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_light_ae38ed2514b1c4c83461d02cda9caa224}\label{class_light_ae38ed2514b1c4c83461d02cda9caa224} 
+char {\bfseries light\+Num}
+\begin{DoxyCompactList}\small\item\em number of light \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class light 
+
+calss for handlig light in scene 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_light_a33803248f8f45aa14ab15b3f2d08f65f}\label{class_light_a33803248f8f45aa14ab15b3f2d08f65f} 
+\index{Light@{Light}!LIGHTYTYPE@{LIGHTYTYPE}}
+\index{LIGHTYTYPE@{LIGHTYTYPE}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{LIGHTYTYPE}{LIGHTYTYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{Light\+::\+LIGHTYTYPE}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+type of light 
+
+type of light that could bes used by scene, curennyl only point light is handled 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_light_abbb96d83f57ac05906057bca42b25471}\label{class_light_abbb96d83f57ac05906057bca42b25471} 
+\index{Light@{Light}!applyLight@{applyLight}}
+\index{applyLight@{applyLight}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{applyLight()}{applyLight()}}
+{\footnotesize\ttfamily void Light\+::apply\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*}}]{shader }\end{DoxyParamCaption})}
+
+
+
+apply light to sahder 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_light_a6ce0d87f2ed1d7225f4745e90a40a784}\label{class_light_a6ce0d87f2ed1d7225f4745e90a40a784} 
+\index{Light@{Light}!getAmbientColor@{getAmbientColor}}
+\index{getAmbientColor@{getAmbientColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getAmbientColor()}{getAmbientColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Light\+::get\+Ambient\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Ambient Color object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} 
+\end{DoxyReturn}
+\Hypertarget{class_light_af0c2223488ecd2a8d28c9a7f60dfa14a}\label{class_light_af0c2223488ecd2a8d28c9a7f60dfa14a} 
+\index{Light@{Light}!getAmbientIntensity@{getAmbientIntensity}}
+\index{getAmbientIntensity@{getAmbientIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getAmbientIntensity()}{getAmbientIntensity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_float}{Float}} Light\+::get\+Ambient\+Intensity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Ambient Intensity object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_float}{Float} 
+\end{DoxyReturn}
+\Hypertarget{class_light_a17517ecc2d25a05c5bb7bfd8210bc849}\label{class_light_a17517ecc2d25a05c5bb7bfd8210bc849} 
+\index{Light@{Light}!getLightColor@{getLightColor}}
+\index{getLightColor@{getLightColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getLightColor()}{getLightColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Light\+::get\+Light\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{class_light}{Light} Color object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} 
+\end{DoxyReturn}
+\Hypertarget{class_light_a4a488b9c61145ef1af5916ee4800569d}\label{class_light_a4a488b9c61145ef1af5916ee4800569d} 
+\index{Light@{Light}!getLightIntensity@{getLightIntensity}}
+\index{getLightIntensity@{getLightIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getLightIntensity()}{getLightIntensity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_float}{Float}} Light\+::get\+Light\+Intensity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{class_light}{Light} Intensity object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_float}{Float} 
+\end{DoxyReturn}
+\Hypertarget{class_light_ac03828de6f99db39a82b9b9d886b046a}\label{class_light_ac03828de6f99db39a82b9b9d886b046a} 
+\index{Light@{Light}!getLightType@{getLightType}}
+\index{getLightType@{getLightType}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{getLightType()}{getLightType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{Light\+::\+LIGHTYTYPE}} Light\+::get\+Light\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the \doxylink{class_light}{Light} Type object. 
+
+\begin{DoxyReturn}{Returns}
+LIGHTYTYPE 
+\end{DoxyReturn}
+\Hypertarget{class_light_ae88646b59335095ec497a03415a00694}\label{class_light_ae88646b59335095ec497a03415a00694} 
+\index{Light@{Light}!setAmbientColor@{setAmbientColor}}
+\index{setAmbientColor@{setAmbientColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setAmbientColor()}{setAmbientColor()}}
+{\footnotesize\ttfamily void Light\+::set\+Ambient\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the Ambient Color object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_light_a574b0591c1cbc0049ba278f880b7cf12}\label{class_light_a574b0591c1cbc0049ba278f880b7cf12} 
+\index{Light@{Light}!setAmbientIntensity@{setAmbientIntensity}}
+\index{setAmbientIntensity@{setAmbientIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setAmbientIntensity()}{setAmbientIntensity()}}
+{\footnotesize\ttfamily void Light\+::set\+Ambient\+Intensity (\begin{DoxyParamCaption}\item[{float}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the Ambient Intensity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & aambient inesity of lifgr \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_light_abf34be6dd9c2190bc1284f358dba3f1d}\label{class_light_abf34be6dd9c2190bc1284f358dba3f1d} 
+\index{Light@{Light}!setLightColor@{setLightColor}}
+\index{setLightColor@{setLightColor}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setLightColor()}{setLightColor()}}
+{\footnotesize\ttfamily void Light\+::set\+Light\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{class_light}{Light} Color object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_light_a66746b4179d0ccb9bf30c529117a2c63}\label{class_light_a66746b4179d0ccb9bf30c529117a2c63} 
+\index{Light@{Light}!setLightIntensity@{setLightIntensity}}
+\index{setLightIntensity@{setLightIntensity}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setLightIntensity()}{setLightIntensity()}}
+{\footnotesize\ttfamily void Light\+::set\+Light\+Intensity (\begin{DoxyParamCaption}\item[{float}]{intensity }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{class_light}{Light} Intensity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em intensity} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_light_a2a87f841449160af66a4afca19061cd7}\label{class_light_a2a87f841449160af66a4afca19061cd7} 
+\index{Light@{Light}!setLightType@{setLightType}}
+\index{setLightType@{setLightType}!Light@{Light}}
+\doxysubsubsection{\texorpdfstring{setLightType()}{setLightType()}}
+{\footnotesize\ttfamily void Light\+::set\+Light\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_light_a33803248f8f45aa14ab15b3f2d08f65f}{LIGHTYTYPE}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Set the \doxylink{class_light}{Light} Type object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_light_a2a87f841449160af66a4afca19061cd7_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_light_8h}{Light.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Light.\+cpp\end{DoxyCompactItemize}

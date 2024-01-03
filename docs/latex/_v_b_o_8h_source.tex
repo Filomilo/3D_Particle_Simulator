@@ -1,0 +1,40 @@
+\doxysection{VBO.\+h}
+\hypertarget{_v_b_o_8h_source}{}\label{_v_b_o_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/VBO.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/VBO.h}}
+\mbox{\hyperlink{_v_b_o_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_b_o}{VBO}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_v_b_o_aa2c6934f04fe41228ac33195ae19815b}{VBO}}(GLfloat*\ vertieces,\ GLsizeiptr\ size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ usage=\ GL\_STATIC\_DRAW)}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ glGenBuffers(1,\ \&\mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86}{update}}(vertieces,\ size,\ usage);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86}{update}}(GLfloat*\ vertieces,\ GLsizeiptr\ size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ usage\ =\ GL\_STATIC\_DRAW)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ \mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ glBufferData(GL\_ARRAY\_BUFFER,\ size,\ vertieces,\ usage);}
+\DoxyCodeLine{00055\ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_b_o_a63c913f623e45e6e7c03506a6705ea21}{bind}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ \mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_b_o_aad7aac5eb2e2d7d397b7f38bb33d3370}{unbind}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ 0);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_b_o_a8a2489bf3fd5e4f7761e3e590e321ea9}{Delete}}()}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ glDeleteBuffers(1,\ \&\mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+
+\end{DoxyCode}

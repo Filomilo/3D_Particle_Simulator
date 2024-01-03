@@ -1,0 +1,114 @@
+\doxysection{Point\+Group\+Object.\+h}
+\hypertarget{_point_group_object_8h_source}{}\label{_point_group_object_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroupObject.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroupObject.h}}
+\mbox{\hyperlink{_point_group_object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gl_object_8h}{glObject.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_group_object}{PointGroupObject}}\ :}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}\ glObject}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<Point*>\ \mbox{\hyperlink{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0}{points}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_point_group_object_ac41f90428361ea8d00d69c8700914de5}{PointGroupObject}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ renderMode\ =\ GL\_POINTS;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(\mbox{\hyperlink{class_point}{Point}}*\ x)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>points.push\_back(x);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a5a12782a371c976240e4cf20c9bd1ee6}{addPoint}}(\mbox{\hyperlink{class_point}{Point}}\ pt)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}*\ Pos\ =\ (\mbox{\hyperlink{class_vector3f}{Vector3f}}*)pt.\mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{getAttribute}}(\textcolor{stringliteral}{"{}P"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}*\ point\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}(Pos-\/>x,\ Pos-\/>\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ Pos-\/>\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(point);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a14526a7e3fbe387980f94316c248d4c7}{addPoint}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}(x,\ y,\ z));}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_adfd5b8ba597ba118e9b6538a022781e0}{addPoint}}(std::initializer\_list<float>\ coordinates)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}*\ pt\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}(coordinates);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(pt);}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a59b236ebb660eb11ae6bf34096fa1957}{addPoints}}(std::initializer\_list<std::initializer\_list<float>\ >\ coordinates)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::initializer\_list<float>\ coord\ :\ coordinates)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(coord);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a879aa313087f0d3a28a95ffae27f3491}{addPoint}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos)}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}(pos));}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace}{getVerteciesAmount}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00114\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0}{points}}.size();}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_attribute}{Attribute}}*\ \mbox{\hyperlink{class_point_group_object_a080956fa5c1912fd080e950ce2a72573}{getVertexAttrib}}(\textcolor{keywordtype}{int}\ num,\ std::string\ attrib)}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}*\ pt\ =\ \mbox{\hyperlink{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0}{points}}.at(num);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pt-\/>\mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{isThereAttrib}}(attrib))}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pt-\/>\mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{getAttribute}}(attrib);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute}{Attribute}}*\ val=\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_vector4f}{Vector4f}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ pt-\/>\mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{setAttribute}}(attrib,\ val);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}*\ \mbox{\hyperlink{class_point_group_object_a528528cee2f08628d078365d1dffcbdb}{getVertexBuffer}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ arrayVbo\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[this-\/>\mbox{\hyperlink{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace}{getVerteciesAmount}}()\ *\ this-\/>getVertexSize()];}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ std::map<std::string,\ Attribute::Types>\ attributesMap\ =\ mat-\/>getAttributeMap();}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::list<std::string>\ attributeList\ =\ mat-\/>getAttributeList();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertexIndex\ =\ 0;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_point}{Point}}*\ vertex\ :\ this-\/>\mbox{\hyperlink{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0}{points}})}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ attribName\ :\ attributeList)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ attribType\ =\ attributesMap.find(attribName)-\/>second;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector4f}{Vector4f}}*\ attribVal\ =\ (\mbox{\hyperlink{class_vector4f}{Vector4f}}*)this-\/>\mbox{\hyperlink{class_point_group_object_a080956fa5c1912fd080e950ce2a72573}{getVertexAttrib}}(vertexIndex,\ attribName);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ attribType;\ i++)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arrayVbo[index++]\ =\ (*attribVal)[i];}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ (*attribVal)[i]\ <<\ "{},\ "{};}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ vertexIndex++;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ arrayVbo;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a5f57589a59f1880ff52d8cee4477d8a1}{iniit}}()}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ glObject::iniit();}
+\DoxyCodeLine{00177\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a111f82687088699c81d41f22f448bc43}{addPoint}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b)}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{addPoint}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_point}{Point}}(\ x,\ y,\ z,\ r,\ g,\ b));}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_object_a345842c42720adeda4f4a41ada742ce3}{glRender}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00199\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ glDrawArrays(GL\_POINTS,\ 0,\ \mbox{\hyperlink{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace}{getVerteciesAmount}}());}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \};}
+\DoxyCodeLine{00203\ }
+
+\end{DoxyCode}

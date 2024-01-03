@@ -1,0 +1,5 @@
+<map id="Keyboard" name="Keyboard">
+<area shape="rect" id="Node000001" title="class fo hanlding keyborad input input" alt="" coords="5,192,82,219"/>
+<area shape="rect" id="Node000002" href="$class_key.html" title="class for ahdnling spcefi ckeyboard key" alt="" coords="21,5,66,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,48,46,192,41,192,41,48"/>
+</map>

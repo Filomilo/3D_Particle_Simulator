@@ -1,0 +1,8 @@
+<map id="Polygonal::addFace" name="Polygonal::addFace">
+<area shape="rect" id="Node000001" title="adds face based indecies prvovided" alt="" coords="5,31,142,57"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="190,5,326,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,32,174,28,174,33,142,37"/>
+<area shape="rect" id="Node000003" href="$class_face.html#a4dd2120c676797bf8b1854badebcf93a" title="add vetex index to face" alt="" coords="374,31,516,57"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="142,41,359,41,359,47,142,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="327,25,359,30,358,35,326,31"/>
+</map>

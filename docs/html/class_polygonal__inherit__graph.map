@@ -1,0 +1,25 @@
+<map id="Polygonal" name="Polygonal">
+<area shape="rect" id="Node000001" title="class holding polygon data for opnegl" alt="" coords="137,229,215,256"/>
+<area shape="rect" id="Node000006" href="$class_cube.html" title="cube class primitve" alt="" coords="19,304,71,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,266,69,306,67,301,138,262"/>
+<area shape="rect" id="Node000008" href="$class_poly_grid.html" title="class impleitng basic primiteve grid" alt="" coords="95,304,166,331"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="162,271,140,305,136,302,157,268"/>
+<area shape="rect" id="Node000009" href="$class_sphere.html" title="class defing primtive sphere class" alt="" coords="190,304,252,331"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="194,268,215,302,211,305,189,271"/>
+<area shape="rect" id="Node000010" href="$class_ui_plane.html" title="UI plane showing on screen." alt="" coords="276,304,342,331"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="213,261,287,301,284,306,211,266"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html" title="class object made out of points" alt="" coords="133,155,219,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,197,178,229,173,229,173,197"/>
+<area shape="rect" id="Node000003" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="140,80,212,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,122,178,154,173,154,173,122"/>
+<area shape="rect" id="Node000004" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="74,5,160,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="139,43,168,78,163,81,135,46"/>
+<area shape="rect" id="Node000005" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="185,5,287,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="218,46,188,81,184,78,214,42"/>
+<area shape="rect" id="Node000007" href="$class_point_light.html" title="class for mangin point light data in opengl" alt="" coords="5,379,85,405"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="48,346,48,378,42,378,42,346"/>
+<area shape="rect" id="Node000011" href="$class_ui_text.html" title="Ui class alowing to print basic text on screen." alt="" coords="280,379,338,405"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="312,346,312,378,306,378,306,346"/>
+<area shape="rect" id="Node000012" href="$class_ui_system.html" title="class for handling ui interaction" alt="" coords="270,453,348,480"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="312,421,312,453,306,453,306,421"/>
+</map>

@@ -1,0 +1,156 @@
+\doxysection{Ui\+Text.\+h}
+\hypertarget{_ui_text_8h_source}{}\label{_ui_text_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiText.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiText.h}}
+\mbox{\hyperlink{_ui_text_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_font_texture_8h}{FontTexture.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_lib_8h}{TextureLib.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_plane_8h}{UiPlane.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_text}{UiText}}\ :}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui_plane}{UiPlane}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ std::shared\_ptr<FontTexture>\ font;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ offset\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(0,0);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ fontSize\ =\ 12;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ ScaleFactor\ =\ 8;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ rowHeight=0;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ texSize\ =\ 1024;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{float}\ letterWidth=0;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ activeRow\ =\ 1;}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ addCharacter(\textcolor{keywordtype}{char}\ letter)}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ amountOfPOints\ =\ this-\/>points.size();}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ float\ texSize\ =\ 1024;}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ Vector2f\ polygonSize=\ leftBounderyPos-\/\ rigtBounderyPos;}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ float\ widthRatio\ =\ polygonSize.x\ /\ polygonSize.y;}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ widthRatio\ *=\ fontSize;}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ leftBounderyPos\ =\ leftBounderyPos\ /\ texSize;}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ rigtBounderyPos\ =\ rigtBounderyPos\ /\ texSize;}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addPoint(offset.x\ +0-\/1,\ \ +\ 0,\ 0);}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addPoint(offset.x\ +\ 1*\ widthRatio\ -\/\ 1,\ \ +\ 0,\ 0);}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addPoint(offset.x\ +\ 1*\ widthRatio\ -\/\ 1,\ \ fontSize,\ 0);}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addPoint(offset.x\ +\ 0\ -\/\ 1,\ \ \ fontSize,\ 0);}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ offset.x\ +=1.3*\ widthRatio;}}
+\DoxyCodeLine{00095\ \textcolor{comment}{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addVertex(amountOfPOints+0,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ leftBounderyPos\ .x,1\ -\/\ rigtBounderyPos.y\ \});}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addVertex(amountOfPOints\ +\ 1,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ rigtBounderyPos.x\ ,1\ -\/\ rigtBounderyPos.y\ \});}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addVertex(amountOfPOints\ +\ 2,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ rigtBounderyPos.x,1-\/\ leftBounderyPos.y\ \});}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addVertex(amountOfPOints\ +\ 3,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ leftBounderyPos.x,\ 1-\/leftBounderyPos.y\});}}
+\DoxyCodeLine{00100\ \textcolor{comment}{}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addFace(\{\ amountOfPOints\ +\ 0,amountOfPOints\ +\ 1,amountOfPOints\ +\ 2,amountOfPOints\ +\ 3\ \});}}
+\DoxyCodeLine{00102\ \textcolor{comment}{}}
+\DoxyCodeLine{00103\ \textcolor{comment}{}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}test"{};}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ letter\ <<\ "{}:\ "{}<<std::endl;}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (letter\ ==\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ offset.x\ +=\ letterWidth/2;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (letter\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ activeRow++;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ offset\ =\mbox{\hyperlink{class_vector2f}{Vector2f}}(0,0);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ leftBounderyPos,\ rigtBounderyPos,\ Offset;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ advance\ =\ std::make\_shared<Float>();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ font-\/>getChar(letter,\ \&leftBounderyPos,\ \&rigtBounderyPos,\ \&Offset,\ advance);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ \ \ \ std::cout\ <<\ "{}leftBounderyPos:\ "{}\ <<\ leftBounderyPos\ <<\ std::endl;;}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ "{}rigtBounderyPos:\ "{}\ <<\ rigtBounderyPos\ <<\ std::endl;;}}
+\DoxyCodeLine{00123\ \ \ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ "{}Offset:\ "{}\ <<\ leftBounderyPos\ <<\ std::endl;;}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ "{}advance:\ "{}\ <<\ advance\ <<\ std::endl;;}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ letterWidtt\ =\ rigtBounderyPos.x\ -\/\ leftBounderyPos.x;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ letterHeight=\ rigtBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ -\/\ leftBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ letterWidtt\ =\ \ (letterWidtt*\ fontSize)/\ ScaleFactor;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ letterHeight\ =\ (letterHeight\ *\ fontSize)/\ ScaleFactor;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ "{}letterWidtt:\ "{}\ <<\ letterWidtt\ <<\ std::endl;;}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<\ "{}letterHeight:\ "{}\ <<\ letterHeight\ <<\ std::endl;}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ leftUp\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(0,(-\/1*\ this-\/>rowHeight)*activeRow+letterHeight)+offset;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ rightDown\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(letterWidtt\ ,\ (-\/1\ *\ this-\/>rowHeight)\ *\ activeRow)+offset;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \textcolor{comment}{//\ leftBounderyPos.x,\ 1\ -\/\ rigtBounderyPos.y}}
+\DoxyCodeLine{00142\ \ \ \ \ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ LeftUpUV\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(leftBounderyPos.x\ /\ texSize,\ 1\ -\/\ leftBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}/\ texSize);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ rightDownUV\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(rigtBounderyPos.x/texSize,\ 1-\/rigtBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ /\ texSize);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_adbf7db3dc2a1f07944bc1358f1366036}{addRect}}(leftUp,\ rightDown,\ LeftUpUV\ ,\ rightDownUV);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ offset\ =\ offset\ +\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(letterWidtt,\ 0);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ std::endl\ <<\ std::endl;}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ cleanGeo()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00159\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_ac534dc3ae2dc90f00f4dcf180745d125}{UiPlane::cleanGeo}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ offset.x\ =\ 0;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ offset.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ =\ 0;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ activeRow\ =\ 1;}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ setScaleData()}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ leftBounderyPos,\ rigtBounderyPos,\ Offset;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ advance=std::make\_shared<Float>();}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ font-\/>getChar(\textcolor{charliteral}{'A'},\ \&leftBounderyPos,\ \&rigtBounderyPos,\ \&Offset,\ advance);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ letterWidtt\ =\ rigtBounderyPos.x\ -\/\ leftBounderyPos.x;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ letterHeight\ =\ rigtBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ -\/\ leftBounderyPos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ this-\/>rowHeight\ =\ (letterHeight\ *\ fontSize)\ /\ ScaleFactor;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ this-\/>letterWidth\ =\ (letterWidtt\ *\ fontSize)\ /\ ScaleFactor;}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_text_a519c415fb05b544ccc416246b2584183}{setText}}(std::string\ text)}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ this-\/>cleanGeo();}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ letter\ :\ text)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ addCharacter(letter);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a94c28a6549b090841e93dd6fa5618f28}{updateVbo}}();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_polygonal_a2eb1b2dae19617a9f23b33f63a39c345}{updateEbo}}();}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{class_ui_text_ac9465a505ed5d4e6631985ec767dc263}{UiText}}(std::string\ text,\textcolor{keywordtype}{float}\ fontSize=1):\ \mbox{\hyperlink{class_ui_plane}{UiPlane}}(nullptr)}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_aab8a671f0a32a3fa0de748f3e8e6c1e2}{ShaderLib::UiShader}}));}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ this-\/>fontSize\ =\ fontSize;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ font\ =std::static\_pointer\_cast<FontTexture>(\mbox{\hyperlink{class_texture_lib_aa4a15d6a7fe08f0434708a3ed1806021}{TextureLib::ArialFontTex}});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>addTex(\textcolor{stringliteral}{"{}ColorTexture"{}},font);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_aa68128871cd44ed5ef126f8af9f87f67}{set\_usage}}(GL\_DYNAMIC\_DRAW);}
+\DoxyCodeLine{00224\ \textcolor{comment}{//\ \ \ \ \ \ \ \ set\_render\_mode(GL\_LINE);}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ setScaleData();}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ letter\ :\ text)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ addCharacter(letter);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}();}
+\DoxyCodeLine{00233\ \ \ \ }
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00236\ }
+
+\end{DoxyCode}

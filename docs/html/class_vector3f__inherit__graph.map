@@ -1,0 +1,11 @@
+<map id="Vector3f" name="Vector3f">
+<area shape="rect" id="Node000001" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="6,229,75,256"/>
+<area shape="rect" id="Node000005" href="$class_vector4f.html" title="Vector 4f implementing functionality of 4 value float vector on top of 3 value float vector." alt="" coords="6,304,75,331"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="43,272,43,304,38,304,38,272"/>
+<area shape="rect" id="Node000002" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="6,155,75,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,197,43,229,38,229,38,197"/>
+<area shape="rect" id="Node000003" href="$class_float.html" title="Float cals attribute." alt="" coords="15,80,66,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="43,122,43,154,38,154,38,122"/>
+<area shape="rect" id="Node000004" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="5,5,76,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="43,48,43,80,38,80,38,48"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/Sphere.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/Sphere.h">
+<area shape="rect" id="Node000001" title="file conating sphere primitive class" alt="" coords="119,5,324,80"/>
+<area shape="rect" id="Node000002" href="$_particle_system_8h.html" title="file containing calss paritcle system" alt="" coords="107,128,336,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,96,224,128,219,128,219,96"/>
+<area shape="rect" id="Node000003" href="$_emitter_8h.html" title="file coanitng emiter calss" alt="" coords="6,373,210,448"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="200,218,127,374,123,372,196,216"/>
+<area shape="rect" id="Node000005" href="$__3_d_engine_8h.html" title="file containg main 3d engie class" alt="" coords="211,251,416,325"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="261,214,288,249,283,252,256,217"/>
+<area shape="rect" id="Node000004" href="$_box_emitter_8h.html" title="file coantiang box emiitrer" alt="" coords="5,496,211,571"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,464,111,496,105,496,105,464"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="239,336,172,375,169,370,237,331"/>
+<area shape="rect" id="Node000006" href="$_ui_system_8h.html" title="file containg class UiSysytem" alt="" coords="234,373,438,448"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="317,340,323,372,318,373,312,341"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="333,359,326,327,331,325,338,358"/>
+</map>

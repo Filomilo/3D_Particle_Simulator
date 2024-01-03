@@ -1,0 +1,7 @@
+<map id="Transformable::moveIndendent" name="Transformable::moveIndendent">
+<area shape="rect" id="Node000001" title="moves object matrix by priovided vector (not origin point)" alt="" coords="388,5,584,32"/>
+<area shape="rect" id="Node000002" href="$class__3_d_engine.html#af60be567bb38f36c7f8ba2fbe7a3a37b" title="inirlizes camera for opengl" alt="" coords="166,5,340,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="372,21,340,21,340,16,372,16"/>
+<area shape="rect" id="Node000003" href="$class__3_d_engine.html#a87083fbc6774b5472e2e2bbf5fac086e" title="inrlizes whole engine" alt="" coords="5,5,118,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,21,118,21,118,16,150,16"/>
+</map>

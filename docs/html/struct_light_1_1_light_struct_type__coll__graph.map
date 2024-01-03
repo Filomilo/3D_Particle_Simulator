@@ -1,0 +1,11 @@
+<map id="Light::LightStructType" name="Light::LightStructType">
+<area shape="rect" id="Node000001" title="structure of light apramters passed to sahder" alt="" coords="5,356,154,383"/>
+<area shape="rect" id="Node000002" href="$class_vector3f.html" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="45,233,114,260"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,276,82,355,77,355,77,276"/>
+<area shape="rect" id="Node000003" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="45,157,114,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,199,82,233,77,233,77,199"/>
+<area shape="rect" id="Node000004" href="$class_float.html" title="Float cals attribute." alt="" coords="54,81,105,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,123,82,157,77,157,77,123"/>
+<area shape="rect" id="Node000005" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="44,5,115,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="82,47,82,81,77,81,77,47"/>
+</map>

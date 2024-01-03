@@ -1,0 +1,31 @@
+\doxysection{Math.\+h}
+\hypertarget{_math_8h_source}{}\label{_math_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Math.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Math.h}}
+\mbox{\hyperlink{_math_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2f_8h}{Vector2f.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_math}{Math}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ \mbox{\hyperlink{class_math_a19f3bb3f639ebbcd11e534798c3ee4aa}{cartezianToPolar}}(\mbox{\hyperlink{class_vector2f}{Vector2f}}\ cartezianCoords)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ polar;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ polar.x\ =\ std::sqrt(cartezianCoords.x\ *\ cartezianCoords.x\ +\ cartezianCoords.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ *\ cartezianCoords.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ polar.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ =\ std::atan2(cartezianCoords.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ cartezianCoords.x);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ polar;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ \mbox{\hyperlink{class_math_a36d23fe8862b7b5204e592884e4f81e4}{polarToCartezian}}(\mbox{\hyperlink{class_vector2f}{Vector2f}}\ polar)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ cartesian;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ cartesian.x\ =\ polar.x\ *\ std::cos(polar.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ cartesian.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ =\ polar.x\ *\ std::sin(polar.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ polar;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+
+\end{DoxyCode}

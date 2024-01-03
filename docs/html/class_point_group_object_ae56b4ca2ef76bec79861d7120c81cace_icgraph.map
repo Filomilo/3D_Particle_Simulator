@@ -1,0 +1,7 @@
+<map id="PointGroupObject::getVerteciesAmount" name="PointGroupObject::getVerteciesAmount">
+<area shape="rect" id="Node000001" title="Get the Vertecies Amount object." alt="" coords="242,35,447,77"/>
+<area shape="rect" id="Node000002" href="$class_point_group_object.html#a528528cee2f08628d078365d1dffcbdb" title="Get the Vertex Buffer object." alt="" coords="5,5,194,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,44,194,41,195,35,226,39"/>
+<area shape="rect" id="Node000003" href="$class_point_group_object.html#a345842c42720adeda4f4a41ada742ce3" title="glrender call to draw point on screen" alt="" coords="8,72,191,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,73,192,77,191,72,226,68"/>
+</map>

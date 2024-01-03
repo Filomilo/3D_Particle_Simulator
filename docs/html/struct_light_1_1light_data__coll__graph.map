@@ -1,0 +1,14 @@
+<map id="Light::lightData" name="Light::lightData">
+<area shape="rect" id="Node000001" title="arrat of ally light and data bout to it to be apsed by shader" alt="" coords="5,447,114,473"/>
+<area shape="rect" id="Node000002" href="$class_vector3f.html" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="25,233,94,260"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,276,53,326,53,383,60,446,55,447,48,383,48,325,53,275"/>
+<area shape="rect" id="Node000006" href="$struct_light_1_1_light_struct_type.html" title="structure of light apramters passed to sahder" alt="" coords="143,356,291,383"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="89,267,202,353,199,358,86,272"/>
+<area shape="rect" id="Node000003" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="25,157,94,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,199,62,233,57,233,57,199"/>
+<area shape="rect" id="Node000004" href="$class_float.html" title="Float cals attribute." alt="" coords="34,81,85,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="62,123,62,157,57,157,57,123"/>
+<area shape="rect" id="Node000005" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="24,5,95,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="62,47,62,81,57,81,57,47"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="183,393,83,448,81,444,180,388"/>
+</map>

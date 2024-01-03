@@ -1,0 +1,39 @@
+\doxysection{Turbulance.\+h}
+\hypertarget{_turbulance_8h_source}{}\label{_turbulance_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Turbulance.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Turbulance.h}}
+\mbox{\hyperlink{_turbulance_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_force_8h}{Force.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_noise_8h}{Noise.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_turbulance}{Turbulance}}\ :}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_force}{Force}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ std::shared\_ptr<Float>\ scale=std::make\_shared<Float>(\ 0.001);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ seed\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_turbulance_ab1bfb88b4f427e93fe72eb9ced945b9a}{affect}}(std::shared\_ptr<Point>\ pt,\ \textcolor{keywordtype}{float}\ timeVal)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ std::shared\_ptr<\ Vector3f>\ pos\ =std::dynamic\_pointer\_cast\ <Vector3f>(\ pt-\/>getAttribute(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ std::shared\_ptr<\ Vector3f>\ vel\ =\ \ std::dynamic\_pointer\_cast<Vector3f>(\ pt-\/>getAttribute(\textcolor{stringliteral}{"{}V"{}}));}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ turbulance\ =\ \mbox{\hyperlink{class_noise_a308dc5c5d3f83f616d842087a262bcf6}{Noise::getNoise}}(*pos,\ seed)\ *\ scale-\/>x;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ *vel\ =\ *vel\ +\ turbulance;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ \mbox{\hyperlink{class_turbulance_aa0318170c7320e9372fa7b0e2fa8e904}{getParameterGroup}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ ui\_parameter\_group\ =\ std::make\_shared<UiParameterGroup>(\textcolor{stringliteral}{"{}Turbulance"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ ui\_parameter\_group-\/>addParameter(std::make\_shared<UiParameter>\ (\textcolor{stringliteral}{"{}scale"{}},\ this-\/>scale,\ 0.001));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ui\_parameter\_group;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

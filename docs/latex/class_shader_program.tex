@@ -1,0 +1,71 @@
+\doxysection{Shader\+Program Class Reference}
+\hypertarget{class_shader_program}{}\label{class_shader_program}\index{ShaderProgram@{ShaderProgram}}
+
+
+class used to mange openg shader program  
+
+
+
+
+{\ttfamily \#include $<$Shader\+Program.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shader_program_a5ab0ea3c02eb8df2f2ab5a9cf0ca32c0}\label{class_shader_program_a5ab0ea3c02eb8df2f2ab5a9cf0ca32c0} 
+{\bfseries Shader\+Program} (std\+::string vertex\+Shader\+Source, std\+::string fragment\+Shader\+Source)
+\item 
+\Hypertarget{class_shader_program_a285c27da064068522f4900a8e8075f68}\label{class_shader_program_a285c27da064068522f4900a8e8075f68} 
+void {\bfseries use} ()
+\item 
+\Hypertarget{class_shader_program_a7eac9b127693719e988e15558bf75b3e}\label{class_shader_program_a7eac9b127693719e988e15558bf75b3e} 
+void {\bfseries set\+Bool} (const std\+::string \&name, bool val)
+\item 
+\Hypertarget{class_shader_program_aefd3157b3d215900631242e15a3e202c}\label{class_shader_program_aefd3157b3d215900631242e15a3e202c} 
+void {\bfseries set\+Int} (const std\+::string \&name, int val)
+\item 
+\Hypertarget{class_shader_program_a62e9423318bd6f4ecc9346d87e27a6f3}\label{class_shader_program_a62e9423318bd6f4ecc9346d87e27a6f3} 
+void {\bfseries set\+Float} (const std\+::string \&name, float val)
+\item 
+\Hypertarget{class_shader_program_ac1c85a52304276be29ac0dd3b30e0323}\label{class_shader_program_ac1c85a52304276be29ac0dd3b30e0323} 
+void {\bfseries set\+Array} (const std\+::string \&name, int size, GLfloat \texorpdfstring{$\ast$}{*}pointer)
+\item 
+\Hypertarget{class_shader_program_ae7fe9df75b9dbcbe659766896a231328}\label{class_shader_program_ae7fe9df75b9dbcbe659766896a231328} 
+void {\bfseries unuse} ()
+\item 
+\Hypertarget{class_shader_program_a05bf1970e612c5c62de29f7c752c6507}\label{class_shader_program_a05bf1970e612c5c62de29f7c752c6507} 
+void {\bfseries set\+Vector3f} (const std\+::string \&name, const \mbox{\hyperlink{class_vector3f}{Vector3f}} \&vector3\+\_\+f)
+\item 
+\Hypertarget{class_shader_program_ad42855d725741e3243a7b1d2486c1390}\label{class_shader_program_ad42855d725741e3243a7b1d2486c1390} 
+void {\bfseries set\+Matrix4} (const std\+::string \&name, const glm\+::mat4 \&mat4)
+\item 
+\Hypertarget{class_shader_program_a20f8e686d97bfeed0dcad35e23ca6d5f}\label{class_shader_program_a20f8e686d97bfeed0dcad35e23ca6d5f} 
+void {\bfseries add\+Attribute} (std\+::string atrib\+Name, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} type)
+\item 
+\Hypertarget{class_shader_program_ac5470d05c0af6a47b931b087c9b77f36}\label{class_shader_program_ac5470d05c0af6a47b931b087c9b77f36} 
+std\+::list$<$ std\+::string $>$ \& {\bfseries get\+Attribute\+List} ()
+\item 
+\Hypertarget{class_shader_program_aa186f9f8b35f406303839c8c0cbe86e5}\label{class_shader_program_aa186f9f8b35f406303839c8c0cbe86e5} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} $>$ \& {\bfseries get\+Attribute\+Map} ()
+\item 
+\Hypertarget{class_shader_program_a801b281e9607151d8637d9922420eefb}\label{class_shader_program_a801b281e9607151d8637d9922420eefb} 
+unsigned int {\bfseries get\+Vertex\+Size\+Required} ()
+\item 
+\Hypertarget{class_shader_program_a2bed26b3b9c75fdecfdc356274de4de6}\label{class_shader_program_a2bed26b3b9c75fdecfdc356274de4de6} 
+void {\bfseries set\+Camera} (std\+::string name, \mbox{\hyperlink{class_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\item 
+\Hypertarget{class_shader_program_a4e6d8042d73424442bc6315a11acd355}\label{class_shader_program_a4e6d8042d73424442bc6315a11acd355} 
+bool {\bfseries is\+Light\+Affeted} ()
+\item 
+\Hypertarget{class_shader_program_a8f66a92c29f5bf6be7faec319236c494}\label{class_shader_program_a8f66a92c29f5bf6be7faec319236c494} 
+void {\bfseries apply\+Light\+Data} (\mbox{\hyperlink{class_vector3f}{Vector3f}} camera\+Pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class used to mange openg shader program 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_shader_program_8h}{Shader\+Program.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Shader\+Program.\+cpp\end{DoxyCompactItemize}

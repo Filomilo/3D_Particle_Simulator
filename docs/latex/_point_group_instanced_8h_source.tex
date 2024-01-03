@@ -1,0 +1,94 @@
+\doxysection{Point\+Group\+Instanced.\+h}
+\hypertarget{_point_group_instanced_8h_source}{}\label{_point_group_instanced_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroupInstanced.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroupInstanced.h}}
+\mbox{\hyperlink{_point_group_instanced_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_8h}{PointGroup.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}}\ :}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point_group}{PointGroup}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced}{\string~PointGroupInstanced}}();}
+\DoxyCodeLine{00028\ \ \ \ \ std::shared\_ptr<Polygonal>\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}};}
+\DoxyCodeLine{00032\ \ \ \ \ std::shared\_ptr<VBO>\ \mbox{\hyperlink{class_point_group_instanced_ab5598319d92ec7e90682946c1902aad5}{instancesVBO}};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a7cfe6946158a82b9bac32b26c84da400}{setInstanceGeo}}(std::shared\_ptr<Polygonal>\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}})\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ this-\/>instanceGeo\ =\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_ada15553ff3e0fc7bfc8a757b7a85b9b8}{initInstancesVbo}}()}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_a4e5b9fbdc6013d2c71bab8fcf1743767}{iniitVboUniversal}}(this-\/>\mbox{\hyperlink{class_point_group_ac9590a35027c8d475bbce9083f9b19a9}{getVertexBuffer}}(),\ this-\/>\mbox{\hyperlink{class_point_group_ac36c933f8ccaec3708c562d09adcad40}{getVerteciesAmount}}(),\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}(),\ this-\/>instancesVBO,\ this-\/>\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}});}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a08ff56f6cb787f41126e21d66a78bdf0}{initPolygonsVbo}}()}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_a4e5b9fbdc6013d2c71bab8fcf1743767}{iniitVboUniversal}}(instanceGeo-\/>getVertexBufferForMat(this-\/>mat),\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}}-\/>getVerteciesAmount(),\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}}-\/>getVertexSizeForMat(this-\/>mat),\ this-\/>vbo,this-\/>vao);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a9134d5b29545f56b2c908d36b091715b}{iniitVao}}()}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}init\ vao"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ verteciesAmt\ =\ this-\/>instanceGeo-\/>getVerteciesAmount();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertexSize\ =\ this-\/>instanceGeo-\/>getVertexSize();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::map<std::string,\ Attribute::Types>\ attributesMap\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeMap();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::list<std::string>\ attributeList\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeList();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ name\ :\ attributeList)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ type\ =\ attributesMap[name];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}}-\/>linkAttrib(this-\/>instanceGeo-\/>vbo,\ i,\ type,\ GL\_FLOAT,\ vertexSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ offset);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(i);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}glEnableVertexAttribArray("{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ offset\ +=\ type\ *\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}}-\/>linkPointINstancePostion(instancesVBO,\ i,\ 3,\ GL\_FLOAT,\ 3\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}),\ 0);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a7de72d470557fca07806b26780712a7f}{initParts}}()}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/INSATEGEO\(\backslash\)n\(\backslash\)n("{};}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_ada15553ff3e0fc7bfc8a757b7a85b9b8}{initInstancesVbo}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/INSATEGEO\(\backslash\)n\(\backslash\)n("{};}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_a08ff56f6cb787f41126e21d66a78bdf0}{initPolygonsVbo}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_a9134d5b29545f56b2c908d36b091715b}{iniitVao}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}}-\/>iniitEBO();}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a1760f5af34f0547b0b92febab429c020}{updateVboInstanced}}()}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_a3770866f40a581c09b16dfaeffa10922}{updateVboUNiversal}}(this-\/>\mbox{\hyperlink{class_point_group_a4e0878b6840a2632669269f2afc67d69}{getVertexBufferForMat}}(this-\/>\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}),\ this-\/>\mbox{\hyperlink{class_point_group_ac36c933f8ccaec3708c562d09adcad40}{getVerteciesAmount}}(),\ this-\/>\mbox{\hyperlink{class_gl_object_ae5f073fd9c7b911ec8eb86d327bfdfcf}{getVertexSizeForMat}}(this-\/>\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}),this-\/>\mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}},\ this-\/>instancesVBO,\ this-\/>\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_instanced_a6914bc9fdc4d2f2a632bb39aa0ef96b7}{glDrawCall}}()}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ glDrawElementsInstanced(GL\_TRIANGLES,\ \mbox{\hyperlink{class_point_group_instanced_ac1589ee88fa03e5df5656969644c7597}{instanceGeo}}-\/>getTringlePointCount(),\ GL\_UNSIGNED\_INT,\ 0,\ this-\/>points.size());}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ glDrawElements(GL\_TRIANGLES,\ instanceGeo-\/>getTringlePointCount(),\ GL\_UNSIGNED\_INT,\ 0);}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ this-\/>instanceGeo-\/>glDrawCall();}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ glDrawElements(GL\_TRIANGLES,\ instanceGeo-\/>getTringlePointCount(),\ GL\_UNSIGNED\_INT,\ 0);}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \};}
+\DoxyCodeLine{00135\ }
+
+\end{DoxyCode}

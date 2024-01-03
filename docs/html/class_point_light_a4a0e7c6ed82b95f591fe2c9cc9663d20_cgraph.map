@@ -1,0 +1,7 @@
+<map id="PointLight::move" name="PointLight::move">
+<area shape="rect" id="Node000001" title="overide move method yto move light" alt="" coords="5,5,123,32"/>
+<area shape="rect" id="Node000002" href="$class_transformable.html#a16541760d089f6987b578e7bd4b64707" title="moves object orign point by provided vector" alt="" coords="171,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,16,155,16,155,21,123,21"/>
+<area shape="rect" id="Node000003" href="$class_vector3f.html#abfd06ee021a58221cda7ba9eb19d6f45" title="function that returns vector value in glm format" alt="" coords="359,5,457,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,16,343,16,343,21,312,21"/>
+</map>

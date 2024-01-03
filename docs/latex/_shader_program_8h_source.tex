@@ -1,0 +1,54 @@
+\doxysection{Shader\+Program.\+h}
+\hypertarget{_shader_program_8h_source}{}\label{_shader_program_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ShaderProgram.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ShaderProgram.h}}
+\mbox{\hyperlink{_shader_program_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <GL/gl.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <glm/fwd.hpp>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include<glm/glm.hpp>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include<glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include<glm/gtc/type\_ptr.hpp>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include<glm/gtx/rotate\_vector.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include<glm/gtx/vector\_angle.hpp>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_math_8h}{Math.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{Vector3f.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader_program}{ShaderProgram}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ID;}
+\DoxyCodeLine{00044\ \ \ \ \ std::map<std::string,\ Attribute::Types>\ AttributesRequiredMap;}
+\DoxyCodeLine{00049\ \ \ \ \ std::list<std::string>\ AttributesRequiredList;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{int}\ vertexSize\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ std::string\ getTextFile(std::string\ file);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_shader_program}{ShaderProgram}}(std::string\ vertexShaderSource,\ std::string\ fragmentShaderSource);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ use();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setBool(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ val);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ setInt(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ setFloat(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ val);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ setArray(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ size,\ GLfloat*\ pointer);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ unuse();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ setVector3f(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\&\ vector3\_f);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ setMatrix4(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ glm::mat4\&\ mat4);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ addAttribute(std::string\ atribName,\ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ type);}
+\DoxyCodeLine{00079\ \ \ \ \ std::list<std::string>\&\ getAttributeList();}
+\DoxyCodeLine{00080\ \ \ \ \ std::map<std::string,\ Attribute::Types>\&\ getAttributeMap();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ getVertexSizeRequired();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ setCamera(std::string\ \ name,\ \mbox{\hyperlink{class_camera}{Camera}}*\ camera);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ isLightAffeted();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ applyLightData(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ cameraPos);}
+\DoxyCodeLine{00085\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,91 @@
+\doxysection{Vortex Class Reference}
+\hypertarget{class_vortex}{}\label{class_vortex}\index{Vortex@{Vortex}}
+
+
+Implementaion of vortex force for paricle simulation.  
+
+
+
+
+{\ttfamily \#include $<$Vortex.\+h$>$}
+
+
+
+Inheritance diagram for Vortex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_vortex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vortex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_vortex__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_vortex_ac2b62abaa22399f175e09bb8a98d577c}{affect}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$ pt, float time\+Val) override
+\begin{DoxyCompactList}\small\item\em applies vector force to current point \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ \mbox{\hyperlink{class_vortex_af290fe2ef1f0ef394b22b07b2a05769c}{get\+Parameter\+Group}} () override
+\begin{DoxyCompactList}\small\item\em Get the Parameter Group object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementaion of vortex force for paricle simulation. 
+
+\doxylink{class_vortex}{Vortex} force that extendeds class Froce, it implements virtual method affect, to apply to gl\+Object vortex force based on its attributes, It works by calculating new velocaity vector based on it\textquotesingle{}s postion form the center and adds it to current object velocity multiply scale parameter, It also apply magnet froce that apply force in direction to closest point in a cricle of radius defined by radius paramter in order to keep object in the center 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vortex_ac2b62abaa22399f175e09bb8a98d577c}\label{class_vortex_ac2b62abaa22399f175e09bb8a98d577c} 
+\index{Vortex@{Vortex}!affect@{affect}}
+\index{affect@{affect}!Vortex@{Vortex}}
+\doxysubsubsection{\texorpdfstring{affect()}{affect()}}
+{\footnotesize\ttfamily void Vortex\+::affect (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{pt,  }\item[{float}]{time\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+applies vector force to current point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & shared pointer to point affect during current simulation run \\
+\hline
+{\em time\+Val} & time offset from previous simulation run to scale force accrodingly \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_force_a57e3bd93284f324c1e36bf06c88849b6}{Force}}.
+
+\Hypertarget{class_vortex_af290fe2ef1f0ef394b22b07b2a05769c}\label{class_vortex_af290fe2ef1f0ef394b22b07b2a05769c} 
+\index{Vortex@{Vortex}!getParameterGroup@{getParameterGroup}}
+\index{getParameterGroup@{getParameterGroup}!Vortex@{Vortex}}
+\doxysubsubsection{\texorpdfstring{getParameterGroup()}{getParameterGroup()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ Vortex\+::get\+Parameter\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Parameter Group object. 
+
+created pareaemter group to be used in gui
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Ui\+Parameter\+Group$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_force_ae197f62748d6d1ed3f260960ca27b21c}{Force}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_vortex_8h}{Vortex.\+h}}\end{DoxyCompactItemize}

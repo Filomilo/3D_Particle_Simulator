@@ -1,0 +1,22 @@
+<map id="PointGroupInstanced::initInstancesVbo" name="PointGroupInstanced::initInstancesVbo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,148,139"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html#ac36c933f8ccaec3708c562d09adcad40" title="Get the Vertecies Amount object." alt="" coords="680,5,848,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,93,153,75,195,61,320,38,447,25,566,20,665,20,665,25,566,25,448,30,321,43,196,67,155,80,118,98"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html#ac9590a35027c8d475bbce9083f9b19a9" title="Get the Vertex Buffer object." alt="" coords="196,76,379,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,105,180,101,180,106,149,110"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="683,131,845,157"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="148,117,667,138,667,143,148,123"/>
+<area shape="rect" id="Node000008" href="$class_gl_object.html#a4e5b9fbdc6013d2c71bab8fcf1743767" title="inirilze vertex buffer for object" alt="" coords="200,181,375,208"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="135,137,197,160,233,173,231,178,195,165,133,142"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#a4e0878b6840a2632669269f2afc67d69" title="Get the Vertex Buffer For Mat object." alt="" coords="435,64,618,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="380,85,419,84,419,90,380,90"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="615,61,665,48,666,53,616,66"/>
+<area shape="rect" id="Node000005" href="$class_point_group.html#a5e99bc81f9de6e26ed91545b73f67c75" title="Get the Vertex Attrib object." alt="" coords="673,72,855,99"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="618,83,658,83,658,88,618,88"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="616,105,692,124,691,129,615,110"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="903,131,1106,157"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="846,141,887,141,887,147,846,147"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="375,185,625,160,667,155,668,160,626,165,376,190"/>
+<area shape="rect" id="Node000009" href="$class_gl_object.html#a682c66222099523058a932574e2b11e6" title="Get the Vertecies Amount object." alt="" coords="427,232,625,259"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="354,206,446,226,445,231,353,211"/>
+</map>

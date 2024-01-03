@@ -1,0 +1,152 @@
+\doxysection{VAO Class Reference}
+\hypertarget{class_v_a_o}{}\label{class_v_a_o}\index{VAO@{VAO}}
+
+
+a warpper for \doxylink{class_v_a_o}{VAO}  
+
+
+
+
+{\ttfamily \#include $<$VAO.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_a_o_a3b2ec9574d0aa9e86e5288095f58097e}{VAO}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_v_a_o}{VAO} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_a_o_ae3eaa4901bcc8a60ccbe07db3be52207}{link\+Attrib}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$ vbo, GLuint layout, GLuint nm\+OFElements, GLenum type, GLsizeiptr stride, int offset)
+\begin{DoxyCompactList}\small\item\em a method that sepcifies attribute in vbo based on provied pramtes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_a_o_ad0c53cbb91905b1ea5abe96a2c32b5cf}{link\+Attrib}} (GLuint vbo, GLuint layout, GLuint nm\+OFElements, GLenum type, GLsizeiptr stride, int offset)
+\begin{DoxyCompactList}\small\item\em similar to toher link attribute however it uses ID instead of \doxylink{class_v_b_o}{VBO} object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_a_o_aa649ecc5e67a48296a21fd36927c90e0}{link\+Point\+INstance\+Postion}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$ vbo, GLuint layout, GLuint nm\+OFElements, GLenum type, GLsizeiptr stride, int offset)
+\begin{DoxyCompactList}\small\item\em a method that links instnace postion \end{DoxyCompactList}\item 
+\Hypertarget{class_v_a_o_a8bb39e6aaadaa0204b0ccf910cf9500a}\label{class_v_a_o_a8bb39e6aaadaa0204b0ccf910cf9500a} 
+void {\bfseries bind} ()
+\begin{DoxyCompactList}\small\item\em bind vertex array id \end{DoxyCompactList}\item 
+\Hypertarget{class_v_a_o_ae96e88a466b44d968315b5dc1f612946}\label{class_v_a_o_ae96e88a466b44d968315b5dc1f612946} 
+void {\bfseries unbind} ()
+\begin{DoxyCompactList}\small\item\em unbind veretx array id \end{DoxyCompactList}\item 
+\Hypertarget{class_v_a_o_a94f02b2944ec65654fce692c25d71dd7}\label{class_v_a_o_a94f02b2944ec65654fce692c25d71dd7} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em detle vertex array object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}{ID}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_v_a_o}{VAO} id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a warpper for \doxylink{class_v_a_o}{VAO} 
+
+A class used tho help to manage \doxylink{class_v_a_o}{VAO} vertex array object contiang parameters fo VBo. in other words it manages how data in \doxylink{class_v_b_o}{VBO} is intertreed by graphics card 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_v_a_o_a3b2ec9574d0aa9e86e5288095f58097e}\label{class_v_a_o_a3b2ec9574d0aa9e86e5288095f58097e} 
+\index{VAO@{VAO}!VAO@{VAO}}
+\index{VAO@{VAO}!VAO@{VAO}}
+\doxysubsubsection{\texorpdfstring{VAO()}{VAO()}}
+{\footnotesize\ttfamily VAO\+::\+VAO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_v_a_o}{VAO} object. 
+
+a default constructor for \doxylink{class_v_a_o}{VAO} that cerated new id for opengl 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_v_a_o_ad0c53cbb91905b1ea5abe96a2c32b5cf}\label{class_v_a_o_ad0c53cbb91905b1ea5abe96a2c32b5cf} 
+\index{VAO@{VAO}!linkAttrib@{linkAttrib}}
+\index{linkAttrib@{linkAttrib}!VAO@{VAO}}
+\doxysubsubsection{\texorpdfstring{linkAttrib()}{linkAttrib()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VAO\+::link\+Attrib (\begin{DoxyParamCaption}\item[{GLuint}]{vbo,  }\item[{GLuint}]{layout,  }\item[{GLuint}]{nm\+OFElements,  }\item[{GLenum}]{type,  }\item[{GLsizeiptr}]{stride,  }\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+similar to toher link attribute however it uses ID instead of \doxylink{class_v_b_o}{VBO} object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vbo} & \\
+\hline
+{\em layout} & \\
+\hline
+{\em nm\+OFElements} & \\
+\hline
+{\em type} & \\
+\hline
+{\em stride} & \\
+\hline
+{\em offset} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_v_a_o_ae3eaa4901bcc8a60ccbe07db3be52207}\label{class_v_a_o_ae3eaa4901bcc8a60ccbe07db3be52207} 
+\index{VAO@{VAO}!linkAttrib@{linkAttrib}}
+\index{linkAttrib@{linkAttrib}!VAO@{VAO}}
+\doxysubsubsection{\texorpdfstring{linkAttrib()}{linkAttrib()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VAO\+::link\+Attrib (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$}]{vbo,  }\item[{GLuint}]{layout,  }\item[{GLuint}]{nm\+OFElements,  }\item[{GLenum}]{type,  }\item[{GLsizeiptr}]{stride,  }\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+a method that sepcifies attribute in vbo based on provied pramtes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vbo} & vertex buffer that cotaines data to be specifed \\
+\hline
+{\em layout} & number of attribute to be sepcifed \\
+\hline
+{\em nm\+OFElements} & number of elemtns in that attebute for example 2 for vectro 2f, 3 for vectro 3f and so on \\
+\hline
+{\em type} & type of attribute , data type of attribute ussualy float \\
+\hline
+{\em stride} & defiend if there bytes between atriubtes \\
+\hline
+{\em offset} & defeind at what point veretx buffer starts \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_v_a_o_aa649ecc5e67a48296a21fd36927c90e0}\label{class_v_a_o_aa649ecc5e67a48296a21fd36927c90e0} 
+\index{VAO@{VAO}!linkPointINstancePostion@{linkPointINstancePostion}}
+\index{linkPointINstancePostion@{linkPointINstancePostion}!VAO@{VAO}}
+\doxysubsubsection{\texorpdfstring{linkPointINstancePostion()}{linkPointINstancePostion()}}
+{\footnotesize\ttfamily void VAO\+::link\+Point\+INstance\+Postion (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$}]{vbo,  }\item[{GLuint}]{layout,  }\item[{GLuint}]{nm\+OFElements,  }\item[{GLenum}]{type,  }\item[{GLsizeiptr}]{stride,  }\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+a method that links instnace postion 
+
+its is simmlar ot link attributes howeber in definedd it atrribute as instance point, its currenly used in one instance rnedeirng and it snot suited for any ohter puprpose
+
+
+\begin{DoxyParams}{Parameters}
+{\em vbo} & \\
+\hline
+{\em layout} & \\
+\hline
+{\em nm\+OFElements} & \\
+\hline
+{\em type} & \\
+\hline
+{\em stride} & \\
+\hline
+{\em offset} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}\label{class_v_a_o_af47651c68a1871c56f7064943cbc09a8} 
+\index{VAO@{VAO}!ID@{ID}}
+\index{ID@{ID}!VAO@{VAO}}
+\doxysubsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily unsigned int VAO\+::\+ID}
+
+
+
+\doxylink{class_v_a_o}{VAO} id. 
+
+id of VAo that is manged by this calss instance, it is auto genreted upoon class instance construciton 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_v_a_o_8h}{VAO.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,172 @@
+\doxysection{Vertex Class Reference}
+\hypertarget{class_vertex}{}\label{class_vertex}\index{Vertex@{Vertex}}
+
+
+class conating vertex data for rendering  
+
+
+
+
+{\ttfamily \#include $<$Vertex.\+h$>$}
+
+
+
+Inheritance diagram for Vertex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_vertex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Vertex\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_vertex__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vertex_a0713e1893ec469c78fb2e6d6375a0168}{Vertex}} (unsigned point\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vertex}{Vertex} object that include point index in main object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_ad8a5abad93509e036acd640317d593ce}{Vertex}} (int point\+NUm, \mbox{\hyperlink{class_vector3f}{Vector3f}} normals)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vertex}{Vertex} object including index of point and normal vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_a24d23d6e87635edac1b7d88d6afafac8}{Vertex}} (int point\+NUm, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$ normals)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_vertex}{Vertex} object including index of point and normal vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_a3dc3934c119d0b31a92f016dcbba7829}{Vertex}} (int point\+NUm, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$ normals, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$ uv)
+\item 
+\mbox{\hyperlink{class_vertex_abfa612a0b5de6df2b1abb93fbb65f640}{Vertex}} (int point\+NUm, \mbox{\hyperlink{class_vector3f}{Vector3f}} normals, \mbox{\hyperlink{class_vector2f}{Vector2f}} Uvs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vertex_a27bc59987033c13174d7f425c88d05e9}\label{class_vertex_a27bc59987033c13174d7f425c88d05e9} 
+unsigned int {\bfseries point\+Index}
+\begin{DoxyCompactList}\small\item\em index number of corresponding point in main object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class conating vertex data for rendering 
+
+class allw for conating structure for vertex data, it conatins point index corresponding in polygonal object, it can store attributes used in rendeeirng like normal vectro and uv position 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vertex_a0713e1893ec469c78fb2e6d6375a0168}\label{class_vertex_a0713e1893ec469c78fb2e6d6375a0168} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{unsigned}]{point\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_vertex}{Vertex} object that include point index in main object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+\_\+index} & index of point in main object \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_ad8a5abad93509e036acd640317d593ce}\label{class_vertex_ad8a5abad93509e036acd640317d593ce} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{int}]{point\+NUm,  }\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{normals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_vertex}{Vertex} object including index of point and normal vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+\_\+index} & index of point in main object \\
+\hline
+{\em normals} & normal vector of vertex \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_vertex_ad8a5abad93509e036acd640317d593ce_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_vertex_a24d23d6e87635edac1b7d88d6afafac8}\label{class_vertex_a24d23d6e87635edac1b7d88d6afafac8} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{int}]{point\+NUm,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$}]{normals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_vertex}{Vertex} object including index of point and normal vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+\_\+index} & index of point in main object \\
+\hline
+{\em normals} & normal vector of vertex \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_vertex_a24d23d6e87635edac1b7d88d6afafac8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_vertex_a3dc3934c119d0b31a92f016dcbba7829}\label{class_vertex_a3dc3934c119d0b31a92f016dcbba7829} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{int}]{point\+NUm,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$}]{normals,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$}]{uv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{class_vertex}{Vertex} constructor that iclunde corresponfing index that includes normal vector and uv coordinates Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_vertex_a3dc3934c119d0b31a92f016dcbba7829_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_vertex_abfa612a0b5de6df2b1abb93fbb65f640}\label{class_vertex_abfa612a0b5de6df2b1abb93fbb65f640} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{int}]{point\+NUm,  }\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{normals,  }\item[{\mbox{\hyperlink{class_vector2f}{Vector2f}}}]{Uvs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\doxylink{class_vertex}{Vertex} constuctor including point index and uvs as not shared pointers Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_vertex_abfa612a0b5de6df2b1abb93fbb65f640_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_vertex_8h}{Vertex.\+h}}\end{DoxyCompactItemize}

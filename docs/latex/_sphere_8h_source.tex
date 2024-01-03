@@ -1,0 +1,107 @@
+\doxysection{Sphere.\+h}
+\hypertarget{_sphere_8h_source}{}\label{_sphere_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Sphere.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Sphere.h}}
+\mbox{\hyperlink{_sphere_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#\ define\ M\_PI\ \ \ \ \ \ \ \ \ \ \ 3.14159265358979323846}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sphere}{Sphere}}\ :}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ getNormalVectroOfPoint(\textcolor{keywordtype}{int}\ pointIndx)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ posRef\ =\ std::dynamic\_pointer\_cast<Vector3f>(\ this-\/>\mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}.at(pointIndx)-\/>getAttribute(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos\ =\ *posRef;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ pos.\mbox{\hyperlink{class_vector3f_af86f3422d11cfb5e56bdada4b4bc68cc}{normalize}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pos;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_sphere_a475cfda56524d2d06440b713707390ff}{Sphere}}(\textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{int}\ columns,\ \textcolor{keywordtype}{int}\ rows)}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ n=0;n<rows;n++)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ m\ =\ 0;\ m\ <\ columns;m++)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ (sin(M\_PI\ *\ m\ /\ columns)\ *\ cos(2*M\_PI\ *\ n\ /\ rows));}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ z\ =\ sin(M\_PI\ *\ m\ /\ columns)\ *\ sin(2*M\_PI\ *\ n\ /\ rows);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ cos(M\_PI\ *\ m\ /columns);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(x*\ size,\ y*\ size,\ z*\ size);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ midP\ =std::dynamic\_pointer\_cast<Vector3f>(\ this-\/>\mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}[0]-\/>getAttribute(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(midP-\/>x,\ -\/midP-\/>y,\ midP-\/>z);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptIt\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ facwItereaote\ =\ 0;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\ =\ rows;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ rows\ =\ columns;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ columns\ =\ tmp;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ columnwidthUv\ =\ 1.0f\ /\ columns;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rowHeightUv\ =\ 1.0f\ /\ rows;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ columns;\ c++)\ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ secndColum\ =\ (c+1)\ \%\ (columns);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ columnsStart\ =\ columnwidthUv\ *\ c;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ getNormalVectroOfPoint(0),\ \{\ 1.0f\ -\/\ columnsStart+\ columnwidthUv/2.0f,\ 1\});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}((rows\ *\ c)\ +\ 1,\ getNormalVectroOfPoint((rows\ *\ c)\ +\ 1),\ \{\ 1.0f\ -\/\ columnsStart\ ,\ 1-\/rowHeightUv\ \});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1\ +\ (rows\ *\ (secndColum)),\ getNormalVectroOfPoint(1\ +\ (rows\ *\ (secndColum))),\ \{\ 1.0f\ -\/\ columnsStart\ +\ columnwidthUv,\ 1-\/\ rowHeightUv\ \});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ facwItereaote++,facwItereaote++,facwItereaote++\ \});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ r\ =\ 1;\ r\ <\ rows-\/1;\ r++)\ \{}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ uv1\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(1.0f\ -\/\ (columnwidthUv\ *\ c),1.0f-\/(\ r\ *\ rowHeightUv));}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ uv2\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(1.0f\ -\/\ (columnwidthUv\ *\ c),\ 1.0f\ -\/\ (r\ *\ rowHeightUv\ +\ rowHeightUv));}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ uv3\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(1.0f\ -\/(\ columnwidthUv\ *\ c\ +\ columnwidthUv),\ 1.0f\ -\/(\ r\ *\ rowHeightUv));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ uv4\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(1.0f\ -\/(\ columnwidthUv\ *\ c\ +\ columnwidthUv),\ 1.0f\ -\/(\ r\ *\ rowHeightUv\ +\ rowHeightUv));}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}((rows\ *\ c)\ +\ r,\ getNormalVectroOfPoint((rows\ *\ c)\ +\ r),\ uv1);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}((rows\ *\ c)\ +\ r\ +\ 1,\ getNormalVectroOfPoint((rows\ *\ c)\ +\ r\ +\ 1),\ uv2);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(r\ +\ 1\ +\ (rows\ *\ (secndColum)),\ getNormalVectroOfPoint(r\ +\ 1\ +\ (rows\ *\ (secndColum))),\ uv4);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(r\ +\ (rows\ *\ (secndColum)),\ getNormalVectroOfPoint(r\ +\ (rows\ *\ secndColum)),\ uv3);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ facwItereaote++,facwItereaote++,facwItereaote++,facwItereaote++\ \});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(columns\ *\ rows,\ getNormalVectroOfPoint(columns\ *\ rows),\ \{\ 1.0f\ -\/\ columnsStart\ +\ columnwidthUv\ /\ 2.0f,\ 0\ \});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}((rows\ *\ c)\ +\ rows\ -\/\ 1,\ getNormalVectroOfPoint((rows\ *\ c)\ +\ rows\ -\/\ 1),\ \{\ 1.0f\ -\/\ columnsStart\ ,\ \ rowHeightUv\ \});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(rows\ -\/\ 1\ +\ (rows\ *\ (secndColum)),\ getNormalVectroOfPoint(rows\ -\/\ 1\ +\ (rows\ *\ (secndColum))),\ \{\ 1.0f\ -\/\ columnsStart\ +\ columnwidthUv,rowHeightUv\ \});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ facwItereaote++,facwItereaote++,facwItereaote++\ \});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \};}
+\DoxyCodeLine{00132\ }
+
+\end{DoxyCode}

@@ -1,0 +1,17 @@
+<map id="PointLight" name="PointLight">
+<area shape="rect" id="Node000001" title="class for mangin point light data in opengl" alt="" coords="30,379,110,405"/>
+<area shape="rect" id="Node000002" href="$class_light.html" title="class light" alt="" coords="8,304,57,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,343,66,377,61,379,44,346"/>
+<area shape="rect" id="Node000003" href="$class_cube.html" title="cube class primitve" alt="" coords="82,304,133,331"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,346,79,379,74,377,91,343"/>
+<area shape="rect" id="Node000004" href="$class_polygonal.html" title="class holding polygon data for opnegl" alt="" coords="68,229,146,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,272,110,304,105,304,105,272"/>
+<area shape="rect" id="Node000005" href="$class_point_group.html" title="class object made out of points" alt="" coords="64,155,150,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="110,197,110,229,105,229,105,197"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="71,80,143,107"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="110,122,110,154,105,154,105,122"/>
+<area shape="rect" id="Node000007" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="5,5,92,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="70,43,99,78,95,81,66,46"/>
+<area shape="rect" id="Node000008" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="116,5,218,32"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="149,46,120,81,115,78,145,42"/>
+</map>

@@ -1,0 +1,117 @@
+\doxysection{VBO Class Reference}
+\hypertarget{class_v_b_o}{}\label{class_v_b_o}\index{VBO@{VBO}}
+
+
+cass wraping functinlaity of \doxylink{class_v_b_o}{VBO} for opengl  
+
+
+
+
+{\ttfamily \#include $<$VBO.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_b_o_aa2c6934f04fe41228ac33195ae19815b}{VBO}} (GLfloat \texorpdfstring{$\ast$}{*}vertieces, GLsizeiptr size, unsigned long int usage=GL\+\_\+\+STATIC\+\_\+\+DRAW)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_v_b_o}{VBO} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86}{update}} (GLfloat \texorpdfstring{$\ast$}{*}vertieces, GLsizeiptr size, unsigned long int usage=GL\+\_\+\+STATIC\+\_\+\+DRAW)
+\begin{DoxyCompactList}\small\item\em a method that send vertex buffer data to vertex buffer object \end{DoxyCompactList}\item 
+\Hypertarget{class_v_b_o_a63c913f623e45e6e7c03506a6705ea21}\label{class_v_b_o_a63c913f623e45e6e7c03506a6705ea21} 
+void {\bfseries bind} ()
+\begin{DoxyCompactList}\small\item\em a wrapper for gl\+Bind\+BUffer \end{DoxyCompactList}\item 
+\Hypertarget{class_v_b_o_aad7aac5eb2e2d7d397b7f38bb33d3370}\label{class_v_b_o_aad7aac5eb2e2d7d397b7f38bb33d3370} 
+void {\bfseries unbind} ()
+\begin{DoxyCompactList}\small\item\em a warpper taht uning vbo in opengl \end{DoxyCompactList}\item 
+\Hypertarget{class_v_b_o_a8a2489bf3fd5e4f7761e3e590e321ea9}\label{class_v_b_o_a8a2489bf3fd5e4f7761e3e590e321ea9} 
+void {\bfseries Delete} ()
+\begin{DoxyCompactList}\small\item\em deletes vertex buffer object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}{ID}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_vertex}{Vertex} buffer id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+cass wraping functinlaity of \doxylink{class_v_b_o}{VBO} for opengl 
+
+a class helpign with mangaing vertexb buffer used in opengl rendering to send dat to graphics card 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_v_b_o_aa2c6934f04fe41228ac33195ae19815b}\label{class_v_b_o_aa2c6934f04fe41228ac33195ae19815b} 
+\index{VBO@{VBO}!VBO@{VBO}}
+\index{VBO@{VBO}!VBO@{VBO}}
+\doxysubsubsection{\texorpdfstring{VBO()}{VBO()}}
+{\footnotesize\ttfamily VBO\+::\+VBO (\begin{DoxyParamCaption}\item[{GLfloat \texorpdfstring{$\ast$}{*}}]{vertieces,  }\item[{GLsizeiptr}]{size,  }\item[{unsigned long int}]{usage = {\ttfamily GL\+\_\+STATIC\+\_\+DRAW} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_v_b_o}{VBO} object. 
+
+A constructor fro vbo that gets vertecis array and its size and construct vertex buffer based on that data
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertieces} & pointer to array conatineg vertex buffer data to be placed inside \doxylink{class_v_b_o}{VBO} \\
+\hline
+{\em size} & size fo cretex bffer array data \\
+\hline
+{\em usage} & udage type used by opengl to determin if its updated many time or it only a few times and optimes acrodigly \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{class_v_b_o_aa2c6934f04fe41228ac33195ae19815b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86}\label{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86} 
+\index{VBO@{VBO}!update@{update}}
+\index{update@{update}!VBO@{VBO}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void VBO\+::update (\begin{DoxyParamCaption}\item[{GLfloat \texorpdfstring{$\ast$}{*}}]{vertieces,  }\item[{GLsizeiptr}]{size,  }\item[{unsigned long int}]{usage = {\ttfamily GL\+\_\+STATIC\+\_\+DRAW} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+a method that send vertex buffer data to vertex buffer object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertieces} & pointer to array conatineg vertex buffer data to be placed inside \doxylink{class_v_b_o}{VBO} \\
+\hline
+{\em size} & size fo cretex bffer array data \\
+\hline
+{\em usage} & udage type used by opengl to determin if its updated many time or it only a few times and optimes acrodigly \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{class_v_b_o_a23ea4f04a75fc345a794b6529420dd86_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1}\label{class_v_b_o_afc26b2d0ea4448ba3e4cd2edbae8c8f1} 
+\index{VBO@{VBO}!ID@{ID}}
+\index{ID@{ID}!VBO@{VBO}}
+\doxysubsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily unsigned int VBO\+::\+ID}
+
+
+
+\doxylink{class_vertex}{Vertex} buffer id. 
+
+id of vertex buffer that is mannagnt by this class instance, ID is geenretd by opengl function inside constructor 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_v_b_o_8h}{VBO.\+h}}\end{DoxyCompactItemize}

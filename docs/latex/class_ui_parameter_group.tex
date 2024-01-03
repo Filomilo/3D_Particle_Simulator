@@ -1,0 +1,208 @@
+\doxysection{Ui\+Parameter\+Group Class Reference}
+\hypertarget{class_ui_parameter_group}{}\label{class_ui_parameter_group}\index{UiParameterGroup@{UiParameterGroup}}
+
+
+Ui parameter group.  
+
+
+
+
+{\ttfamily \#include $<$Ui\+Parameter\+Group.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ui_parameter_group_ae7f47aadc1bc8c3ef202eee9576af2a6}{Ui\+Parameter\+Group}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Construct a new Ui Parameter Group object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_ui_parameter_group_a3510a2050ead3a0abfe98bef5370191c}{get\+\_\+name}} () const
+\begin{DoxyCompactList}\small\item\em Get the name object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_a3239dc1f92919ffcaf4b15345eff0d86}{set\+\_\+name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_ab0df4cd7e30e03eb96ad8b5feca42f6e}{icrease\+Selection}} ()
+\begin{DoxyCompactList}\small\item\em increase selction of paramters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_ae995b8cdf47c7daa816bac13a4d72005}{decrease\+Selection}} ()
+\begin{DoxyCompactList}\small\item\em decreases selction of paramters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_aed2b36e9db8bedd84496c860e923dad3}{increase\+Selected\+Param}} ()
+\begin{DoxyCompactList}\small\item\em increse value of selected paramter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_a75be1594885d86896b31f0936f2d85a7}{decrease\+Selected\+Param}} ()
+\begin{DoxyCompactList}\small\item\em decrease value of selected paramter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ui_parameter_group_ab30cf9f7f31f86c97090bda9c7d102e9}{add\+Parameter}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter}{Ui\+Parameter}} $>$ ui\+\_\+parameter)
+\begin{DoxyCompactList}\small\item\em add pramter \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter}{Ui\+Parameter}} $>$ $>$ \mbox{\hyperlink{class_ui_parameter_group_a273a065b1ce658658fc8eb0d79eeb877}{get\+Paramters}} ()
+\begin{DoxyCompactList}\small\item\em Get the Paramters object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_ui_parameter_group_a2f3624d50e15132f91cc8c55976ec8ca}{get\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em Get the Selected object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_ui_parameter_group_a1e4184fc78295d3ba501cae4a36fc511}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} \&obj)
+\begin{DoxyCompactList}\small\item\em print fucniton \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ui parameter group. 
+
+class conating and alowwing for selection and modificatin of flaot parameters 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ui_parameter_group_ae7f47aadc1bc8c3ef202eee9576af2a6}\label{class_ui_parameter_group_ae7f47aadc1bc8c3ef202eee9576af2a6} 
+\index{UiParameterGroup@{UiParameterGroup}!UiParameterGroup@{UiParameterGroup}}
+\index{UiParameterGroup@{UiParameterGroup}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{UiParameterGroup()}{UiParameterGroup()}}
+{\footnotesize\ttfamily Ui\+Parameter\+Group\+::\+Ui\+Parameter\+Group (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new Ui Parameter Group object. 
+
+consturct parametr group with provided name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of paramter group \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ui_parameter_group_ab30cf9f7f31f86c97090bda9c7d102e9}\label{class_ui_parameter_group_ab30cf9f7f31f86c97090bda9c7d102e9} 
+\index{UiParameterGroup@{UiParameterGroup}!addParameter@{addParameter}}
+\index{addParameter@{addParameter}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{addParameter()}{addParameter()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::add\+Parameter (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter}{Ui\+Parameter}} $>$}]{ui\+\_\+parameter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add pramter 
+
+adds editable ui pramter to grou\mbox{[}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui\+\_\+parameter} & ponter to paramter \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ui_parameter_group_a75be1594885d86896b31f0936f2d85a7}\label{class_ui_parameter_group_a75be1594885d86896b31f0936f2d85a7} 
+\index{UiParameterGroup@{UiParameterGroup}!decreaseSelectedParam@{decreaseSelectedParam}}
+\index{decreaseSelectedParam@{decreaseSelectedParam}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{decreaseSelectedParam()}{decreaseSelectedParam()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::decrease\+Selected\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+decrease value of selected paramter 
+
+decreases selcted paramter by its set step value \Hypertarget{class_ui_parameter_group_ae995b8cdf47c7daa816bac13a4d72005}\label{class_ui_parameter_group_ae995b8cdf47c7daa816bac13a4d72005} 
+\index{UiParameterGroup@{UiParameterGroup}!decreaseSelection@{decreaseSelection}}
+\index{decreaseSelection@{decreaseSelection}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{decreaseSelection()}{decreaseSelection()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::decrease\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+decreases selction of paramters 
+
+decreses selcted paramter nad updated ui based on that, loops if decreased too much \Hypertarget{class_ui_parameter_group_a3510a2050ead3a0abfe98bef5370191c}\label{class_ui_parameter_group_a3510a2050ead3a0abfe98bef5370191c} 
+\index{UiParameterGroup@{UiParameterGroup}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string Ui\+Parameter\+Group\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string name of parmeter group 
+\end{DoxyReturn}
+\Hypertarget{class_ui_parameter_group_a273a065b1ce658658fc8eb0d79eeb877}\label{class_ui_parameter_group_a273a065b1ce658658fc8eb0d79eeb877} 
+\index{UiParameterGroup@{UiParameterGroup}!getParamters@{getParamters}}
+\index{getParamters@{getParamters}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{getParamters()}{getParamters()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter}{Ui\+Parameter}} $>$ $>$ Ui\+Parameter\+Group\+::get\+Paramters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Paramters object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Ui\+Parameter$>$$>$ returns list of paramters 
+\end{DoxyReturn}
+\Hypertarget{class_ui_parameter_group_a2f3624d50e15132f91cc8c55976ec8ca}\label{class_ui_parameter_group_a2f3624d50e15132f91cc8c55976ec8ca} 
+\index{UiParameterGroup@{UiParameterGroup}!getSelected@{getSelected}}
+\index{getSelected@{getSelected}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{getSelected()}{getSelected()}}
+{\footnotesize\ttfamily int Ui\+Parameter\+Group\+::get\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Selected object. 
+
+\begin{DoxyReturn}{Returns}
+int retruns index of selected object 
+\end{DoxyReturn}
+\Hypertarget{class_ui_parameter_group_ab0df4cd7e30e03eb96ad8b5feca42f6e}\label{class_ui_parameter_group_ab0df4cd7e30e03eb96ad8b5feca42f6e} 
+\index{UiParameterGroup@{UiParameterGroup}!icreaseSelection@{icreaseSelection}}
+\index{icreaseSelection@{icreaseSelection}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{icreaseSelection()}{icreaseSelection()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::icrease\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+increase selction of paramters 
+
+incraease selcted paramter nad updated ui based on that, loops if increased too much \Hypertarget{class_ui_parameter_group_aed2b36e9db8bedd84496c860e923dad3}\label{class_ui_parameter_group_aed2b36e9db8bedd84496c860e923dad3} 
+\index{UiParameterGroup@{UiParameterGroup}!increaseSelectedParam@{increaseSelectedParam}}
+\index{increaseSelectedParam@{increaseSelectedParam}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{increaseSelectedParam()}{increaseSelectedParam()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::increase\+Selected\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+increse value of selected paramter 
+
+increses selcted paramter by its set step value \Hypertarget{class_ui_parameter_group_a3239dc1f92919ffcaf4b15345eff0d86}\label{class_ui_parameter_group_a3239dc1f92919ffcaf4b15345eff0d86} 
+\index{UiParameterGroup@{UiParameterGroup}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Ui\+Parameter\+Group\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the name object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of paramter group \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_ui_parameter_group_a1e4184fc78295d3ba501cae4a36fc511}\label{class_ui_parameter_group_a1e4184fc78295d3ba501cae4a36fc511} 
+\index{UiParameterGroup@{UiParameterGroup}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!UiParameterGroup@{UiParameterGroup}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+print fucniton 
+
+a function helping iwth debuggin by priting ui paramter group in console
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::ostream\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_ui_parameter_group_8h}{Ui\+Parameter\+Group.\+h}}\end{DoxyCompactItemize}

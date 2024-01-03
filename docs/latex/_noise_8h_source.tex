@@ -1,0 +1,34 @@
+\doxysection{Noise.\+h}
+\hypertarget{_noise_8h_source}{}\label{_noise_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Noise.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Noise.h}}
+\mbox{\hyperlink{_noise_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}FastNoiseLite.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector3f_8h}{Vector3f.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_noise}{Noise}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ \mbox{\hyperlink{class_noise_a308dc5c5d3f83f616d842087a262bcf6}{getNoise}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos,\textcolor{keywordtype}{int}\ seed\ ,\ \textcolor{keywordtype}{float}\ frequancy=0.1)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ FastNoiseLite\ fast\_noise\_lite;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ fast\_noise\_lite.SetFrequency(frequancy);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ values;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<3;i++)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ fast\_noise\_lite.SetSeed(seed\ +\ i);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ fast\_noise\_lite.GetNoise(pos.x,\ pos.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ pos.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ values.\mbox{\hyperlink{class_vector3f_af86f3422d11cfb5e56bdada4b4bc68cc}{normalize}}()\ ;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+
+\end{DoxyCode}

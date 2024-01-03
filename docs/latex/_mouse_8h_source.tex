@@ -1,0 +1,143 @@
+\doxysection{Mouse.\+h}
+\hypertarget{_mouse_8h_source}{}\label{_mouse_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Mouse.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Mouse.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2f_8h}{Vector2f.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mouse}{Mouse}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ LPM=0,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ RPM,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ MPM}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ RELEASE=0,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ PUSH}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ position=\mbox{\hyperlink{class_vector2f}{Vector2f}}(0,0);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ offset\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(0,\ 0);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scrollMovement=0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressing[3];}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isClick[3];}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isReleasing[3];}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_mouse_a99024d3700d649ae19c1537b42a3e86d}{Mouse}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::fill(isPressing,\ isPressing\ +\ 3,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mouse_aba60ae3aab2142aea9847a3cd59c13a5}{reset}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_mouse}{\string~Mouse}}()\ \{\}}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mouse_a2956e5e0d7ddb795b4273934ed7c644e}{setMousePostition}}(\textcolor{keywordtype}{int}\ screenWidth,\textcolor{keywordtype}{int}\ screenHeight,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ this-\/>offset.x\ =\ position.x\ -\/\ x\ /\ (float)screenWidth;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ this-\/>offset.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ =\ position.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ -\/\ y\ /\ (float)screenHeight;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ this-\/>position.x\ =\ x\ /\ (float)screenWidth;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this-\/>position.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}\ =\ y\ /\ (float)screenHeight;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ position.x\ <<\ std::endl;}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mouse_a6b3e4767e6070d5bcb7e7186fdf964ad}{getX}}()}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ this-\/>position.x;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mouse_ae689662822d51c6a68a993d64d352ba0}{getY}}()}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ this-\/>position.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}};}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ \mbox{\hyperlink{class_mouse_a4c70f9229e9b46b4eb324cf65b671917}{getPos}}()}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ position;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ \mbox{\hyperlink{class_mouse_adf9d40a03957289cf9fc00e110cd608e}{getMouseOffset}}()}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>offset;}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mouse_aba60ae3aab2142aea9847a3cd59c13a5}{reset}}()}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ this-\/>offset\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(0,0);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ this-\/>scrollMovement\ =\ 0;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ std::fill(isClick,\ isClick\ +\ 3,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ std::fill(isReleasing,\ isReleasing\ +\ 3,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mouse_af1bcbc9309ac3fb056a85f6ac3e7d89e}{updateMouseButton}}(\textcolor{keywordtype}{int}\ type,\textcolor{keywordtype}{int}\ param)}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(param==PUSH)}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ isPressing[type]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ isClick[type]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ isPressing[type]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ isReleasing[type]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mouse_a9b6b95077d8ccc6b4822a12afda18fd6}{updateScroll}}(\textcolor{keywordtype}{float}\ scrollMove)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ this-\/>scrollMovement+=\ scrollMove;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mouse_ae2eba6a397c1a80b8db0f72a13c60116}{getScrollMovement}}()}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ scrollMovement;}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a0e3a1b5f3ca7f2a468bb79ec39332e0d}{getIsRightClick}}()}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isClick[RPM];}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_af3ecfb119f8f801f1af4e6c833a3e1bf}{getIsLeftClick}}()}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isClick[LPM];}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a844bc0d18962968f40c0ed36164db921}{getIsMiddleClick}}()}
+\DoxyCodeLine{00206\ \ \ \ \ \{}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isClick[MPM];}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_ab5c9b92acfa98932bf34277689c9b83a}{getIsRightRealsed}}()}
+\DoxyCodeLine{00216\ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isReleasing[RPM];}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a21076ceb60eae30ada1fc209f3326967}{getIsLefteReleased}}()}
+\DoxyCodeLine{00226\ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isReleasing[LPM];}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a9ae36454c8f911c8091bf3d909817ee3}{getIsMiddleReleased}}()}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isReleasing[MPM];}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_aad8a9e47991208a0ce26c81480fd8fb6}{getIsRightPressed}}()}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isPressing[RPM];}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a97a22799e7ee88642a45df594776bd3f}{getIsLeftePressed}}()}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isPressing[LPM];}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mouse_a4635d069d4770cc2c7495c342d239ee9}{getIsMiddlePressedd}}()}
+\DoxyCodeLine{00266\ \ \ \ \ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isReleasing[MPM];}
+\DoxyCodeLine{00268\ \ \ \ \ \}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \};}
+\DoxyCodeLine{00271\ }
+
+\end{DoxyCode}

@@ -1,0 +1,15 @@
+<map id="PointGroupInstanced" name="PointGroupInstanced">
+<area shape="rect" id="Node000001" title=" " alt="" coords="65,229,208,256"/>
+<area shape="rect" id="Node000006" href="$class_particle_system.html" title="class with particle system" alt="" coords="5,304,116,331"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="114,269,75,306,72,302,111,265"/>
+<area shape="rect" id="Node000007" href="$class_switchable_point_group.html" title=" " alt="" coords="139,304,289,331"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="163,265,202,302,199,306,159,269"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html" title="class object made out of points" alt="" coords="93,155,180,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,197,139,229,134,229,134,197"/>
+<area shape="rect" id="Node000003" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="100,80,173,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,122,139,154,134,154,134,122"/>
+<area shape="rect" id="Node000004" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="35,5,121,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,43,128,78,124,81,96,46"/>
+<area shape="rect" id="Node000005" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="145,5,248,32"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="179,46,149,81,145,78,174,42"/>
+</map>

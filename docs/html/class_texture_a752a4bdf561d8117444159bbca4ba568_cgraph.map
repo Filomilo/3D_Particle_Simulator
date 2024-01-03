@@ -1,0 +1,5 @@
+<map id="Texture::genTex" name="Texture::genTex">
+<area shape="rect" id="Node000001" title="mrthod used for genratign texture" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="Node000002" href="$class_texture.html#af7bac510daac6ac22077d2f2aac5270a" title="genertes texture data based ob bytes" alt="" coords="168,5,288,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,16,152,16,152,21,120,21"/>
+</map>

@@ -1,0 +1,437 @@
+\doxysection{Point Class Reference}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+
+
+class for handling single point  
+
+
+
+
+{\ttfamily \#include $<$Point.\+h$>$}
+
+
+
+Inheritance diagram for Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_point__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_point__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_abf67a1160dd25744b162999d0cac1adf}{Point}} (float x=0, float y=0, float z=0)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_point}{Point} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_ad9df67895f722afe3efedc269c17823a}{Point}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} pos)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_point}{Point} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_a23cf1a19ad6d123e9c4c2f3237df0913}{Point}} (std\+::initializer\+\_\+list$<$ float $>$ initializers)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_point}{Point} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a4e75b065a97aa8850b5b79f95bd63de7}{set\+Color}} (float r, float g, float b)
+\begin{DoxyCompactList}\small\item\em Set the Color object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a41dbe49207a8fd141e70e317b2bd04d5}{set\+Pscale}} (float size)
+\begin{DoxyCompactList}\small\item\em Set the Pscale object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_aa9f3656d011ad031b2019c967a752a4c}{set\+Velocity}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Set the Velocity object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a1a8a88a4765bbe6bfe8d275fe8698875}{set\+Mass}} (float mass)
+\begin{DoxyCompactList}\small\item\em Set the Mass object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_af2620710c18bd529a2b3d895810b89a1}{set\+Bounce}} (float bounce)
+\begin{DoxyCompactList}\small\item\em Set the Bounce objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_ad52cb216702e97fca4d029a0257b9ef9}{set\+Life}} (float life)
+\begin{DoxyCompactList}\small\item\em Set the Life object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a15061d264ff84b5e82363b34435d12c8}{set\+Age}} (float age)
+\begin{DoxyCompactList}\small\item\em Set the Age object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_a190a449119d5bead0a4927cced8db270}{increase\+Age}} (float amount)
+\begin{DoxyCompactList}\small\item\em increse age of point \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_ac8c1ef2f28ed16a4bfc677a24d7768d9}{Point}} (float x, float y, float z, float r, float g, float b, float size=1)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_point}{Point} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for handling single point 
+
+class handles mangain single point form wchi most objet are made out of 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_abf67a1160dd25744b162999d0cac1adf}\label{class_point_abf67a1160dd25744b162999d0cac1adf} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{float}]{x = {\ttfamily 0},  }\item[{float}]{y = {\ttfamily 0},  }\item[{float}]{z = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_point}{Point} object. 
+
+baisc constuctor with xyz cooridante
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & point positon in x axis \\
+\hline
+{\em y} & position of point in y axis \\
+\hline
+{\em z} & position of point z axis \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_point_abf67a1160dd25744b162999d0cac1adf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_ad9df67895f722afe3efedc269c17823a}\label{class_point_ad9df67895f722afe3efedc269c17823a} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_point}{Point} object. 
+
+construcotr that creates point at posiotn specifec by \doxylink{class_vector3f}{Vector3f}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & position of point in vector3f \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_point_ad9df67895f722afe3efedc269c17823a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_a23cf1a19ad6d123e9c4c2f3237df0913}\label{class_point_a23cf1a19ad6d123e9c4c2f3237df0913} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ float $>$}]{initializers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_point}{Point} object. 
+
+bsic constrcuto that creates point in positon specifed by value in inirlizer list
+
+
+\begin{DoxyParams}{Parameters}
+{\em initializers} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_point_a23cf1a19ad6d123e9c4c2f3237df0913_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_ac8c1ef2f28ed16a4bfc677a24d7768d9}\label{class_point_ac8c1ef2f28ed16a4bfc677a24d7768d9} 
+\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Point\+::\+Point (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{size = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_point}{Point} object. 
+
+create point with postion color and size
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & postion in x axis \\
+\hline
+{\em y} & postion in y axis \\
+\hline
+{\em z} & poztion in z axis \\
+\hline
+{\em r} & red color value \\
+\hline
+{\em g} & green color value \\
+\hline
+{\em b} & blue color value \\
+\hline
+{\em size} & size of point \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_ac8c1ef2f28ed16a4bfc677a24d7768d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_point_a190a449119d5bead0a4927cced8db270}\label{class_point_a190a449119d5bead0a4927cced8db270} 
+\index{Point@{Point}!increaseAge@{increaseAge}}
+\index{increaseAge@{increaseAge}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{increaseAge()}{increaseAge()}}
+{\footnotesize\ttfamily void Point\+::increase\+Age (\begin{DoxyParamCaption}\item[{float}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+increse age of point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & amount to increase \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_a190a449119d5bead0a4927cced8db270_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_a15061d264ff84b5e82363b34435d12c8}\label{class_point_a15061d264ff84b5e82363b34435d12c8} 
+\index{Point@{Point}!setAge@{setAge}}
+\index{setAge@{setAge}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setAge()}{setAge()}}
+{\footnotesize\ttfamily void Point\+::set\+Age (\begin{DoxyParamCaption}\item[{float}]{age }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Age object. 
+
+attrbiute age is define how long point is living for
+
+
+\begin{DoxyParams}{Parameters}
+{\em age} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_point_a15061d264ff84b5e82363b34435d12c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_point_a15061d264ff84b5e82363b34435d12c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_af2620710c18bd529a2b3d895810b89a1}\label{class_point_af2620710c18bd529a2b3d895810b89a1} 
+\index{Point@{Point}!setBounce@{setBounce}}
+\index{setBounce@{setBounce}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setBounce()}{setBounce()}}
+{\footnotesize\ttfamily void Point\+::set\+Bounce (\begin{DoxyParamCaption}\item[{float}]{bounce }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Bounce objects. 
+
+set bounciness of point
+
+
+\begin{DoxyParams}{Parameters}
+{\em bounce} & bounce value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_point_af2620710c18bd529a2b3d895810b89a1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_a4e75b065a97aa8850b5b79f95bd63de7}\label{class_point_a4e75b065a97aa8850b5b79f95bd63de7} 
+\index{Point@{Point}!setColor@{setColor}}
+\index{setColor@{setColor}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Point\+::set\+Color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Color object. 
+
+set color attribute of point to specifed coolor
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & red color value \\
+\hline
+{\em g} & green color value \\
+\hline
+{\em b} & blue color value \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_point_a4e75b065a97aa8850b5b79f95bd63de7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_point_a4e75b065a97aa8850b5b79f95bd63de7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_ad52cb216702e97fca4d029a0257b9ef9}\label{class_point_ad52cb216702e97fca4d029a0257b9ef9} 
+\index{Point@{Point}!setLife@{setLife}}
+\index{setLife@{setLife}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setLife()}{setLife()}}
+{\footnotesize\ttfamily void Point\+::set\+Life (\begin{DoxyParamCaption}\item[{float}]{life }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Life object. 
+
+sets life of point so how maximusm time can it live for
+
+
+\begin{DoxyParams}{Parameters}
+{\em life} & life of point \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{class_point_ad52cb216702e97fca4d029a0257b9ef9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_a1a8a88a4765bbe6bfe8d275fe8698875}\label{class_point_a1a8a88a4765bbe6bfe8d275fe8698875} 
+\index{Point@{Point}!setMass@{setMass}}
+\index{setMass@{setMass}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setMass()}{setMass()}}
+{\footnotesize\ttfamily void Point\+::set\+Mass (\begin{DoxyParamCaption}\item[{float}]{mass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Mass object. 
+
+set mass of point
+
+
+\begin{DoxyParams}{Parameters}
+{\em mass} & mass of point \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_point_a1a8a88a4765bbe6bfe8d275fe8698875_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_a41dbe49207a8fd141e70e317b2bd04d5}\label{class_point_a41dbe49207a8fd141e70e317b2bd04d5} 
+\index{Point@{Point}!setPscale@{setPscale}}
+\index{setPscale@{setPscale}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setPscale()}{setPscale()}}
+{\footnotesize\ttfamily void Point\+::set\+Pscale (\begin{DoxyParamCaption}\item[{float}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Pscale object. 
+
+set point scale attriubte of point
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & size of point \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_point_a41dbe49207a8fd141e70e317b2bd04d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_point_a41dbe49207a8fd141e70e317b2bd04d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_aa9f3656d011ad031b2019c967a752a4c}\label{class_point_aa9f3656d011ad031b2019c967a752a4c} 
+\index{Point@{Point}!setVelocity@{setVelocity}}
+\index{setVelocity@{setVelocity}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{setVelocity()}{setVelocity()}}
+{\footnotesize\ttfamily void Point\+::set\+Velocity (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Velocity object. 
+
+set velocity attribute for point
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & valocity valeu in x axis \\
+\hline
+{\em y} & velocity in y axis \\
+\hline
+{\em z} & velocity in z axis \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_point_aa9f3656d011ad031b2019c967a752a4c_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_point_8h}{Point.\+h}}\end{DoxyCompactItemize}

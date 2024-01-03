@@ -1,0 +1,13 @@
+<map id="Cube::Cube" name="Cube::Cube">
+<area shape="rect" id="Node000001" title="Construct a new Cube object." alt="" coords="5,56,95,83"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="151,5,287,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,53,156,34,158,40,96,59"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#ab2c867be82490492af4ab729960d503a" title="add multiply ponints using inlizer list coordianres" alt="" coords="143,56,295,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,67,127,67,127,72,95,72"/>
+<area shape="rect" id="Node000006" href="$class_polygonal.html#a2b5f67ba833b94d2f671b9d2c94a043b" title="add vertex for sepcifed poitn index" alt="" coords="146,107,292,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="96,80,158,99,156,104,94,85"/>
+<area shape="rect" id="Node000003" href="$class_face.html#a4dd2120c676797bf8b1854badebcf93a" title="add vetex index to face" alt="" coords="345,5,487,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,16,329,16,329,21,288,21"/>
+<area shape="rect" id="Node000005" href="$class_point_group.html#a17bdde63833d3f5328a9598bc2ad5834" title="add point to point group" alt="" coords="343,56,488,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="295,67,328,67,328,72,295,72"/>
+</map>

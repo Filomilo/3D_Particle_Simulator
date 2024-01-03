@@ -1,0 +1,31 @@
+\doxysection{Gravity.\+h}
+\hypertarget{_gravity_8h_source}{}\label{_gravity_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Gravity.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Gravity.h}}
+\mbox{\hyperlink{_gravity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_force_8h}{Force.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_parameter_group_8h}{UiParameterGroup.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_gravity}{Gravity}}:}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_force}{Force}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<Float>\ \ G\ =\ std::make\_shared<Float>(9.8);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_gravity_a25d8f2724df0be4870b38c6f66f9dfc1}{affect}}(std::shared\_ptr<Point>\ pt,\ \textcolor{keywordtype}{float}\ timeVal)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ V\ =\ std::dynamic\_pointer\_cast<Vector3f>(\ pt-\/>getAttribute(\textcolor{stringliteral}{"{}V"{}}));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ mass\ =\ std::dynamic\_pointer\_cast<Float>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}mass"{}}));}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ V-\/>y\ -\/=\ (((*mass)*(*G))\ *\ timeVal)[0];}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ \mbox{\hyperlink{class_gravity_a040f5227c70f06c8d6ba70f3bafa0dbf}{getParameterGroup}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ ui\_parameter\_group\ =\ std::make\_shared<UiParameterGroup>(\textcolor{stringliteral}{"{}Gravity"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ui\_parameter\_group-\/>addParameter(std::make\_shared<UiParameter>(\textcolor{stringliteral}{"{}G"{}},\ G,\ 0.1));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ui\_parameter\_group;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+
+\end{DoxyCode}

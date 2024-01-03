@@ -1,0 +1,10 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiSystem.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiSystem.h">
+<area shape="rect" id="Node000001" title="file containg class UiSysytem" alt="" coords="6,5,210,80"/>
+<area shape="rect" id="Node000002" href="$__3_d_engine_8h.html" title="file containg main 3d engie class" alt="" coords="6,128,210,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,96,102,128,97,128,96,96"/>
+<area shape="poly" id="edge4_Node000002_Node000001" title=" " alt="" coords="114,112,114,81,119,81,120,112"/>
+<area shape="rect" id="Node000003" href="$_emitter_8h.html" title="file coanitng emiter calss" alt="" coords="6,251,210,325"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,219,111,250,105,250,105,219"/>
+<area shape="rect" id="Node000004" href="$_box_emitter_8h.html" title="file coantiang box emiitrer" alt="" coords="5,373,211,448"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,341,111,373,105,373,105,341"/>
+</map>

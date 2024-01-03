@@ -1,0 +1,186 @@
+\doxysection{Obj\+Loader.\+h}
+\hypertarget{_obj_loader_8h_source}{}\label{_obj_loader_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ObjLoader.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ObjLoader.h}}
+\mbox{\hyperlink{_obj_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_obj_loader}{ObjLoader}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<float>\ getValues(std::string\ line)}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::vector<float>\ array;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ value)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ array.push\_back(value);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ array;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handleNewPoint(std::string\ line,\ std::shared\_ptr<Polygonal>\ loadingFile)}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}new\ point:\ "{}\ <<\ array.at(0)<<"{},\ "{}\ <<\ array.at(1)\ <<"{},\ "{}<<\ array.at(2)\ <<\ std::endl;}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::vector<float>\ array\ =\ getValues(line);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ loadingFile-\/>addPoint(array.at(0),\ array.at(1),\ array.at(2),}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{float})rand()\ /\ RAND\_MAX\ *\ 50}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handleNewFace(std::string\ line,\ std::vector<Vector2f>*\ uvs,\ std::vector<Vector3f>*\ ns,\ std::shared\_ptr<Polygonal>\ loadingFile)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ "{}face"{}\ <<line<<\ std::endl;}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::vector<std::string>\ array;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::string\ point;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ss\ >>\ point)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ array.push\_back(point);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}uvssize:\ "{}\ <<\ uvs-\/>size()\ <<\ std::endl;}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::vector<int>\ poinIndexList;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::vector<Vector2f>\ uvList;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::vector<Vector3f>\ NList;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ pointString:\ array)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}piont:"{}\ <<\ pointString\ <<\ std::endl;}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptNumbEnd=\ pointString.find(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ptNumber\ =\ stoi(pointString.substr(0,\ ptNumbEnd))-\/1;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ poinIndexList.push\_back(ptNumber);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ pointString\ =\ pointString.substr(ptNumbEnd+1);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}piont2:"{}\ <<\ pointString\ <<\ std::endl;}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ ptNumbEnd\ =\ pointString.find(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}pt:\ "{}\ <<\ pointString.substr(0,\ ptNumbEnd)\ <<\ std::endl;}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ptNumbEnd\ =\ pointString.find('/');}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::cout\ <<"{}pt:\ "{}<<\ pointString\ <<"{}\ ptned:\ "{}<<\ ptNumbEnd\ <<\ "{}\ substr:\ "{}<<\ pointString.substr(0,\ ptNumbEnd)<<std::endl;}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uvNumber\ =\ stoi(pointString.substr(0,\ ptNumbEnd))\ -\/\ 1;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ uvNumber\ <<\ "{},\ "{}\ <<\ std::endl;;}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uvList.push\_back(uvs-\/>at(uvNumber));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//loadingFile-\/>addFace()}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pointString\ =\ pointString.substr(ptNumbEnd\ +\ 1);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}piont2:"{}\ <<\ pointString\ <<\ std::endl;}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptNumbEnd\ =\ pointString.find(\textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}pt:\ "{}\ <<\ pointString.substr(0,\ ptNumbEnd)\ <<\ std::endl;}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ptNumbEnd\ =\ pointString.find('/');}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}pt:\ "{}\ <<\ pointString\ <<\ "{}\ ptned:\ "{}\ <<\ ptNumbEnd\ <<\ "{}\ substr:\ "{}\ <<\ pointString.substr(0,\ ptNumbEnd)\ <<\ std::endl;}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nNumber\ =\ stoi(pointString.substr(0,\ ptNumbEnd))\ -\/\ 1;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ nNumber\ <<\ "{},\ "{}\ <<\ std::endl;;}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NList.push\_back(ns-\/>at(nNumber));}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ loadingFile-\/>addFullFace(poinIndexList,\ uvList,\ NList);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \textcolor{keyword}{static}\ \ \textcolor{keywordtype}{void}\ handleNewUV(std::string\ line,\ std::vector<Vector2f>*\ uvs)}
+\DoxyCodeLine{00143\ \ \ \ \ \{}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}new\ point:\ "{}\ <<\ array.at(0)<<"{},\ "{}\ <<\ array.at(1)\ <<"{},\ "{}<<\ array.at(2)\ <<\ std::endl;}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ std::vector<float>\ array\ =\ getValues(line);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2f}{Vector2f}}\ uv\ =\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(array.at(0),\ array.at(1));}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ uvs-\/>push\_back(uv);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}uv:\ "{}\ <<\ uv\ <<\ std::endl;}}
+\DoxyCodeLine{00150\ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{static}\ \ \textcolor{keywordtype}{void}\ handleNewN(std::string\ line,\ std::vector<Vector3f>*\ ns)}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}new\ point:\ "{}\ <<\ array.at(0)<<"{},\ "{}\ <<\ array.at(1)\ <<"{},\ "{}<<\ array.at(2)\ <<\ std::endl;}}
+\DoxyCodeLine{00163\ \ \ \ \ std::vector<float>\ array\ =\ getValues(line);}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ N\ =\ \mbox{\hyperlink{class_vector3f}{Vector3f}}(array.at(0),\ array.at(1),\ array.at(2));}
+\DoxyCodeLine{00165\ \ \ \ \ ns-\/>push\_back(N);}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}uv:\ "{}\ <<\ uv\ <<\ std::endl;}}
+\DoxyCodeLine{00167\ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handleNeLine(std::string\ line,\ std::shared\_ptr<Polygonal>\ loadingFile,\ std::vector<Vector2f>*\ uvs,\ std::vector<Vector3f>*\ ns)}
+\DoxyCodeLine{00178\ \ \ \ \ \{}
+\DoxyCodeLine{00179\ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ typeEnd\ =\ line.find(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ std::string\ type\ =\ line.substr(0,\ typeEnd);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}v"{}})}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ handleNewPoint(line.substr(typeEnd),\ loadingFile);}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}vt"{}})}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ handleNewUV(line.substr(typeEnd),\ uvs);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}vn"{}})}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ handleNewN(line.substr(typeEnd),\ ns);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}f"{}})\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ handleNewFace(line.substr(typeEnd),\ uvs,ns,loadingFile);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<Polygonal>\ \mbox{\hyperlink{class_obj_loader_ab988335017626b63757e094577dae542}{loadFromFile}}(std::string\ file)}
+\DoxyCodeLine{00212\ \ \ \ \ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}file:\ "{}\ <<\ file;}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ std::ifstream\ inputStream;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ inputStream.open(file);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ std::shared\_ptr<Polygonal>\ loadingFile\ =\ std::make\_shared<Polygonal>();}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ std::vector<Vector2f>*\ uvs\ =\ \textcolor{keyword}{new}\ std::vector<Vector2f>();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ std::vector<Vector3f>*\ ns\ =\ \textcolor{keyword}{new}\ \ \ \ \ std::vector<Vector3f>();}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inputStream.is\_open())}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(inputStream,line))}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handleNeLine(line,\ loadingFile,\ uvs,\ ns);}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Couildnt\ open\ file"{}});}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}(uvs);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}(ns);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ loadingFile;}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ }
+
+\end{DoxyCode}

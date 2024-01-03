@@ -1,0 +1,37 @@
+<map id="UiPlane::UiPlane" name="UiPlane::UiPlane">
+<area shape="rect" id="Node000001" title="Construct a new Ui Plane object." alt="" coords="5,107,125,133"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="177,5,314,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,104,121,73,171,42,183,36,186,41,174,46,124,78,84,108"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#a17bdde63833d3f5328a9598bc2ad5834" title="add point to point group" alt="" coords="173,56,318,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,103,180,85,181,90,116,109"/>
+<area shape="rect" id="Node000005" href="$class_polygonal.html#a2b5f67ba833b94d2f671b9d2c94a043b" title="add vertex for sepcifed poitn index" alt="" coords="173,107,318,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="125,117,157,117,157,123,125,123"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html#a303d280c102c45b8c05ff5aae14ccc78" title="nitlizes object" alt="" coords="197,157,294,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="116,131,182,150,181,155,115,137"/>
+<area shape="rect" id="Node000016" href="$class_gl_object.html#ab0c75c848c3a411bf0924cecacfdf775" title="Set the Mat object." alt="" coords="185,208,306,235"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="84,132,124,162,174,194,186,199,183,204,171,198,121,167,81,136"/>
+<area shape="rect" id="Node000003" href="$class_face.html#a4dd2120c676797bf8b1854badebcf93a" title="add vetex index to face" alt="" coords="366,5,508,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="314,16,350,16,350,21,314,21"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html#a04b2c9a9f4e7d6c37b69c2e775e79c29" title="intilizes buffers of objeect" alt="" coords="373,183,501,209"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="295,174,358,183,357,188,294,180"/>
+<area shape="rect" id="Node000015" href="$class_gl_object.html#af142c6a9d45130b1702e61d70fddac54" title="unbind all object buffers" alt="" coords="378,132,496,159"/>
+<area shape="poly" id="edge18_Node000006_Node000015" title=" " alt="" coords="294,162,363,152,363,158,295,167"/>
+<area shape="rect" id="Node000008" href="$class_gl_object.html#ad714dda8d3b92367b988ab67b01ce55d" title="initlize VAo for object" alt="" coords="754,107,877,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="501,181,738,133,739,138,502,186"/>
+<area shape="rect" id="Node000012" href="$class_gl_object.html#aeb66962c60b73ec0232e18ab5afc90fd" title="initlize vretx buffer for specif object" alt="" coords="556,208,680,235"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="502,202,541,208,541,213,501,208"/>
+<area shape="rect" id="Node000009" href="$class_gl_object.html#a682c66222099523058a932574e2b11e6" title="Get the Vertecies Amount object." alt="" coords="951,157,1149,184"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="878,131,971,151,970,156,877,136"/>
+<area shape="rect" id="Node000010" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="969,208,1131,235"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="839,132,889,162,952,194,971,200,969,205,950,198,887,167,836,136"/>
+<area shape="rect" id="Node000011" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="1197,208,1401,235"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1132,219,1182,219,1182,224,1132,224"/>
+<area shape="poly" id="edge12_Node000012_Node000009" title=" " alt="" coords="671,205,727,193,834,180,935,173,935,178,834,186,728,199,672,210"/>
+<area shape="poly" id="edge14_Node000012_Node000010" title=" " alt="" coords="668,233,728,244,815,250,903,244,967,235,968,241,903,249,815,255,727,249,667,238"/>
+<area shape="rect" id="Node000013" href="$class_gl_object.html#ad29dff0e8392d4c1326bfbf4c1990484" title="Get the Vertex Buffer object." alt="" coords="731,309,900,336"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="640,233,680,260,729,288,758,301,756,306,726,293,677,265,637,237"/>
+<area shape="rect" id="Node000014" href="$class_gl_object.html#a4e5b9fbdc6013d2c71bab8fcf1743767" title="inirilze vertex buffer for object" alt="" coords="728,208,903,235"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="680,219,712,219,712,224,680,224"/>
+<area shape="poly" id="edge16_Node000014_Node000009" title=" " alt="" coords="880,205,970,185,971,190,881,210"/>
+<area shape="poly" id="edge17_Node000014_Node000010" title=" " alt="" coords="903,219,953,219,953,224,903,224"/>
+</map>

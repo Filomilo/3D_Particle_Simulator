@@ -1,0 +1,15 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiParameter.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiParameter.h">
+<area shape="rect" id="Node000001" title="file conating UI paramter class" alt="" coords="5,5,218,80"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="73,277,142,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,81,75,129,73,165,77,201,97,262,92,264,72,202,67,165,70,127,88,79"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="85,128,138,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,80,114,112,109,112,109,80"/>
+<area shape="rect" id="Node000004" href="$_float_8h.html" title="file coanting FLaot attribute class" alt="" coords="162,128,224,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,79,174,114,170,118,140,82"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="178,157,156,178,135,204,122,233,114,262,109,261,117,231,131,201,152,174,174,153"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="144,203,223,229"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="194,156,190,188,184,187,189,155"/>
+<area shape="rect" id="Node000006" href="$_attribute_8h.html" title="file containg attirbute class" alt="" coords="247,203,328,229"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="211,153,261,191,257,195,208,157"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="257,232,154,274,152,269,255,227"/>
+</map>

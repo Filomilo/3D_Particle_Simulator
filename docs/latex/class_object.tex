@@ -1,0 +1,155 @@
+\doxysection{Object Class Reference}
+\hypertarget{class_object}{}\label{class_object}\index{Object@{Object}}
+
+
+class object  
+
+
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+
+
+Inheritance diagram for Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_object__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_object_a5b011405a84c9f656ac312e4cac6828d}\label{class_object_a5b011405a84c9f656ac312e4cac6828d} 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class object 
+
+main objet class, it deifned main object that excpected that every object can coniatins some kind of attivutes 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_object_ae8f5483f459e46687bd01e6f9977afd3}\label{class_object_ae8f5483f459e46687bd01e6f9977afd3} 
+\index{Object@{Object}!````~Object@{\texorpdfstring{$\sim$}{\string~}Object}}
+\index{````~Object@{\texorpdfstring{$\sim$}{\string~}Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Object()}{\string~Object()}}
+{\footnotesize\ttfamily Object\+::\texorpdfstring{$\sim$}{\string~}\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{class_object}{Object} object. 
+
+clear atrbiutes 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}\label{class_object_a0573bd5bbf26928f6ccb84fcff92f44b} 
+\index{Object@{Object}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ Object\+::get\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{class_attribute}{Attribute} object. 
+
+retruns attribure of object with sepcifed name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Attribute$>$ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_object_a0573bd5bbf26928f6ccb84fcff92f44b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a0573bd5bbf26928f6ccb84fcff92f44b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_object_ab5bc4f48f04461a85189ecd320b1835d}\label{class_object_ab5bc4f48f04461a85189ecd320b1835d} 
+\index{Object@{Object}!isThereAttrib@{isThereAttrib}}
+\index{isThereAttrib@{isThereAttrib}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{isThereAttrib()}{isThereAttrib()}}
+{\footnotesize\ttfamily bool Object\+::is\+There\+Attrib (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+check if there s attibute of specifed name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of attribute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_ab5bc4f48f04461a85189ecd320b1835d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_object_a1e43fb6799d6f6540c80f53294476e0a}\label{class_object_a1e43fb6799d6f6540c80f53294476e0a} 
+\index{Object@{Object}!setAttribute@{setAttribute}}
+\index{setAttribute@{setAttribute}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setAttribute()}{setAttribute()}}
+{\footnotesize\ttfamily void Object\+::set\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{class_attribute}{Attribute} object. 
+
+set attribute of object
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & get name of object \\
+\hline
+{\em type} & attrbute value \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a1e43fb6799d6f6540c80f53294476e0a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_object_8h}{Object.\+h}}\end{DoxyCompactItemize}

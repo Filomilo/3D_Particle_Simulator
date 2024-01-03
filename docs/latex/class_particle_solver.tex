@@ -1,0 +1,140 @@
+\doxysection{Particle\+Solver Class Reference}
+\hypertarget{class_particle_solver}{}\label{class_particle_solver}\index{ParticleSolver@{ParticleSolver}}
+
+
+paritlce solver class class that handles siumalting specifed particle system  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Solver.\+h$>$}
+
+
+
+Inheritance diagram for Particle\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_particle_solver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Particle\+Solver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_particle_solver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_particle_solver_ac0fdc0ab7a228ef3d2cc71440ce28bc5}{update}} (float time\+Elpased) override
+\begin{DoxyCompactList}\small\item\em main update emthod to update siumaltion \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ \mbox{\hyperlink{class_particle_solver_a37b0c5cff67986c3e8197de02a7ea239}{get\+\_\+particle\+\_\+system}} () const
+\begin{DoxyCompactList}\small\item\em Get the particle system objectr. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_solver_aa4ffd0bcfb712111313aec328b991d69}{set\+\_\+particle\+\_\+system}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ particle\+\_\+system)
+\begin{DoxyCompactList}\small\item\em Set the particle system object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_solver_afceb84d56d7e255687f9871dccc0463a}{add\+Force}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_force}{Force}} $>$ force)
+\begin{DoxyCompactList}\small\item\em add force to list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_particle_solver_a6a5ae8e08e4b54119e1bc6ecdea86449}{reset}} ()
+\begin{DoxyCompactList}\small\item\em reset simulaiton \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+paritlce solver class class that handles siumalting specifed particle system 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_particle_solver_afceb84d56d7e255687f9871dccc0463a}\label{class_particle_solver_afceb84d56d7e255687f9871dccc0463a} 
+\index{ParticleSolver@{ParticleSolver}!addForce@{addForce}}
+\index{addForce@{addForce}!ParticleSolver@{ParticleSolver}}
+\doxysubsubsection{\texorpdfstring{addForce()}{addForce()}}
+{\footnotesize\ttfamily void Particle\+Solver\+::add\+Force (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_force}{Force}} $>$}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add force to list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_particle_solver_a37b0c5cff67986c3e8197de02a7ea239}\label{class_particle_solver_a37b0c5cff67986c3e8197de02a7ea239} 
+\index{ParticleSolver@{ParticleSolver}!get\_particle\_system@{get\_particle\_system}}
+\index{get\_particle\_system@{get\_particle\_system}!ParticleSolver@{ParticleSolver}}
+\doxysubsubsection{\texorpdfstring{get\_particle\_system()}{get\_particle\_system()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ Particle\+Solver\+::get\+\_\+particle\+\_\+system (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the particle system objectr. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Particle\+System$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_particle_solver_a6a5ae8e08e4b54119e1bc6ecdea86449}\label{class_particle_solver_a6a5ae8e08e4b54119e1bc6ecdea86449} 
+\index{ParticleSolver@{ParticleSolver}!reset@{reset}}
+\index{reset@{reset}!ParticleSolver@{ParticleSolver}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Particle\+Solver\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+reset simulaiton 
+
+
+
+Implements \mbox{\hyperlink{class_simulatable_a162c6bcc48399fdc50b5bc6cfa66f635}{Simulatable}}.
+
+\Hypertarget{class_particle_solver_aa4ffd0bcfb712111313aec328b991d69}\label{class_particle_solver_aa4ffd0bcfb712111313aec328b991d69} 
+\index{ParticleSolver@{ParticleSolver}!set\_particle\_system@{set\_particle\_system}}
+\index{set\_particle\_system@{set\_particle\_system}!ParticleSolver@{ParticleSolver}}
+\doxysubsubsection{\texorpdfstring{set\_particle\_system()}{set\_particle\_system()}}
+{\footnotesize\ttfamily void Particle\+Solver\+::set\+\_\+particle\+\_\+system (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$}]{particle\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the particle system object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particle\+\_\+system} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_particle_solver_ac0fdc0ab7a228ef3d2cc71440ce28bc5}\label{class_particle_solver_ac0fdc0ab7a228ef3d2cc71440ce28bc5} 
+\index{ParticleSolver@{ParticleSolver}!update@{update}}
+\index{update@{update}!ParticleSolver@{ParticleSolver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Particle\+Solver\+::update (\begin{DoxyParamCaption}\item[{float}]{time\+Elpased }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+main update emthod to update siumaltion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Elpased} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_updatable_aa79d5233231f1534f21a58d1d6557123}{Updatable}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_particle_solver_ac0fdc0ab7a228ef3d2cc71440ce28bc5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_particle_solver_8h}{Particle\+Solver.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Particle\+Solver.\+cpp\end{DoxyCompactItemize}

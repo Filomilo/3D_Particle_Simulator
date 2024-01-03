@@ -1,0 +1,98 @@
+\doxysection{Shader\+Lib Class Reference}
+\hypertarget{class_shader_lib}{}\label{class_shader_lib}\index{ShaderLib@{ShaderLib}}
+
+
+static shader lib  
+
+
+
+
+{\ttfamily \#include $<$Shader\+Lib.\+h$>$}
+
+
+
+Collaboration diagram for Shader\+Lib\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_shader_lib__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shader_lib_ae42c812807ecd99b9a668156bfa6442b}\label{class_shader_lib_ae42c812807ecd99b9a668156bfa6442b} 
+static void {\bfseries iniit\+Shader\+Lib} ()
+\begin{DoxyCompactList}\small\item\em method sued to inlil;ize shader programs at start of 3d engine \end{DoxyCompactList}\item 
+\Hypertarget{class_shader_lib_a6d6f5bf686c781cd7dc5c38c7e930f0c}\label{class_shader_lib_a6d6f5bf686c781cd7dc5c38c7e930f0c} 
+static void {\bfseries uninnit} ()
+\begin{DoxyCompactList}\small\item\em method used to remove all sahder form library from opengl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shader_lib_a626c0b6e9e1fba0eda7efde4543c9f38}\label{class_shader_lib_a626c0b6e9e1fba0eda7efde4543c9f38} 
+static \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} {\bfseries phong\+Shader} = nullptr
+\begin{DoxyCompactList}\small\item\em basic phong sahder \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78}{guide\+Shader}} = nullptr
+\begin{DoxyCompactList}\small\item\em basic guide shader \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shader_lib_af82418c265789c415577dd01d036bcd9}{particle\+Shader}} = nullptr
+\begin{DoxyCompactList}\small\item\em basic particel sahder \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shader_lib_ac0b25459556656d0da7ce3add94ad922}{particle\+Shader\+Instanced}} = nullptr
+\begin{DoxyCompactList}\small\item\em basci paritlce isnatnece \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_shader_lib_aab8a671f0a32a3fa0de748f3e8e6c1e2}{Ui\+Shader}} = nullptr
+\begin{DoxyCompactList}\small\item\em baisc ui shader \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+static shader lib 
+
+sahder library class ocnating basci global shader program used in openg 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78}\label{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78} 
+\index{ShaderLib@{ShaderLib}!guideShader@{guideShader}}
+\index{guideShader@{guideShader}!ShaderLib@{ShaderLib}}
+\doxysubsubsection{\texorpdfstring{guideShader}{guideShader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} Shader\+Lib\+::guide\+Shader = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+basic guide shader 
+
+sahder used bu object like lines of ground plane taht is not ffecte by light \Hypertarget{class_shader_lib_af82418c265789c415577dd01d036bcd9}\label{class_shader_lib_af82418c265789c415577dd01d036bcd9} 
+\index{ShaderLib@{ShaderLib}!particleShader@{particleShader}}
+\index{particleShader@{particleShader}!ShaderLib@{ShaderLib}}
+\doxysubsubsection{\texorpdfstring{particleShader}{particleShader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} Shader\+Lib\+::particle\+Shader = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+basic particel sahder 
+
+bsic partice lsahder for renderign gl points \Hypertarget{class_shader_lib_ac0b25459556656d0da7ce3add94ad922}\label{class_shader_lib_ac0b25459556656d0da7ce3add94ad922} 
+\index{ShaderLib@{ShaderLib}!particleShaderInstanced@{particleShaderInstanced}}
+\index{particleShaderInstanced@{particleShaderInstanced}!ShaderLib@{ShaderLib}}
+\doxysubsubsection{\texorpdfstring{particleShaderInstanced}{particleShaderInstanced}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} Shader\+Lib\+::particle\+Shader\+Instanced = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+basci paritlce isnatnece 
+
+currently the only insnaces shade used in simulation to instnace sphere in points \Hypertarget{class_shader_lib_aab8a671f0a32a3fa0de748f3e8e6c1e2}\label{class_shader_lib_aab8a671f0a32a3fa0de748f3e8e6c1e2} 
+\index{ShaderLib@{ShaderLib}!UiShader@{UiShader}}
+\index{UiShader@{UiShader}!ShaderLib@{ShaderLib}}
+\doxysubsubsection{\texorpdfstring{UiShader}{UiShader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shader_program}{Shader\+Program}} \texorpdfstring{$\ast$}{*} Shader\+Lib\+::\+Ui\+Shader = nullptr\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+baisc ui shader 
+
+simple ui shader not affect by light and camera perspecive 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_shader_lib_8h}{Shader\+Lib.\+h}}\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/Shader\+Lib.\+cpp\end{DoxyCompactItemize}

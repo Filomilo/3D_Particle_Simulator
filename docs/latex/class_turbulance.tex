@@ -1,0 +1,99 @@
+\doxysection{Turbulance Class Reference}
+\hypertarget{class_turbulance}{}\label{class_turbulance}\index{Turbulance@{Turbulance}}
+
+
+\doxylink{class_turbulance}{Turbulance} class force.  
+
+
+
+
+{\ttfamily \#include $<$Turbulance.\+h$>$}
+
+
+
+Inheritance diagram for Turbulance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_turbulance__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Turbulance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_turbulance__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_turbulance_ab1bfb88b4f427e93fe72eb9ced945b9a}{affect}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$ pt, float time\+Val) override
+\begin{DoxyCompactList}\small\item\em affect method appliyng noise velocity \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ \mbox{\hyperlink{class_turbulance_aa0318170c7320e9372fa7b0e2fa8e904}{get\+Parameter\+Group}} () override
+\begin{DoxyCompactList}\small\item\em Get the Parameter Group object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_turbulance}{Turbulance} class force. 
+
+class implements affect method allwing to add turubulent veloctiy in simualtion 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_turbulance_ab1bfb88b4f427e93fe72eb9ced945b9a}\label{class_turbulance_ab1bfb88b4f427e93fe72eb9ced945b9a} 
+\index{Turbulance@{Turbulance}!affect@{affect}}
+\index{affect@{affect}!Turbulance@{Turbulance}}
+\doxysubsubsection{\texorpdfstring{affect()}{affect()}}
+{\footnotesize\ttfamily void Turbulance\+::affect (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{pt,  }\item[{float}]{time\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+affect method appliyng noise velocity 
+
+it gets noise from noise class and get velcoty based on point position
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & point affected in siumaltion \\
+\hline
+{\em time\+Val} & time facot form prevois run \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_force_a57e3bd93284f324c1e36bf06c88849b6}{Force}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_turbulance_ab1bfb88b4f427e93fe72eb9ced945b9a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_turbulance_aa0318170c7320e9372fa7b0e2fa8e904}\label{class_turbulance_aa0318170c7320e9372fa7b0e2fa8e904} 
+\index{Turbulance@{Turbulance}!getParameterGroup@{getParameterGroup}}
+\index{getParameterGroup@{getParameterGroup}!Turbulance@{Turbulance}}
+\doxysubsubsection{\texorpdfstring{getParameterGroup()}{getParameterGroup()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ Turbulance\+::get\+Parameter\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Parameter Group object. 
+
+created ui paramter group with ponter to scale factor of turbulance force \begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Ui\+Parameter\+Group$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_force_ae197f62748d6d1ed3f260960ca27b21c}{Force}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_turbulance_8h}{Turbulance.\+h}}\end{DoxyCompactItemize}

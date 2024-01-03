@@ -1,0 +1,13 @@
+<map id="PointGroup::getVertexBuffer" name="PointGroup::getVertexBuffer">
+<area shape="rect" id="Node000001" title="Get the Vertex Buffer object." alt="" coords="5,72,189,99"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html#a4e0878b6840a2632669269f2afc67d69" title="Get the Vertex Buffer For Mat object." alt="" coords="237,64,420,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,83,221,83,221,88,189,88"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html#ac36c933f8ccaec3708c562d09adcad40" title="Get the Vertecies Amount object." alt="" coords="475,5,642,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,61,459,49,460,54,415,66"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#a5e99bc81f9de6e26ed91545b73f67c75" title="Get the Vertex Attrib object." alt="" coords="468,72,649,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="420,83,452,83,452,88,420,88"/>
+<area shape="rect" id="Node000005" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="478,123,640,149"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="421,103,480,116,479,121,420,108"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="697,123,901,149"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="640,133,682,133,682,139,640,139"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="Object::getAttribute" name="Object::getAttribute">
+<area shape="rect" id="Node000001" title="Get the Attribute object." alt="" coords="478,85,612,112"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html#a574a815ea002699dec6cf2723e1019ef" title="adds point to point group" alt="" coords="263,5,409,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,80,429,46,394,35,395,30,431,42,506,75"/>
+<area shape="rect" id="Node000003" href="$class_point_group_object.html#a5a12782a371c976240e4cf20c9bd1ee6" title="add point to group" alt="" coords="244,56,428,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="462,90,428,85,428,80,463,85"/>
+<area shape="rect" id="Node000004" href="$class_point_group_object.html#a080956fa5c1912fd080e950ce2a72573" title="Get the Vertex Attrib object get attribure og point index ands set it there is none." alt="" coords="242,107,430,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="463,113,431,117,430,112,463,107"/>
+<area shape="rect" id="Node000006" href="$class_point.html#a190a449119d5bead0a4927cced8db270" title="increse age of point" alt="" coords="270,173,402,200"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="511,123,473,144,431,164,397,175,395,170,429,159,471,139,508,118"/>
+<area shape="rect" id="Node000005" href="$class_point_group_object.html#a528528cee2f08628d078365d1dffcbdb" title="Get the Vertex Buffer object." alt="" coords="5,107,194,149"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="226,131,194,131,194,125,226,125"/>
+</map>

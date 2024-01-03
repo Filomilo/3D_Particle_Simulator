@@ -1,0 +1,27 @@
+<map id="UiSystem" name="UiSystem">
+<area shape="rect" id="Node000001" title="class for handling ui interaction" alt="" coords="22,780,100,807"/>
+<area shape="rect" id="Node000002" href="$class_updatable.html" title="virtual class updatable" alt="" coords="5,704,85,731"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,745,61,779,56,780,48,746"/>
+<area shape="rect" id="Node000003" href="$class_ui_text.html" title="Ui class alowing to print basic text on screen." alt="" coords="109,704,168,731"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,743,76,782,72,778,113,739"/>
+<area shape="rect" id="Node000004" href="$class_ui_plane.html" title="UI plane showing on screen." alt="" coords="105,628,172,655"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="141,670,141,704,136,704,136,670"/>
+<area shape="rect" id="Node000005" href="$class_polygonal.html" title="class holding polygon data for opnegl" alt="" coords="99,552,178,579"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="141,594,141,628,136,628,136,594"/>
+<area shape="rect" id="Node000006" href="$class_point_group.html" title="class object made out of points" alt="" coords="95,476,182,503"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="141,518,141,552,136,552,136,518"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="102,400,175,427"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="141,442,141,476,136,476,136,442"/>
+<area shape="rect" id="Node000008" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="79,324,166,351"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="131,365,138,399,133,400,126,366"/>
+<area shape="rect" id="Node000009" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="190,324,292,351"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="213,362,157,402,154,397,210,358"/>
+<area shape="rect" id="Node000010" href="$class_vector3f.html" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="206,233,276,260"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="244,276,244,323,238,323,238,276"/>
+<area shape="rect" id="Node000011" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="206,157,276,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="244,199,244,233,238,233,238,199"/>
+<area shape="rect" id="Node000012" href="$class_float.html" title="Float cals attribute." alt="" coords="216,81,266,108"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="244,123,244,157,238,157,238,123"/>
+<area shape="rect" id="Node000013" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="206,5,276,32"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="244,47,244,81,238,81,238,47"/>
+</map>

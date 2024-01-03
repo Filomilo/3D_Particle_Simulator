@@ -1,0 +1,11 @@
+<map id="PointGroupInstanced::initPolygonsVbo" name="PointGroupInstanced::initPolygonsVbo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,148,65"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html#a4e5b9fbdc6013d2c71bab8fcf1743767" title="inirilze vertex buffer for object" alt="" coords="196,31,371,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,41,180,41,180,47,148,47"/>
+<area shape="rect" id="Node000003" href="$class_gl_object.html#a682c66222099523058a932574e2b11e6" title="Get the Vertecies Amount object." alt="" coords="419,5,617,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,32,403,28,404,34,371,37"/>
+<area shape="rect" id="Node000004" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="437,56,599,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,51,422,56,421,62,371,56"/>
+<area shape="rect" id="Node000005" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="665,56,869,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="600,67,650,67,650,72,600,72"/>
+</map>

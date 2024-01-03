@@ -1,0 +1,19 @@
+<map id="UiSystem" name="UiSystem">
+<area shape="rect" id="Node000001" title="class for handling ui interaction" alt="" coords="53,453,131,480"/>
+<area shape="rect" id="Node000002" href="$class_updatable.html" title="virtual class updatable" alt="" coords="5,379,85,405"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,417,86,451,81,454,59,420"/>
+<area shape="rect" id="Node000003" href="$class_ui_text.html" title="Ui class alowing to print basic text on screen." alt="" coords="109,379,168,405"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,420,102,454,97,451,120,417"/>
+<area shape="rect" id="Node000004" href="$class_ui_plane.html" title="UI plane showing on screen." alt="" coords="105,304,172,331"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="141,346,141,378,136,378,136,346"/>
+<area shape="rect" id="Node000005" href="$class_polygonal.html" title="class holding polygon data for opnegl" alt="" coords="99,229,178,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="141,272,141,304,136,304,136,272"/>
+<area shape="rect" id="Node000006" href="$class_point_group.html" title="class object made out of points" alt="" coords="95,155,182,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="141,197,141,229,136,229,136,197"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="102,80,175,107"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="141,122,141,154,136,154,136,122"/>
+<area shape="rect" id="Node000008" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="37,5,123,32"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="102,43,130,78,126,81,97,46"/>
+<area shape="rect" id="Node000009" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="147,5,250,32"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="180,46,151,81,147,78,176,42"/>
+</map>

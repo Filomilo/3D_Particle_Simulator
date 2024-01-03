@@ -1,0 +1,450 @@
+\doxysection{Transformable Class Reference}
+\hypertarget{class_transformable}{}\label{class_transformable}\index{Transformable@{Transformable}}
+
+
+virtual class allwoign for transformation  
+
+
+
+
+{\ttfamily \#include $<$Transformable.\+h$>$}
+
+
+
+Inheritance diagram for Transformable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Transformable\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_transformable__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_transformable_aaf42df1fbbc11ac758342a0cb26eb80a}\label{class_transformable_aaf42df1fbbc11ac758342a0cb26eb80a} 
+{\bfseries Transformable} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_transformable}{Transformable} object basic empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_ac82e02c363ef3a5bf903fce4a79b5b93}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the rotation object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6dd853da205976148e31e71f618a6a90}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the scale object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ada57443e0e5d1773951918a3437e5e9a}{rotateY}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object arounf y axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a96dfd0389c69a1102e235c288ae788d7}{rotateX}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object around x axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a311c802058f2f21211aaf9432d0b646b}{rotateZ}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotate object around z axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e}{rotate}} (float degrees, \mbox{\hyperlink{class_vector3f}{Vector3f}} vec)
+\begin{DoxyCompactList}\small\item\em rotate object in degrese arounf specifed vector \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_add511c646430a73e00f7c23b65f01f1f}{set\+\_\+position}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the origin point position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_aeb0657e4da1b2ea0cb0ff5ca94e4626b}{set\+\_\+position\+\_\+object}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the position object object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ad0cddcb6706ee7c90631a4653de500c8}{set\+\_\+rotation}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the rotation object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd}{scale}} (const \mbox{\hyperlink{class_vector3f}{Vector3f}} \&scale)
+\begin{DoxyCompactList}\small\item\em sclae origin point matrix acording to privided data \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad}{get\+Transformation\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Get the Transformation Matrix object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_a16541760d089f6987b578e7bd4b64707}{move}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object orign point by provided vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_af4fd98610962c61d31ff205348fd6897}{move\+Indendent}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object matrix by priovided vector (not origin point) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{get\+Full\+Positon}} ()
+\begin{DoxyCompactList}\small\item\em Get the Full Positon object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a33121857ff78af430ae1ed1f5921ef96}{moveY}} (double y\+Offset)
+\begin{DoxyCompactList}\small\item\em move object in y axis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_transformable_a1354454e4d09378d738e3d2975386413}\label{class_transformable_a1354454e4d09378d738e3d2975386413} 
+glm\+::mat4 {\bfseries object\+Transformation} =glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em main obejct transformation matrix \end{DoxyCompactList}\item 
+\Hypertarget{class_transformable_ae249acde8849afac706bdba105e1e02c}\label{class_transformable_ae249acde8849afac706bdba105e1e02c} 
+glm\+::mat4 {\bfseries origin\+Point\+Transformation} = glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em matric allwoing for origin point transformation \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}} =\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,0,0)
+\begin{DoxyCompactList}\small\item\em hel class coanting rotaitn \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+virtual class allwoign for transformation 
+
+virtual class containg values and mothod allowing for matrtx glm transformation in object that inhertes from this class
+
+curently class probably contains error so it must be used iwth caution 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5}\label{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5} 
+\index{Transformable@{Transformable}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Transformable\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the position object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} postion of origin point 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_ac82e02c363ef3a5bf903fce4a79b5b93}\label{class_transformable_ac82e02c363ef3a5bf903fce4a79b5b93} 
+\index{Transformable@{Transformable}!get\_rotation@{get\_rotation}}
+\index{get\_rotation@{get\_rotation}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{get\_rotation()}{get\_rotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Transformable\+::get\+\_\+rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the rotation object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} retruns rotation of object 
+\end{DoxyReturn}
+\Hypertarget{class_transformable_a6dd853da205976148e31e71f618a6a90}\label{class_transformable_a6dd853da205976148e31e71f618a6a90} 
+\index{Transformable@{Transformable}!get\_scale@{get\_scale}}
+\index{get\_scale@{get\_scale}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{get\_scale()}{get\_scale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Transformable\+::get\+\_\+scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the scale object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} scale of object 
+\end{DoxyReturn}
+\Hypertarget{class_transformable_a5d859992167dff5372d6247e5a6d0d88}\label{class_transformable_a5d859992167dff5372d6247e5a6d0d88} 
+\index{Transformable@{Transformable}!getFullPositon@{getFullPositon}}
+\index{getFullPositon@{getFullPositon}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{getFullPositon()}{getFullPositon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Transformable\+::get\+Full\+Positon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Full Positon object. 
+
+returns full object postion from cobming origin and object matrix
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_vector3f}{Vector3f} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable_a5d859992167dff5372d6247e5a6d0d88_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad}\label{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad} 
+\index{Transformable@{Transformable}!getTransformationMatrix@{getTransformationMatrix}}
+\index{getTransformationMatrix@{getTransformationMatrix}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{getTransformationMatrix()}{getTransformationMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Transformable\+::get\+Transformation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Transformation Matrix object. 
+
+multiplyies orign nad obejct matrix get full object transformation matrix
+
+\begin{DoxyReturn}{Returns}
+glm\+::mat4 full transformation matrix 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_a16541760d089f6987b578e7bd4b64707}\label{class_transformable_a16541760d089f6987b578e7bd4b64707} 
+\index{Transformable@{Transformable}!move@{move}}
+\index{move@{move}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Transformable\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+moves object orign point by provided vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & vector to move object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_point_light_a4a0e7c6ed82b95f591fe2c9cc9663d20}{Point\+Light}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_transformable_a16541760d089f6987b578e7bd4b64707_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_transformable_a16541760d089f6987b578e7bd4b64707_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_af4fd98610962c61d31ff205348fd6897}\label{class_transformable_af4fd98610962c61d31ff205348fd6897} 
+\index{Transformable@{Transformable}!moveIndendent@{moveIndendent}}
+\index{moveIndendent@{moveIndendent}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{moveIndendent()}{moveIndendent()}}
+{\footnotesize\ttfamily void Transformable\+::move\+Indendent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+moves object matrix by priovided vector (not origin point) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & vector move by \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_transformable_af4fd98610962c61d31ff205348fd6897_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable_af4fd98610962c61d31ff205348fd6897_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_a33121857ff78af430ae1ed1f5921ef96}\label{class_transformable_a33121857ff78af430ae1ed1f5921ef96} 
+\index{Transformable@{Transformable}!moveY@{moveY}}
+\index{moveY@{moveY}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{moveY()}{moveY()}}
+{\footnotesize\ttfamily void Transformable\+::moveY (\begin{DoxyParamCaption}\item[{double}]{y\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+move object in y axis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+Offset} & value by what to move in y axis \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transformable_a33121857ff78af430ae1ed1f5921ef96_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e}\label{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e} 
+\index{Transformable@{Transformable}!rotate@{rotate}}
+\index{rotate@{rotate}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void Transformable\+::rotate (\begin{DoxyParamCaption}\item[{float}]{degrees,  }\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+rotate object in degrese arounf specifed vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & degrees to rotate \\
+\hline
+{\em vec} & around vector vector \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_a96dfd0389c69a1102e235c288ae788d7}\label{class_transformable_a96dfd0389c69a1102e235c288ae788d7} 
+\index{Transformable@{Transformable}!rotateX@{rotateX}}
+\index{rotateX@{rotateX}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{rotateX()}{rotateX()}}
+{\footnotesize\ttfamily void Transformable\+::rotateX (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+rotates object around x axis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & degress to rotate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transformable_ada57443e0e5d1773951918a3437e5e9a}\label{class_transformable_ada57443e0e5d1773951918a3437e5e9a} 
+\index{Transformable@{Transformable}!rotateY@{rotateY}}
+\index{rotateY@{rotateY}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{rotateY()}{rotateY()}}
+{\footnotesize\ttfamily void Transformable\+::rotateY (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+rotates object arounf y axis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & degress to rotate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transformable_a311c802058f2f21211aaf9432d0b646b}\label{class_transformable_a311c802058f2f21211aaf9432d0b646b} 
+\index{Transformable@{Transformable}!rotateZ@{rotateZ}}
+\index{rotateZ@{rotateZ}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{rotateZ()}{rotateZ()}}
+{\footnotesize\ttfamily void Transformable\+::rotateZ (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+rotate object around z axis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & degrees to roatate \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd}\label{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd} 
+\index{Transformable@{Transformable}!scale@{scale}}
+\index{scale@{scale}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void Transformable\+::scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector3f}{Vector3f}} \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sclae origin point matrix acording to privided data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & vector to scale \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_add511c646430a73e00f7c23b65f01f1f}\label{class_transformable_add511c646430a73e00f7c23b65f01f1f} 
+\index{Transformable@{Transformable}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily virtual void Transformable\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the origin point position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & postion of origin point to set \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_point_light_a9cbff8c3c146f0b024583cb21abe075c}{Point\+Light}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_transformable_add511c646430a73e00f7c23b65f01f1f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transformable_aeb0657e4da1b2ea0cb0ff5ca94e4626b}\label{class_transformable_aeb0657e4da1b2ea0cb0ff5ca94e4626b} 
+\index{Transformable@{Transformable}!set\_position\_object@{set\_position\_object}}
+\index{set\_position\_object@{set\_position\_object}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{set\_position\_object()}{set\_position\_object()}}
+{\footnotesize\ttfamily void Transformable\+::set\+\_\+position\+\_\+object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the position object object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & new postioni of obejct(not origin point) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_transformable_ad0cddcb6706ee7c90631a4653de500c8}\label{class_transformable_ad0cddcb6706ee7c90631a4653de500c8} 
+\index{Transformable@{Transformable}!set\_rotation@{set\_rotation}}
+\index{set\_rotation@{set\_rotation}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{set\_rotation()}{set\_rotation()}}
+{\footnotesize\ttfamily void Transformable\+::set\+\_\+rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the rotation object. 
+
+currecntly not implemented
+
+
+\begin{DoxyParams}{Parameters}
+{\em rotation} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}\label{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d} 
+\index{Transformable@{Transformable}!rotation@{rotation}}
+\index{rotation@{rotation}!Transformable@{Transformable}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector3f}{Vector3f}} Transformable\+::rotation =\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,0,0)\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+hel class coanting rotaitn 
+
+hel class saving prevois rotating transfomration to know how rotaee object is 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_transformable_8h}{Transformable.\+h}}\end{DoxyCompactItemize}

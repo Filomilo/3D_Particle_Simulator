@@ -1,0 +1,142 @@
+\doxysection{Face Class Reference}
+\hypertarget{class_face}{}\label{class_face}\index{Face@{Face}}
+
+
+class for annling data about specifc face of polygonal objeect  
+
+
+
+
+{\ttfamily \#include $<$Face.\+h$>$}
+
+
+
+Inheritance diagram for Face\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_face__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Face\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{class_face__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_face_a4496448530ffbe687d4b1a701b4ddea0}{Face}} (std\+::initializer\+\_\+list$<$ unsigned int $>$ vertex\+Indecies)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_face}{Face} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_face_afdb634bc2d5287ba0d62e46b57e9dc2e}\label{class_face_afdb634bc2d5287ba0d62e46b57e9dc2e} 
+{\bfseries Face} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_face}{Face} object. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned $>$ \mbox{\hyperlink{class_face_a79300b1a00e5bbaaa8d597fe27024ad5}{get\+\_\+vertex\+\_\+indecies}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertex indecies object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_face_a9eb64b0ee2e72d5f6a5e640d0df6d2d6}{set\+\_\+vertex\+\_\+indecies}} (const std\+::vector$<$ unsigned $>$ \&vertex\+\_\+indecies)
+\begin{DoxyCompactList}\small\item\em Set the vertex indecies object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{add\+Point\+INdex}} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em add vetex index to face \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_object_a1e43fb6799d6f6540c80f53294476e0a}{set\+Attribute}} (std\+::string name, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ type)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ \mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{get\+Attribute}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_attribute}{Attribute} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_object_ab5bc4f48f04461a85189ecd320b1835d}{is\+There\+Attrib}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em check if there s attibute of specifed name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{class_object}{Object} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_object}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_attribute}{Attribute}} $>$ $>$ {\bfseries attributes}
+\begin{DoxyCompactList}\small\item\em map for conating attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for annling data about specifc face of polygonal objeect 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_face_a4496448530ffbe687d4b1a701b4ddea0}\label{class_face_a4496448530ffbe687d4b1a701b4ddea0} 
+\index{Face@{Face}!Face@{Face}}
+\index{Face@{Face}!Face@{Face}}
+\doxysubsubsection{\texorpdfstring{Face()}{Face()}}
+{\footnotesize\ttfamily Face\+::\+Face (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ unsigned int $>$}]{vertex\+Indecies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{class_face}{Face} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Indecies} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_face_a4dd2120c676797bf8b1854badebcf93a}\label{class_face_a4dd2120c676797bf8b1854badebcf93a} 
+\index{Face@{Face}!addPointINdex@{addPointINdex}}
+\index{addPointINdex@{addPointINdex}!Face@{Face}}
+\doxysubsubsection{\texorpdfstring{addPointINdex()}{addPointINdex()}}
+{\footnotesize\ttfamily void Face\+::add\+Point\+INdex (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add vetex index to face 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_face_a4dd2120c676797bf8b1854badebcf93a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_face_a79300b1a00e5bbaaa8d597fe27024ad5}\label{class_face_a79300b1a00e5bbaaa8d597fe27024ad5} 
+\index{Face@{Face}!get\_vertex\_indecies@{get\_vertex\_indecies}}
+\index{get\_vertex\_indecies@{get\_vertex\_indecies}!Face@{Face}}
+\doxysubsubsection{\texorpdfstring{get\_vertex\_indecies()}{get\_vertex\_indecies()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned $>$ Face\+::get\+\_\+vertex\+\_\+indecies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the vertex indecies object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$unsigned$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_face_a9eb64b0ee2e72d5f6a5e640d0df6d2d6}\label{class_face_a9eb64b0ee2e72d5f6a5e640d0df6d2d6} 
+\index{Face@{Face}!set\_vertex\_indecies@{set\_vertex\_indecies}}
+\index{set\_vertex\_indecies@{set\_vertex\_indecies}!Face@{Face}}
+\doxysubsubsection{\texorpdfstring{set\_vertex\_indecies()}{set\_vertex\_indecies()}}
+{\footnotesize\ttfamily void Face\+::set\+\_\+vertex\+\_\+indecies (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned $>$ \&}]{vertex\+\_\+indecies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the vertex indecies object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+\_\+indecies} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_face_8h}{Face.\+h}}\end{DoxyCompactItemize}

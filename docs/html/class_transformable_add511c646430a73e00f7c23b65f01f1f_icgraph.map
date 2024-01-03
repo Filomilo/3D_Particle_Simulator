@@ -1,0 +1,7 @@
+<map id="Transformable::set_position" name="Transformable::set_position">
+<area shape="rect" id="Node000001" title="Set the origin point position." alt="" coords="213,23,341,65"/>
+<area shape="rect" id="Node000002" href="$class_box_emitter.html#a83658d0598f436496b0bfc22fe3edc96" title="Construct a new Box Emitter object." alt="" coords="5,5,165,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,36,165,32,166,27,198,31"/>
+<area shape="rect" id="Node000003" href="$class_point_light.html#a9cbff8c3c146f0b024583cb21abe075c" title="Set the position object." alt="" coords="6,56,164,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,57,165,62,164,56,197,52"/>
+</map>

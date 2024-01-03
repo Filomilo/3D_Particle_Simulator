@@ -1,0 +1,15 @@
+<map id="_3DEngine::iniit" name="_3DEngine::iniit">
+<area shape="rect" id="Node000001" title="inrlizes whole engine" alt="" coords="5,56,118,83"/>
+<area shape="rect" id="Node000002" href="$class__3_d_engine.html#af60be567bb38f36c7f8ba2fbe7a3a37b" title="inirlizes camera for opengl" alt="" coords="166,5,340,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,53,184,34,186,39,116,58"/>
+<area shape="rect" id="Node000005" href="$class__3_d_engine.html#a7874d6af858f0278850fdf7a8372f7aa" title="inrlizes ground for perspecitive" alt="" coords="167,56,339,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="118,67,151,67,151,72,118,72"/>
+<area shape="rect" id="Node000007" href="$class_texture_lib.html#a77d71c017b2fdc029d1f50e8ebc3c12b" title="consturctor that intlizes all static textures" alt="" coords="170,107,336,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="116,81,186,100,184,105,114,86"/>
+<area shape="rect" id="Node000003" href="$class_transformable.html#af4fd98610962c61d31ff205348fd6897" title="moves object matrix by priovided vector (not origin point)" alt="" coords="388,5,584,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="340,16,372,16,372,21,340,21"/>
+<area shape="rect" id="Node000004" href="$class_vector3f.html#abfd06ee021a58221cda7ba9eb19d6f45" title="function that returns vector value in glm format" alt="" coords="632,5,731,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="585,16,616,16,616,21,585,21"/>
+<area shape="rect" id="Node000006" href="$class__3_d_engine.html#ae6a77d2e6690a446c73ff5c2ac5b12cf" title="add renderable object" alt="" coords="397,56,575,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="339,67,381,67,381,72,339,72"/>
+</map>

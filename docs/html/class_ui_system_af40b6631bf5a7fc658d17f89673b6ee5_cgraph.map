@@ -1,0 +1,12 @@
+<map id="UiSystem::update" name="UiSystem::update">
+<area shape="rect" id="Node000001" title="update method" alt="" coords="5,81,131,108"/>
+<area shape="rect" id="Node000002" href="$class__3_d_engine.html#a6c7f33de8ad902fce8d3138480f404f0" title="clears al simulations" alt="" coords="185,5,366,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,78,178,48,215,35,217,40,180,53,104,83"/>
+<area shape="rect" id="Node000003" href="$class__3_d_engine.html#a38ae048fea21d38baa8c0170e2a0252b" title="Get the Instance object." alt="" coords="420,81,579,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,92,405,92,405,97,131,97"/>
+<area shape="rect" id="Node000004" href="$class__3_d_engine.html#a3aaa20100f419eb6b6c837bd839f111e" title="Get the Key Board object." alt="" coords="192,107,359,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,100,176,105,176,111,131,105"/>
+<area shape="rect" id="Node000005" href="$class__3_d_engine.html#ad3578893d0781a710abc58382b2c49e3" title="get if siunumaltion is active" alt="" coords="179,157,372,200"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="98,106,180,143,195,149,193,154,178,148,96,111"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="359,108,404,103,405,108,360,113"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="PointLight" name="PointLight">
+<area shape="rect" id="Node000001" title="class for mangin point light data in opengl" alt="" coords="188,791,267,817"/>
+<area shape="rect" id="Node000002" href="$class_light.html" title="class light" alt="" coords="237,588,287,615"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,630,232,791,227,790,255,629"/>
+<area shape="rect" id="Node000003" href="$struct_light_1_1light_data.html" title="arrat of ally light and data bout to it to be apsed by shader" alt="" coords="216,447,324,473"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,489,265,588,260,587,266,489"/>
+<area shape="rect" id="Node000004" href="$class_vector3f.html" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="231,233,301,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="269,275,272,446,267,446,264,275"/>
+<area shape="rect" id="Node000008" href="$struct_light_1_1_light_struct_type.html" title="structure of light apramters passed to sahder" alt="" coords="370,356,519,383"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="298,267,427,353,424,358,295,271"/>
+<area shape="rect" id="Node000014" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="116,356,218,383"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="221,270,202,286,190,303,182,322,172,357,167,355,177,320,186,300,198,282,218,266"/>
+<area shape="rect" id="Node000005" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="231,157,301,184"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,199,269,233,263,233,263,199"/>
+<area shape="rect" id="Node000006" href="$class_float.html" title="Float cals attribute." alt="" coords="241,81,291,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="269,123,269,157,263,157,263,123"/>
+<area shape="rect" id="Node000007" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="231,5,301,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="269,47,269,81,263,81,263,47"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="407,392,296,448,294,444,405,388"/>
+<area shape="rect" id="Node000009" href="$class_cube.html" title="cube class primitve" alt="" coords="168,715,220,741"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="208,754,224,789,219,791,203,756"/>
+<area shape="rect" id="Node000010" href="$class_polygonal.html" title="class holding polygon data for opnegl" alt="" coords="144,639,222,665"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="190,680,195,714,189,715,184,681"/>
+<area shape="rect" id="Node000011" href="$class_point_group.html" title="class object made out of points" alt="" coords="137,537,224,564"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="184,580,186,639,180,639,179,580"/>
+<area shape="rect" id="Node000012" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="119,447,191,473"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="166,488,179,536,174,537,160,489"/>
+<area shape="rect" id="Node000013" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="5,356,92,383"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="77,391,142,444,138,448,74,395"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="166,399,160,446,154,446,161,398"/>
+</map>

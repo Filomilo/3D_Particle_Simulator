@@ -1,0 +1,29 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiParameterGroup.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/UiParameterGroup.h">
+<area shape="rect" id="Node000001" title="file conatinng ui paremter group" alt="" coords="337,5,585,80"/>
+<area shape="rect" id="Node000002" href="$_gravity_8h.html" title="fle coanitng gravity force calss" alt="" coords="5,373,210,448"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,91,341,130,279,193,221,260,135,374,130,371,217,257,275,190,338,126,387,87"/>
+<area shape="rect" id="Node000003" href="$_parametrized_8h.html" title="file coanating paremtairezed virtual template" alt="" coords="352,128,570,203"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="464,96,464,128,458,128,458,96"/>
+<area shape="rect" id="Node000010" href="$_ui_system_8h.html" title="file containg class UiSysytem" alt="" coords="609,741,814,816"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="600,52,657,62,716,75,774,93,829,117,877,148,915,186,930,208,941,232,948,258,950,287,950,535,946,570,934,602,917,632,894,660,841,707,786,743,783,739,838,703,890,656,912,629,929,600,941,568,945,535,945,287,943,259,936,234,925,210,911,189,874,152,826,122,772,98,714,80,656,67,600,58"/>
+<area shape="rect" id="Node000004" href="$_force_8h.html" title="file conaitng Force class" alt="" coords="359,251,563,325"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="464,219,464,250,458,250,458,219"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="345,332,211,377,209,372,343,327"/>
+<area shape="rect" id="Node000005" href="$_particle_solver_8h.html" title="a file conating paritcle sovler" alt="" coords="234,373,453,448"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="416,339,381,375,377,371,413,335"/>
+<area shape="rect" id="Node000011" href="$_turbulance_8h.html" title="file coanting Turbulance force implemtantion" alt="" coords="477,373,682,448"/>
+<area shape="poly" id="edge13_Node000004_Node000011" title=" " alt="" coords="510,335,545,371,542,375,506,339"/>
+<area shape="rect" id="Node000012" href="$_vortex_8h.html" title="File containg class with Vortex Force." alt="" coords="705,373,910,448"/>
+<area shape="poly" id="edge14_Node000004_Node000012" title=" " alt="" coords="579,327,706,371,704,376,577,332"/>
+<area shape="rect" id="Node000006" href="$_particle_system_8h.html" title="file containing calss paritcle system" alt="" coords="369,496,598,571"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="399,456,443,494,439,498,396,460"/>
+<area shape="rect" id="Node000007" href="$_emitter_8h.html" title="file coanitng emiter calss" alt="" coords="381,741,586,816"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="486,586,486,741,481,741,481,586"/>
+<area shape="rect" id="Node000009" href="$__3_d_engine_8h.html" title="file containg main 3d engie class" alt="" coords="565,619,770,693"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="554,577,613,616,610,620,551,582"/>
+<area shape="rect" id="Node000008" href="$_box_emitter_8h.html" title="file coantiang box emiitrer" alt="" coords="381,864,586,939"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="486,832,486,864,481,864,481,832"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="600,704,541,743,538,739,597,700"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="680,708,692,740,687,742,675,709"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="699,727,687,695,692,693,704,725"/>
+</map>

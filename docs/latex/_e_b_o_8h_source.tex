@@ -1,0 +1,40 @@
+\doxysection{EBO.\+h}
+\hypertarget{_e_b_o_8h_source}{}\label{_e_b_o_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/EBO.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/EBO.h}}
+\mbox{\hyperlink{_e_b_o_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_e_b_o}{EBO}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_e_b_o_a07984e865937506be810afcf447edbe8}{EBO}}(GLuint*\ indeces,\ GLsizeiptr\ size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ usage=\ GL\_STATIC\_DRAW)}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ glGenBuffers(1,\ \&\mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER,\ \mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER,\ size,\ indeces,\ usage);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_b_o_a0fc0d95ce8b37f98a256f4dd8581c33f}{bind}}()}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER,\ \mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}});}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_b_o_a8857542d7b10bc6ecd3aadd0567d4d42}{unbind}}()}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER,\ 0);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_b_o_a19ec6b0474d1e2085b0f85415426a65d}{Delete}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ glDeleteBuffers(1,\ \&\mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}});}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_b_o_a2faf86d52e8ec6324d6307c705b27c9e}{update}}(GLuint*\ indeces,\ GLsizeiptr\ size,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ usage\ =\ GL\_DYNAMIC\_DRAW)}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER,\ \mbox{\hyperlink{class_e_b_o_a0397cee2fda5995034be233d4c5943eb}{ID}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER,\ size,\ indeces,\ usage);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \};}
+
+\end{DoxyCode}

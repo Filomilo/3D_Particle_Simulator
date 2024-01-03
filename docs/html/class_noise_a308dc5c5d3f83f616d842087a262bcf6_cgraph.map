@@ -1,0 +1,7 @@
+<map id="Noise::getNoise" name="Noise::getNoise">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,119,32"/>
+<area shape="rect" id="Node000002" href="$class_vector3f.html#af86f3422d11cfb5e56bdada4b4bc68cc" title="normalisez vector values to achinve length egual to 1" alt="" coords="167,5,300,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,16,151,16,151,21,119,21"/>
+<area shape="rect" id="Node000003" href="$class_vector3f.html#abd0d544e338c5832b565a189f92e5782" title="method calcluats length using pythogarm theory" alt="" coords="348,5,460,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,16,332,16,332,21,301,21"/>
+</map>

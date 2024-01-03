@@ -1,0 +1,352 @@
+\doxysection{Point\+Group\+Object Class Reference}
+\hypertarget{class_point_group_object}{}\label{class_point_group_object}\index{PointGroupObject@{PointGroupObject}}
+
+
+class conating points of opengl  
+
+
+
+
+{\ttfamily \#include $<$Point\+Group\+Object.\+h$>$}
+
+
+
+Inheritance diagram for Point\+Group\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_point_group_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+Group\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_point_group_object__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_group_object_ac41f90428361ea8d00d69c8700914de5}{Point\+Group\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_point}{Point} Group \doxylink{class_object}{Object} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}{add\+Point}} (\mbox{\hyperlink{class_point}{Point}} \texorpdfstring{$\ast$}{*}x)
+\begin{DoxyCompactList}\small\item\em add points to point group object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a5a12782a371c976240e4cf20c9bd1ee6}{add\+Point}} (\mbox{\hyperlink{class_point}{Point}} pt)
+\begin{DoxyCompactList}\small\item\em add point to group \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a14526a7e3fbe387980f94316c248d4c7}{add\+Point}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em added point at specifed postion \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_adfd5b8ba597ba118e9b6538a022781e0}{add\+Point}} (std\+::initializer\+\_\+list$<$ float $>$ coordinates)
+\begin{DoxyCompactList}\small\item\em added point based list corrsinates \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a59b236ebb660eb11ae6bf34096fa1957}{add\+Points}} (std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ float $>$ $>$ coordinates)
+\begin{DoxyCompactList}\small\item\em add point based list of list of paramters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a879aa313087f0d3a28a95ffae27f3491}{add\+Point}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} pos)
+\begin{DoxyCompactList}\small\item\em add points based on its postion \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace}{get\+Vertecies\+Amount}} () override
+\begin{DoxyCompactList}\small\item\em Get the Vertecies Amount object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_point_group_object_a080956fa5c1912fd080e950ce2a72573}{get\+Vertex\+Attrib}} (int num, std\+::string attrib)
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Attrib object get attribure og point index ands set it there is none. \end{DoxyCompactList}\item 
+virtual float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_point_group_object_a528528cee2f08628d078365d1dffcbdb}{get\+Vertex\+Buffer}} () override
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Buffer object. \end{DoxyCompactList}\item 
+\Hypertarget{class_point_group_object_a5f57589a59f1880ff52d8cee4477d8a1}\label{class_point_group_object_a5f57589a59f1880ff52d8cee4477d8a1} 
+virtual void {\bfseries iniit} ()
+\begin{DoxyCompactList}\small\item\em initlizes object for opengl \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_object_a111f82687088699c81d41f22f448bc43}{add\+Point}} (float x, float y, float z, float r, float g, float b)
+\begin{DoxyCompactList}\small\item\em adds point with sceifed positon and color \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_point_group_object_a345842c42720adeda4f4a41ada742ce3}\label{class_point_group_object_a345842c42720adeda4f4a41ada742ce3} 
+void {\bfseries gl\+Render} () override
+\begin{DoxyCompactList}\small\item\em glrender call to draw point on screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0}\label{class_point_group_object_a6283fc4cb33b8eacc4dc8ae39f80d2b0} 
+std\+::vector$<$ \mbox{\hyperlink{class_point}{Point}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries points}
+\begin{DoxyCompactList}\small\item\em list of point in the object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class conating points of opengl 
+
+class for magingn and redneirgin simple point group in opengl 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_group_object_ac41f90428361ea8d00d69c8700914de5}\label{class_point_group_object_ac41f90428361ea8d00d69c8700914de5} 
+\index{PointGroupObject@{PointGroupObject}!PointGroupObject@{PointGroupObject}}
+\index{PointGroupObject@{PointGroupObject}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{PointGroupObject()}{PointGroupObject()}}
+{\footnotesize\ttfamily Point\+Group\+Object\+::\+Point\+Group\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{class_point}{Point} Group \doxylink{class_object}{Object} object. 
+
+basic constructor that setsrender mode to gl points 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_point_group_object_a14526a7e3fbe387980f94316c248d4c7}\label{class_point_group_object_a14526a7e3fbe387980f94316c248d4c7} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+added point at specifed postion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & postion in x axis \\
+\hline
+{\em y} & postion in y axis \\
+\hline
+{\em z} & postion in z axxis \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a14526a7e3fbe387980f94316c248d4c7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a111f82687088699c81d41f22f448bc43}\label{class_point_group_object_a111f82687088699c81d41f22f448bc43} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+adds point with sceifed positon and color 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & postion in sx axis \\
+\hline
+{\em y} & postion in y axis \\
+\hline
+{\em z} & postion in z axis \\
+\hline
+{\em r} & red color value \\
+\hline
+{\em g} & green color value \\
+\hline
+{\em b} & blue color vlaue \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a111f82687088699c81d41f22f448bc43_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0}\label{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}} \texorpdfstring{$\ast$}{*}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add points to point group object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & poitner to \doxylink{class_point}{Point} to be added \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a4ffff6521ca71c451789484c0d7f20c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a5a12782a371c976240e4cf20c9bd1ee6}\label{class_point_group_object_a5a12782a371c976240e4cf20c9bd1ee6} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point}{Point}}}]{pt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add point to group 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & point data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a5a12782a371c976240e4cf20c9bd1ee6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_adfd5b8ba597ba118e9b6538a022781e0}\label{class_point_group_object_adfd5b8ba597ba118e9b6538a022781e0} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ float $>$}]{coordinates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+added point based list corrsinates 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinates} & list of corrsinates \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_adfd5b8ba597ba118e9b6538a022781e0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a879aa313087f0d3a28a95ffae27f3491}\label{class_point_group_object_a879aa313087f0d3a28a95ffae27f3491} 
+\index{PointGroupObject@{PointGroupObject}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector3f}{Vector3f}}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add points based on its postion 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & postion of point \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a879aa313087f0d3a28a95ffae27f3491_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a59b236ebb660eb11ae6bf34096fa1957}\label{class_point_group_object_a59b236ebb660eb11ae6bf34096fa1957} 
+\index{PointGroupObject@{PointGroupObject}!addPoints@{addPoints}}
+\index{addPoints@{addPoints}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{addPoints()}{addPoints()}}
+{\footnotesize\ttfamily void Point\+Group\+Object\+::add\+Points (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ float $>$ $>$}]{coordinates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add point based list of list of paramters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinates} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a59b236ebb660eb11ae6bf34096fa1957_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace}\label{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace} 
+\index{PointGroupObject@{PointGroupObject}!getVerteciesAmount@{getVerteciesAmount}}
+\index{getVerteciesAmount@{getVerteciesAmount}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{getVerteciesAmount()}{getVerteciesAmount()}}
+{\footnotesize\ttfamily virtual int Point\+Group\+Object\+::get\+Vertecies\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Vertecies Amount object. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_ae56b4ca2ef76bec79861d7120c81cace_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a080956fa5c1912fd080e950ce2a72573}\label{class_point_group_object_a080956fa5c1912fd080e950ce2a72573} 
+\index{PointGroupObject@{PointGroupObject}!getVertexAttrib@{getVertexAttrib}}
+\index{getVertexAttrib@{getVertexAttrib}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{getVertexAttrib()}{getVertexAttrib()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} Point\+Group\+Object\+::get\+Vertex\+Attrib (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{std\+::string}]{attrib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{class_vertex}{Vertex} Attrib object get attribure og point index ands set it there is none. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+{\em attrib} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Attribute\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a080956fa5c1912fd080e950ce2a72573_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a080956fa5c1912fd080e950ce2a72573_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_point_group_object_a528528cee2f08628d078365d1dffcbdb}\label{class_point_group_object_a528528cee2f08628d078365d1dffcbdb} 
+\index{PointGroupObject@{PointGroupObject}!getVertexBuffer@{getVertexBuffer}}
+\index{getVertexBuffer@{getVertexBuffer}!PointGroupObject@{PointGroupObject}}
+\doxysubsubsection{\texorpdfstring{getVertexBuffer()}{getVertexBuffer()}}
+{\footnotesize\ttfamily virtual float \texorpdfstring{$\ast$}{*} Point\+Group\+Object\+::get\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the \doxylink{class_vertex}{Vertex} Buffer object. 
+
+vrates veretx buffer object for open gl
+
+\begin{DoxyReturn}{Returns}
+float\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_point_group_object_a528528cee2f08628d078365d1dffcbdb_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_point_group_object_8h}{Point\+Group\+Object.\+h}}\end{DoxyCompactItemize}

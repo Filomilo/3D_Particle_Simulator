@@ -1,0 +1,116 @@
+\doxysection{Point\+Group.\+h}
+\hypertarget{_point_group_8h_source}{}\label{_point_group_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroup.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PointGroup.h}}
+\mbox{\hyperlink{_point_group_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gl_object_8h}{GlObject.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_8h}{Point.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_group}{PointGroup}}\ :}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_gl_object}{GlObject}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<std::shared\_ptr<Point>>\ \mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}};}
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<Attribute>\ \mbox{\hyperlink{class_point_group_a5e99bc81f9de6e26ed91545b73f67c75}{getVertexAttrib}}(\textcolor{keywordtype}{int}\ num,\ std::string\ attrib)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::shared\_ptr<Point>\ pt\ =\ this-\/>points.at(num);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pt-\/>isThereAttrib(attrib))\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pt-\/>getAttribute(attrib);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pt-\/>getAttribute(attrib);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_group_ac36c933f8ccaec3708c562d09adcad40}{getVerteciesAmount}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}.size();}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00063\ \ \ \ \ GLfloat*\ \mbox{\hyperlink{class_point_group_a4e0878b6840a2632669269f2afc67d69}{getVertexBufferForMat}}(std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ GLfloat*\ arrayVbo\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{float}[this-\/>\mbox{\hyperlink{class_point_group_ac36c933f8ccaec3708c562d09adcad40}{getVerteciesAmount}}()\ *\ this-\/>\mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{getVertexSize}}()];}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ std::map<std::string,\ Attribute::Types>\ attributesMap\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeMap();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::list<std::string>\ attributeList\ =\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>getAttributeList();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vertIndex\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Point>\ vertex\ :\ this-\/>\mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ attribName\ :\ attributeList)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute::Types}}\ attribType\ =\ attributesMap.find(attribName)-\/>second;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector4f>\ attribVal\ =\ std::static\_pointer\_cast\ <Vector4f>(this-\/>\mbox{\hyperlink{class_point_group_a5e99bc81f9de6e26ed91545b73f67c75}{getVertexAttrib}}(vertIndex,\ attribName));}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ attribType;\ i++)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arrayVbo[index++]\ =\ (*attribVal)[i];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ (*attribVal)[i]\ <<\ "{},\ "{};}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ std::endl;}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ vertIndex++;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ arrayVbo;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ GLfloat*\ \mbox{\hyperlink{class_point_group_ac9590a35027c8d475bbce9083f9b19a9}{getVertexBuffer}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00100\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{class_point_group_a4e0878b6840a2632669269f2afc67d69}{getVertexBufferForMat}}(this-\/>\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}});}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_ac63115131e281073dcc79f6459599db3}{glDrawCall}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ glDrawArrays(GL\_POINTS,\ 0,\ \mbox{\hyperlink{class_point_group_ac36c933f8ccaec3708c562d09adcad40}{getVerteciesAmount}}());}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{class_point_group}{PointGroup}}():\ \mbox{\hyperlink{class_gl_object}{GlObject}}()}
+\DoxyCodeLine{00115\ \ \ \ \ \{\}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(std::shared\_ptr<Point>\ x)}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ this-\/>points.push\_back(x);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_a574a815ea002699dec6cf2723e1019ef}{addPoint}}(\mbox{\hyperlink{class_point}{Point}}\ pt)}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ Pos\ =\ std::dynamic\_pointer\_cast\ <Vector3f>(pt.\mbox{\hyperlink{class_object_a0573bd5bbf26928f6ccb84fcff92f44b}{getAttribute}}(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::shared\_ptr<Point>\ point\ =\ std::make\_shared<Point>(Pos-\/>x,\ Pos-\/>y,\ Pos-\/>z);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(point);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_a07d0e7dae0a09865d7d5a5d2f09f2a9b}{addPoint}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}\ pos)}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(std::make\_shared<Point>(pos));}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_ad2c1169d8a4f8af17e83a6616be59334}{addPoint}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(std::make\_shared<Point>(x,\ y,\ z));}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_a3981e8fd1d37d54e64eac211961d567c}{addPoint}}(std::initializer\_list<float>\ coordinates)}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ std::shared\_ptr<Point>\ pt\ =\ std::make\_shared<Point>(coordinates);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(pt);}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_ab2c867be82490492af4ab729960d503a}{addPoints}}(std::initializer\_list<std::initializer\_list<float>\ >\ coordinates)}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::initializer\_list<float>\ coord\ :\ coordinates)}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(coord);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_ad1c6a58e6e91e25ddc84f209b8c2f46e}{addPoint}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ pscale=10)}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(std::make\_shared<Point>(x,\ y,\ z,\ r,\ g,\ b,\ pscale));}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_group_ac534dc3ae2dc90f00f4dcf180745d125}{cleanGeo}}()}
+\DoxyCodeLine{00202\ \ \ \ \ \{}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_ab35e427c1880ed31f7d6a5338984bb06}{points}}.clear();}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \};}
+\DoxyCodeLine{00207\ }
+
+\end{DoxyCode}

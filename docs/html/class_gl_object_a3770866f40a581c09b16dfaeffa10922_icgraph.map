@@ -1,0 +1,11 @@
+<map id="GlObject::updateVboUNiversal" name="GlObject::updateVboUNiversal">
+<area shape="rect" id="Node000001" title="update vertex buffer unierslly" alt="" coords="406,35,602,61"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html#a94c28a6549b090841e93dd6fa5618f28" title="updated vertex buffer for specifc object" alt="" coords="213,5,356,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,36,356,31,356,26,391,30"/>
+<area shape="rect" id="Node000004" href="$class_point_group_instanced.html#a1760f5af34f0547b0b92febab429c020" title=" " alt="" coords="211,56,358,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="391,66,359,70,358,65,390,60"/>
+<area shape="rect" id="Node000003" href="$class_ui_text.html#a519c415fb05b544ccc416246b2584183" title="Set the Text object." alt="" coords="29,5,139,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,21,139,21,139,16,198,16"/>
+<area shape="rect" id="Node000005" href="$class_particle_system.html#aaff9d7b372e1925194aa21115d07ea43" title="update vertedx buffer of object" alt="" coords="5,64,163,91"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="195,80,163,80,163,75,195,75"/>
+</map>

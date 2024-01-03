@@ -1,0 +1,15 @@
+<map id="ParticleSystem" name="ParticleSystem">
+<area shape="rect" id="Node000001" title="class with particle system" alt="" coords="119,304,229,331"/>
+<area shape="rect" id="Node000002" href="$class_point_group_instanced.html" title=" " alt="" coords="36,229,178,256"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,266,164,302,160,305,127,269"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html" title="class object made out of points" alt="" coords="64,155,150,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,197,110,229,105,229,105,197"/>
+<area shape="rect" id="Node000004" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="71,80,143,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,122,110,154,105,154,105,122"/>
+<area shape="rect" id="Node000005" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="5,5,92,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="70,43,99,78,95,81,66,46"/>
+<area shape="rect" id="Node000006" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="116,5,218,32"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="149,46,120,81,115,78,145,42"/>
+<area shape="rect" id="Node000007" href="$class_updatable.html" title="virtual class updatable" alt="" coords="202,229,282,256"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="221,269,187,305,184,302,218,266"/>
+</map>

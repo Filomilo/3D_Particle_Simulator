@@ -1,0 +1,17 @@
+<map id="PointGroup" name="PointGroup">
+<area shape="rect" id="Node000001" title="class object made out of points" alt="" coords="21,476,108,503"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="28,400,101,427"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,442,67,476,62,476,62,442"/>
+<area shape="rect" id="Node000003" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="5,324,92,351"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,365,64,399,59,400,52,366"/>
+<area shape="rect" id="Node000004" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="116,324,218,351"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="139,362,84,402,80,397,136,358"/>
+<area shape="rect" id="Node000005" href="$class_vector3f.html" title="Vector 3f implementing functionality of 3 value float vector on top of 2 value float vector." alt="" coords="133,233,202,260"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="170,276,170,323,165,323,165,276"/>
+<area shape="rect" id="Node000006" href="$class_vector2f.html" title="Vector 3f implementing functionality of 2 value float vector on top of Float class." alt="" coords="133,157,202,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="170,199,170,233,165,233,165,199"/>
+<area shape="rect" id="Node000007" href="$class_float.html" title="Float cals attribute." alt="" coords="142,81,192,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="170,123,170,157,165,157,165,123"/>
+<area shape="rect" id="Node000008" href="$class_attribute.html" title="attrbiute class gor hangling value of diffent types" alt="" coords="132,5,202,32"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="170,47,170,81,165,81,165,47"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/Math.h" name="D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D_Particle_Simulator/3DOpenGlEngine/Math.h">
+<area shape="rect" id="Node000001" title="file conaintg some math function" alt="" coords="5,5,210,80"/>
+<area shape="rect" id="Node000002" href="$_vector2f_8h.html" title="a file conitng implemation of class Vectro 2f" alt="" coords="67,128,148,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,80,110,112,105,112,105,80"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="91,352,159,379"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,155,125,337,120,337,106,155"/>
+<area shape="rect" id="Node000004" href="$_float_8h.html" title="file coanting FLaot attribute class" alt="" coords="141,203,202,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="121,153,152,189,148,193,117,157"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="169,231,153,278,135,338,130,336,148,277,164,229"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="162,277,240,304"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="179,229,193,262,188,264,174,231"/>
+<area shape="rect" id="Node000006" href="$_attribute_8h.html" title="file containg attirbute class" alt="" coords="264,277,346,304"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="196,228,270,267,267,272,193,232"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="274,307,171,348,169,343,272,302"/>
+</map>

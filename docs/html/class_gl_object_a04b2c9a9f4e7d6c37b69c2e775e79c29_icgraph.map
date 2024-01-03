@@ -1,0 +1,17 @@
+<map id="GlObject::initParts" name="GlObject::initParts">
+<area shape="rect" id="Node000001" title="intilizes buffers of objeect" alt="" coords="398,164,526,191"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html#a303d280c102c45b8c05ff5aae14ccc78" title="nitlizes object" alt="" coords="234,139,332,165"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,169,332,162,332,156,383,163"/>
+<area shape="rect" id="Node000008" href="$class_polygonal.html#a7e3ad1d7b539c03039de66f16a2ef28e" title="initlize parat of objecy" alt="" coords="216,189,350,216"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="383,191,351,196,350,191,382,186"/>
+<area shape="rect" id="Node000003" href="$class_particle_system.html#a9028ec8023c61773dd4a668c3ad8cc26" title="Construct a new Particle System object." alt="" coords="5,5,168,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,130,214,96,166,62,145,51,147,46,169,58,217,92,258,126"/>
+<area shape="rect" id="Node000004" href="$class_particle_system.html#ac071408f3e30f614caf9e7de6ee0ff0b" title="Construct a new Particle System object." alt="" coords="5,72,168,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="221,136,160,118,161,113,222,131"/>
+<area shape="rect" id="Node000005" href="$class_point_light.html#abbfdf5f05b559c49016f8bb97b0ca414" title="Construct a new Point Light object." alt="" coords="14,139,159,165"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="218,155,160,155,160,149,218,149"/>
+<area shape="rect" id="Node000006" href="$class_ui_plane.html#a0478c4cee4849541e96e66a0506c03a0" title="Construct a new Ui Plane object." alt="" coords="27,189,146,216"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="220,171,142,191,141,186,218,166"/>
+<area shape="rect" id="Node000007" href="$class_ui_text.html#ac9465a505ed5d4e6631985ec767dc263" title="Construct a new Ui Text object." alt="" coords="35,240,138,267"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="225,175,217,179,203,192,194,205,185,217,169,230,140,244,137,239,166,226,181,214,190,201,199,188,214,175,222,170"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Emitter" name="Emitter">
+<area shape="rect" id="Node000001" title="emtiter calss emitter class if paramters that genretes particles" alt="" coords="140,80,203,107"/>
+<area shape="rect" id="Node000005" href="$class_box_emitter.html" title="emitter inheterd clas for box emitter" alt="" coords="128,155,214,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="174,122,174,154,169,154,169,122"/>
+<area shape="rect" id="Node000002" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="5,5,108,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,38,152,77,150,82,88,43"/>
+<area shape="rect" id="Node000003" href="$class_updatable.html" title="virtual class updatable" alt="" coords="132,5,211,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,48,174,80,169,80,169,48"/>
+<area shape="rect" id="Node000004" href="$class_parametrized.html" title=" " alt="" coords="235,5,334,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,43,192,82,190,77,251,38"/>
+</map>

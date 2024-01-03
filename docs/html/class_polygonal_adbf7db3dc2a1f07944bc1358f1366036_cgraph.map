@@ -1,0 +1,11 @@
+<map id="Polygonal::addRect" name="Polygonal::addRect">
+<area shape="rect" id="Node000001" title="add rectangel in postion provided" alt="" coords="5,56,140,83"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#ad2c452923933fb6ee216d041c86a4a42" title="adds face made out of provided point index" alt="" coords="192,5,329,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,53,193,34,194,39,126,58"/>
+<area shape="rect" id="Node000004" href="$class_point_group.html#a17bdde63833d3f5328a9598bc2ad5834" title="add point to point group" alt="" coords="188,56,333,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,67,172,67,172,72,140,72"/>
+<area shape="rect" id="Node000005" href="$class_polygonal.html#a2b5f67ba833b94d2f671b9d2c94a043b" title="add vertex for sepcifed poitn index" alt="" coords="188,107,333,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="126,81,194,100,193,105,124,86"/>
+<area shape="rect" id="Node000003" href="$class_face.html#a4dd2120c676797bf8b1854badebcf93a" title="add vetex index to face" alt="" coords="381,5,523,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,16,365,16,365,21,329,21"/>
+</map>

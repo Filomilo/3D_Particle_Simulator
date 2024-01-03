@@ -1,0 +1,28 @@
+\doxysection{Font\+Texture.\+h}
+\hypertarget{_font_texture_8h_source}{}\label{_font_texture_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/FontTexture.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/FontTexture.h}}
+\mbox{\hyperlink{_font_texture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ warning(disable:4996)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_8h}{Texture.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector2f_8h}{Vector2f.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_font_texture}{FontTexture}}\ :}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_texture}{Texture}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ genFontTex(std::string\ fontFileName,\ std::string\ \ destinationTex);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_font_texture_ab6483c8c6611ff68d05a0efb21a68429}{charBeigin}}\ =\ 32;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_font_texture_a738a97ca378845aece97acda08f957f5}{charAmount}}\ =\ 96;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}*\ charData=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_font_texture_aaeca1b093410a99bce5d4baac2ceec54}{FontTexture}}(std::string\ fontFileName,\ std::string\ destinationTex);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_font_texture_a5fb4f5571a2ccd37083456549c6abbcd}{getChar}}(\textcolor{keywordtype}{char}\ letter,\ \mbox{\hyperlink{class_vector2f}{Vector2f}}*\ upperLeftPostion,\ \mbox{\hyperlink{class_vector2f}{Vector2f}}*\ rightDoownPostiion,\ \mbox{\hyperlink{class_vector2f}{Vector2f}}*\ offset,\ std::shared\_ptr<Float>\ advance);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+
+\end{DoxyCode}

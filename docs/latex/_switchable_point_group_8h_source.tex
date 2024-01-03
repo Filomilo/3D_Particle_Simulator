@@ -1,0 +1,40 @@
+\doxysection{Switchable\+Point\+Group.\+h}
+\hypertarget{_switchable_point_group_8h_source}{}\label{_switchable_point_group_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/SwitchablePointGroup.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/SwitchablePointGroup.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_8h}{PointGroup.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_instanced_8h}{PointGroupInstanced.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_switchable_point_group}{SwitchablePointGroup}}:}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}\ \ \mbox{\hyperlink{class_point_group}{PointGroup}},}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInstanced=\textcolor{keyword}{false};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ setMat(std::shared\_ptr<Material>\ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{PointGroup::setMat}}(\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}});}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ addPoint(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ pscale\ =\ 10)}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{PointGroup::addPoint}}(x,\ y,\ z,\ r,\ g,\ b,\ pscale);}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ init()}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isInstanced)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{PointGroupInstanced::init}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{PointGroup::init}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

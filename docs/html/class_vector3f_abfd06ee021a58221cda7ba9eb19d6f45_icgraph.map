@@ -1,0 +1,19 @@
+<map id="Vector3f::glm" name="Vector3f::glm">
+<area shape="rect" id="Node000001" title="function that returns vector value in glm format" alt="" coords="639,81,738,108"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#abc40ebcf4f397efd5b4fed7efbc4bdad" title="applies movment of mouse to camera" alt="" coords="388,5,591,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="650,76,590,46,555,35,557,30,592,42,653,71"/>
+<area shape="rect" id="Node000003" href="$class_transformable.html#a16541760d089f6987b578e7bd4b64707" title="moves object orign point by provided vector" alt="" coords="420,56,560,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="623,89,560,81,561,76,624,84"/>
+<area shape="rect" id="Node000006" href="$class_transformable.html#af4fd98610962c61d31ff205348fd6897" title="moves object matrix by priovided vector (not origin point)" alt="" coords="392,107,588,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="624,106,589,110,588,105,623,100"/>
+<area shape="rect" id="Node000009" href="$class_transformable.html#a00f6f7b618b22376d1ab1a50efaf619e" title="rotate object in degrese arounf specifed vector" alt="" coords="418,157,561,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="653,119,592,148,557,159,555,154,590,143,650,114"/>
+<area shape="rect" id="Node000004" href="$class_point_light.html#a4a0e7c6ed82b95f591fe2c9cc9663d20" title="overide move method yto move light" alt="" coords="194,5,312,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="408,55,312,34,313,29,410,50"/>
+<area shape="rect" id="Node000005" href="$class_transformable.html#a33121857ff78af430ae1ed1f5921ef96" title="move object in y axis" alt="" coords="178,56,328,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="404,72,328,72,328,67,404,67"/>
+<area shape="rect" id="Node000007" href="$class__3_d_engine.html#af60be567bb38f36c7f8ba2fbe7a3a37b" title="inirlizes camera for opengl" alt="" coords="166,107,340,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="376,123,340,123,340,117,376,117"/>
+<area shape="rect" id="Node000008" href="$class__3_d_engine.html#a87083fbc6774b5472e2e2bbf5fac086e" title="inrlizes whole engine" alt="" coords="5,107,118,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="150,123,118,123,118,117,150,117"/>
+</map>

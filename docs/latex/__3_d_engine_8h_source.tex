@@ -1,0 +1,390 @@
+\doxysection{\+\_\+3\+DEngine.\+h}
+\hypertarget{__3_d_engine_8h_source}{}\label{__3_d_engine_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/\_3DEngine.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/\_3DEngine.h}}
+\mbox{\hyperlink{__3_d_engine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vector4f_8h}{Vector4f.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_renderable_8h}{Renderable.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_program_8h}{ShaderProgram.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Mouse.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_particle_system_8h}{ParticleSystem.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_poly_grid_8h}{PolyGrid.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_lib_8h}{ShaderLib.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_lib_8h}{TextureLib.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_plane_8h}{UiPlane.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_system_8h}{UiSystem.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_keyboard_8h}{Keyboard.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ instance;}
+\DoxyCodeLine{00048\ \ \ \ \ GLFWwindow*\ mainWindow;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ shouldClose=\textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_vector4f}{Vector4f}}\ backgroundColor=\mbox{\hyperlink{class_vector4f}{Vector4f}}(0.1f,0.1f,0.1f,1.0f);}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_camera}{Camera}}*\ activeCamera;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ width;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{int}\ height;}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_mouse}{Mouse}}*\ mouse=\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mouse}{Mouse}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSimulationActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ timeElapesed;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ timerunning;}
+\DoxyCodeLine{00098\ \ \ \ \ std::list<std::shared\_ptr<Renderable>\ >\ renderables\_;}
+\DoxyCodeLine{00103\ \ \ \ \ std::list<ShaderProgram*>\ shaders;}
+\DoxyCodeLine{00108\ \ \ \ \ std::list<std::shared\_ptr<Updatable>>\ updatabels;}
+\DoxyCodeLine{00113\ \ \ \ \ std::list<std::shared\_ptr<Simulatable>>\ simulatables;}
+\DoxyCodeLine{00118\ \ \ \ \ std::list<std::shared\_ptr<UiPlane>>\ uiElements;}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_keyboard}{Keyboard}}*\ keyboard=\textcolor{keyword}{new}\ \mbox{\hyperlink{class_keyboard}{Keyboard}};}
+\DoxyCodeLine{00128\ \ \ \ \ std::list<void(*)(\mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine)>\ updateFunctions;}
+\DoxyCodeLine{00133\ \ \ \ \ std::list<void(*)(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods)>\ keycallBacks;}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ framebuffer\_size\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine\ =\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}test:\ "{}\ <<\ width\ /\ (float)engine-\/>width\ <<\ std::endl;}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ engine-\/>updateUiRatio(\mbox{\hyperlink{class_vector2f}{Vector2f}}((\textcolor{keywordtype}{float})engine-\/>width\ /\ width,\ (\textcolor{keywordtype}{float})engine-\/>height\ /\ height));}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ engine-\/>width\ =\ width;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ engine-\/>height\ =\ height;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ glViewport(0,0,width,\ height);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ engine-\/>activeCamera-\/>\mbox{\hyperlink{class_camera_aa0d66cae0b1675d6216b051356649f6a}{set\_aspect}}(width,\ height);}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ cursor\_pos\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine\ =\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ engine-\/>mouse-\/>\mbox{\hyperlink{class_mouse_a2956e5e0d7ddb795b4273934ed7c644e}{setMousePostition}}(engine-\/>width,\ engine-\/>height,\ x,\ y);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ scroll\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)}
+\DoxyCodeLine{00175\ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine\ =\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}();}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ engine-\/>mouse-\/>\mbox{\hyperlink{class_mouse_a9b6b95077d8ccc6b4822a12afda18fd6}{updateScroll}}(y);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ x\ <<\ "{},\ "{}\ <<\ y\ <<\ std::endl;}}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ mouse\_button\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ button,\textcolor{keywordtype}{int}\ action,\textcolor{keywordtype}{int}\ mods\ )}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine\ =\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ engine-\/>mouse-\/>\mbox{\hyperlink{class_mouse_af1bcbc9309ac3fb056a85f6ac3e7d89e}{updateMouseButton}}(button,\ action);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ button\ <<\ "{},\ "{}\ <<\ action\ <<\ "{},\ "{}\ <<\ mods\ <<\ std::endl;}}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \textcolor{keyword}{static}\ keyboard\_callback(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods)}
+\DoxyCodeLine{00205\ \ \ \ \ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine\ =\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}();}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{void}(*func)(GLFWwindow\ *\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods)\ :\ engine-\/>keycallBacks)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ func(window,\ key,\ scancode,\ action,\ mods);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ engine-\/>keyboard-\/>\mbox{\hyperlink{class_keyboard_a2744ee114685c5a529b0dc19d3b2c2d3}{update}}(key,\ action);}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ resetOneTimeEvenets()}
+\DoxyCodeLine{00218\ \ \ \ \ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ this-\/>mouse-\/>\mbox{\hyperlink{class_mouse_aba60ae3aab2142aea9847a3cd59c13a5}{reset}}();}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ keyboard-\/>\mbox{\hyperlink{class_keyboard_a765a73cd072fcad73db2d1d9824e7595}{reset}}();}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ setCallBacks()}
+\DoxyCodeLine{00228\ \ \ \ \ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ glfwSetFramebufferSizeCallback(this-\/>mainWindow,\ \_3DEngine::framebuffer\_size\_callback);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ glfwSetCursorPosCallback(this-\/>mainWindow,\ \_3DEngine::cursor\_pos\_callback);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ glfwSetScrollCallback(this-\/>mainWindow,\ \_3DEngine::scroll\_callback);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ glfwSetMouseButtonCallback(this-\/>mainWindow,\ \_3DEngine::mouse\_button\_callback);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ glfwSetKeyCallback(this-\/>mainWindow,\ keyboard\_callback);}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ initilizeOpenGl()}
+\DoxyCodeLine{00242\ \ \ \ \ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ glfwInit();}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MAJOR,\ 3);}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MINOR,\ 3);}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ glfwWindowHint(GLFW\_OPENGL\_PROFILE,\ GLFW\_OPENGL\_CORE\_PROFILE);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ initlizeWindow(\textcolor{keywordtype}{int}\ windowWidth,\ \textcolor{keywordtype}{int}\ windowHeight)}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ this-\/>width\ =\ windowWidth;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ this-\/>height\ =\ windowHeight;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ this-\/>mainWindow=\ \ glfwCreateWindow(windowWidth,\ windowHeight,\ \textcolor{stringliteral}{"{}3DEngine"{}},\ NULL,\ NULL);}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mainWindow==NULL)}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Error\ creating\ glfwWindow"{}});}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ glfwMakeContextCurrent(this-\/>mainWindow);}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ iniitShaderLib()}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_shader_lib_ae42c812807ecd99b9a668156bfa6442b}{ShaderLib::iniitShaderLib}}();}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{addShader}}(\mbox{\hyperlink{class_shader_lib_a626c0b6e9e1fba0eda7efde4543c9f38}{ShaderLib::phongShader}});}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{addShader}}(\mbox{\hyperlink{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78}{ShaderLib::guideShader}});}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{addShader}}(\mbox{\hyperlink{class_shader_lib_af82418c265789c415577dd01d036bcd9}{ShaderLib::particleShader}});}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{addShader}}(\mbox{\hyperlink{class_shader_lib_ac0b25459556656d0da7ce3add94ad922}{ShaderLib::particleShaderInstanced}});}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{void}\ initilizeGlad()}
+\DoxyCodeLine{00286\ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}couldnt\ intinlize\ glad"{}});}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ glEnable(GL\_VERTEX\_PROGRAM\_POINT\_SIZE);}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ glEnable(GL\_BLEND);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ glBlendFunc(GL\_SRC\_ALPHA,\ GL\_ONE\_MINUS\_SRC\_ALPHA);}
+\DoxyCodeLine{00295\ \ \ \ \ \}}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{void}\ cameraApplyMovement()}
+\DoxyCodeLine{00302\ \ \ \ \ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ this-\/>activeCamera-\/>\mbox{\hyperlink{class_camera_a948b346c4f95e6971d4e50999e65f9f0}{applyZoom}}(this-\/>mouse-\/>\mbox{\hyperlink{class_mouse_ae2eba6a397c1a80b8db0f72a13c60116}{getScrollMovement}}());}
+\DoxyCodeLine{00304\ \textcolor{comment}{//\ \ \ \ \ \ std::cout\ <<\ mouse-\/>getIsLeftePressed()\ <<\ std::endl;}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>mouse-\/>\mbox{\hyperlink{class_mouse_a97a22799e7ee88642a45df594776bd3f}{getIsLeftePressed}}())}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>activeCamera-\/>\mbox{\hyperlink{class_camera_abc40ebcf4f397efd5b4fed7efbc4bdad}{applyMouseMovement}}(this-\/>mouse-\/>\mbox{\hyperlink{class_mouse_adf9d40a03957289cf9fc00e110cd608e}{getMouseOffset}}()*\mbox{\hyperlink{class_vector2f}{Vector2f}}(width,height));}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(mouse-\/>getMouseOffset().x!=0\ ||\ mouse-\/>getMouseOffset().y\ !=\ 0)}}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::cout\ <<\ activeCamera-\/>get\_rotation()\ <<\ std::endl;}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mouse-\/>\mbox{\hyperlink{class_mouse_aad8a9e47991208a0ce26c81480fd8fb6}{getIsRightPressed}}())}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeCamera-\/>\mbox{\hyperlink{class_camera_a948b346c4f95e6971d4e50999e65f9f0}{applyZoom}}(mouse-\/>\mbox{\hyperlink{class_mouse_adf9d40a03957289cf9fc00e110cd608e}{getMouseOffset}}().x\ *\ mouse-\/>\mbox{\hyperlink{class_mouse_adf9d40a03957289cf9fc00e110cd608e}{getMouseOffset}}().\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}*1000);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(mouse-\/>\mbox{\hyperlink{class_mouse_a4635d069d4770cc2c7495c342d239ee9}{getIsMiddlePressedd}}())}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ processInput()}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ cameraApplyMovement();}
+\DoxyCodeLine{00339\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{void}\ clear()}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ glClearColor(backgroundColor.r,\ backgroundColor.\mbox{\hyperlink{class_vector2f_af485b9121ecad2cea52a0fe7be15e4e5}{g}},\ backgroundColor.\mbox{\hyperlink{class_vector3f_a3d5c28e46c191cf1a05881edf3cff18a}{b}},\ backgroundColor.\mbox{\hyperlink{class_vector4f_aa05862a709661cfa529a1abb28a09d63}{a}});}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT\ |\ GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{00348\ \ \ \ \ \}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{void}\ updateShaders()}
+\DoxyCodeLine{00357\ \ \ \ \ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_shader_program}{ShaderProgram}}*\ shader\ :\ this-\/>shaders)}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>setCamera(\textcolor{stringliteral}{"{}camera"{}},\ this-\/>activeCamera);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(shader-\/>isLightAffeted())}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>applyLightData(activeCamera-\/>\mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{getFullPositon}}());}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \ \ \ \ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{void}\ mainLoop()}
+\DoxyCodeLine{00375\ \ \ \ \ \{}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ timer;\ }
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(!this-\/>shouldClose)}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ timer\ =\ clock();}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ processInput();}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>updateShaders();}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>render();}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>update();}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//activeCamera-\/>rotateY(0.1);}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ glfwSwapBuffers(this-\/>mainWindow);}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (glfwWindowShouldClose(this-\/>mainWindow))}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>shouldClose\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>resetOneTimeEvenets();}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ timerunning\ =\ clock();}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ timeElapesed\ =\ timerunning\ -\/\ timer;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00414\ \ \ \ \ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}()}
+\DoxyCodeLine{00415\ \ \ \ \ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00417\ \ \ \ \ \}}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{void}\ render()}
+\DoxyCodeLine{00423\ \ \ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Renderable>\ \ element\ :\ this-\/>renderables\_)}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ element-\/>render();}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ \ \ \ \ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordtype}{void}\ update()}
+\DoxyCodeLine{00435\ \ \ \ \ \{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{void}(*funciton)(\mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine)\ :\ updateFunctions)}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ funciton(\textcolor{keyword}{this});}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Updatable>\ element\ :\ updatabels)}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ element-\/>update(\mbox{\hyperlink{class__3_d_engine_a6acace6d5cf988d3f21d795065f5893c}{getTimeElapesed}}());}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00445\ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{void}\ updateUiRatio(\mbox{\hyperlink{class_vector2f}{Vector2f}}\ scaleFactor)}
+\DoxyCodeLine{00452\ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<UiPlane>\ element\ :\ this-\/>uiElements)}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<<"{}TeeeeeeeeL\ :"{}<<scaleFactor<<std::endl;}}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ element-\/>scale(\mbox{\hyperlink{class_vector3f}{Vector3f}}(scaleFactor.x/\ scaleFactor.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ 1,\ 1));}
+\DoxyCodeLine{00458\ \ \ \ \ }
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00461\ \ \ \ \ \}}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00469\ \ \ \ \ \mbox{\hyperlink{class__3_d_engine_a3a66262f44e27d2e8d9b557b7c7b68e0}{\string~\_3DEngine}}()}
+\DoxyCodeLine{00470\ \ \ \ \ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_shader_lib_a6d6f5bf686c781cd7dc5c38c7e930f0c}{ShaderLib::uninnit}}();}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a10fb57122ba596e83657d7a5ec245e01}{addUpdate}}(\textcolor{keywordtype}{void}(*\ funciton)(\mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ engine))}
+\DoxyCodeLine{00479\ \ \ \ \ \{}
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ updateFunctions.push\_back(funciton);}
+\DoxyCodeLine{00481\ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a8697768ccc573d9b1a4cd6a1acebb563}{addKeyCallBack}}(\textcolor{keywordtype}{void}(*\ cube\_key\_callback)(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods))}
+\DoxyCodeLine{00488\ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ keycallBacks.push\_back(cube\_key\_callback);}
+\DoxyCodeLine{00490\ \ \ \ \ \}}
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823}{addUpdatable}}(std::shared\_ptr<Updatable>\ updatable)}
+\DoxyCodeLine{00497\ \ \ \ \ \{}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ this-\/>updatabels.push\_back(updatable);}
+\DoxyCodeLine{00499\ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a26e3b7416734b6d74a72b9152ddb7510}{addUiElement}}(std::shared\_ptr<UiPlane>\ ui\_plane)}
+\DoxyCodeLine{00506\ \ \ \ \ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>width\ >\ this-\/>height)\ \{}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ ui\_plane-\/>scale(\mbox{\hyperlink{class_vector3f}{Vector3f}}(this-\/>height\ /\ (\textcolor{keywordtype}{float})this-\/>width,\ 1,\ 1));}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ui\_plane-\/>move(Vector3f((1\ -\/\ (this-\/>height\ /\ (float)this-\/>width))\ *\ -\/1,\ 0,\ 0));}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ ui\_plane-\/>scale(\mbox{\hyperlink{class_vector3f}{Vector3f}}(1,\ this-\/>width\ /\ (\textcolor{keywordtype}{float})this-\/>height,\ 1));}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ui\_plane-\/>move(Vector3f(0,1-\/(this-\/>width\ /\ (float)this-\/>height),0));}}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ this-\/>uiElements.push\_back(ui\_plane);}
+\DoxyCodeLine{00517\ \ \ \ \ \}}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00524\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}}*\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{getInstance}}()}
+\DoxyCodeLine{00525\ \ \ \ \ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_3DEngine::instance\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \_3DEngine::instance=\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class__3_d_engine}{\_3DEngine}};}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_3DEngine::instance;}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_3DEngine::instance;}
+\DoxyCodeLine{00532\ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_af60be567bb38f36c7f8ba2fbe7a3a37b}{initlizeCamera}}()}
+\DoxyCodeLine{00538\ \ \ \ \ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ this-\/>activeCamera\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_camera}{Camera}}(80,\ this-\/>width\ /\ height,\ 0.01,\ 1000);}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ this-\/>activeCamera-\/>\mbox{\hyperlink{class_transformable_af4fd98610962c61d31ff205348fd6897}{moveIndendent}}(\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,\ 6,-\/10));}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00542\ \ \ \ \ \}}
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a7874d6af858f0278850fdf7a8372f7aa}{initlizeGround}}()}
+\DoxyCodeLine{00548\ \ \ \ \ \{}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ std::shared\_ptr<PolyGrid>\ polygrid\ =\ std::make\_shared<PolyGrid>(10,\ 10,\ 10,\ 10);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf}{addRenderable}}(polygrid);}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ polygrid-\/>setMat(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_a81a5732413a2d66c02de54f89a9c8c78}{ShaderLib::guideShader}}));}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ polygrid-\/>set\_render\_mode(GL\_LINE);}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ polygrid-\/>init();}
+\DoxyCodeLine{00554\ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a87083fbc6774b5472e2e2bbf5fac086e}{iniit}}(\textcolor{keywordtype}{int}\ windowWidth,\ \textcolor{keywordtype}{int}\ windowHeight)}
+\DoxyCodeLine{00562\ \ \ \ \ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ this-\/>initilizeOpenGl();}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ this-\/>initlizeWindow(windowWidth,\ windowHeight);}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ this-\/>initilizeGlad();}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_af60be567bb38f36c7f8ba2fbe7a3a37b}{initlizeCamera}}();}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ this-\/>iniitShaderLib();}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_lib_a77d71c017b2fdc029d1f50e8ebc3c12b}{TextureLib::initTextureLib}}();}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class__3_d_engine_a7874d6af858f0278850fdf7a8372f7aa}{initlizeGround}}();}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ framebuffer\_size\_callback(this-\/>mainWindow,\ windowWidth,\ windowHeight);}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ setCallBacks();}
+\DoxyCodeLine{00572\ \ \ \ \ \}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00578\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_ad2cf4d9574cfc7c31b0f13c926fa66b1}{start}}()}
+\DoxyCodeLine{00579\ \ \ \ \ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ this-\/>mainLoop();}
+\DoxyCodeLine{00581\ \ \ \ \ \}}
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_ae6a77d2e6690a446c73ff5c2ac5b12cf}{addRenderable}}(\ std::shared\_ptr<Renderable>\ \textcolor{keywordtype}{object})}
+\DoxyCodeLine{00588\ \ \ \ \ \{}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ this-\/>renderables\_.push\_back(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{00590\ \ \ \ \ \}}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a49fc140cd27902976955ca329d651969}{addShader}}(\mbox{\hyperlink{class_shader_program}{ShaderProgram}}*\ shader)}
+\DoxyCodeLine{00597\ \ \ \ \ \{}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ this-\/>shaders.push\_back(shader);}
+\DoxyCodeLine{00599\ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class__3_d_engine_ac37a9dc3e3a1cde657af2c109a4a0183}{getTimeRunnig}}()}
+\DoxyCodeLine{00607\ \ \ \ \ \{}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})timerunning\ /\ CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{00609\ \ \ \ \ \}}
+\DoxyCodeLine{00615\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class__3_d_engine_a6acace6d5cf988d3f21d795065f5893c}{getTimeElapesed}}()}
+\DoxyCodeLine{00616\ \ \ \ \ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})timeElapesed\ /\ CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{00618\ \ \ \ \ \}}
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_keyboard}{Keyboard}}*\ \ \mbox{\hyperlink{class__3_d_engine_a3aaa20100f419eb6b6c837bd839f111e}{getKeyBoard}}()}
+\DoxyCodeLine{00626\ \ \ \ \ \{}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class__3_d_engine_a38ae048fea21d38baa8c0170e2a0252b}{\_3DEngine::getInstance}}()-\/>keyboard;}
+\DoxyCodeLine{00628\ \ \ \ \ \}}
+\DoxyCodeLine{00635\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class__3_d_engine_a2fbf080aad4a06199abe13295ff22d4e}{getIsSimulationActive}}()\ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isSimulationActive;}
+\DoxyCodeLine{00637\ \ \ \ \ \}}
+\DoxyCodeLine{00642\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_ad3578893d0781a710abc58382b2c49e3}{inverseSimulationActive}}()\ \{}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ isSimulationActive\ =\ !isSimulationActive;}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ std::cout\ <<\ isSimulationActive\ <<\ std::endl;}
+\DoxyCodeLine{00645\ \ \ \ \ \}}
+\DoxyCodeLine{00650\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a6c7f33de8ad902fce8d3138480f404f0}{clearSimulation}}()}
+\DoxyCodeLine{00651\ \ \ \ \ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::shared\_ptr<Simulatable>\ simulatable\ :\ simulatables)}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ simulatable-\/>reset();}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00656\ \ \ \ \ \}}
+\DoxyCodeLine{00662\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class__3_d_engine_a0bd84951b11a10e6f93b53376ac995a1}{addSimulatable}}(std::shared\_ptr<Simulatable>\ element)}
+\DoxyCodeLine{00663\ \ \ \ \ \{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class__3_d_engine_a64a5ea7df6c2648d8534328c31890823}{addUpdatable}}(element);}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ this-\/>simulatables.push\_back(element);}
+\DoxyCodeLine{00666\ \ \ \ \ \}}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \};}
+
+\end{DoxyCode}

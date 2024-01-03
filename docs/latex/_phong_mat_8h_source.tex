@@ -1,0 +1,111 @@
+\doxysection{Phong\+Mat.\+h}
+\hypertarget{_phong_mat_8h_source}{}\label{_phong_mat_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PhongMat.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PhongMat.h}}
+\mbox{\hyperlink{_phong_mat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_material_8h}{Material.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_lib_8h}{ShaderLib.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_phong_mat}{PhongMat}}:}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_material}{Material}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ std::shared\_ptr<Texture>\ colorTex=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00028\ \ \ \ \ \ std::shared\_ptr<Texture>\ normalTex\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00032\ \ \ \ \ \ std::shared\_ptr<Texture>\ emissionTex\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \ \ \ \ \ std::shared\_ptr<Texture>\ roughTex\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ bindTex()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i++);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (colorTex\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_a8480eed7ed703a937c3e6ab528f559bd}{Texture::unbind}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ colorTex-\/>bind();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i++);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (normalTex\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_a8480eed7ed703a937c3e6ab528f559bd}{Texture::unbind}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ normalTex-\/>bind();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i++);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (roughTex\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_a8480eed7ed703a937c3e6ab528f559bd}{Texture::unbind}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ roughTex-\/>bind();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ glActiveTexture(GL\_TEXTURE0\ +\ i++);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (emissionTex\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture_a8480eed7ed703a937c3e6ab528f559bd}{Texture::unbind}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ emissionTex-\/>bind();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_phong_mat}{PhongMat}}():\ \mbox{\hyperlink{class_material_a63966f646a6b1e1f82399da648d63482}{Material}}(\mbox{\hyperlink{class_shader_lib_a626c0b6e9e1fba0eda7efde4543c9f38}{ShaderLib::phongShader}})}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ std::shared\_ptr<Texture>\ \mbox{\hyperlink{class_phong_mat_a8a69c7cf79e18f24c9a4ebb71054fb32}{get\_color\_tex}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorTex;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3}{set\_color\_tex}}(\ std::shared\_ptr<Texture>\ color\_tex)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ colorTex\ =\ color\_tex;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ std::shared\_ptr<Texture>\ \mbox{\hyperlink{class_phong_mat_a843366939f1606dee9f0c4a2bf4437df}{get\_normal\_tex}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00105\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ normalTex;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a}{set\_normal\_tex}}(\ std::shared\_ptr<Texture>\ normal\_tex)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ normalTex\ =\ normal\_tex;}
+\DoxyCodeLine{00116\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ std::shared\_ptr<Texture>\ \mbox{\hyperlink{class_phong_mat_a72e7f6b51b06c179436a1e90f27b0b0f}{get\_emission\_tex}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00123\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ emissionTex;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6}{set\_emission\_tex}}(\ std::shared\_ptr<Texture>\ emission\_tex)}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ emissionTex\ =\ emission\_tex;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209}{set\_rough\_tex}}(\ std::shared\_ptr<Texture>\ tex)}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ roughTex\ =\ tex;}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_phong_mat}{\string~PhongMat}}()}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_a6c42eb5f7092b1a4a9bd2422b0d40b85}{set\_color\_tex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ i1,\ \textcolor{keywordtype}{int}\ i2)}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_phong_mat_ad407a843a47782ce8f0ca25dd6c9b2b3}{set\_color\_tex}}(std::make\_shared<Texture>(str,\ i,\ i1,\ i2));}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_adfd25926cda2da8de33b03fe427cc42e}{set\_normal\_tex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ i1,\ \textcolor{keywordtype}{int}\ i2)}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_phong_mat_accabb50abb3c21e59bb066dc8c03692a}{set\_normal\_tex}}(std::make\_shared<Texture>(str,\ i,\ i1,\ i2));}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_aabffe0dc9922e7a5ff8270969a645a22}{set\_rough\_tex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ i1,\ \textcolor{keywordtype}{int}\ i2,\ \textcolor{keywordtype}{int}\ type=GL\_RED)}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_phong_mat_a43ad8f188f6fe35725d004e3009ab209}{set\_rough\_tex}}(std::make\_shared<Texture>(str,\ i,\ i1,\ i2,\ type));}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_phong_mat_a10cfa3ca30c0b05fed5f0097159c9bba}{set\_emission\_tex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ i1,\ \textcolor{keywordtype}{int}\ i2)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_phong_mat_a5b058fe1552ee7f00f7cbc1fbb07e8e6}{set\_emission\_tex}}(std::make\_shared<Texture>(str,\ i,\ i1,\ i2));}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \};}
+\DoxyCodeLine{00201\ }
+
+\end{DoxyCode}

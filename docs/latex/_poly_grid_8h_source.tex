@@ -1,0 +1,32 @@
+\doxysection{Poly\+Grid.\+h}
+\hypertarget{_poly_grid_8h_source}{}\label{_poly_grid_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PolyGrid.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/PolyGrid.h}}
+\mbox{\hyperlink{_poly_grid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_poly_grid}{PolyGrid}}\ :}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_poly_grid_a9adcd65dd2ad98e6e8d02030436b6657}{PolyGrid}}(\textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ rows\ =\ 2,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ colums\ =\ 2)}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TOOD:\ implement\ mulitple\ rows\ for\ polygrid;}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(-\/width\ /\ 2,\ 0,\ -\/height\ /\ 2);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(-\/width\ /\ 2,\ 0,\ height\ /\ 2);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(width\ /\ 2,\ 0,\ height\ /\ 2);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(width\ /\ 2,\ 0,\ -\/height\ /\ 2);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ 0.0,\ 0.000000\ \ \});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 1.0\ ,0.0\ \ \});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(2,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ 1.0,\ 1.0,\});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(3,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 0.0,\ 1.0\});}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 0,1,2\ \});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 0,2,3\ \});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

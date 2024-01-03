@@ -1,0 +1,21 @@
+<map id="GlObject::initParts" name="GlObject::initParts">
+<area shape="rect" id="Node000001" title="intilizes buffers of objeect" alt="" coords="5,81,134,108"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html#ad714dda8d3b92367b988ab67b01ce55d" title="initlize VAo for object" alt="" coords="379,5,502,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,79,363,32,364,37,135,84"/>
+<area shape="rect" id="Node000006" href="$class_gl_object.html#aeb66962c60b73ec0232e18ab5afc90fd" title="initlize vretx buffer for specif object" alt="" coords="182,107,305,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="134,101,167,106,166,111,134,107"/>
+<area shape="rect" id="Node000003" href="$class_gl_object.html#a682c66222099523058a932574e2b11e6" title="Get the Vertecies Amount object." alt="" coords="576,56,775,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="504,29,596,50,595,55,502,35"/>
+<area shape="rect" id="Node000004" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="594,107,757,133"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="464,30,514,61,577,92,597,99,595,104,575,97,512,66,461,35"/>
+<area shape="rect" id="Node000005" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="823,107,1026,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="757,117,807,117,807,123,757,123"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="297,103,353,92,459,79,560,71,561,77,459,84,353,97,298,109"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="294,131,353,143,441,149,528,143,593,134,593,139,529,148,441,154,353,148,293,137"/>
+<area shape="rect" id="Node000007" href="$class_gl_object.html#ad29dff0e8392d4c1326bfbf4c1990484" title="Get the Vertex Buffer object." alt="" coords="356,208,525,235"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="265,132,305,159,354,187,383,200,381,205,352,192,302,163,262,136"/>
+<area shape="rect" id="Node000008" href="$class_gl_object.html#a4e5b9fbdc6013d2c71bab8fcf1743767" title="inirilze vertex buffer for object" alt="" coords="353,107,528,133"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="305,117,337,117,337,123,305,123"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="505,103,595,84,596,89,507,109"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="528,117,579,117,579,123,528,123"/>
+</map>

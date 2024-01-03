@@ -1,0 +1,15 @@
+<map id="PointGroupObject::addPoint" name="PointGroupObject::addPoint">
+<area shape="rect" id="Node000001" title="add points to point group object" alt="" coords="244,132,427,159"/>
+<area shape="rect" id="Node000002" href="$class_point_group_object.html#a14526a7e3fbe387980f94316c248d4c7" title="added point at specifed postion" alt="" coords="9,5,192,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,124,256,84,194,46,165,35,167,30,197,42,259,80,309,119"/>
+<area shape="rect" id="Node000003" href="$class_point_group_object.html#a111f82687088699c81d41f22f448bc43" title="adds point with sceifed positon and color" alt="" coords="9,56,192,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="283,128,195,97,156,86,157,81,196,92,285,123"/>
+<area shape="rect" id="Node000004" href="$class_point_group_object.html#a5a12782a371c976240e4cf20c9bd1ee6" title="add point to group" alt="" coords="9,107,192,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,136,192,133,193,127,229,131"/>
+<area shape="rect" id="Node000005" href="$class_point_group_object.html#adfd5b8ba597ba118e9b6538a022781e0" title="added point based list corrsinates" alt="" coords="9,157,192,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="229,159,193,163,192,158,228,154"/>
+<area shape="rect" id="Node000006" href="$class_point_group_object.html#a879aa313087f0d3a28a95ffae27f3491" title="add points based on its postion" alt="" coords="9,208,192,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="285,167,196,199,157,210,156,205,195,193,283,162"/>
+<area shape="rect" id="Node000007" href="$class_point_group_object.html#a59b236ebb660eb11ae6bf34096fa1957" title="add point based list of list of paramters" alt="" coords="5,259,196,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="309,171,259,211,197,249,167,261,165,256,194,244,256,207,306,167"/>
+</map>

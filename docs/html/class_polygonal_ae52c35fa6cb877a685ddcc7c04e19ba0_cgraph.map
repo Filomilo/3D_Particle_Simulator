@@ -1,0 +1,5 @@
+<map id="Polygonal::glDrawCall" name="Polygonal::glDrawCall">
+<area shape="rect" id="Node000001" title="opengl call to draw object on screen" alt="" coords="5,13,153,40"/>
+<area shape="rect" id="Node000002" href="$class_polygonal.html#aebdc9218c8da0dfe336bd622d96ceef5" title="Get the Tringle Point Count object retruns amount of tringles making out the object." alt="" coords="201,5,373,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,24,185,24,185,29,153,29"/>
+</map>

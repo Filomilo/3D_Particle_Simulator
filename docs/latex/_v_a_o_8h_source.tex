@@ -1,0 +1,61 @@
+\doxysection{VAO.\+h}
+\hypertarget{_v_a_o_8h_source}{}\label{_v_a_o_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/VAO.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/VAO.h}}
+\mbox{\hyperlink{_v_a_o_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_b_o_8h}{VBO.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_a_o}{VAO}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}{ID}};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_v_a_o_a3b2ec9574d0aa9e86e5288095f58097e}{VAO}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ glGenVertexArrays(1,\ \&\mbox{\hyperlink{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}{ID}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ GLenum\ error\ =\ glGetError();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_ae3eaa4901bcc8a60ccbe07db3be52207}{linkAttrib}}(std::shared\_ptr<VBO>\ vbo,\ GLuint\ layout,\ GLuint\ nmOFElements,\ GLenum\ type,\ GLsizeiptr\ stride,\ \textcolor{keywordtype}{int}\ offset)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ vbo-\/>bind();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ glVertexAttribPointer(layout,\ nmOFElements,\ type,\ GL\_FALSE,\ stride,\ (\textcolor{keywordtype}{void}*)offset);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}glVertexAttribPointer("{}\ <<\ layout\ <<\ "{},\ "{}\ <<\ nmOFElements\ <<\ "{},\ "{}\ <<\ type\ <<\ "{},\ "{}\ <<\ "{}\ GL\_FALSE"{}\ <<\ "{},\ "{}\ <<\ stride\ <<\ "{},\ "{}\ <<\ offset\ <<\ "{})\(\backslash\)n"{};}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(layout);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ vbo-\/>unbind();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_ad0c53cbb91905b1ea5abe96a2c32b5cf}{linkAttrib}}(GLuint\ vbo,\ GLuint\ layout,\ GLuint\ nmOFElements,\ GLenum\ type,\ GLsizeiptr\ stride,\ \textcolor{keywordtype}{int}\ offset)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,vbo);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ glVertexAttribPointer(layout,\ nmOFElements,\ type,\ GL\_FALSE,\ stride,\ (\textcolor{keywordtype}{void}*)offset);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}glVertexAttribPointer("{}\ <<\ layout\ <<\ "{},\ "{}\ <<\ nmOFElements\ <<\ "{},\ "{}\ <<\ type\ <<\ "{},\ "{}\ <<\ "{}\ GL\_FALSE"{}\ <<\ "{},\ "{}\ <<\ stride\ <<\ "{},\ "{}\ <<\ offset\ <<\ "{})\(\backslash\)n"{};}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(layout);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,0);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_aa649ecc5e67a48296a21fd36927c90e0}{linkPointINstancePostion}}(std::shared\_ptr<VBO>\ vbo,\ GLuint\ layout,\ GLuint\ nmOFElements,\ GLenum\ type,\ GLsizeiptr\ stride,\ \textcolor{keywordtype}{int}\ offset)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ vbo-\/>bind();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ glVertexAttribPointer(layout,\ nmOFElements,\ type,\ GL\_FALSE,\ stride,\ (\textcolor{keywordtype}{void}*)offset);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(layout);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ glVertexAttribDivisor(1,\ 1);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ vbo-\/>unbind();}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_a8bb39e6aaadaa0204b0ccf910cf9500a}{bind}}()}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ glBindVertexArray(\mbox{\hyperlink{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}{ID}});}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_ae96e88a466b44d968315b5dc1f612946}{unbind}}()}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ glBindVertexArray(0);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_a_o_a94f02b2944ec65654fce692c25d71dd7}{Delete}}()}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ glDeleteVertexArrays(1,\ \&\mbox{\hyperlink{class_v_a_o_af47651c68a1871c56f7064943cbc09a8}{ID}});}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \};}
+
+\end{DoxyCode}

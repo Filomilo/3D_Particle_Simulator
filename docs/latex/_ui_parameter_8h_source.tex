@@ -1,0 +1,49 @@
+\doxysection{Ui\+Parameter.\+h}
+\hypertarget{_ui_parameter_8h_source}{}\label{_ui_parameter_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiParameter.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiParameter.h}}
+\mbox{\hyperlink{_ui_parameter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_float_8h}{Float.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_parameter}{UiParameter}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00031\ \ \ \ \ std::shared\_ptr<Float>\ parametertoChange;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ paremeterChangeStep;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_ui_parameter_abf959d0ccdf552b2a3a3da12b262436e}{UiParameter}}(\textcolor{keyword}{const}\ std::string\&\ name,\ std::shared\_ptr<Float>\ parameterto\_change,\ \textcolor{keywordtype}{float}\ paremeter\_change\_step)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ :\ name(name),}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ parametertoChange(parameterto\_change),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ paremeterChangeStep(paremeter\_change\_step)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_parameter_adf894289ab51dafc7dc6b84219565397}{increaseVal}}()}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ *parametertoChange\ =\ *parametertoChange+\ paremeterChangeStep;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_parameter_a88d6432758e388a9e712f83f2e7eff4e}{decreaseVal}}()}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ *parametertoChange\ =\ *parametertoChange-\/\ paremeterChangeStep;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_ui_parameter_accdb1d87f72f44b9f90ecffffde231b4}{operator<<}}(std::ostream\&\ os,\ \ \mbox{\hyperlink{class_ui_parameter}{UiParameter}}\&\ obj)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os<<\ obj.name<<\textcolor{stringliteral}{"{}:\ "{}}<<*obj.parametertoChange;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ std::string\ \mbox{\hyperlink{class_ui_parameter_a4d32faf6af4e35dfebefe31b3c8c06d6}{getName}}()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ name;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ui_parameter_abca57f659e5d544b7f83197eb61ecc12}{getVal}}()}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parametertoChange-\/>x;}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+
+\end{DoxyCode}

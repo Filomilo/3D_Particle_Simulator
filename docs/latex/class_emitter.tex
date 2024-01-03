@@ -1,0 +1,204 @@
+\doxysection{Emitter Class Reference}
+\hypertarget{class_emitter}{}\label{class_emitter}\index{Emitter@{Emitter}}
+
+
+emtiter calss emitter class if paramters that genretes particles  
+
+
+
+
+{\ttfamily \#include $<$Emitter.\+h$>$}
+
+
+
+Inheritance diagram for Emitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_emitter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Emitter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_emitter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_emitter_a3e7a617d8b26fdcdbaad6ab21d0e34d5}{update}} (float time\+Elpased) override
+\begin{DoxyCompactList}\small\item\em updateds paritcle metter \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{class_emitter_a2dc19f8807623642a719ef442fd64b30}{get\+\_\+particles\+\_\+per\+\_\+second}} () const
+\begin{DoxyCompactList}\small\item\em Get the particles per second object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_emitter_a6c70b92e577bb5942afcd36a8a17a50f}{set\+\_\+particles\+\_\+per\+\_\+second}} (unsigned particles\+\_\+per\+\_\+second)
+\begin{DoxyCompactList}\small\item\em Set the particles per second object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ \mbox{\hyperlink{class_emitter_abd2fa3036024f082fae9297fc7ef02ad}{get\+\_\+particle\+\_\+system}} () const
+\begin{DoxyCompactList}\small\item\em Get the particle system object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_emitter_a62138190d20a7f389c1e165585903988}{set\+\_\+particle\+\_\+system}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ particle\+\_\+system)
+\begin{DoxyCompactList}\small\item\em Set the particle system object. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ \mbox{\hyperlink{class_emitter_a3a3a8b663abcf3fe47634b5150cfa8ea}{get\+Parameter\+Group}} () override
+\begin{DoxyCompactList}\small\item\em Get the Parameter Group object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_transformable}{Transformable}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Transformable} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_transformable}{Transformable} object basic empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_ac82e02c363ef3a5bf903fce4a79b5b93}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the rotation object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6dd853da205976148e31e71f618a6a90}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the scale object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ada57443e0e5d1773951918a3437e5e9a}{rotateY}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object arounf y axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a96dfd0389c69a1102e235c288ae788d7}{rotateX}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object around x axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a311c802058f2f21211aaf9432d0b646b}{rotateZ}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotate object around z axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e}{rotate}} (float degrees, \mbox{\hyperlink{class_vector3f}{Vector3f}} vec)
+\begin{DoxyCompactList}\small\item\em rotate object in degrese arounf specifed vector \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_add511c646430a73e00f7c23b65f01f1f}{set\+\_\+position}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the origin point position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_aeb0657e4da1b2ea0cb0ff5ca94e4626b}{set\+\_\+position\+\_\+object}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the position object object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ad0cddcb6706ee7c90631a4653de500c8}{set\+\_\+rotation}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the rotation object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd}{scale}} (const \mbox{\hyperlink{class_vector3f}{Vector3f}} \&scale)
+\begin{DoxyCompactList}\small\item\em sclae origin point matrix acording to privided data \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad}{get\+Transformation\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Get the Transformation Matrix object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_a16541760d089f6987b578e7bd4b64707}{move}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object orign point by provided vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_af4fd98610962c61d31ff205348fd6897}{move\+Indendent}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object matrix by priovided vector (not origin point) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{get\+Full\+Positon}} ()
+\begin{DoxyCompactList}\small\item\em Get the Full Positon object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a33121857ff78af430ae1ed1f5921ef96}{moveY}} (double y\+Offset)
+\begin{DoxyCompactList}\small\item\em move object in y axis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_transformable}{Transformable}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 {\bfseries object\+Transformation} =glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em main obejct transformation matrix \end{DoxyCompactList}\item 
+glm\+::mat4 {\bfseries origin\+Point\+Transformation} = glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em matric allwoing for origin point transformation \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}} =\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,0,0)
+\begin{DoxyCompactList}\small\item\em hel class coanting rotaitn \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+emtiter calss emitter class if paramters that genretes particles 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_emitter_abd2fa3036024f082fae9297fc7ef02ad}\label{class_emitter_abd2fa3036024f082fae9297fc7ef02ad} 
+\index{Emitter@{Emitter}!get\_particle\_system@{get\_particle\_system}}
+\index{get\_particle\_system@{get\_particle\_system}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{get\_particle\_system()}{get\_particle\_system()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$ Emitter\+::get\+\_\+particle\+\_\+system (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the particle system object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Particle\+System$>$ 
+\end{DoxyReturn}
+\Hypertarget{class_emitter_a2dc19f8807623642a719ef442fd64b30}\label{class_emitter_a2dc19f8807623642a719ef442fd64b30} 
+\index{Emitter@{Emitter}!get\_particles\_per\_second@{get\_particles\_per\_second}}
+\index{get\_particles\_per\_second@{get\_particles\_per\_second}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{get\_particles\_per\_second()}{get\_particles\_per\_second()}}
+{\footnotesize\ttfamily unsigned Emitter\+::get\+\_\+particles\+\_\+per\+\_\+second (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the particles per second object. 
+
+\begin{DoxyReturn}{Returns}
+unsigned 
+\end{DoxyReturn}
+\Hypertarget{class_emitter_a3a3a8b663abcf3fe47634b5150cfa8ea}\label{class_emitter_a3a3a8b663abcf3fe47634b5150cfa8ea} 
+\index{Emitter@{Emitter}!getParameterGroup@{getParameterGroup}}
+\index{getParameterGroup@{getParameterGroup}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{getParameterGroup()}{getParameterGroup()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_ui_parameter_group}{Ui\+Parameter\+Group}} $>$ Emitter\+::get\+Parameter\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the Parameter Group object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Ui\+Parameter\+Group$>$ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_parametrized_a9129facdabd9b8bb1d323677bd08f2d7}{Parametrized}}.
+
+\Hypertarget{class_emitter_a62138190d20a7f389c1e165585903988}\label{class_emitter_a62138190d20a7f389c1e165585903988} 
+\index{Emitter@{Emitter}!set\_particle\_system@{set\_particle\_system}}
+\index{set\_particle\_system@{set\_particle\_system}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{set\_particle\_system()}{set\_particle\_system()}}
+{\footnotesize\ttfamily void Emitter\+::set\+\_\+particle\+\_\+system (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_particle_system}{Particle\+System}} $>$}]{particle\+\_\+system }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the particle system object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particle\+\_\+system} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_emitter_a6c70b92e577bb5942afcd36a8a17a50f}\label{class_emitter_a6c70b92e577bb5942afcd36a8a17a50f} 
+\index{Emitter@{Emitter}!set\_particles\_per\_second@{set\_particles\_per\_second}}
+\index{set\_particles\_per\_second@{set\_particles\_per\_second}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{set\_particles\_per\_second()}{set\_particles\_per\_second()}}
+{\footnotesize\ttfamily void Emitter\+::set\+\_\+particles\+\_\+per\+\_\+second (\begin{DoxyParamCaption}\item[{unsigned}]{particles\+\_\+per\+\_\+second }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the particles per second object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em particles\+\_\+per\+\_\+second} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_emitter_a3e7a617d8b26fdcdbaad6ab21d0e34d5}\label{class_emitter_a3e7a617d8b26fdcdbaad6ab21d0e34d5} 
+\index{Emitter@{Emitter}!update@{update}}
+\index{update@{update}!Emitter@{Emitter}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Emitter\+::update (\begin{DoxyParamCaption}\item[{float}]{time\+Elpased }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+updateds paritcle metter 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Elpased} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_updatable_aa79d5233231f1534f21a58d1d6557123}{Updatable}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_emitter_a3e7a617d8b26fdcdbaad6ab21d0e34d5_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_emitter_8h}{Emitter.\+h}}\end{DoxyCompactItemize}

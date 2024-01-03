@@ -1,0 +1,9 @@
+<map id="GlObject::iniitVboUniversal" name="GlObject::iniitVboUniversal">
+<area shape="rect" id="Node000001" title="inirilze vertex buffer for object" alt="" coords="5,31,181,57"/>
+<area shape="rect" id="Node000002" href="$class_gl_object.html#a682c66222099523058a932574e2b11e6" title="Get the Vertecies Amount object." alt="" coords="229,5,427,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,32,213,28,213,34,181,37"/>
+<area shape="rect" id="Node000003" href="$class_gl_object.html#a3a946dd167e1260a01a97f8976cbb210" title="Get the Vertex Size object return vertex size for already applied materail." alt="" coords="247,56,409,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,51,231,56,231,62,180,56"/>
+<area shape="rect" id="Node000004" href="$class_gl_object.html#ae5f073fd9c7b911ec8eb86d327bfdfcf" title="Get the Vertex Size For Mat object rutune vertex size for spcif material." alt="" coords="475,56,678,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="409,67,460,67,460,72,409,72"/>
+</map>

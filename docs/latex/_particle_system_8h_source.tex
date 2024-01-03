@@ -1,0 +1,90 @@
+\doxysection{Particle\+System.\+h}
+\hypertarget{_particle_system_8h_source}{}\label{_particle_system_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ParticleSystem.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/ParticleSystem.h}}
+\mbox{\hyperlink{_particle_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_particle_solver_8h}{ParticleSolver.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_8h}{PointGroup.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_point_group_instanced_8h}{PointGroupInstanced.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_lib_8h}{ShaderLib.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sphere_8h}{Sphere.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_updatable_8h}{Updatable.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_particle_system}{ParticleSystem}}\ :}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}},}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_updatable}{Updatable}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_particle_solver}{ParticleSolver}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_particle_system_ac071408f3e30f614caf9e7de6ee0ff0b}{ParticleSystem}}(std::shared\_ptr<Polygonal>\ instance):\ \mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_a7cfe6946158a82b9bac32b26c84da400}{setInstanceGeo}}(instance);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_aa68128871cd44ed5ef126f8af9f87f67}{set\_usage}}(GL\_DYNAMIC\_DRAW);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::make\_shared<Material>\ (\mbox{\hyperlink{class_shader_lib_ac0b25459556656d0da7ce3add94ad922}{ShaderLib::particleShaderInstanced}}));}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_particle_system_a9028ec8023c61773dd4a668c3ad8cc26}{ParticleSystem}}()\ :\ \mbox{\hyperlink{class_point_group_instanced}{PointGroupInstanced}}()}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::shared\_ptr<Sphere>\ sph\ =\ std::make\_shared<Sphere>(0.06,\ 10,\ 20);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ sph-\/>setMat(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_af82418c265789c415577dd01d036bcd9}{ShaderLib::particleShader}}));\ \(\backslash\)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ sph-\/>init();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_a7cfe6946158a82b9bac32b26c84da400}{setInstanceGeo}}(sph);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_aa68128871cd44ed5ef126f8af9f87f67}{set\_usage}}(GL\_DYNAMIC\_DRAW);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_ac0b25459556656d0da7ce3add94ad922}{ShaderLib::particleShaderInstanced}}));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a5fe91b674903062d0ea9a10366515704}{addPoint}}(\textcolor{keywordtype}{float}\ pos,\ \textcolor{keywordtype}{float}\ color,\ \textcolor{keywordtype}{float}\ velocity,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ x2)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{PointGroup::addPoint}}(pos,\ color,\ velocity,\ size,\ x,\ x1,\ x2);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_aaff9d7b372e1925194aa21115d07ea43}{update}}(\textcolor{keywordtype}{float}\ timeElpased)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ float\ particleSize\ =\ 10;}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ this-\/>addPoint(}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Vector3f(}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX\ *\ particleSize\ -\/\ particleSize\ /\ 2,}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX\ *\ particleSize\ -\/\ particleSize\ /\ 2,}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX\ *\ particleSize\ -\/\ particleSize\ /\ 2}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ,}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Vector3f((float)rand()\ /\ RAND\_MAX,}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX,}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ ),}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Vector3f((float)rand()\ /\ RAND\_MAX,}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX,}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ ),}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (float)rand()\ /\ RAND\_MAX\ *\ 50}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ \ \ \ \ );}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_instanced_a1760f5af34f0547b0b92febab429c020}{updateVboInstanced}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_affb4b0b6c00e35a31a96017648f50aab}{addPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\&\ pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\&\ color,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector3f}{Vector3f}}\&\ velocity,\ \textcolor{keywordtype}{float}\ size=1,\ \textcolor{keywordtype}{float}\ mass=1,\ \textcolor{keywordtype}{float}\ bounce=1.0,\ \textcolor{keywordtype}{float}\ life=10)}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ std::shared\_ptr<Point>\ pt\ =\ std::make\_shared<Point>(pos);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ pt-\/>setColor(color.r,color.\mbox{\hyperlink{class_vector2f_af485b9121ecad2cea52a0fe7be15e4e5}{g}},color.\mbox{\hyperlink{class_vector3f_a3d5c28e46c191cf1a05881edf3cff18a}{b}});}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ pt-\/>setVelocity(velocity.x,\ velocity.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}},\ velocity.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ pt-\/>setPscale(size);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ pt-\/>setMass(mass);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ pt-\/>setBounce(bounce);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ pt-\/>setLife(life);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{PointGroup::addPoint}}(pt);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_particle_system_a88eef5a7e4c658027bdc7b51920728ab}{clearPoints}}();}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+
+\end{DoxyCode}

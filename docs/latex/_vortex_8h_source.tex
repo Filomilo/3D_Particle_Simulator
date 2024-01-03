@@ -1,0 +1,56 @@
+\doxysection{Vortex.\+h}
+\hypertarget{_vortex_8h_source}{}\label{_vortex_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Vortex.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Vortex.h}}
+\mbox{\hyperlink{_vortex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_force_8h}{Force.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vortex}{Vortex}}\ :}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_force}{Force}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ std::shared\_ptr<Float>\ \ scale\ =\ std::make\_shared<Float>(1);}
+\DoxyCodeLine{00036\ \ \ \ \ std::shared\_ptr<Float>\ \ radius\ =\ std::make\_shared<Float>(1);}
+\DoxyCodeLine{00037\ \ \ \ \ std::shared\_ptr<Float>\ \ magnet\ =\ std::make\_shared<Float>(0);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vortex_ac2b62abaa22399f175e09bb8a98d577c}{affect}}(std::shared\_ptr<Point>\ pt,\ \textcolor{keywordtype}{float}\ timeVal)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ V\ =\ std::dynamic\_pointer\_cast<Vector3f>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}V"{}}));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::shared\_ptr<Float>\ mass\ =\ std::dynamic\_pointer\_cast<Float>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}mass"{}}));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::shared\_ptr<Vector3f>\ P\ =\ std::dynamic\_pointer\_cast<Vector3f>(pt-\/>getAttribute(\textcolor{stringliteral}{"{}P"{}}));}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ sqrt(pow(P-\/>x,\ 2)\ +\ pow(P-\/>z,\ 2));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ alpha\ =\ atan(P-\/>z\ /\ P-\/>x);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fromRadiusDistannce\ =\ \ (radius-\/>x-\/r)/10;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector3f}{Vector3f}}\ newVel;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ newVel.x=P-\/>x*fromRadiusDistannce*magnet-\/>x;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ newVel.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}\ =\ P-\/>z*fromRadiusDistannce*magnet-\/>x;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ newVel.x\ +=\ -\/P-\/>z*scale-\/>x;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ newVel.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}\ +=\ P-\/>x*scale-\/>x;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ V-\/>x\ +=\ newVel.x*timeVal;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ V-\/>z\ +=\ newVel.\mbox{\hyperlink{class_vector3f_a470cff51eb6463672be518f5af4e26db}{z}}*timeVal;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ V-\/>y\ +=\ newVel.\mbox{\hyperlink{class_vector2f_a14874a72597fd358b15f8ba34b999c4d}{y}}*timeVal;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ \mbox{\hyperlink{class_vortex_af290fe2ef1f0ef394b22b07b2a05769c}{getParameterGroup}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::shared\_ptr<UiParameterGroup>\ ui\_parameter\_group\ =\ std::make\_shared<UiParameterGroup>(\textcolor{stringliteral}{"{}Vortex"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ui\_parameter\_group-\/>addParameter(std::make\_shared<UiParameter>(\textcolor{stringliteral}{"{}scale"{}},\ scale,\ 0.1));}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ ui\_parameter\_group-\/>addParameter(std::make\_shared<UiParameter>(\textcolor{stringliteral}{"{}magnet"{}},\ magnet,\ 10));}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ ui\_parameter\_group-\/>addParameter(std::make\_shared<UiParameter>(\textcolor{stringliteral}{"{}radius"{}},\ radius,\ 0.1));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ui\_parameter\_group;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}

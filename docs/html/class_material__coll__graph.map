@@ -1,0 +1,7 @@
+<map id="Material" name="Material">
+<area shape="rect" id="Node000001" title="matrial calss" alt="" coords="56,96,123,123"/>
+<area shape="rect" id="Node000002" href="$class_object.html" title="class object" alt="" coords="5,5,65,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,44,84,94,80,97,49,47"/>
+<area shape="rect" id="Node000003" href="$class_shader_program.html" title="class used to mange openg shader program" alt="" coords="89,5,200,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,47,100,97,95,94,126,44"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Transformable::get_position" name="Transformable::get_position">
+<area shape="rect" id="Node000001" title="Get the position object." alt="" coords="257,5,385,48"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#abc40ebcf4f397efd5b4fed7efbc4bdad" title="applies movment of mouse to camera" alt="" coords="5,13,209,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,29,209,29,209,24,241,24"/>
+</map>

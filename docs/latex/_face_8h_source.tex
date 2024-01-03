@@ -1,0 +1,48 @@
+\doxysection{Face.\+h}
+\hypertarget{_face_8h_source}{}\label{_face_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Face.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Face.h}}
+\mbox{\hyperlink{_face_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_face}{Face}}\ :}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_object}{Object}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<unsigned\ int>\ vertexIndecies;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_face_a4496448530ffbe687d4b1a701b4ddea0}{Face}}(std::initializer\_list<unsigned\ int>\ vertexIndecies)\ :\ \mbox{\hyperlink{class_object}{Object}}()}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index\ :\ vertexIndecies)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>vertexIndecies.push\_back(index);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_face_afdb634bc2d5287ba0d62e46b57e9dc2e}{Face}}()\ :\ \mbox{\hyperlink{class_object}{Object}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<unsigned>\ \mbox{\hyperlink{class_face_a79300b1a00e5bbaaa8d597fe27024ad5}{get\_vertex\_indecies}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vertexIndecies;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_face_a9eb64b0ee2e72d5f6a5e640d0df6d2d6}{set\_vertex\_indecies}}(\textcolor{keyword}{const}\ std::vector<unsigned>\&\ vertex\_indecies)}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ vertexIndecies\ =\ vertex\_indecies;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_face_a4dd2120c676797bf8b1854badebcf93a}{addPointINdex}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this-\/>vertexIndecies.push\_back(index);}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_face}{\string~Face}}()}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}

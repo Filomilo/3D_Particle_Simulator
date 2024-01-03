@@ -1,0 +1,75 @@
+\doxysection{Cube.\+h}
+\hypertarget{_cube_8h_source}{}\label{_cube_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Cube.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Cube.h}}
+\mbox{\hyperlink{_cube_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cube}{Cube}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_cube_aa5836d076d913d4272b8b1547d695df3}{Cube}}(\textcolor{keywordtype}{float}\ size)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_ab2c867be82490492af4ab729960d503a}{addPoints}}(\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{-\/size\ /\ 2,\ -\/size\ /\ 2,\ size\ /\ 2\},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{size\ /\ 2,\ -\/size\ /\ 2,\ size\ /\ 2\},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{-\/size\ /\ 2,\ size\ /\ 2,\ size\ /\ 2\},}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{size\ /\ 2,\ size\ /\ 2,\ size\ /\ 2\},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{-\/size\ /\ 2,\ size\ /\ 2\ ,-\/size\ /\ 2\},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{size\ /\ 2,\ size\ /\ 2,\ -\/size\ /\ 2\},}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \{-\/size\ /\ 2,\ -\/size\ /\ 2,\ -\/size\ /\ 2\},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \{size\ /\ 2,\ -\/size\ /\ 2,\ -\/size\ /\ 2\}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ \mbox{\hyperlink{class_vector3f}{Vector3f}}(\ 0.000000,\ 0.000000\ ,1.000000\ ),\ \mbox{\hyperlink{class_vector2f}{Vector2f}}(\ 0.375000,\ 0.000000\ ));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1,\ \{\ 0.000000,\ 0.000000,\ 1.000000\ \},\ \{\ 0.625000\ ,0.000000\ \ \});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(3,\ \{\ 0.000000,\ 0.000000\ ,1.000000\ \},\ \{\ 0.625000,\ 0.250000\ \});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(2,\ \{\ 0.000000,\ 0.000000,\ 1.000000\ \},\ \{\ 0.375000,\ 0.250000\ \});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 0,1,2,3\ \});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(2,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 0.375000,\ 0.250000\ \});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(3,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 0.250000\ \ \});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(5,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 0.500000\});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(4,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ 0.375000,\ 0.500000\ \});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 4,5,6,7\ \});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(4,\ \{\ 0.000000,\ 0.000000,\ -\/1.000000\ \},\ \{\ 0.375000\ ,0.500000\ \});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(5,\ \{\ 0.000000\ ,0.000000,\ -\/1.000000\ \},\ \{\ 0.625000\ ,0.500000\ \});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(7,\ \{\ 0.000000\ ,0.000000,\ -\/1.000000\ \},\ \{\ 0.625000,\ 0.750000\});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(6,\ \{\ 0.000000,\ 0.000000\ ,-\/1.000000\ \},\ \{\ 0.375000\ ,0.750000\});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 8,9,10,11\ \});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(6,\ \{\ 0.000000,\ -\/1.000000,\ 0.000000\ \},\ \{\ 0.375000,\ 0.750000\ \});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(7,\ \{\ 0.000000\ ,-\/1.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 0.750000\ \});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1,\ \{\ 0.000000,\ -\/1.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 1.000000\});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ \{\ 0.000000,\ -\/1.000000\ ,0.000000\ \},\ \{\ 0.375000,\ 1.000000\ \});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 12,13,14,15\ \});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1,\ \{\ 1.000000,\ 0.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 0.000000\});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(7,\ \{\ 1.000000\ ,0.000000,\ 0.000000\ \},\ \{\ 0.87500\ ,0.000000\ \});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(5,\ \{\ 1.000000\ ,0.000000,\ 0.000000\ \},\ \{\ 0.875000,\ 0.250000\ \});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(3,\ \{\ 1.000000\ ,0.000000,\ 0.000000\ \},\ \{\ 0.625000,\ 0.250000\ \ \});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 16,17,18,19\ \});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(6,\ \{\ -\/1.000000,\ 0.000000,\ 0.000000\ \},\ \{\ 0.125000,\ 0.000000\});}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ \{\ -\/1.000000\ ,0.000000,\ 0.000000\ \},\ \{\ 0.375000,\ 0.000000\ \});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(2,\ \{\ -\/1.000000\ ,0.000000,\ 0.000000\ \},\ \{\ 0.375000,0.250000\});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(4,\ \{\ -\/1.000000,\ 0.000000,\ 0.000000\ \},\ \{\ 0.125000,\ 0.250000\ \ \});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 20,21,22,23\ \});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+
+\end{DoxyCode}

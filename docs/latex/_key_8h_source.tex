@@ -1,0 +1,57 @@
+\doxysection{Key.\+h}
+\hypertarget{_key_8h_source}{}\label{_key_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Key.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/Key.h}}
+\mbox{\hyperlink{_key_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_key}{Key}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClicked=\textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ isPressing=\textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ isReleased=\textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_key}{Key}}()\{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_key_a1ed148b2763c9dfdfed6ed0c68b81210}{reset}}()}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ isClicked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ isReleased\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_key_aa82182b00038106cd7050ad3f1d5dd45}{update}}(\textcolor{keywordtype}{int}\ state)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (state)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ GLFW\_PRESS:\ isClicked\ =\ \textcolor{keyword}{true};\ isPressing\ =\ \textcolor{keyword}{true};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ GLFW\_REPEAT:\ isClicked\ =\ \textcolor{keyword}{true};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ GLFW\_RELEASE:\ isReleased\ =\ \textcolor{keyword}{true};\ isPressing\ =\ \textcolor{keyword}{false};\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_key_ac11b09b8b02102a5129cf523e647cf4d}{is\_is\_clicked}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isClicked;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_key_a78bcbb09b96c5a46b1ca6aa6de5ea950}{is\_is\_pressing}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00082\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isPressing;}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_key_ac581eb75546d07199b508291917dbdcd}{is\_is\_released}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isReleased;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_key_a9f3f0b64127a2645fc7a4270a8761aca}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_key}{Key}}\&\ obj)}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}isClicked:\ "{}}\ <<\ obj.isClicked}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ isPressing:\ "{}}\ <<\ obj.isPressing}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ isReleased:\ "{}}\ <<\ obj.isReleased;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+
+\end{DoxyCode}

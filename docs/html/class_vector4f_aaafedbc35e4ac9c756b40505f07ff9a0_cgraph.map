@@ -1,0 +1,5 @@
+<map id="Vector4f::operator+" name="Vector4f::operator+">
+<area shape="rect" id="Node000001" title="overloading operator + allowing to add two vector4f to one" alt="" coords="5,5,138,32"/>
+<area shape="rect" id="Node000002" href="$class_vector4f.html#a3d3c607b062a80d74fa25c5e8616f84e" title="Construct a new Vector 4f object with default all 0 zero values." alt="" coords="186,5,311,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,16,170,16,170,21,138,21"/>
+</map>

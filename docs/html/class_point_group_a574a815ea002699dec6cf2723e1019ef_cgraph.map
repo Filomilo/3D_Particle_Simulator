@@ -1,0 +1,9 @@
+<map id="PointGroup::addPoint" name="PointGroup::addPoint">
+<area shape="rect" id="Node000001" title="adds point to point group" alt="" coords="5,31,151,57"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html#a17bdde63833d3f5328a9598bc2ad5834" title="add point to point group" alt="" coords="199,5,344,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,32,183,28,183,33,151,37"/>
+<area shape="rect" id="Node000003" href="$class_object.html#a0573bd5bbf26928f6ccb84fcff92f44b" title="Get the Attribute object." alt="" coords="204,56,339,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,51,189,56,188,61,151,56"/>
+<area shape="rect" id="Node000004" href="$class_object.html#a1e43fb6799d6f6540c80f53294476e0a" title="Set the Attribute object." alt="" coords="392,56,526,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="339,67,376,67,376,72,339,72"/>
+</map>

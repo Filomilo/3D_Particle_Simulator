@@ -1,0 +1,19 @@
+<map id="PointGroup::getVerteciesAmount" name="PointGroup::getVerteciesAmount">
+<area shape="rect" id="Node000001" title="Get the Vertecies Amount object." alt="" coords="864,66,1031,109"/>
+<area shape="rect" id="Node000002" href="$class_point_group.html#a4e0878b6840a2632669269f2afc67d69" title="Get the Vertex Buffer For Mat object." alt="" coords="632,37,816,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="848,77,816,73,816,67,849,72"/>
+<area shape="rect" id="Node000004" href="$class_point_group_instanced.html#ada15553ff3e0fc7bfc8a757b7a85b9b8" title=" " alt="" coords="203,30,346,73"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="897,60,858,41,815,27,752,16,687,10,558,11,440,23,346,38,345,33,439,18,558,6,687,5,753,11,816,22,860,36,899,56"/>
+<area shape="rect" id="Node000006" href="$class_point_group_instanced.html#a1760f5af34f0547b0b92febab429c020" title=" " alt="" coords="419,93,566,135"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="848,96,567,112,567,107,848,90"/>
+<area shape="rect" id="Node000008" href="$class_point_group.html#ac63115131e281073dcc79f6459599db3" title="oprn gl draw cal draw points" alt="" coords="646,154,802,181"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="874,117,817,138,766,156,764,151,815,133,872,112"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html#ac9590a35027c8d475bbce9083f9b19a9" title="Get the Vertex Buffer object." alt="" coords="401,39,584,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="617,58,585,57,585,52,617,53"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="619,86,568,99,566,93,618,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="385,55,346,54,346,49,385,49"/>
+<area shape="rect" id="Node000005" href="$class_point_group_instanced.html#a7de72d470557fca07806b26780712a7f" title=" " alt="" coords="5,30,148,73"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="187,54,148,54,148,49,187,49"/>
+<area shape="rect" id="Node000007" href="$class_particle_system.html#aaff9d7b372e1925194aa21115d07ea43" title="update vertedx buffer of object" alt="" coords="196,101,353,127"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="404,117,353,117,353,111,404,111"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="PointGroupObject::getVertexAttrib" name="PointGroupObject::getVertexAttrib">
+<area shape="rect" id="Node000001" title="Get the Vertex Attrib object get attribure og point index ands set it there is none." alt="" coords="5,48,194,91"/>
+<area shape="rect" id="Node000002" href="$class_object.html#a0573bd5bbf26928f6ccb84fcff92f44b" title="Get the Attribute object." alt="" coords="245,5,379,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,45,238,34,239,39,192,50"/>
+<area shape="rect" id="Node000003" href="$class_object.html#a1e43fb6799d6f6540c80f53294476e0a" title="Set the Attribute object." alt="" coords="430,31,564,57"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="194,61,414,47,415,52,194,66"/>
+<area shape="rect" id="Node000004" href="$class_object.html#ab5bc4f48f04461a85189ecd320b1835d" title="check if there s attibute of specifed name" alt="" coords="242,107,382,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,89,239,100,238,105,191,94"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="380,25,415,30,414,35,379,31"/>
+</map>

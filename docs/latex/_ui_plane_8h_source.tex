@@ -1,0 +1,42 @@
+\doxysection{Ui\+Plane.\+h}
+\hypertarget{_ui_plane_8h_source}{}\label{_ui_plane_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiPlane.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiPlane.h}}
+\mbox{\hyperlink{_ui_plane_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_polygonal_8h}{Polygonal.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_lib_8h}{ShaderLib.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_plane}{UiPlane}}\ :}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0}{UiPlane}}(\textcolor{keywordtype}{void}\ *\ empty)\{\}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0}{UiPlane}}()}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(-\/1,-\/1,0);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(1,\ -\/1,\ 0);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(1,\ 1,\ 0);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{addPoint}}(-\/1,\ 1,\ 0);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(0,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ 0.0,\ 0.000000\ \});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(1,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 1.0\ ,0.0\ \});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(2,\ \{\ 0.000000,\ 1.000000\ ,0.000000\ \},\ \{\ 1.0,\ 1.0,\ \});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{addVertex}}(3,\ \{\ 0.000000,\ 1.000000,\ 0.000000\ \},\ \{\ 0.0,\ 1.0\ \});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{addFace}}(\{\ 0,1,2,3\ \});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{setMat}}(std::make\_shared<Material>(\mbox{\hyperlink{class_shader_lib_aab8a671f0a32a3fa0de748f3e8e6c1e2}{ShaderLib::UiShader}}));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//set\_render\_mode(GL\_LINES);}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_gl_object_a303d280c102c45b8c05ff5aae14ccc78}{init}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ setTex(\ std::shared\_ptr<Texture>\ tex)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}}-\/>addTex(\textcolor{stringliteral}{"{}color"{}},\ tex);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ }
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+
+\end{DoxyCode}

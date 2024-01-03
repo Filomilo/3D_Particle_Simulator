@@ -1,0 +1,250 @@
+\doxysection{Ui\+Plane Class Reference}
+\hypertarget{class_ui_plane}{}\label{class_ui_plane}\index{UiPlane@{UiPlane}}
+
+
+UI plane showing on screen.  
+
+
+
+
+{\ttfamily \#include $<$Ui\+Plane.\+h$>$}
+
+
+
+Inheritance diagram for Ui\+Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_ui_plane__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ui\+Plane\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_ui_plane__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ui_plane_a77704aff49a0467d3aab6d3c398c1c05}\label{class_ui_plane_a77704aff49a0467d3aab6d3c398c1c05} 
+{\bfseries Ui\+Plane} (void \texorpdfstring{$\ast$}{*}empty)
+\item 
+\mbox{\hyperlink{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0}{Ui\+Plane}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Ui Plane object. \end{DoxyCompactList}\item 
+\Hypertarget{class_ui_plane_a67ebee9ebd01ff41c5d3ebbfb6c44413}\label{class_ui_plane_a67ebee9ebd01ff41c5d3ebbfb6c44413} 
+void {\bfseries set\+Tex} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_texture}{Texture}} $>$ tex)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_polygonal_ab2f212430d6c01ea42e050bba5fadeec}{Polygonal}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_polygonal}{Polygonal} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a2b5f67ba833b94d2f671b9d2c94a043b}{add\+Vertex}} (int ptnum)
+\begin{DoxyCompactList}\small\item\em add vertex for sepcifed poitn index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a408d79f114d494dc8167197cd9d3abe1}{add\+Vertex}} (int ptnum, \mbox{\hyperlink{class_vector3f}{Vector3f}} normals)
+\begin{DoxyCompactList}\small\item\em add vertex fro specifed point index iwth provide d normal data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a10aebdb62a58e60c93c4863f61b4a24c}{add\+Vertex}} (int ptnum, \mbox{\hyperlink{class_vector3f}{Vector3f}} normals, \mbox{\hyperlink{class_vector2f}{Vector2f}} Uvs)
+\begin{DoxyCompactList}\small\item\em add vertex at specifed point with porvided noraml vector and uv postion \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_ad2c452923933fb6ee216d041c86a4a42}{add\+Face}} (std\+::initializer\+\_\+list$<$ int $>$ vertecies\+Number)
+\begin{DoxyCompactList}\small\item\em adds face made out of provided point index \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a8ae6f814c99a8dbe307fad2821b03199}{add\+Faces}} (std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ int $>$ $>$ faces)
+\begin{DoxyCompactList}\small\item\em crates muliple faces made out of prvide vertecie indecies \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a9c0f9b06a300c0b9d1f2c135179b1e29}{add\+Vertecies}} (std\+::initializer\+\_\+list$<$ int $>$ indxs)
+\begin{DoxyCompactList}\small\item\em adds vertecies fform at point index list \end{DoxyCompactList}\item 
+void {\bfseries iniit\+EBO} ()
+\begin{DoxyCompactList}\small\item\em intlizes ebo to opngl based data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a7e3ad1d7b539c03039de66f16a2ef28e}{init\+Parts}} () override
+\begin{DoxyCompactList}\small\item\em initlize parat of objecy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_ae52c35fa6cb877a685ddcc7c04e19ba0}{gl\+Draw\+Call}} () override
+\begin{DoxyCompactList}\small\item\em opengl call to draw object on screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_a00de27cbcccc03b47b8a0fad681e0e28}{add\+Face}} (\mbox{\hyperlink{class_face}{Face}} \texorpdfstring{$\ast$}{*}face)
+\begin{DoxyCompactList}\small\item\em adds face based on pointser to that face \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_af94c434bf667c08fc9b90cc83b22d51b}{add\+Face}} (const std\+::vector$<$ int $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em adds face based indecies prvovided \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_ababeedde87b427c70196ab39165bdf44}{clean\+Geo}} () override
+\begin{DoxyCompactList}\small\item\em clea all geometry dta of instsnce \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_polygonal_adbf7db3dc2a1f07944bc1358f1366036}{add\+Rect}} (const \mbox{\hyperlink{class_vector2f}{Vector2f}} \&left\+\_\+upper\+\_\+pos, const \mbox{\hyperlink{class_vector2f}{Vector2f}} \&right\+\_\+down\+\_\+pos, const \mbox{\hyperlink{class_vector2f}{Vector2f}} \&left\+\_\+upper\+\_\+uv, const \mbox{\hyperlink{class_vector2f}{Vector2f}} \&right\+\_\+down\+\_\+uv)
+\begin{DoxyCompactList}\small\item\em add rectangel in postion provided \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_polygonal_aebdc9218c8da0dfe336bd622d96ceef5}{get\+Tringle\+Point\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get the Tringle \doxylink{class_point}{Point} Count object retruns amount of tringles making out the object. \end{DoxyCompactList}\item 
+void {\bfseries add\+Full\+Face} (std\+::vector$<$ int $>$ point\+Indecies)
+\item 
+void {\bfseries add\+Full\+Face} (std\+::vector$<$ int $>$ point\+Indecies, std\+::vector$<$ \mbox{\hyperlink{class_vector2f}{Vector2f}} $>$ uvs)
+\item 
+void {\bfseries add\+Full\+Face} (std\+::vector$<$ int $>$ point\+Indecies, std\+::vector$<$ \mbox{\hyperlink{class_vector2f}{Vector2f}} $>$ uvs, std\+::vector$<$ \mbox{\hyperlink{class_vector3f}{Vector3f}} $>$ ns)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_point_group}{Point\+Group}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_point_group_a17bdde63833d3f5328a9598bc2ad5834}{add\+Point}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$ x)
+\begin{DoxyCompactList}\small\item\em add point to point group \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_a574a815ea002699dec6cf2723e1019ef}{add\+Point}} (\mbox{\hyperlink{class_point}{Point}} pt)
+\begin{DoxyCompactList}\small\item\em adds point to point group \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_a07d0e7dae0a09865d7d5a5d2f09f2a9b}{add\+Point}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} pos)
+\begin{DoxyCompactList}\small\item\em add point to point group \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_ad2c1169d8a4f8af17e83a6616be59334}{add\+Point}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em adds point with specifed xyz coridantes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_a3981e8fd1d37d54e64eac211961d567c}{add\+Point}} (std\+::initializer\+\_\+list$<$ float $>$ coordinates)
+\begin{DoxyCompactList}\small\item\em add point to point group with specided corsinates in intlizer float list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_group_ab2c867be82490492af4ab729960d503a}{add\+Points}} (std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ float $>$ $>$ coordinates)
+\begin{DoxyCompactList}\small\item\em add multiply ponints using inlizer list coordianres \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_point_group_ad1c6a58e6e91e25ddc84f209b8c2f46e}{add\+Point}} (float x, float y, float z, float r, float g, float b, float pscale=10)
+\begin{DoxyCompactList}\small\item\em adds point with specifed color nad scale \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_gl_object}{Gl\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Gl\+Object} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Gl \doxylink{class_object}{Object} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_gl_object_a230ebc157cf962e0a15c7c18f265c11c}{get\+\_\+render\+\_\+mode}} () const
+\begin{DoxyCompactList}\small\item\em Get the render mode object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_af86286d32938597b06a490ff450b0067}{set\+\_\+render\+\_\+mode}} (int render\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Set the render mode object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_ab0c75c848c3a411bf0924cecacfdf775}{set\+Mat}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_material}{Material}} $>$ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})
+\begin{DoxyCompactList}\small\item\em Set the Mat object. \end{DoxyCompactList}\item 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em nitlizes object \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_gl_object_a84bff39a6d827ad8a41f8f7e4a1c24b3}{get\+\_\+usage}} () const
+\begin{DoxyCompactList}\small\item\em Get the usage object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_aa68128871cd44ed5ef126f8af9f87f67}{set\+\_\+usage}} (long \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}})
+\begin{DoxyCompactList}\small\item\em Set the usage object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_renderable}{Renderable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_renderable_a581df1aecf30b520f5bcda57af0b32db}{is\+\_\+should\+\_\+render}} () const
+\begin{DoxyCompactList}\small\item\em retunrs wheter or object should be rendered \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderable_a093ffed283f6ba2a6ffa25796c0ebc04}{set\+\_\+should\+\_\+render}} (bool should\+\_\+render)
+\begin{DoxyCompactList}\small\item\em Set the should render object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_renderable_a1dce45c4703b60fd30acf824c77df9b6}{render}} ()
+\begin{DoxyCompactList}\small\item\em activate render procorces of object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_transformable}{Transformable}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Transformable} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{class_transformable}{Transformable} object basic empty constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6c94e2fa9347cacfb036b04c7138a5a5}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_ac82e02c363ef3a5bf903fce4a79b5b93}{get\+\_\+rotation}} () const
+\begin{DoxyCompactList}\small\item\em Get the rotation object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a6dd853da205976148e31e71f618a6a90}{get\+\_\+scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the scale object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ada57443e0e5d1773951918a3437e5e9a}{rotateY}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object arounf y axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a96dfd0389c69a1102e235c288ae788d7}{rotateX}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotates object around x axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a311c802058f2f21211aaf9432d0b646b}{rotateZ}} (float degrees)
+\begin{DoxyCompactList}\small\item\em rotate object around z axis \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a00f6f7b618b22376d1ab1a50efaf619e}{rotate}} (float degrees, \mbox{\hyperlink{class_vector3f}{Vector3f}} vec)
+\begin{DoxyCompactList}\small\item\em rotate object in degrese arounf specifed vector \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_add511c646430a73e00f7c23b65f01f1f}{set\+\_\+position}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the origin point position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_aeb0657e4da1b2ea0cb0ff5ca94e4626b}{set\+\_\+position\+\_\+object}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} position)
+\begin{DoxyCompactList}\small\item\em Set the position object object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_ad0cddcb6706ee7c90631a4653de500c8}{set\+\_\+rotation}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}})
+\begin{DoxyCompactList}\small\item\em Set the rotation object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a05c2607a3f8d9b0b53d07de95954c3dd}{scale}} (const \mbox{\hyperlink{class_vector3f}{Vector3f}} \&scale)
+\begin{DoxyCompactList}\small\item\em sclae origin point matrix acording to privided data \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{class_transformable_a5cf8a70fee1a81e6f34ae5706fae9bad}{get\+Transformation\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Get the Transformation Matrix object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_transformable_a16541760d089f6987b578e7bd4b64707}{move}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object orign point by provided vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_af4fd98610962c61d31ff205348fd6897}{move\+Indendent}} (\mbox{\hyperlink{class_vector3f}{Vector3f}} offset)
+\begin{DoxyCompactList}\small\item\em moves object matrix by priovided vector (not origin point) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a5d859992167dff5372d6247e5a6d0d88}{get\+Full\+Positon}} ()
+\begin{DoxyCompactList}\small\item\em Get the Full Positon object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transformable_a33121857ff78af430ae1ed1f5921ef96}{moveY}} (double y\+Offset)
+\begin{DoxyCompactList}\small\item\em move object in y axis \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_polygonal}{Polygonal}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update\+Ebo} ()
+\begin{DoxyCompactList}\small\item\em updates ebo data bsed on changes in object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_gl_object}{Gl\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_gl_object_ae5f073fd9c7b911ec8eb86d327bfdfcf}{get\+Vertex\+Size\+For\+Mat}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_material}{Material}} $>$ \mbox{\hyperlink{class_gl_object_aafaeb77938bc8389d34b0968581ca109}{mat}})
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Size For Mat object rutune vertex size for spcif material. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_gl_object_a3a946dd167e1260a01a97f8976cbb210}{get\+Vertex\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{class_vertex}{Vertex} Size object return vertex size for already applied materail. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_attribute_a7a338c500645d5509fca351ddea8b49c}{Attribute\+::\+Types}} $>$ \mbox{\hyperlink{class_gl_object_aedb90bc05aceb32757744c5a44ccd223}{get\+Map\+Of\+Attributes}} ()
+\begin{DoxyCompactList}\small\item\em Get the Map Of Attributes object returns map of attribute. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{class_gl_object_a7836e95ec25e6847763e282493764db0}{get\+List\+Of\+Attributes}} ()
+\begin{DoxyCompactList}\small\item\em Get the List Of Attributes object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_gl_object_a39df6fc8abae00ab001e1e85c99e0e86}{get\+Size\+Of\+Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Get the Size Of \doxylink{class_vertex}{Vertex} object returns size of vertex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_a4e5b9fbdc6013d2c71bab8fcf1743767}{iniit\+Vbo\+Universal}} (GLfloat \texorpdfstring{$\ast$}{*}vertex\+Buffer, int vertecies\+Amt, int vertex\+Size, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$ \&\mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_a_o}{VAO}} $>$ \&\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}})
+\begin{DoxyCompactList}\small\item\em inirilze vertex buffer for object \end{DoxyCompactList}\item 
+void {\bfseries iniit\+Vbo} ()
+\begin{DoxyCompactList}\small\item\em initlize vretx buffer for specif object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_a3770866f40a581c09b16dfaeffa10922}{update\+Vbo\+UNiversal}} (GLfloat \texorpdfstring{$\ast$}{*}vertex\+Buffer, int vertecies\+Amt, int vertex\+Size, long \mbox{\hyperlink{class_gl_object_ab547a4fb387c99d1cc7777e5f241f113}{usage}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$ \&\mbox{\hyperlink{class_gl_object_a80be086aebc73a74582417fa34105a88}{vbo}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_a_o}{VAO}} $>$ \&\mbox{\hyperlink{class_gl_object_add6df427c0174652339d433d1b362d2e}{vao}})
+\begin{DoxyCompactList}\small\item\em update vertex buffer unierslly \end{DoxyCompactList}\item 
+void {\bfseries update\+Vbo} ()
+\begin{DoxyCompactList}\small\item\em updated vertex buffer for specifc object \end{DoxyCompactList}\item 
+void {\bfseries iniit\+Vao} ()
+\begin{DoxyCompactList}\small\item\em initlize VAo for object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gl_object_a9770fbbbe86341a99324d59c90eb491a}{render\+Proc}} () override
+\begin{DoxyCompactList}\small\item\em reneeing priced for opengl \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_point_group}{Point\+Group}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_point}{Point}} $>$ $>$ {\bfseries points}
+\begin{DoxyCompactList}\small\item\em vector conating list of points \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_gl_object}{Gl\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_a_o}{VAO}} $>$ {\bfseries vao}
+\begin{DoxyCompactList}\small\item\em vertex attrivute array for object \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_b_o}{VBO}} $>$ {\bfseries vbo}
+\begin{DoxyCompactList}\small\item\em vertex buffer for obejct \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_material}{Material}} $>$ {\bfseries mat}
+\begin{DoxyCompactList}\small\item\em material including shader for rendering object \end{DoxyCompactList}\item 
+int {\bfseries render\+Mode} = GL\+\_\+\+FILL
+\begin{DoxyCompactList}\small\item\em render mode for opengl \end{DoxyCompactList}\item 
+long int {\bfseries usage} = GL\+\_\+\+STATIC\+\_\+\+DRAW
+\begin{DoxyCompactList}\small\item\em gl update usage \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_transformable}{Transformable}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 {\bfseries object\+Transformation} =glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em main obejct transformation matrix \end{DoxyCompactList}\item 
+glm\+::mat4 {\bfseries origin\+Point\+Transformation} = glm\+::mat4(1)
+\begin{DoxyCompactList}\small\item\em matric allwoing for origin point transformation \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector3f}{Vector3f}} \mbox{\hyperlink{class_transformable_a3a7781cfc79865ae46a13efbb2c9431d}{rotation}} =\mbox{\hyperlink{class_vector3f}{Vector3f}}(0,0,0)
+\begin{DoxyCompactList}\small\item\em hel class coanting rotaitn \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UI plane showing on screen. 
+
+class base for ui method showing on screen always in the same 2d plane on screen 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0}\label{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0} 
+\index{UiPlane@{UiPlane}!UiPlane@{UiPlane}}
+\index{UiPlane@{UiPlane}!UiPlane@{UiPlane}}
+\doxysubsubsection{\texorpdfstring{UiPlane()}{UiPlane()}}
+{\footnotesize\ttfamily Ui\+Plane\+::\+Ui\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Ui Plane object. 
+
+base consturct seetting basseic plane add ui Shader Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ui_plane_a0478c4cee4849541e96e66a0506c03a0_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/studia/semestr5/\+Podstawy grafiki komputerowej/\+Projekt/3\+D\+\_\+\+Particle\+\_\+\+Simulator/3\+DOpen\+Gl\+Engine/\mbox{\hyperlink{_ui_plane_8h}{Ui\+Plane.\+h}}\end{DoxyCompactItemize}

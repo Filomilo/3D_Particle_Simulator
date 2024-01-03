@@ -1,0 +1,68 @@
+\doxysection{Ui\+System.\+h}
+\hypertarget{_ui_system_8h_source}{}\label{_ui_system_8h_source}\index{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiSystem.h@{D:/studia/semestr5/Podstawy grafiki komputerowej/Projekt/3D\_Particle\_Simulator/3DOpenGlEngine/UiSystem.h}}
+\mbox{\hyperlink{_ui_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_updatable_8h}{Updatable.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{__3_d_engine_8h}{\_3DEngine.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_parameter_group_8h}{UiParameterGroup.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ui_text_8h}{UiText.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ui_system}{UiSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_updatable}{Updatable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_ui_text}{UiText}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::shared\_ptr<UiParameterGroup>>\ groups;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ activegroup=0;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ incrementGroup()}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ activegroup\ =\ (activegroup\ +\ 1)\ \%\ groups.size();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ updateGroupText()}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::stringstream\ stream;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ stream\ <<\ groups.at(activegroup)-\/>get\_name()\ <<\ \textcolor{stringliteral}{"{}:\ "{}}<<\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(std::shared\_ptr<UiParameter>\ param\ :\ groups.at(activegroup)-\/>getParamters())}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(groups.at(activegroup)-\/>getSelected()\ ==\ i)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\textcolor{stringliteral}{"{}<<"{}}<<\ param-\/>getName()\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ param-\/>getVal()<<\textcolor{stringliteral}{"{}\ >>"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ stream\ <<\ param-\/>getName()\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ param-\/>getVal()<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_ui_text_a519c415fb05b544ccc416246b2584183}{setText}}(stream.str());}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ stream.str()\ <<\ std::endl;}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_ui_system_a87f55adfc9650e821d56534ac66c2888}{UiSystem}}()}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_ui_text}{UiText}}(\textcolor{stringliteral}{"{}-\/"{}},\ 0.008)}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_system_a4ce2ed26c50247e2021903558372e3fa}{addParameterGroup}}(\ std::shared\_ptr<UiParameterGroup>\ ui\_parameter\_group)}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ groups.push\_back(ui\_parameter\_group);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ updateGroupText();}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_system_af40b6631bf5a7fc658d17f89673b6ee5}{update}}(\textcolor{keywordtype}{float}\ timeElpased);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_ui_system_ac9b77fde07ba6a246851d6385da1ab05}{operator<<}}(std::ostream\&\ os,\ \ \mbox{\hyperlink{class_ui_system}{UiSystem}}\&\ obj)}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ *obj.groups[obj.activegroup];}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ui_system_a9bd919819ddfe90925a69309a82c153a}{reset}}()}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+
+\end{DoxyCode}

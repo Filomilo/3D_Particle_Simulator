@@ -1,0 +1,58 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_light.html" title="class light" alt="" coords="651,157,700,184"/>
+<area shape="rect" id="Node000001" href="$class_point_light.html" title="class for mangin point light data in opengl" alt="" coords="809,183,888,209"/>
+<area shape="poly" id="edge6_Node000000_Node000001" title=" " alt="" coords="716,174,809,188,808,193,715,179"/>
+<area shape="rect" id="Node000012" href="$class_parametrized.html" title=" " alt="" coords="432,512,531,539"/>
+<area shape="rect" id="Node000010" href="$class_emitter.html" title="emtiter calss emitter class if paramters that genretes particles" alt="" coords="644,461,707,488"/>
+<area shape="poly" id="edge7_Node000012_Node000010" title=" " alt="" coords="545,506,642,480,644,485,546,511"/>
+<area shape="rect" id="Node000013" href="$class_force.html" title="Force class tempalte to be applied in simulation." alt="" coords="648,537,703,564"/>
+<area shape="poly" id="edge9_Node000012_Node000013" title=" " alt="" coords="546,531,648,545,647,550,546,536"/>
+<area shape="rect" id="Node000011" href="$class_box_emitter.html" title="emitter inheterd clas for box emitter" alt="" coords="805,461,891,488"/>
+<area shape="poly" id="edge8_Node000010_Node000011" title=" " alt="" coords="723,472,805,472,805,477,723,477"/>
+<area shape="rect" id="Node000014" href="$class_gravity.html" title="gravity forcei mpleitnf force template" alt="" coords="818,512,879,539"/>
+<area shape="poly" id="edge10_Node000013_Node000014" title=" " alt="" coords="717,542,816,527,817,532,718,547"/>
+<area shape="rect" id="Node000015" href="$class_turbulance.html" title="Turbulance class force." alt="" coords="806,563,890,589"/>
+<area shape="poly" id="edge11_Node000013_Node000015" title=" " alt="" coords="718,554,806,567,805,573,718,559"/>
+<area shape="rect" id="Node000016" href="$class_vortex.html" title="Implementaion of vortex force for paricle simulation." alt="" coords="819,613,878,640"/>
+<area shape="poly" id="edge12_Node000013_Node000016" title=" " alt="" coords="718,566,819,611,817,616,716,571"/>
+<area shape="rect" id="Node000024" href="$class_renderable.html" title="virtual rendreabble class" alt="" coords="13,335,100,361"/>
+<area shape="rect" id="Node000019" href="$class_gl_object.html" title="gl object class for magnign object drawable by opengl" alt="" coords="156,335,228,361"/>
+<area shape="poly" id="edge13_Node000024_Node000019" title=" " alt="" coords="115,345,155,345,155,351,115,351"/>
+<area shape="rect" id="Node000020" href="$class_point_group.html" title="class object made out of points" alt="" coords="276,284,362,311"/>
+<area shape="poly" id="edge14_Node000019_Node000020" title=" " alt="" coords="240,326,283,309,285,314,242,331"/>
+<area shape="rect" id="Node000021" href="$class_point_group_instanced.html" title=" " alt="" coords="410,309,553,336"/>
+<area shape="poly" id="edge15_Node000020_Node000021" title=" " alt="" coords="378,304,410,309,409,314,378,309"/>
+<area shape="rect" id="Node000023" href="$class_switchable_point_group.html" title=" " alt="" coords="601,259,750,285"/>
+<area shape="poly" id="edge26_Node000020_Node000023" title=" " alt="" coords="378,291,600,275,600,280,378,296"/>
+<area shape="rect" id="Node000003" href="$class_polygonal.html" title="class holding polygon data for opnegl" alt="" coords="442,107,521,133"/>
+<area shape="poly" id="edge18_Node000020_Node000003" title=" " alt="" coords="341,271,466,132,470,136,345,274"/>
+<area shape="rect" id="Node000022" href="$class_particle_system.html" title="class with particle system" alt="" coords="620,309,731,336"/>
+<area shape="poly" id="edge16_Node000021_Node000022" title=" " alt="" coords="568,320,620,320,620,325,568,325"/>
+<area shape="poly" id="edge17_Node000021_Node000023" title=" " alt="" coords="549,302,621,283,622,289,550,307"/>
+<area shape="rect" id="Node000002" href="$class_cube.html" title="cube class primitve" alt="" coords="650,208,701,235"/>
+<area shape="poly" id="edge19_Node000003_Node000002" title=" " alt="" coords="515,141,556,168,602,194,650,212,648,217,600,198,553,172,512,145"/>
+<area shape="rect" id="Node000004" href="$class_poly_grid.html" title="class impleitng basic primiteve grid" alt="" coords="640,5,711,32"/>
+<area shape="poly" id="edge21_Node000003_Node000004" title=" " alt="" coords="512,95,553,68,600,42,638,26,640,31,602,46,556,72,515,99"/>
+<area shape="rect" id="Node000005" href="$class_sphere.html" title="class defing primtive sphere class" alt="" coords="644,56,707,83"/>
+<area shape="poly" id="edge22_Node000003_Node000005" title=" " alt="" coords="535,103,643,75,645,80,537,109"/>
+<area shape="rect" id="Node000006" href="$class_ui_plane.html" title="UI plane showing on screen." alt="" coords="642,107,709,133"/>
+<area shape="poly" id="edge23_Node000003_Node000006" title=" " alt="" coords="536,117,642,117,642,123,536,123"/>
+<area shape="poly" id="edge20_Node000002_Node000001" title=" " alt="" coords="716,213,808,199,809,204,717,218"/>
+<area shape="rect" id="Node000007" href="$class_ui_text.html" title="Ui class alowing to print basic text on screen." alt="" coords="819,120,877,147"/>
+<area shape="poly" id="edge24_Node000006_Node000007" title=" " alt="" coords="724,121,819,128,818,134,724,126"/>
+<area shape="rect" id="Node000008" href="$class_ui_system.html" title="class for handling ui interaction" alt="" coords="946,265,1025,292"/>
+<area shape="poly" id="edge25_Node000007_Node000008" title=" " alt="" coords="884,154,900,169,945,220,977,263,973,266,941,223,896,173,880,158"/>
+<area shape="rect" id="Node000017" href="$class_transformable.html" title="virtual class allwoign for transformation" alt="" coords="5,411,108,437"/>
+<area shape="poly" id="edge28_Node000017_Node000010" title=" " alt="" coords="124,427,643,469,643,475,123,432"/>
+<area shape="poly" id="edge29_Node000017_Node000019" title=" " alt="" coords="94,400,165,360,168,364,97,405"/>
+<area shape="rect" id="Node000018" href="$class_camera.html" title="camerar clas fro hadnlign amrea postion movment nad projection" alt="" coords="159,461,225,488"/>
+<area shape="poly" id="edge27_Node000017_Node000018" title=" " alt="" coords="110,441,159,460,157,465,108,446"/>
+<area shape="rect" id="Node000009" href="$class_updatable.html" title="virtual class updatable" alt="" coords="442,360,521,387"/>
+<area shape="poly" id="edge30_Node000009_Node000010" title=" " alt="" coords="533,391,554,403,578,422,602,440,644,461,642,466,599,445,575,426,551,408,530,396"/>
+<area shape="poly" id="edge31_Node000009_Node000022" title=" " alt="" coords="535,357,621,334,622,339,537,362"/>
+<area shape="poly" id="edge34_Node000009_Node000008" title=" " alt="" coords="534,390,609,411,702,426,752,428,802,425,851,415,897,396,926,374,949,345,966,316,977,291,982,293,971,318,954,348,930,378,900,401,853,420,803,430,752,433,702,431,608,416,533,395"/>
+<area shape="rect" id="Node000025" href="$class_simulatable.html" title="class of Sumualtable used in simulation" alt="" coords="631,360,720,387"/>
+<area shape="poly" id="edge32_Node000009_Node000025" title=" " alt="" coords="537,371,630,371,630,376,537,376"/>
+<area shape="rect" id="Node000026" href="$class_particle_solver.html" title="paritlce solver class class that handles siumalting specifed particle system" alt="" coords="798,360,898,387"/>
+<area shape="poly" id="edge33_Node000025_Node000026" title=" " alt="" coords="735,371,798,371,798,376,735,376"/>
+</map>

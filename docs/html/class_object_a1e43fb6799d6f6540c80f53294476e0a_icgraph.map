@@ -1,0 +1,48 @@
+<map id="Object::setAttribute" name="Object::setAttribute">
+<area shape="rect" id="Node000001" title="Set the Attribute object." alt="" coords="660,448,795,475"/>
+<area shape="rect" id="Node000002" href="$class_object.html#a0573bd5bbf26928f6ccb84fcff92f44b" title="Get the Attribute object." alt="" coords="478,68,612,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="722,433,713,369,695,285,680,240,662,196,639,153,610,115,586,97,590,93,614,111,643,150,667,193,685,238,700,284,719,368,727,432"/>
+<area shape="rect" id="Node000005" href="$class_point_group_object.html#a080956fa5c1912fd080e950ce2a72573" title="Get the Vertex Attrib object get attribure og point index ands set it there is none." alt="" coords="242,107,430,149"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="722,433,715,373,698,298,683,259,664,222,640,188,611,159,570,136,524,123,476,117,430,117,430,112,476,112,525,117,572,131,614,155,644,185,669,219,688,257,703,297,720,373,728,432"/>
+<area shape="rect" id="Node000008" href="$class_point.html#abf67a1160dd25744b162999d0cac1adf" title="Construct a new Point object." alt="" coords="501,220,590,247"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="715,434,700,395,678,349,648,302,611,261,589,248,592,243,614,257,652,299,682,346,705,393,720,432"/>
+<area shape="rect" id="Node000009" href="$class_point.html#a23cf1a19ad6d123e9c4c2f3237df0913" title="Construct a new Point object." alt="" coords="501,271,590,297"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="710,436,670,374,643,340,611,311,589,299,592,295,614,307,646,337,674,371,714,433"/>
+<area shape="rect" id="Node000010" href="$class_point.html#ad9df67895f722afe3efedc269c17823a" title="Construct a new Point object." alt="" coords="501,321,590,348"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="702,439,661,400,611,362,588,351,591,346,614,358,665,396,706,435"/>
+<area shape="rect" id="Node000011" href="$class_point.html#a15061d264ff84b5e82363b34435d12c8" title="Set the Age object." alt="" coords="495,169,595,196"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="718,433,706,385,685,326,654,264,634,235,611,210,594,199,597,194,614,206,638,232,658,261,690,324,711,384,723,432"/>
+<area shape="rect" id="Node000012" href="$class_point.html#af2620710c18bd529a2b3d895810b89a1" title="Set the Bounce objects." alt="" coords="485,372,606,399"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="681,444,611,413,583,402,585,397,613,408,683,439"/>
+<area shape="rect" id="Node000013" href="$class_point.html#a4e75b065a97aa8850b5b79f95bd63de7" title="Set the Color object." alt="" coords="492,423,599,449"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="645,453,599,446,600,441,645,447"/>
+<area shape="rect" id="Node000015" href="$class_point.html#ad52cb216702e97fca4d029a0257b9ef9" title="Set the Life object." alt="" coords="497,524,594,551"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="683,484,613,514,585,526,583,521,611,510,681,479"/>
+<area shape="rect" id="Node000016" href="$class_point.html#a1a8a88a4765bbe6bfe8d275fe8698875" title="Set the Mass object." alt="" coords="491,575,600,601"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="706,488,665,527,614,565,591,576,588,572,611,560,661,523,702,484"/>
+<area shape="rect" id="Node000017" href="$class_point.html#a41dbe49207a8fd141e70e317b2bd04d5" title="Set the Pscale object." alt="" coords="487,473,604,500"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="645,475,605,481,604,476,644,470"/>
+<area shape="rect" id="Node000018" href="$class_point.html#aa9f3656d011ad031b2019c967a752a4c" title="Set the Velocity object." alt="" coords="483,625,607,652"/>
+<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="714,490,674,552,646,586,614,615,594,627,591,623,611,611,643,582,670,549,710,487"/>
+<area shape="rect" id="Node000019" href="$class_vertex.html#a24d23d6e87635edac1b7d88d6afafac8" title="Construct a new Vertex object including index of point and normal vector." alt="" coords="493,676,598,703"/>
+<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="720,491,705,530,682,576,652,624,614,666,596,678,593,673,611,662,648,621,678,574,700,527,715,489"/>
+<area shape="rect" id="Node000020" href="$class_vertex.html#a3dc3934c119d0b31a92f016dcbba7829" title=" " alt="" coords="493,727,598,753"/>
+<area shape="poly" id="edge22_Node000001_Node000020" title=" " alt="" coords="723,491,711,539,690,599,658,662,638,691,614,717,597,728,594,724,611,713,634,687,654,659,685,597,706,537,718,489"/>
+<area shape="rect" id="Node000021" href="$class_vertex.html#ad8a5abad93509e036acd640317d593ce" title="Construct a new Vertex object including index of point and normal vector." alt="" coords="493,777,598,804"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="726,491,716,548,697,621,682,660,664,699,641,735,614,767,598,779,595,775,611,763,637,732,659,696,677,658,692,620,711,547,721,490"/>
+<area shape="rect" id="Node000022" href="$class_vertex.html#abfa612a0b5de6df2b1abb93fbb65f640" title=" " alt="" coords="493,828,598,855"/>
+<area shape="poly" id="edge24_Node000001_Node000022" title=" " alt="" coords="728,491,721,556,703,643,689,690,669,736,645,779,614,818,599,830,595,825,610,814,640,776,665,733,684,688,698,642,716,556,722,490"/>
+<area shape="rect" id="Node000003" href="$class_point_group.html#a574a815ea002699dec6cf2723e1019ef" title="adds point to point group" alt="" coords="263,56,409,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,79,409,76,409,71,463,74"/>
+<area shape="rect" id="Node000004" href="$class_point_group_object.html#a5a12782a371c976240e4cf20c9bd1ee6" title="add point to group" alt="" coords="244,5,428,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="488,65,429,47,389,35,391,30,431,41,489,60"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="468,101,431,110,430,104,467,96"/>
+<area shape="rect" id="Node000007" href="$class_point.html#a190a449119d5bead0a4927cced8db270" title="increse age of point" alt="" coords="270,173,402,200"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="518,107,478,136,431,164,401,175,399,170,429,159,475,132,515,103"/>
+<area shape="rect" id="Node000006" href="$class_point_group_object.html#a528528cee2f08628d078365d1dffcbdb" title="Get the Vertex Buffer object." alt="" coords="5,107,194,149"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="226,131,194,131,194,125,226,125"/>
+<area shape="poly" id="edge12_Node000011_Node000007" title=" " alt="" coords="480,187,402,188,402,183,480,181"/>
+<area shape="rect" id="Node000014" href="$class_point.html#ac8c1ef2f28ed16a4bfc677a24d7768d9" title="Construct a new Point object." alt="" coords="291,448,381,475"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="477,447,381,459,381,453,476,442"/>
+<area shape="poly" id="edge19_Node000017_Node000014" title=" " alt="" coords="471,480,380,469,381,464,472,475"/>
+</map>

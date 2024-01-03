@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_object.html" title="class object" alt="" coords="5,81,65,108"/>
+<area shape="rect" id="Node000001" href="$class_face.html" title="class for annling data about specifc face of polygonal objeect" alt="" coords="121,5,172,32"/>
+<area shape="poly" id="edge35_Node000000_Node000001" title=" " alt="" coords="67,70,124,30,127,35,70,74"/>
+<area shape="rect" id="Node000002" href="$class_material.html" title="matrial calss" alt="" coords="113,56,180,83"/>
+<area shape="poly" id="edge36_Node000000_Node000002" title=" " alt="" coords="79,82,111,74,113,80,80,87"/>
+<area shape="rect" id="Node000004" href="$class_point.html" title="class for handling single point" alt="" coords="121,107,172,133"/>
+<area shape="poly" id="edge38_Node000000_Node000004" title=" " alt="" coords="80,102,121,112,120,117,79,107"/>
+<area shape="rect" id="Node000005" href="$class_vertex.html" title="class conating vertex data for rendering" alt="" coords="117,157,176,184"/>
+<area shape="poly" id="edge39_Node000000_Node000005" title=" " alt="" coords="70,115,127,155,124,159,67,120"/>
+<area shape="rect" id="Node000003" href="$class_phong_mat.html" title=" " alt="" coords="228,56,308,83"/>
+<area shape="poly" id="edge37_Node000002_Node000003" title=" " alt="" coords="195,67,228,67,228,72,195,72"/>
+</map>
