@@ -257,7 +257,7 @@ void particleTest()
     std::shared_ptr<PointGroup> point_group = std::make_shared<PointGroup>();
     srand(time(0));
     float particleSize = 100;
-    for (int i = 0; i < 1000; i++)
+    for (int i = 0; i < 100000; i++)
     {
         point_group->addPoint(
             (float)rand() / RAND_MAX * particleSize - particleSize / 2,
@@ -497,14 +497,14 @@ void     ObjLoaderTest()
 
 
         std::shared_ptr<PhongMat> cubeMat = std::make_shared<PhongMat>();
-        cubeMat->set_color_tex("Assets\\minislplp_DefaultMaterial_BaseColor.jpg", 4096, 4096, 16);
-       cubeMat->set_normal_tex("Assets\\minislplp_DefaultMaterial_Normal.jpg", 4096, 4096, 16);
-        	cubeMat->set_rough_tex("Assets\\minislplp_DefaultMaterial_Roughness.jpg", 4096, 4096, 8, GL_RED);
-       cubeMat->set_emission_tex("Assets\\minislplp_DefaultMaterial_Emissive.jpg", 4096, 4096, 16);
+        cubeMat->set_color_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_BaseColor.png", 4096, 4096, 16);
+       cubeMat->set_normal_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_Normal.png", 4096, 4096, 16);
+        	cubeMat->set_rough_tex("Assets\\OrsisnaBlenderRIg_Uv_otssina_Roughness.png", 4096, 4096, 8, GL_RED);
+      // cubeMat->set_emission_tex("Assets\\minislplp_DefaultMaterial_Emissive.jpg", 4096, 4096, 16);
        pointLight->moveY(5);
        
         //std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("D:\\proejcts\\OrssinaBlednerRig\\orsinaobj.obj");
-        std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("Assets\\minis.obj2");
+        std::shared_ptr<Polygonal> chracter = ObjLoader::loadFromFile("Assets\\orssina.obj2");
         chracter->setMat(cubeMat);
         chracter->init();
        // std::cout << "finehs init" << std::endl;
@@ -532,13 +532,13 @@ void     ObjLoaderTest()
 int main()
 {
  //cubeTest();
-//	particleTest();
-//	pointGroupInstanced();
+	//particleTest();
+	//pointGroupInstanced();
 //emptyTest();
 //SimulationTest();
    // SimulationTestInstance();
   // uiTest();
-   // textTest();
+   //textTest();
   //  sphereTest();
    ObjLoaderTest();
     return 0;
